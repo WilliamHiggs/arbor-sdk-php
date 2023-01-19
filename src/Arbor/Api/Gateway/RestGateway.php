@@ -623,7 +623,7 @@ class RestGateway implements GatewayInterface
     private function createRetryHandler()
     {
         /** @noinspection PhpUnusedParameterInspection */
-        return function ($retries, Request $request, Response $response = null, RequestException $exception = null) {
+        return function ($retries, Request $request, Response $response = null, TransferException $exception = null) {
             if ($retries >= self::MAX_RETRIES) {
                 return false;
             }
@@ -646,10 +646,10 @@ class RestGateway implements GatewayInterface
     }
 
     /**
-     * @param RequestException|null $exception
+     * @param TransferException|null $exception
      * @return bool
      */
-    private function isConnectError(RequestException $exception = null)
+    private function isConnectError(TransferException $exception = null)
     {
         return $exception instanceof ConnectException;
     }
