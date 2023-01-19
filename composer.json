@@ -1,9 +1,9 @@
 {
-    "name": "arbor-education/arbor-sdk-php",
+    "name": "williamhiggs/arbor-sdk-php",
     "type": "library",
     "description": "Arbor Education PHP SDK",
     "keywords": ["arbor", "mis", "library", "SDK", "REST api"],
-    "homepage": "https://github.com/arbor-education/sis-sdk-php",
+    "homepage": "https://github.com/williamhiggs/sis-sdk-php",
     "license": "Apache-2.0",
     "repositories": [
         {
