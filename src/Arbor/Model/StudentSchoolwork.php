@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentSchoolwork extends ModelBase
 {
-    const SCHOOLWORK = 'schoolwork';
+    public const SCHOOLWORK = 'schoolwork';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const DUE_DATETIME = 'dueDatetime';
+    public const DUE_DATETIME = 'dueDatetime';
 
-    const SUBMITTED_DATETIME = 'submittedDatetime';
+    public const SUBMITTED_DATETIME = 'submittedDatetime';
 
-    const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
+    public const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
-    const NOT_SUBMITTED_DATETIME = 'notSubmittedDatetime';
+    public const NOT_SUBMITTED_DATETIME = 'notSubmittedDatetime';
 
     protected $_resourceType = ResourceType::STUDENT_SCHOOLWORK;
 
@@ -25,7 +26,7 @@ class StudentSchoolwork extends ModelBase
      * @return StudentSchoolwork[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +58,7 @@ class StudentSchoolwork extends ModelBase
     }
 
     /**
-     * @return Schoolwork
+     * @return \Arbor\Model\Schoolwork
      */
     public function getSchoolwork()
     {
@@ -65,15 +66,15 @@ class StudentSchoolwork extends ModelBase
     }
 
     /**
-     * @param Schoolwork $schoolwork
+     * @param \Arbor\Model\Schoolwork $schoolwork
      */
-    public function setSchoolwork(Schoolwork $schoolwork = null)
+    public function setSchoolwork(\Arbor\Model\Schoolwork $schoolwork = null)
     {
         $this->setProperty('schoolwork', $schoolwork);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -81,9 +82,9 @@ class StudentSchoolwork extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }

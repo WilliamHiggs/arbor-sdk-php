@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentLinkedRelationship extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const LINKED_OBJECT = 'linkedObject';
+    public const LINKED_OBJECT = 'linkedObject';
 
-    const STUDENT_LINKED_RELATIONSHIP_TYPE = 'studentLinkedRelationshipType';
+    public const STUDENT_LINKED_RELATIONSHIP_TYPE = 'studentLinkedRelationshipType';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::STUDENT_LINKED_RELATIONSHIP;
 
@@ -23,7 +24,7 @@ class StudentLinkedRelationship extends ModelBase
      * @return StudentLinkedRelationship[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class StudentLinkedRelationship extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -63,9 +64,9 @@ class StudentLinkedRelationship extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -81,13 +82,13 @@ class StudentLinkedRelationship extends ModelBase
     /**
      * @param ModelBase $linkedObject
      */
-    public function setLinkedObject(ModelBase $linkedObject = null)
+    public function setLinkedObject(\ModelBase $linkedObject = null)
     {
         $this->setProperty('linkedObject', $linkedObject);
     }
 
     /**
-     * @return StudentLinkedRelationshipType
+     * @return \Arbor\Model\StudentLinkedRelationshipType
      */
     public function getStudentLinkedRelationshipType()
     {
@@ -95,9 +96,9 @@ class StudentLinkedRelationship extends ModelBase
     }
 
     /**
-     * @param StudentLinkedRelationshipType $studentLinkedRelationshipType
+     * @param \Arbor\Model\StudentLinkedRelationshipType $studentLinkedRelationshipType
      */
-    public function setStudentLinkedRelationshipType(StudentLinkedRelationshipType $studentLinkedRelationshipType = null)
+    public function setStudentLinkedRelationshipType(\Arbor\Model\StudentLinkedRelationshipType $studentLinkedRelationshipType = null)
     {
         $this->setProperty('studentLinkedRelationshipType', $studentLinkedRelationshipType);
     }

@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AcademicTeachingHour extends ModelBase
 {
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const START_TIME = 'startTime';
+    public const START_TIME = 'startTime';
 
-    const END_TIME = 'endTime';
+    public const END_TIME = 'endTime';
 
-    const DAY_OF_CYCLE = 'dayOfCycle';
+    public const DAY_OF_CYCLE = 'dayOfCycle';
 
     protected $_resourceType = ResourceType::ACADEMIC_TEACHING_HOUR;
 
@@ -23,7 +24,7 @@ class AcademicTeachingHour extends ModelBase
      * @return AcademicTeachingHour[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -97,7 +98,7 @@ class AcademicTeachingHour extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime($startTime = null)
+    public function setStartTime(string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -113,7 +114,7 @@ class AcademicTeachingHour extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime($endTime = null)
+    public function setEndTime(string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -129,7 +130,7 @@ class AcademicTeachingHour extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle($dayOfCycle = null)
+    public function setDayOfCycle(int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }

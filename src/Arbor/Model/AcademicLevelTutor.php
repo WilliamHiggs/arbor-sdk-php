@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AcademicLevelTutor extends ModelBase
 {
-    const ACADEMIC_LEVEL = 'academicLevel';
+    public const ACADEMIC_LEVEL = 'academicLevel';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::ACADEMIC_LEVEL_TUTOR;
 
@@ -21,7 +22,7 @@ class AcademicLevelTutor extends ModelBase
      * @return AcademicLevelTutor[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class AcademicLevelTutor extends ModelBase
     }
 
     /**
-     * @return AcademicLevel
+     * @return \Arbor\Model\AcademicLevel
      */
     public function getAcademicLevel()
     {
@@ -61,15 +62,15 @@ class AcademicLevelTutor extends ModelBase
     }
 
     /**
-     * @param AcademicLevel $academicLevel
+     * @param \Arbor\Model\AcademicLevel $academicLevel
      */
-    public function setAcademicLevel(AcademicLevel $academicLevel = null)
+    public function setAcademicLevel(\Arbor\Model\AcademicLevel $academicLevel = null)
     {
         $this->setProperty('academicLevel', $academicLevel);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -77,9 +78,9 @@ class AcademicLevelTutor extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

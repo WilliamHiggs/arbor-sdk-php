@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TimetablerImportStepOutcome extends ModelBase
 {
-    const TIMETABLER_IMPORT_RESULT = 'timetablerImportResult';
+    public const TIMETABLER_IMPORT_RESULT = 'timetablerImportResult';
 
-    const IDENTIFIER = 'identifier';
+    public const IDENTIFIER = 'identifier';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const OPTION_TYPE = 'optionType';
+    public const OPTION_TYPE = 'optionType';
 
-    const LINKED_OBJECT = 'linkedObject';
+    public const LINKED_OBJECT = 'linkedObject';
 
-    const STEP_TYPE = 'stepType';
+    public const STEP_TYPE = 'stepType';
 
-    const IS_DRAFT = 'isDraft';
+    public const IS_DRAFT = 'isDraft';
 
     protected $_resourceType = ResourceType::TIMETABLER_IMPORT_STEP_OUTCOME;
 
@@ -27,7 +28,7 @@ class TimetablerImportStepOutcome extends ModelBase
      * @return TimetablerImportStepOutcome[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class TimetablerImportStepOutcome extends ModelBase
     }
 
     /**
-     * @return TimetablerImportResult
+     * @return \Arbor\Model\TimetablerImportResult
      */
     public function getTimetablerImportResult()
     {
@@ -67,9 +68,9 @@ class TimetablerImportStepOutcome extends ModelBase
     }
 
     /**
-     * @param TimetablerImportResult $timetablerImportResult
+     * @param \Arbor\Model\TimetablerImportResult $timetablerImportResult
      */
-    public function setTimetablerImportResult(TimetablerImportResult $timetablerImportResult = null)
+    public function setTimetablerImportResult(\Arbor\Model\TimetablerImportResult $timetablerImportResult = null)
     {
         $this->setProperty('timetablerImportResult', $timetablerImportResult);
     }
@@ -85,7 +86,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier($identifier = null)
+    public function setIdentifier(string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -101,7 +102,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -117,7 +118,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param string $optionType
      */
-    public function setOptionType($optionType = null)
+    public function setOptionType(string $optionType = null)
     {
         $this->setProperty('optionType', $optionType);
     }
@@ -133,7 +134,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param ModelBase $linkedObject
      */
-    public function setLinkedObject(ModelBase $linkedObject = null)
+    public function setLinkedObject(\ModelBase $linkedObject = null)
     {
         $this->setProperty('linkedObject', $linkedObject);
     }
@@ -149,7 +150,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param string $stepType
      */
-    public function setStepType($stepType = null)
+    public function setStepType(string $stepType = null)
     {
         $this->setProperty('stepType', $stepType);
     }
@@ -165,7 +166,7 @@ class TimetablerImportStepOutcome extends ModelBase
     /**
      * @param bool $isDraft
      */
-    public function setIsDraft($isDraft = null)
+    public function setIsDraft(bool $isDraft = null)
     {
         $this->setProperty('isDraft', $isDraft);
     }

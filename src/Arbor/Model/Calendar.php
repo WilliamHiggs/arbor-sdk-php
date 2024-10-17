@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Calendar extends ModelBase
 {
-    const OWNER = 'owner';
+    public const OWNER = 'owner';
 
-    const CALENDAR_TYPE = 'calendarType';
+    public const CALENDAR_TYPE = 'calendarType';
 
-    const CALENDAR_NAME = 'calendarName';
+    public const CALENDAR_NAME = 'calendarName';
 
-    const CALENDAR_DESCRIPTION = 'calendarDescription';
+    public const CALENDAR_DESCRIPTION = 'calendarDescription';
 
-    const CALENDAR_COLOR = 'calendarColor';
+    public const CALENDAR_COLOR = 'calendarColor';
 
     protected $_resourceType = ResourceType::CALENDAR;
 
@@ -23,7 +24,7 @@ class Calendar extends ModelBase
      * @return Calendar[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,13 +66,13 @@ class Calendar extends ModelBase
     /**
      * @param ModelBase $owner
      */
-    public function setOwner(ModelBase $owner = null)
+    public function setOwner(\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }
 
     /**
-     * @return CalendarType
+     * @return \Arbor\Model\CalendarType
      */
     public function getCalendarType()
     {
@@ -79,9 +80,9 @@ class Calendar extends ModelBase
     }
 
     /**
-     * @param CalendarType $calendarType
+     * @param \Arbor\Model\CalendarType $calendarType
      */
-    public function setCalendarType(CalendarType $calendarType = null)
+    public function setCalendarType(\Arbor\Model\CalendarType $calendarType = null)
     {
         $this->setProperty('calendarType', $calendarType);
     }
@@ -97,7 +98,7 @@ class Calendar extends ModelBase
     /**
      * @param string $calendarName
      */
-    public function setCalendarName($calendarName = null)
+    public function setCalendarName(string $calendarName = null)
     {
         $this->setProperty('calendarName', $calendarName);
     }
@@ -113,7 +114,7 @@ class Calendar extends ModelBase
     /**
      * @param string $calendarDescription
      */
-    public function setCalendarDescription($calendarDescription = null)
+    public function setCalendarDescription(string $calendarDescription = null)
     {
         $this->setProperty('calendarDescription', $calendarDescription);
     }
@@ -129,7 +130,7 @@ class Calendar extends ModelBase
     /**
      * @param string $calendarColor
      */
-    public function setCalendarColor($calendarColor = null)
+    public function setCalendarColor(string $calendarColor = null)
     {
         $this->setProperty('calendarColor', $calendarColor);
     }

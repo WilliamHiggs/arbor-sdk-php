@@ -3,42 +3,43 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentIntervention extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const INTERVENTION = 'intervention';
+    public const INTERVENTION = 'intervention';
 
-    const INTERVENTION_GROUP = 'interventionGroup';
+    public const INTERVENTION_GROUP = 'interventionGroup';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const PRIORITY = 'priority';
+    public const PRIORITY = 'priority';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
-    const MONITORING = 'monitoring';
+    public const MONITORING = 'monitoring';
 
-    const AIMS = 'aims';
+    public const AIMS = 'aims';
 
-    const STRATEGIES = 'strategies';
+    public const STRATEGIES = 'strategies';
 
-    const SUCCESS_CRITERIA = 'successCriteria';
+    public const SUCCESS_CRITERIA = 'successCriteria';
 
-    const REASON = 'reason';
+    public const REASON = 'reason';
 
-    const SEN_NEED = 'senNeed';
+    public const SEN_NEED = 'senNeed';
 
-    const LANGUAGE_ABILITY = 'languageAbility';
+    public const LANGUAGE_ABILITY = 'languageAbility';
 
-    const MEDICAL_CONDITION = 'medicalCondition';
+    public const MEDICAL_CONDITION = 'medicalCondition';
 
-    const SUCCESS = 'success';
+    public const SUCCESS = 'success';
 
-    const ESTIMATED_DURATION = 'estimatedDuration';
+    public const ESTIMATED_DURATION = 'estimatedDuration';
 
     protected $_resourceType = ResourceType::STUDENT_INTERVENTION;
 
@@ -47,7 +48,7 @@ class StudentIntervention extends ModelBase
      * @return StudentIntervention[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +80,7 @@ class StudentIntervention extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -87,15 +88,15 @@ class StudentIntervention extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Intervention
+     * @return \Arbor\Model\Intervention
      */
     public function getIntervention()
     {
@@ -103,15 +104,15 @@ class StudentIntervention extends ModelBase
     }
 
     /**
-     * @param Intervention $intervention
+     * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(Intervention $intervention = null)
+    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
 
     /**
-     * @return InterventionGroup
+     * @return \Arbor\Model\InterventionGroup
      */
     public function getInterventionGroup()
     {
@@ -119,9 +120,9 @@ class StudentIntervention extends ModelBase
     }
 
     /**
-     * @param InterventionGroup $interventionGroup
+     * @param \Arbor\Model\InterventionGroup $interventionGroup
      */
-    public function setInterventionGroup(InterventionGroup $interventionGroup = null)
+    public function setInterventionGroup(\Arbor\Model\InterventionGroup $interventionGroup = null)
     {
         $this->setProperty('interventionGroup', $interventionGroup);
     }
@@ -169,7 +170,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $priority
      */
-    public function setPriority($priority = null)
+    public function setPriority(string $priority = null)
     {
         $this->setProperty('priority', $priority);
     }
@@ -185,7 +186,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus($status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -201,7 +202,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $monitoring
      */
-    public function setMonitoring($monitoring = null)
+    public function setMonitoring(string $monitoring = null)
     {
         $this->setProperty('monitoring', $monitoring);
     }
@@ -217,7 +218,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $aims
      */
-    public function setAims($aims = null)
+    public function setAims(string $aims = null)
     {
         $this->setProperty('aims', $aims);
     }
@@ -233,7 +234,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $strategies
      */
-    public function setStrategies($strategies = null)
+    public function setStrategies(string $strategies = null)
     {
         $this->setProperty('strategies', $strategies);
     }
@@ -249,7 +250,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $successCriteria
      */
-    public function setSuccessCriteria($successCriteria = null)
+    public function setSuccessCriteria(string $successCriteria = null)
     {
         $this->setProperty('successCriteria', $successCriteria);
     }
@@ -265,13 +266,13 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $reason
      */
-    public function setReason($reason = null)
+    public function setReason(string $reason = null)
     {
         $this->setProperty('reason', $reason);
     }
 
     /**
-     * @return SenNeed
+     * @return \Arbor\Model\SenNeed
      */
     public function getSenNeed()
     {
@@ -279,15 +280,15 @@ class StudentIntervention extends ModelBase
     }
 
     /**
-     * @param SenNeed $senNeed
+     * @param \Arbor\Model\SenNeed $senNeed
      */
-    public function setSenNeed(SenNeed $senNeed = null)
+    public function setSenNeed(\Arbor\Model\SenNeed $senNeed = null)
     {
         $this->setProperty('senNeed', $senNeed);
     }
 
     /**
-     * @return LanguageAbility
+     * @return \Arbor\Model\LanguageAbility
      */
     public function getLanguageAbility()
     {
@@ -295,15 +296,15 @@ class StudentIntervention extends ModelBase
     }
 
     /**
-     * @param LanguageAbility $languageAbility
+     * @param \Arbor\Model\LanguageAbility $languageAbility
      */
-    public function setLanguageAbility(LanguageAbility $languageAbility = null)
+    public function setLanguageAbility(\Arbor\Model\LanguageAbility $languageAbility = null)
     {
         $this->setProperty('languageAbility', $languageAbility);
     }
 
     /**
-     * @return MedicalCondition
+     * @return \Arbor\Model\MedicalCondition
      */
     public function getMedicalCondition()
     {
@@ -311,9 +312,9 @@ class StudentIntervention extends ModelBase
     }
 
     /**
-     * @param MedicalCondition $medicalCondition
+     * @param \Arbor\Model\MedicalCondition $medicalCondition
      */
-    public function setMedicalCondition(MedicalCondition $medicalCondition = null)
+    public function setMedicalCondition(\Arbor\Model\MedicalCondition $medicalCondition = null)
     {
         $this->setProperty('medicalCondition', $medicalCondition);
     }
@@ -329,7 +330,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $success
      */
-    public function setSuccess($success = null)
+    public function setSuccess(string $success = null)
     {
         $this->setProperty('success', $success);
     }
@@ -345,7 +346,7 @@ class StudentIntervention extends ModelBase
     /**
      * @param string $estimatedDuration
      */
-    public function setEstimatedDuration($estimatedDuration = null)
+    public function setEstimatedDuration(string $estimatedDuration = null)
     {
         $this->setProperty('estimatedDuration', $estimatedDuration);
     }

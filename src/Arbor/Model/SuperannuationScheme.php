@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class SuperannuationScheme extends ModelBase
 {
-    const SUPERANNUATION_SCHEME_NAME = 'superannuationSchemeName';
+    public const SUPERANNUATION_SCHEME_NAME = 'superannuationSchemeName';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
     protected $_resourceType = ResourceType::SUPERANNUATION_SCHEME;
 
@@ -17,7 +18,7 @@ class SuperannuationScheme extends ModelBase
      * @return SuperannuationScheme[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class SuperannuationScheme extends ModelBase
     /**
      * @param string $superannuationSchemeName
      */
-    public function setSuperannuationSchemeName($superannuationSchemeName = null)
+    public function setSuperannuationSchemeName(string $superannuationSchemeName = null)
     {
         $this->setProperty('superannuationSchemeName', $superannuationSchemeName);
     }
@@ -75,7 +76,7 @@ class SuperannuationScheme extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }

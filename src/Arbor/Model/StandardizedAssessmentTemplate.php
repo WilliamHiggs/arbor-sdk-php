@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentTemplate extends ModelBase
 {
-    const TEMPLATE_NAME = 'templateName';
+    public const TEMPLATE_NAME = 'templateName';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const VALIDITY_START_DATE = 'validityStartDate';
+    public const VALIDITY_START_DATE = 'validityStartDate';
 
-    const VALIDITY_END_DATE = 'validityEndDate';
+    public const VALIDITY_END_DATE = 'validityEndDate';
 
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_TEMPLATE;
 
@@ -21,7 +22,7 @@ class StandardizedAssessmentTemplate extends ModelBase
      * @return StandardizedAssessmentTemplate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +64,7 @@ class StandardizedAssessmentTemplate extends ModelBase
     /**
      * @param string $templateName
      */
-    public function setTemplateName($templateName = null)
+    public function setTemplateName(string $templateName = null)
     {
         $this->setProperty('templateName', $templateName);
     }
@@ -79,7 +80,7 @@ class StandardizedAssessmentTemplate extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }

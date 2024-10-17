@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AcademicUnitBlockAssignment extends ModelBase
 {
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const BLOCK_NAME = 'blockName';
+    public const BLOCK_NAME = 'blockName';
 
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_BLOCK_ASSIGNMENT;
 
@@ -17,7 +18,7 @@ class AcademicUnitBlockAssignment extends ModelBase
      * @return AcademicUnitBlockAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class AcademicUnitBlockAssignment extends ModelBase
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -57,9 +58,9 @@ class AcademicUnitBlockAssignment extends ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -75,7 +76,7 @@ class AcademicUnitBlockAssignment extends ModelBase
     /**
      * @param string $blockName
      */
-    public function setBlockName($blockName = null)
+    public function setBlockName(string $blockName = null)
     {
         $this->setProperty('blockName', $blockName);
     }

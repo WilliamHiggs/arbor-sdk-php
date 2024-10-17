@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ThirdPartyLogin extends ModelBase
 {
-    const THIRD_PARTY_SITE = 'thirdPartySite';
+    public const THIRD_PARTY_SITE = 'thirdPartySite';
 
-    const USERNAME = 'username';
+    public const USERNAME = 'username';
 
-    const PASSWORD = 'password';
+    public const PASSWORD = 'password';
 
-    const VERIFIED_DATETIME = 'verifiedDatetime';
+    public const VERIFIED_DATETIME = 'verifiedDatetime';
 
-    const FAILED_DATETIME = 'failedDatetime';
+    public const FAILED_DATETIME = 'failedDatetime';
 
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
     protected $_resourceType = ResourceType::THIRD_PARTY_LOGIN;
 
@@ -25,7 +26,7 @@ class ThirdPartyLogin extends ModelBase
      * @return ThirdPartyLogin[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +58,7 @@ class ThirdPartyLogin extends ModelBase
     }
 
     /**
-     * @return ThirdPartySite
+     * @return \Arbor\Model\ThirdPartySite
      */
     public function getThirdPartySite()
     {
@@ -65,9 +66,9 @@ class ThirdPartyLogin extends ModelBase
     }
 
     /**
-     * @param ThirdPartySite $thirdPartySite
+     * @param \Arbor\Model\ThirdPartySite $thirdPartySite
      */
-    public function setThirdPartySite(ThirdPartySite $thirdPartySite = null)
+    public function setThirdPartySite(\Arbor\Model\ThirdPartySite $thirdPartySite = null)
     {
         $this->setProperty('thirdPartySite', $thirdPartySite);
     }
@@ -83,7 +84,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param string $username
      */
-    public function setUsername($username = null)
+    public function setUsername(string $username = null)
     {
         $this->setProperty('username', $username);
     }
@@ -99,7 +100,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param string $password
      */
-    public function setPassword($password = null)
+    public function setPassword(string $password = null)
     {
         $this->setProperty('password', $password);
     }
@@ -147,7 +148,7 @@ class ThirdPartyLogin extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }

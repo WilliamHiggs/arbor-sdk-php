@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CustomReportColumnConditionalFormatter extends ModelBase
 {
-    const CUSTOM_REPORT_COLUMN = 'customReportColumn';
+    public const CUSTOM_REPORT_COLUMN = 'customReportColumn';
 
-    const CONDITION_CLASS = 'conditionClass';
+    public const CONDITION_CLASS = 'conditionClass';
 
-    const CONDITION_PARAMS = 'conditionParams';
+    public const CONDITION_PARAMS = 'conditionParams';
 
-    const COLOR = 'color';
+    public const COLOR = 'color';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_COLUMN_CONDITIONAL_FORMATTER;
 
@@ -21,7 +22,7 @@ class CustomReportColumnConditionalFormatter extends ModelBase
      * @return CustomReportColumnConditionalFormatter[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     }
 
     /**
-     * @return CustomReportColumn
+     * @return \Arbor\Model\CustomReportColumn
      */
     public function getCustomReportColumn()
     {
@@ -61,9 +62,9 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     }
 
     /**
-     * @param CustomReportColumn $customReportColumn
+     * @param \Arbor\Model\CustomReportColumn $customReportColumn
      */
-    public function setCustomReportColumn(CustomReportColumn $customReportColumn = null)
+    public function setCustomReportColumn(\Arbor\Model\CustomReportColumn $customReportColumn = null)
     {
         $this->setProperty('customReportColumn', $customReportColumn);
     }
@@ -79,7 +80,7 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     /**
      * @param string $conditionClass
      */
-    public function setConditionClass($conditionClass = null)
+    public function setConditionClass(string $conditionClass = null)
     {
         $this->setProperty('conditionClass', $conditionClass);
     }
@@ -95,7 +96,7 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     /**
      * @param string $conditionParams
      */
-    public function setConditionParams($conditionParams = null)
+    public function setConditionParams(string $conditionParams = null)
     {
         $this->setProperty('conditionParams', $conditionParams);
     }
@@ -111,7 +112,7 @@ class CustomReportColumnConditionalFormatter extends ModelBase
     /**
      * @param string $color
      */
-    public function setColor($color = null)
+    public function setColor(string $color = null)
     {
         $this->setProperty('color', $color);
     }

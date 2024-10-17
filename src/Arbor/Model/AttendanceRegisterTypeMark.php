@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AttendanceRegisterTypeMark extends ModelBase
 {
-    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+    public const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
-    const ATTENDANCE_MARK = 'attendanceMark';
+    public const ATTENDANCE_MARK = 'attendanceMark';
 
     protected $_resourceType = ResourceType::ATTENDANCE_REGISTER_TYPE_MARK;
 
@@ -17,7 +18,7 @@ class AttendanceRegisterTypeMark extends ModelBase
      * @return AttendanceRegisterTypeMark[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class AttendanceRegisterTypeMark extends ModelBase
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -57,15 +58,15 @@ class AttendanceRegisterTypeMark extends ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
 
     /**
-     * @return AttendanceMark
+     * @return \Arbor\Model\AttendanceMark
      */
     public function getAttendanceMark()
     {
@@ -73,9 +74,9 @@ class AttendanceRegisterTypeMark extends ModelBase
     }
 
     /**
-     * @param AttendanceMark $attendanceMark
+     * @param \Arbor\Model\AttendanceMark $attendanceMark
      */
-    public function setAttendanceMark(AttendanceMark $attendanceMark = null)
+    public function setAttendanceMark(\Arbor\Model\AttendanceMark $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }

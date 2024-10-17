@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class MedicalConditionMedication extends ModelBase
 {
-    const MEDICAL_CONDITION = 'medicalCondition';
+    public const MEDICAL_CONDITION = 'medicalCondition';
 
-    const MEDICATION = 'medication';
+    public const MEDICATION = 'medication';
 
-    const DOSAGE = 'dosage';
+    public const DOSAGE = 'dosage';
 
-    const FREQUENCY = 'frequency';
+    public const FREQUENCY = 'frequency';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::MEDICAL_CONDITION_MEDICATION;
 
@@ -25,7 +26,7 @@ class MedicalConditionMedication extends ModelBase
      * @return MedicalConditionMedication[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +58,7 @@ class MedicalConditionMedication extends ModelBase
     }
 
     /**
-     * @return MedicalCondition
+     * @return \Arbor\Model\MedicalCondition
      */
     public function getMedicalCondition()
     {
@@ -65,15 +66,15 @@ class MedicalConditionMedication extends ModelBase
     }
 
     /**
-     * @param MedicalCondition $medicalCondition
+     * @param \Arbor\Model\MedicalCondition $medicalCondition
      */
-    public function setMedicalCondition(MedicalCondition $medicalCondition = null)
+    public function setMedicalCondition(\Arbor\Model\MedicalCondition $medicalCondition = null)
     {
         $this->setProperty('medicalCondition', $medicalCondition);
     }
 
     /**
-     * @return Medication
+     * @return \Arbor\Model\Medication
      */
     public function getMedication()
     {
@@ -81,9 +82,9 @@ class MedicalConditionMedication extends ModelBase
     }
 
     /**
-     * @param Medication $medication
+     * @param \Arbor\Model\Medication $medication
      */
-    public function setMedication(Medication $medication = null)
+    public function setMedication(\Arbor\Model\Medication $medication = null)
     {
         $this->setProperty('medication', $medication);
     }
@@ -99,7 +100,7 @@ class MedicalConditionMedication extends ModelBase
     /**
      * @param string $dosage
      */
-    public function setDosage($dosage = null)
+    public function setDosage(string $dosage = null)
     {
         $this->setProperty('dosage', $dosage);
     }
@@ -115,7 +116,7 @@ class MedicalConditionMedication extends ModelBase
     /**
      * @param string $frequency
      */
-    public function setFrequency($frequency = null)
+    public function setFrequency(string $frequency = null)
     {
         $this->setProperty('frequency', $frequency);
     }

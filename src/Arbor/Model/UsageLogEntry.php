@@ -3,32 +3,33 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class UsageLogEntry extends ModelBase
 {
-    const TIMESTAMP = 'timestamp';
+    public const TIMESTAMP = 'timestamp';
 
-    const USER = 'user';
+    public const USER = 'user';
 
-    const SEVERITY = 'severity';
+    public const SEVERITY = 'severity';
 
-    const MESSAGE = 'message';
+    public const MESSAGE = 'message';
 
-    const EVENT_TYPE = 'event_type';
+    public const EVENT_TYPE = 'event_type';
 
-    const EVENT_NAME = 'event_name';
+    public const EVENT_NAME = 'event_name';
 
-    const EVENT_DATA = 'event_data';
+    public const EVENT_DATA = 'event_data';
 
-    const MODULE = 'module';
+    public const MODULE = 'module';
 
-    const CONTROLLER = 'controller';
+    public const CONTROLLER = 'controller';
 
-    const ACTION = 'action';
+    public const ACTION = 'action';
 
-    const CLIENT_IP = 'clientIp';
+    public const CLIENT_IP = 'clientIp';
 
-    const USER_AGENT = 'userAgent';
+    public const USER_AGENT = 'userAgent';
 
     protected $_resourceType = ResourceType::USAGE_LOG_ENTRY;
 
@@ -37,7 +38,7 @@ class UsageLogEntry extends ModelBase
      * @return UsageLogEntry[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -85,7 +86,7 @@ class UsageLogEntry extends ModelBase
     }
 
     /**
-     * @return User
+     * @return \Arbor\Model\User
      */
     public function getUser()
     {
@@ -93,9 +94,9 @@ class UsageLogEntry extends ModelBase
     }
 
     /**
-     * @param User $user
+     * @param \Arbor\Model\User $user
      */
-    public function setUser(User $user = null)
+    public function setUser(\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -111,7 +112,7 @@ class UsageLogEntry extends ModelBase
     /**
      * @param int $severity
      */
-    public function setSeverity($severity = null)
+    public function setSeverity(int $severity = null)
     {
         $this->setProperty('severity', $severity);
     }
@@ -127,7 +128,7 @@ class UsageLogEntry extends ModelBase
     /**
      * @param string $message
      */
-    public function setMessage($message = null)
+    public function setMessage(string $message = null)
     {
         $this->setProperty('message', $message);
     }
@@ -143,7 +144,7 @@ class UsageLogEntry extends ModelBase
     /**
      * @param string $event_type
      */
-    public function setEvent_type($event_type = null)
+    public function setEvent_type(string $event_type = null)
     {
         $this->setProperty('event_type', $event_type);
     }
@@ -159,7 +160,7 @@ class UsageLogEntry extends ModelBase
     /**
      * @param string $event_name
      */
-    public function setEvent_name($event_name = null)
+    public function setEvent_name(string $event_name = null)
     {
         $this->setProperty('event_name', $event_name);
     }
@@ -175,7 +176,7 @@ class UsageLogEntry extends ModelBase
     /**
      * @param string $event_data
      */
-    public function setEvent_data($event_data = null)
+    public function setEvent_data(string $event_data = null)
     {
         $this->setProperty('event_data', $event_data);
     }
@@ -191,7 +192,7 @@ class UsageLogEntry extends ModelBase
     /**
      * @param string $module
      */
-    public function setModule($module = null)
+    public function setModule(string $module = null)
     {
         $this->setProperty('module', $module);
     }
@@ -207,7 +208,7 @@ class UsageLogEntry extends ModelBase
     /**
      * @param string $controller
      */
-    public function setController($controller = null)
+    public function setController(string $controller = null)
     {
         $this->setProperty('controller', $controller);
     }
@@ -223,7 +224,7 @@ class UsageLogEntry extends ModelBase
     /**
      * @param string $action
      */
-    public function setAction($action = null)
+    public function setAction(string $action = null)
     {
         $this->setProperty('action', $action);
     }
@@ -239,7 +240,7 @@ class UsageLogEntry extends ModelBase
     /**
      * @param string $clientIp
      */
-    public function setClientIp($clientIp = null)
+    public function setClientIp(string $clientIp = null)
     {
         $this->setProperty('clientIp', $clientIp);
     }
@@ -255,7 +256,7 @@ class UsageLogEntry extends ModelBase
     /**
      * @param string $userAgent
      */
-    public function setUserAgent($userAgent = null)
+    public function setUserAgent(string $userAgent = null)
     {
         $this->setProperty('userAgent', $userAgent);
     }

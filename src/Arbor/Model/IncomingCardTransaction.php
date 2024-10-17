@@ -3,34 +3,35 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class IncomingCardTransaction extends ModelBase
 {
-    const BILL_PAYER = 'billPayer';
+    public const BILL_PAYER = 'billPayer';
 
-    const PAYMENT_PROVIDER = 'paymentProvider';
+    public const PAYMENT_PROVIDER = 'paymentProvider';
 
-    const PAYMENT_PROVIDER_PAYOUT = 'paymentProviderPayout';
+    public const PAYMENT_PROVIDER_PAYOUT = 'paymentProviderPayout';
 
-    const PAYMENT_PROVIDER_TRANSACTION_IDENTIFIER = 'paymentProviderTransactionIdentifier';
+    public const PAYMENT_PROVIDER_TRANSACTION_IDENTIFIER = 'paymentProviderTransactionIdentifier';
 
-    const TRANSACTION_NET_AMOUNT = 'transactionNetAmount';
+    public const TRANSACTION_NET_AMOUNT = 'transactionNetAmount';
 
-    const TRANSACTION_FEE_AMOUNT = 'transactionFeeAmount';
+    public const TRANSACTION_FEE_AMOUNT = 'transactionFeeAmount';
 
-    const TRANSACTION_REFERENCE = 'transactionReference';
+    public const TRANSACTION_REFERENCE = 'transactionReference';
 
-    const TRANSACTION_INITIATED_DATETIME = 'transactionInitiatedDatetime';
+    public const TRANSACTION_INITIATED_DATETIME = 'transactionInitiatedDatetime';
 
-    const TRANSACTION_SUCCEEDED_DATETIME = 'transactionSucceededDatetime';
+    public const TRANSACTION_SUCCEEDED_DATETIME = 'transactionSucceededDatetime';
 
-    const TRANSACTION_FAILED_DATETIME = 'transactionFailedDatetime';
+    public const TRANSACTION_FAILED_DATETIME = 'transactionFailedDatetime';
 
-    const TRANSACTION_REFUNDED_DATETIME = 'transactionRefundedDatetime';
+    public const TRANSACTION_REFUNDED_DATETIME = 'transactionRefundedDatetime';
 
-    const CARD_TOKEN_ID = 'cardTokenId';
+    public const CARD_TOKEN_ID = 'cardTokenId';
 
-    const CANCELLED_DATETIME = 'cancelledDatetime';
+    public const CANCELLED_DATETIME = 'cancelledDatetime';
 
     protected $_resourceType = ResourceType::INCOMING_CARD_TRANSACTION;
 
@@ -39,7 +40,7 @@ class IncomingCardTransaction extends ModelBase
      * @return IncomingCardTransaction[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +72,7 @@ class IncomingCardTransaction extends ModelBase
     }
 
     /**
-     * @return BillPayer
+     * @return \Arbor\Model\BillPayer
      */
     public function getBillPayer()
     {
@@ -79,15 +80,15 @@ class IncomingCardTransaction extends ModelBase
     }
 
     /**
-     * @param BillPayer $billPayer
+     * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(BillPayer $billPayer = null)
+    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
 
     /**
-     * @return PaymentProvider
+     * @return \Arbor\Model\PaymentProvider
      */
     public function getPaymentProvider()
     {
@@ -95,15 +96,15 @@ class IncomingCardTransaction extends ModelBase
     }
 
     /**
-     * @param PaymentProvider $paymentProvider
+     * @param \Arbor\Model\PaymentProvider $paymentProvider
      */
-    public function setPaymentProvider(PaymentProvider $paymentProvider = null)
+    public function setPaymentProvider(\Arbor\Model\PaymentProvider $paymentProvider = null)
     {
         $this->setProperty('paymentProvider', $paymentProvider);
     }
 
     /**
-     * @return PaymentProviderPayout
+     * @return \Arbor\Model\PaymentProviderPayout
      */
     public function getPaymentProviderPayout()
     {
@@ -111,9 +112,9 @@ class IncomingCardTransaction extends ModelBase
     }
 
     /**
-     * @param PaymentProviderPayout $paymentProviderPayout
+     * @param \Arbor\Model\PaymentProviderPayout $paymentProviderPayout
      */
-    public function setPaymentProviderPayout(PaymentProviderPayout $paymentProviderPayout = null)
+    public function setPaymentProviderPayout(\Arbor\Model\PaymentProviderPayout $paymentProviderPayout = null)
     {
         $this->setProperty('paymentProviderPayout', $paymentProviderPayout);
     }
@@ -129,7 +130,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $paymentProviderTransactionIdentifier
      */
-    public function setPaymentProviderTransactionIdentifier($paymentProviderTransactionIdentifier = null)
+    public function setPaymentProviderTransactionIdentifier(string $paymentProviderTransactionIdentifier = null)
     {
         $this->setProperty('paymentProviderTransactionIdentifier', $paymentProviderTransactionIdentifier);
     }
@@ -145,7 +146,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $transactionNetAmount
      */
-    public function setTransactionNetAmount($transactionNetAmount = null)
+    public function setTransactionNetAmount(string $transactionNetAmount = null)
     {
         $this->setProperty('transactionNetAmount', $transactionNetAmount);
     }
@@ -161,7 +162,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $transactionFeeAmount
      */
-    public function setTransactionFeeAmount($transactionFeeAmount = null)
+    public function setTransactionFeeAmount(string $transactionFeeAmount = null)
     {
         $this->setProperty('transactionFeeAmount', $transactionFeeAmount);
     }
@@ -177,7 +178,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $transactionReference
      */
-    public function setTransactionReference($transactionReference = null)
+    public function setTransactionReference(string $transactionReference = null)
     {
         $this->setProperty('transactionReference', $transactionReference);
     }
@@ -257,7 +258,7 @@ class IncomingCardTransaction extends ModelBase
     /**
      * @param string $cardTokenId
      */
-    public function setCardTokenId($cardTokenId = null)
+    public function setCardTokenId(string $cardTokenId = null)
     {
         $this->setProperty('cardTokenId', $cardTokenId);
     }

@@ -9,9 +9,9 @@ use Arbor\Model\ModelBase;
 
 class EducationalInstitutionEnrolment extends ModelBase
 {
-    const REMOVAL_GROUNDS = 'removalGrounds';
+    public const REMOVAL_GROUNDS = 'removalGrounds';
 
-    const ALTERNATIVE_PROVISION_REASON = 'alternativeProvisionReason';
+    public const ALTERNATIVE_PROVISION_REASON = 'alternativeProvisionReason';
 
     protected $_resourceType = ResourceType::UK_DFE_EDUCATIONAL_INSTITUTION_ENROLMENT;
 
@@ -20,7 +20,7 @@ class EducationalInstitutionEnrolment extends ModelBase
      * @return EducationalInstitutionEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -62,13 +62,13 @@ class EducationalInstitutionEnrolment extends ModelBase
     /**
      * @param string $removalGrounds
      */
-    public function setRemovalGrounds($removalGrounds = null)
+    public function setRemovalGrounds(string $removalGrounds = null)
     {
         $this->setProperty('removalGrounds', $removalGrounds);
     }
 
     /**
-     * @return AlternativeProvisionReason
+     * @return \Arbor\Model\UkDfe\AlternativeProvisionReason
      */
     public function getAlternativeProvisionReason()
     {
@@ -76,9 +76,9 @@ class EducationalInstitutionEnrolment extends ModelBase
     }
 
     /**
-     * @param AlternativeProvisionReason $alternativeProvisionReason
+     * @param \Arbor\Model\UkDfe\AlternativeProvisionReason $alternativeProvisionReason
      */
-    public function setAlternativeProvisionReason(AlternativeProvisionReason $alternativeProvisionReason = null)
+    public function setAlternativeProvisionReason(\Arbor\Model\UkDfe\AlternativeProvisionReason $alternativeProvisionReason = null)
     {
         $this->setProperty('alternativeProvisionReason', $alternativeProvisionReason);
     }

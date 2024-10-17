@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class SchoolShopProductPrice extends ModelBase
 {
-    const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
+    public const SCHOOL_SHOP_PRODUCT = 'schoolShopProduct';
 
-    const ELIGIBLE = 'eligible';
+    public const ELIGIBLE = 'eligible';
 
-    const PRICE_EX_VAT = 'priceExVat';
+    public const PRICE_EX_VAT = 'priceExVat';
 
-    const VAT_RATE = 'vatRate';
+    public const VAT_RATE = 'vatRate';
 
     protected $_resourceType = ResourceType::SCHOOL_SHOP_PRODUCT_PRICE;
 
@@ -21,7 +22,7 @@ class SchoolShopProductPrice extends ModelBase
      * @return SchoolShopProductPrice[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class SchoolShopProductPrice extends ModelBase
     }
 
     /**
-     * @return SchoolShopProduct
+     * @return \Arbor\Model\SchoolShopProduct
      */
     public function getSchoolShopProduct()
     {
@@ -61,9 +62,9 @@ class SchoolShopProductPrice extends ModelBase
     }
 
     /**
-     * @param SchoolShopProduct $schoolShopProduct
+     * @param \Arbor\Model\SchoolShopProduct $schoolShopProduct
      */
-    public function setSchoolShopProduct(SchoolShopProduct $schoolShopProduct = null)
+    public function setSchoolShopProduct(\Arbor\Model\SchoolShopProduct $schoolShopProduct = null)
     {
         $this->setProperty('schoolShopProduct', $schoolShopProduct);
     }
@@ -79,7 +80,7 @@ class SchoolShopProductPrice extends ModelBase
     /**
      * @param ModelBase $eligible
      */
-    public function setEligible(ModelBase $eligible = null)
+    public function setEligible(\ModelBase $eligible = null)
     {
         $this->setProperty('eligible', $eligible);
     }
@@ -95,13 +96,13 @@ class SchoolShopProductPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat($priceExVat = null)
+    public function setPriceExVat(string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
 
     /**
-     * @return VatRate
+     * @return \Arbor\Model\VatRate
      */
     public function getVatRate()
     {
@@ -109,9 +110,9 @@ class SchoolShopProductPrice extends ModelBase
     }
 
     /**
-     * @param VatRate $vatRate
+     * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(VatRate $vatRate = null)
+    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }

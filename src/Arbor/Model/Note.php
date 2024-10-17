@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Note extends ModelBase
 {
-    const NOTE = 'note';
+    public const NOTE = 'note';
 
-    const REFERENCE_OBJECT = 'referenceObject';
+    public const REFERENCE_OBJECT = 'referenceObject';
 
-    const IS_SHARED_WITH_GUARDIANS = 'isSharedWithGuardians';
+    public const IS_SHARED_WITH_GUARDIANS = 'isSharedWithGuardians';
 
     protected $_resourceType = ResourceType::NOTE;
 
@@ -19,7 +20,7 @@ class Note extends ModelBase
      * @return Note[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class Note extends ModelBase
     /**
      * @param string $note
      */
-    public function setNote($note = null)
+    public function setNote(string $note = null)
     {
         $this->setProperty('note', $note);
     }
@@ -77,7 +78,7 @@ class Note extends ModelBase
     /**
      * @param ModelBase $referenceObject
      */
-    public function setReferenceObject(ModelBase $referenceObject = null)
+    public function setReferenceObject(\ModelBase $referenceObject = null)
     {
         $this->setProperty('referenceObject', $referenceObject);
     }
@@ -93,7 +94,7 @@ class Note extends ModelBase
     /**
      * @param bool $isSharedWithGuardians
      */
-    public function setIsSharedWithGuardians($isSharedWithGuardians = null)
+    public function setIsSharedWithGuardians(bool $isSharedWithGuardians = null)
     {
         $this->setProperty('isSharedWithGuardians', $isSharedWithGuardians);
     }

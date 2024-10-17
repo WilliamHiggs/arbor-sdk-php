@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TimetableSlotException extends ModelBase
 {
-    const TIMETABLE_SLOT = 'timetableSlot';
+    public const TIMETABLE_SLOT = 'timetableSlot';
 
-    const EXCEPTION_DATE = 'exceptionDate';
+    public const EXCEPTION_DATE = 'exceptionDate';
 
-    const NO_EVENT_EXCEPTION = 'noEventException';
+    public const NO_EVENT_EXCEPTION = 'noEventException';
 
-    const LOCATION_EXCEPTION = 'locationException';
+    public const LOCATION_EXCEPTION = 'locationException';
 
-    const TIME_EXCEPTION = 'timeException';
+    public const TIME_EXCEPTION = 'timeException';
 
     protected $_resourceType = ResourceType::TIMETABLE_SLOT_EXCEPTION;
 
@@ -23,7 +24,7 @@ class TimetableSlotException extends ModelBase
      * @return TimetableSlotException[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class TimetableSlotException extends ModelBase
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -63,9 +64,9 @@ class TimetableSlotException extends ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
@@ -97,7 +98,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param bool $noEventException
      */
-    public function setNoEventException($noEventException = null)
+    public function setNoEventException(bool $noEventException = null)
     {
         $this->setProperty('noEventException', $noEventException);
     }
@@ -113,7 +114,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param bool $locationException
      */
-    public function setLocationException($locationException = null)
+    public function setLocationException(bool $locationException = null)
     {
         $this->setProperty('locationException', $locationException);
     }
@@ -129,7 +130,7 @@ class TimetableSlotException extends ModelBase
     /**
      * @param bool $timeException
      */
-    public function setTimeException($timeException = null)
+    public function setTimeException(bool $timeException = null)
     {
         $this->setProperty('timeException', $timeException);
     }

@@ -3,30 +3,31 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class EmailDraft extends ModelBase
 {
-    const SENDER = 'sender';
+    public const SENDER = 'sender';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const BODY = 'body';
+    public const BODY = 'body';
 
-    const CUSTOM_REPORT = 'customReport';
+    public const CUSTOM_REPORT = 'customReport';
 
-    const COMBINE_MESSAGES_TO_SAME_RECIPIENT = 'combineMessagesToSameRecipient';
+    public const COMBINE_MESSAGES_TO_SAME_RECIPIENT = 'combineMessagesToSameRecipient';
 
-    const COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = 'combineMessagesToSameHousehold';
+    public const COMBINE_MESSAGES_TO_SAME_HOUSEHOLD = 'combineMessagesToSameHousehold';
 
-    const SENDING_QUEUED_DATETIME = 'sendingQueuedDatetime';
+    public const SENDING_QUEUED_DATETIME = 'sendingQueuedDatetime';
 
-    const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
+    public const SENDING_STARTED_DATETIME = 'sendingStartedDatetime';
 
-    const RECIPIENTS_RESOLVED_DATETIME = 'recipientsResolvedDatetime';
+    public const RECIPIENTS_RESOLVED_DATETIME = 'recipientsResolvedDatetime';
 
-    const SENDING_COMPLETED_DATETIME = 'sendingCompletedDatetime';
+    public const SENDING_COMPLETED_DATETIME = 'sendingCompletedDatetime';
 
-    const CONTEXT = 'context';
+    public const CONTEXT = 'context';
 
     protected $_resourceType = ResourceType::EMAIL_DRAFT;
 
@@ -35,7 +36,7 @@ class EmailDraft extends ModelBase
      * @return EmailDraft[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +78,7 @@ class EmailDraft extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(ModelBase $sender = null)
+    public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -93,7 +94,7 @@ class EmailDraft extends ModelBase
     /**
      * @param string $subject
      */
-    public function setSubject($subject = null)
+    public function setSubject(string $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
@@ -109,13 +110,13 @@ class EmailDraft extends ModelBase
     /**
      * @param string $body
      */
-    public function setBody($body = null)
+    public function setBody(string $body = null)
     {
         $this->setProperty('body', $body);
     }
 
     /**
-     * @return CustomReport
+     * @return \Arbor\Model\CustomReport
      */
     public function getCustomReport()
     {
@@ -123,9 +124,9 @@ class EmailDraft extends ModelBase
     }
 
     /**
-     * @param CustomReport $customReport
+     * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(CustomReport $customReport = null)
+    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -141,7 +142,7 @@ class EmailDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameRecipient
      */
-    public function setCombineMessagesToSameRecipient($combineMessagesToSameRecipient = null)
+    public function setCombineMessagesToSameRecipient(bool $combineMessagesToSameRecipient = null)
     {
         $this->setProperty('combineMessagesToSameRecipient', $combineMessagesToSameRecipient);
     }
@@ -157,7 +158,7 @@ class EmailDraft extends ModelBase
     /**
      * @param bool $combineMessagesToSameHousehold
      */
-    public function setCombineMessagesToSameHousehold($combineMessagesToSameHousehold = null)
+    public function setCombineMessagesToSameHousehold(bool $combineMessagesToSameHousehold = null)
     {
         $this->setProperty('combineMessagesToSameHousehold', $combineMessagesToSameHousehold);
     }
@@ -237,7 +238,7 @@ class EmailDraft extends ModelBase
     /**
      * @param ModelBase $context
      */
-    public function setContext(ModelBase $context = null)
+    public function setContext(\ModelBase $context = null)
     {
         $this->setProperty('context', $context);
     }

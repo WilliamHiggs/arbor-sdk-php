@@ -2,7 +2,10 @@
 
 namespace Arbor\Api\Gateway;
 
+use Arbor\ChangeLog\Change;
+use Arbor\Model\Collection;
 use Arbor\Model\ModelBase;
+use Arbor\Query\Query;
 
 interface GatewayInterface
 {
@@ -15,7 +18,7 @@ interface GatewayInterface
     /**
      * @param string $resource
      * @param string $id
-     * @return \Arbor\Model\ModelBase
+     * @return ModelBase
      */
     public function retrieve($resource, $id);
 
@@ -36,8 +39,8 @@ interface GatewayInterface
     public function describe($resource);
 
     /**
-     * @param Arbor\Query\QueryBase
-     * @return \Arbor\Model\Collection
+     * @param Query
+     * @return Collection
      */
     public function query($query);
 
@@ -51,9 +54,17 @@ interface GatewayInterface
      * @param string $resourceType
      * @param int $fromRevision
      * @param int $toRevision
-     * @return \Arbor\Changelog\Change[]
+     * @return Change[]
      */
     public function getChanges($resourceType, $fromRevision, $toRevision);
+
+    /**
+     * @param string $resource
+     * @param Collection $collection
+     * @param bool $checkForPersistence
+     * @return Collection
+     */
+    public function bulkCreate(string $resource, Collection $collection, bool $checkForPersistence = true): Collection;
 
     /**
      * @param string $applicationId

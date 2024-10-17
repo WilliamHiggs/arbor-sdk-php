@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CustomerPaymentRefund extends ModelBase
 {
-    const CUSTOMER_PAYMENT = 'customerPayment';
+    public const CUSTOMER_PAYMENT = 'customerPayment';
 
-    const REFUND_DATETIME = 'refundDatetime';
+    public const REFUND_DATETIME = 'refundDatetime';
 
-    const REFUND_AMOUNT = 'refundAmount';
+    public const REFUND_AMOUNT = 'refundAmount';
 
-    const REFUND_TRANSACTION = 'refundTransaction';
+    public const REFUND_TRANSACTION = 'refundTransaction';
 
-    const REFUND_SUCCEEDED_DATETIME = 'refundSucceededDatetime';
+    public const REFUND_SUCCEEDED_DATETIME = 'refundSucceededDatetime';
 
-    const REFUND_FAILED_DATETIME = 'refundFailedDatetime';
+    public const REFUND_FAILED_DATETIME = 'refundFailedDatetime';
 
-    const CUSTOMER_PAYMENT_REFUND_METHOD = 'customerPaymentRefundMethod';
+    public const CUSTOMER_PAYMENT_REFUND_METHOD = 'customerPaymentRefundMethod';
 
     protected $_resourceType = ResourceType::CUSTOMER_PAYMENT_REFUND;
 
@@ -27,7 +28,7 @@ class CustomerPaymentRefund extends ModelBase
      * @return CustomerPaymentRefund[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class CustomerPaymentRefund extends ModelBase
     }
 
     /**
-     * @return CustomerPayment
+     * @return \Arbor\Model\CustomerPayment
      */
     public function getCustomerPayment()
     {
@@ -67,9 +68,9 @@ class CustomerPaymentRefund extends ModelBase
     }
 
     /**
-     * @param CustomerPayment $customerPayment
+     * @param \Arbor\Model\CustomerPayment $customerPayment
      */
-    public function setCustomerPayment(CustomerPayment $customerPayment = null)
+    public function setCustomerPayment(\Arbor\Model\CustomerPayment $customerPayment = null)
     {
         $this->setProperty('customerPayment', $customerPayment);
     }
@@ -101,7 +102,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param string $refundAmount
      */
-    public function setRefundAmount($refundAmount = null)
+    public function setRefundAmount(string $refundAmount = null)
     {
         $this->setProperty('refundAmount', $refundAmount);
     }
@@ -117,7 +118,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param ModelBase $refundTransaction
      */
-    public function setRefundTransaction(ModelBase $refundTransaction = null)
+    public function setRefundTransaction(\ModelBase $refundTransaction = null)
     {
         $this->setProperty('refundTransaction', $refundTransaction);
     }
@@ -165,7 +166,7 @@ class CustomerPaymentRefund extends ModelBase
     /**
      * @param string $customerPaymentRefundMethod
      */
-    public function setCustomerPaymentRefundMethod($customerPaymentRefundMethod = null)
+    public function setCustomerPaymentRefundMethod(string $customerPaymentRefundMethod = null)
     {
         $this->setProperty('customerPaymentRefundMethod', $customerPaymentRefundMethod);
     }

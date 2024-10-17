@@ -3,24 +3,25 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentProgressBaseline extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const GRADE = 'grade';
+    public const GRADE = 'grade';
 
-    const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
+    public const LOWER_GRADE_POINT_SCALE_VALUE = 'lowerGradePointScaleValue';
 
-    const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
+    public const UPPER_GRADE_POINT_SCALE_VALUE = 'upperGradePointScaleValue';
 
-    const STATISTICAL_GRADE_POINT_SCALE_VALUE = 'statisticalGradePointScaleValue';
+    public const STATISTICAL_GRADE_POINT_SCALE_VALUE = 'statisticalGradePointScaleValue';
 
-    const IS_CALCULATED_GRADE = 'isCalculatedGrade';
+    public const IS_CALCULATED_GRADE = 'isCalculatedGrade';
 
     protected $_resourceType = ResourceType::STUDENT_PROGRESS_BASELINE;
 
@@ -29,7 +30,7 @@ class StudentProgressBaseline extends ModelBase
      * @return StudentProgressBaseline[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class StudentProgressBaseline extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -69,15 +70,15 @@ class StudentProgressBaseline extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -85,15 +86,15 @@ class StudentProgressBaseline extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
 
     /**
-     * @return Assessment
+     * @return \Arbor\Model\Assessment
      */
     public function getAssessment()
     {
@@ -101,15 +102,15 @@ class StudentProgressBaseline extends ModelBase
     }
 
     /**
-     * @param Assessment $assessment
+     * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
 
     /**
-     * @return Grade
+     * @return \Arbor\Model\Grade
      */
     public function getGrade()
     {
@@ -117,9 +118,9 @@ class StudentProgressBaseline extends ModelBase
     }
 
     /**
-     * @param Grade $grade
+     * @param \Arbor\Model\Grade $grade
      */
-    public function setGrade(Grade $grade = null)
+    public function setGrade(\Arbor\Model\Grade $grade = null)
     {
         $this->setProperty('grade', $grade);
     }
@@ -135,7 +136,7 @@ class StudentProgressBaseline extends ModelBase
     /**
      * @param float $lowerGradePointScaleValue
      */
-    public function setLowerGradePointScaleValue($lowerGradePointScaleValue = null)
+    public function setLowerGradePointScaleValue(float $lowerGradePointScaleValue = null)
     {
         $this->setProperty('lowerGradePointScaleValue', $lowerGradePointScaleValue);
     }
@@ -151,7 +152,7 @@ class StudentProgressBaseline extends ModelBase
     /**
      * @param float $upperGradePointScaleValue
      */
-    public function setUpperGradePointScaleValue($upperGradePointScaleValue = null)
+    public function setUpperGradePointScaleValue(float $upperGradePointScaleValue = null)
     {
         $this->setProperty('upperGradePointScaleValue', $upperGradePointScaleValue);
     }
@@ -167,7 +168,7 @@ class StudentProgressBaseline extends ModelBase
     /**
      * @param float $statisticalGradePointScaleValue
      */
-    public function setStatisticalGradePointScaleValue($statisticalGradePointScaleValue = null)
+    public function setStatisticalGradePointScaleValue(float $statisticalGradePointScaleValue = null)
     {
         $this->setProperty('statisticalGradePointScaleValue', $statisticalGradePointScaleValue);
     }
@@ -183,7 +184,7 @@ class StudentProgressBaseline extends ModelBase
     /**
      * @param bool $isCalculatedGrade
      */
-    public function setIsCalculatedGrade($isCalculatedGrade = null)
+    public function setIsCalculatedGrade(bool $isCalculatedGrade = null)
     {
         $this->setProperty('isCalculatedGrade', $isCalculatedGrade);
     }

@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class EmailReference extends ModelBase
 {
-    const EMAIL = 'email';
+    public const EMAIL = 'email';
 
-    const REFERENCE_TYPE = 'referenceType';
+    public const REFERENCE_TYPE = 'referenceType';
 
-    const REFERENCED_MESSAGE_ID = 'referencedMessageId';
+    public const REFERENCED_MESSAGE_ID = 'referencedMessageId';
 
-    const REFERENCE_EMAIL = 'referenceEmail';
+    public const REFERENCE_EMAIL = 'referenceEmail';
 
-    const REFERENCE_INDEX = 'referenceIndex';
+    public const REFERENCE_INDEX = 'referenceIndex';
 
     protected $_resourceType = ResourceType::EMAIL_REFERENCE;
 
@@ -23,7 +24,7 @@ class EmailReference extends ModelBase
      * @return EmailReference[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class EmailReference extends ModelBase
     }
 
     /**
-     * @return Email
+     * @return \Arbor\Model\Email
      */
     public function getEmail()
     {
@@ -63,9 +64,9 @@ class EmailReference extends ModelBase
     }
 
     /**
-     * @param Email $email
+     * @param \Arbor\Model\Email $email
      */
-    public function setEmail(Email $email = null)
+    public function setEmail(\Arbor\Model\Email $email = null)
     {
         $this->setProperty('email', $email);
     }
@@ -81,7 +82,7 @@ class EmailReference extends ModelBase
     /**
      * @param string $referenceType
      */
-    public function setReferenceType($referenceType = null)
+    public function setReferenceType(string $referenceType = null)
     {
         $this->setProperty('referenceType', $referenceType);
     }
@@ -97,13 +98,13 @@ class EmailReference extends ModelBase
     /**
      * @param string $referencedMessageId
      */
-    public function setReferencedMessageId($referencedMessageId = null)
+    public function setReferencedMessageId(string $referencedMessageId = null)
     {
         $this->setProperty('referencedMessageId', $referencedMessageId);
     }
 
     /**
-     * @return Email
+     * @return \Arbor\Model\Email
      */
     public function getReferenceEmail()
     {
@@ -111,9 +112,9 @@ class EmailReference extends ModelBase
     }
 
     /**
-     * @param Email $referenceEmail
+     * @param \Arbor\Model\Email $referenceEmail
      */
-    public function setReferenceEmail(Email $referenceEmail = null)
+    public function setReferenceEmail(\Arbor\Model\Email $referenceEmail = null)
     {
         $this->setProperty('referenceEmail', $referenceEmail);
     }
@@ -129,7 +130,7 @@ class EmailReference extends ModelBase
     /**
      * @param int $referenceIndex
      */
-    public function setReferenceIndex($referenceIndex = null)
+    public function setReferenceIndex(int $referenceIndex = null)
     {
         $this->setProperty('referenceIndex', $referenceIndex);
     }

@@ -3,32 +3,33 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StaffContractPost extends ModelBase
 {
-    const STAFF_CONTRACT = 'staffContract';
+    public const STAFF_CONTRACT = 'staffContract';
 
-    const POSITION = 'position';
+    public const POSITION = 'position';
 
-    const POST_REFERENCE = 'postReference';
+    public const POST_REFERENCE = 'postReference';
 
-    const JOB_TITLE = 'jobTitle';
+    public const JOB_TITLE = 'jobTitle';
 
-    const OFFERED_DATE = 'offeredDate';
+    public const OFFERED_DATE = 'offeredDate';
 
-    const ACCEPTED_DATE = 'acceptedDate';
+    public const ACCEPTED_DATE = 'acceptedDate';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const START_REASON = 'startReason';
+    public const START_REASON = 'startReason';
 
-    const EXPECTED_END_DATE = 'expectedEndDate';
+    public const EXPECTED_END_DATE = 'expectedEndDate';
 
-    const EXPECTED_END_REASON = 'expectedEndReason';
+    public const EXPECTED_END_REASON = 'expectedEndReason';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const END_REASON = 'endReason';
+    public const END_REASON = 'endReason';
 
     protected $_resourceType = ResourceType::STAFF_CONTRACT_POST;
 
@@ -37,7 +38,7 @@ class StaffContractPost extends ModelBase
      * @return StaffContractPost[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +70,7 @@ class StaffContractPost extends ModelBase
     }
 
     /**
-     * @return StaffContract
+     * @return \Arbor\Model\StaffContract
      */
     public function getStaffContract()
     {
@@ -77,15 +78,15 @@ class StaffContractPost extends ModelBase
     }
 
     /**
-     * @param StaffContract $staffContract
+     * @param \Arbor\Model\StaffContract $staffContract
      */
-    public function setStaffContract(StaffContract $staffContract = null)
+    public function setStaffContract(\Arbor\Model\StaffContract $staffContract = null)
     {
         $this->setProperty('staffContract', $staffContract);
     }
 
     /**
-     * @return Position
+     * @return \Arbor\Model\Position
      */
     public function getPosition()
     {
@@ -93,9 +94,9 @@ class StaffContractPost extends ModelBase
     }
 
     /**
-     * @param Position $position
+     * @param \Arbor\Model\Position $position
      */
-    public function setPosition(Position $position = null)
+    public function setPosition(\Arbor\Model\Position $position = null)
     {
         $this->setProperty('position', $position);
     }
@@ -111,7 +112,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param string $postReference
      */
-    public function setPostReference($postReference = null)
+    public function setPostReference(string $postReference = null)
     {
         $this->setProperty('postReference', $postReference);
     }
@@ -127,7 +128,7 @@ class StaffContractPost extends ModelBase
     /**
      * @param string $jobTitle
      */
-    public function setJobTitle($jobTitle = null)
+    public function setJobTitle(string $jobTitle = null)
     {
         $this->setProperty('jobTitle', $jobTitle);
     }
@@ -181,7 +182,7 @@ class StaffContractPost extends ModelBase
     }
 
     /**
-     * @return StaffContractPostStartReason
+     * @return \Arbor\Model\StaffContractPostStartReason
      */
     public function getStartReason()
     {
@@ -189,9 +190,9 @@ class StaffContractPost extends ModelBase
     }
 
     /**
-     * @param StaffContractPostStartReason $startReason
+     * @param \Arbor\Model\StaffContractPostStartReason $startReason
      */
-    public function setStartReason(StaffContractPostStartReason $startReason = null)
+    public function setStartReason(\Arbor\Model\StaffContractPostStartReason $startReason = null)
     {
         $this->setProperty('startReason', $startReason);
     }
@@ -213,7 +214,7 @@ class StaffContractPost extends ModelBase
     }
 
     /**
-     * @return StaffContractPostEndReason
+     * @return \Arbor\Model\StaffContractPostEndReason
      */
     public function getExpectedEndReason()
     {
@@ -221,9 +222,9 @@ class StaffContractPost extends ModelBase
     }
 
     /**
-     * @param StaffContractPostEndReason $expectedEndReason
+     * @param \Arbor\Model\StaffContractPostEndReason $expectedEndReason
      */
-    public function setExpectedEndReason(StaffContractPostEndReason $expectedEndReason = null)
+    public function setExpectedEndReason(\Arbor\Model\StaffContractPostEndReason $expectedEndReason = null)
     {
         $this->setProperty('expectedEndReason', $expectedEndReason);
     }
@@ -245,7 +246,7 @@ class StaffContractPost extends ModelBase
     }
 
     /**
-     * @return StaffContractPostEndReason
+     * @return \Arbor\Model\StaffContractPostEndReason
      */
     public function getEndReason()
     {
@@ -253,9 +254,9 @@ class StaffContractPost extends ModelBase
     }
 
     /**
-     * @param StaffContractPostEndReason $endReason
+     * @param \Arbor\Model\StaffContractPostEndReason $endReason
      */
-    public function setEndReason(StaffContractPostEndReason $endReason = null)
+    public function setEndReason(\Arbor\Model\StaffContractPostEndReason $endReason = null)
     {
         $this->setProperty('endReason', $endReason);
     }

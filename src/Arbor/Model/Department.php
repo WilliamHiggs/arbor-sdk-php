@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Department extends ModelBase
 {
-    const DEPARTMENT_CODE = 'departmentCode';
+    public const DEPARTMENT_CODE = 'departmentCode';
 
-    const DEPARTMENT_NAME = 'departmentName';
+    public const DEPARTMENT_NAME = 'departmentName';
 
-    const IS_ACTIVE = 'isActive';
+    public const IS_ACTIVE = 'isActive';
 
     protected $_resourceType = ResourceType::DEPARTMENT;
 
@@ -19,7 +20,7 @@ class Department extends ModelBase
      * @return Department[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class Department extends ModelBase
     /**
      * @param string $departmentCode
      */
-    public function setDepartmentCode($departmentCode = null)
+    public function setDepartmentCode(string $departmentCode = null)
     {
         $this->setProperty('departmentCode', $departmentCode);
     }
@@ -77,7 +78,7 @@ class Department extends ModelBase
     /**
      * @param string $departmentName
      */
-    public function setDepartmentName($departmentName = null)
+    public function setDepartmentName(string $departmentName = null)
     {
         $this->setProperty('departmentName', $departmentName);
     }
@@ -93,7 +94,7 @@ class Department extends ModelBase
     /**
      * @param bool $isActive
      */
-    public function setIsActive($isActive = null)
+    public function setIsActive(bool $isActive = null)
     {
         $this->setProperty('isActive', $isActive);
     }

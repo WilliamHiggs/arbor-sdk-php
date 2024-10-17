@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentDestination extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const STUDENT_DESTINATION_TYPE = 'studentDestinationType';
+    public const STUDENT_DESTINATION_TYPE = 'studentDestinationType';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const VERIFIED_DATE = 'verifiedDate';
+    public const VERIFIED_DATE = 'verifiedDate';
 
-    const LINKED_RECORD = 'linkedRecord';
+    public const LINKED_RECORD = 'linkedRecord';
 
     protected $_resourceType = ResourceType::STUDENT_DESTINATION;
 
@@ -25,7 +26,7 @@ class StudentDestination extends ModelBase
      * @return StudentDestination[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +58,7 @@ class StudentDestination extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -65,15 +66,15 @@ class StudentDestination extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return StudentDestinationType
+     * @return \Arbor\Model\StudentDestinationType
      */
     public function getStudentDestinationType()
     {
@@ -81,9 +82,9 @@ class StudentDestination extends ModelBase
     }
 
     /**
-     * @param StudentDestinationType $studentDestinationType
+     * @param \Arbor\Model\StudentDestinationType $studentDestinationType
      */
-    public function setStudentDestinationType(StudentDestinationType $studentDestinationType = null)
+    public function setStudentDestinationType(\Arbor\Model\StudentDestinationType $studentDestinationType = null)
     {
         $this->setProperty('studentDestinationType', $studentDestinationType);
     }
@@ -147,7 +148,7 @@ class StudentDestination extends ModelBase
     /**
      * @param ModelBase $linkedRecord
      */
-    public function setLinkedRecord(ModelBase $linkedRecord = null)
+    public function setLinkedRecord(\ModelBase $linkedRecord = null)
     {
         $this->setProperty('linkedRecord', $linkedRecord);
     }

@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class DepartmentMembership extends ModelBase
 {
-    const DEPARTMENT_RESPONSIBILITY = 'departmentResponsibility';
+    public const DEPARTMENT_RESPONSIBILITY = 'departmentResponsibility';
 
-    const DEPARTMENT = 'department';
+    public const DEPARTMENT = 'department';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::DEPARTMENT_MEMBERSHIP;
 
@@ -23,7 +24,7 @@ class DepartmentMembership extends ModelBase
      * @return DepartmentMembership[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class DepartmentMembership extends ModelBase
     }
 
     /**
-     * @return DepartmentResponsibility
+     * @return \Arbor\Model\DepartmentResponsibility
      */
     public function getDepartmentResponsibility()
     {
@@ -63,15 +64,15 @@ class DepartmentMembership extends ModelBase
     }
 
     /**
-     * @param DepartmentResponsibility $departmentResponsibility
+     * @param \Arbor\Model\DepartmentResponsibility $departmentResponsibility
      */
-    public function setDepartmentResponsibility(DepartmentResponsibility $departmentResponsibility = null)
+    public function setDepartmentResponsibility(\Arbor\Model\DepartmentResponsibility $departmentResponsibility = null)
     {
         $this->setProperty('departmentResponsibility', $departmentResponsibility);
     }
 
     /**
-     * @return Department
+     * @return \Arbor\Model\Department
      */
     public function getDepartment()
     {
@@ -79,15 +80,15 @@ class DepartmentMembership extends ModelBase
     }
 
     /**
-     * @param Department $department
+     * @param \Arbor\Model\Department $department
      */
-    public function setDepartment(Department $department = null)
+    public function setDepartment(\Arbor\Model\Department $department = null)
     {
         $this->setProperty('department', $department);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -95,9 +96,9 @@ class DepartmentMembership extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

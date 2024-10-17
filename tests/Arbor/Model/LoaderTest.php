@@ -5,11 +5,14 @@ namespace Arbor\Test\Model;
 use Arbor\Model\ModelBase;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers Arbor\Model
+ */
 class LoaderTest extends TestCase
 {
     private $basePath;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->basePath = dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, ['src', 'Arbor', 'Model']);
     }
@@ -29,13 +32,13 @@ class LoaderTest extends TestCase
         }
     }
 
-    public function directoryProvider()
+    public static function directoryProvider()
     {
         return [
             [''],
-            ['Group'],
             ['UkDfe'],
-            ['UkJcq']
+            ['UkIlr'],
+            ['UkJcq'],
         ];
     }
 

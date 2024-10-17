@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ObservationTheme extends ModelBase
 {
-    const OBSERVATION_TYPE = 'observationType';
+    public const OBSERVATION_TYPE = 'observationType';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
     protected $_resourceType = ResourceType::OBSERVATION_THEME;
 
@@ -17,7 +18,7 @@ class ObservationTheme extends ModelBase
      * @return ObservationTheme[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class ObservationTheme extends ModelBase
     }
 
     /**
-     * @return ObservationType
+     * @return \Arbor\Model\ObservationType
      */
     public function getObservationType()
     {
@@ -57,9 +58,9 @@ class ObservationTheme extends ModelBase
     }
 
     /**
-     * @param ObservationType $observationType
+     * @param \Arbor\Model\ObservationType $observationType
      */
-    public function setObservationType(ObservationType $observationType = null)
+    public function setObservationType(\Arbor\Model\ObservationType $observationType = null)
     {
         $this->setProperty('observationType', $observationType);
     }
@@ -75,7 +76,7 @@ class ObservationTheme extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }

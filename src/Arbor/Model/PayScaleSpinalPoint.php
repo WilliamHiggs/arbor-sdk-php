@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class PayScaleSpinalPoint extends ModelBase
 {
-    const PAY_SCALE = 'payScale';
+    public const PAY_SCALE = 'payScale';
 
-    const SPINAL_POINT_CODE = 'spinalPointCode';
+    public const SPINAL_POINT_CODE = 'spinalPointCode';
 
-    const SPINAL_POINT_NAME = 'spinalPointName';
+    public const SPINAL_POINT_NAME = 'spinalPointName';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
     protected $_resourceType = ResourceType::PAY_SCALE_SPINAL_POINT;
 
@@ -21,7 +22,7 @@ class PayScaleSpinalPoint extends ModelBase
      * @return PayScaleSpinalPoint[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class PayScaleSpinalPoint extends ModelBase
     }
 
     /**
-     * @return PayScale
+     * @return \Arbor\Model\PayScale
      */
     public function getPayScale()
     {
@@ -61,9 +62,9 @@ class PayScaleSpinalPoint extends ModelBase
     }
 
     /**
-     * @param PayScale $payScale
+     * @param \Arbor\Model\PayScale $payScale
      */
-    public function setPayScale(PayScale $payScale = null)
+    public function setPayScale(\Arbor\Model\PayScale $payScale = null)
     {
         $this->setProperty('payScale', $payScale);
     }
@@ -79,7 +80,7 @@ class PayScaleSpinalPoint extends ModelBase
     /**
      * @param string $spinalPointCode
      */
-    public function setSpinalPointCode($spinalPointCode = null)
+    public function setSpinalPointCode(string $spinalPointCode = null)
     {
         $this->setProperty('spinalPointCode', $spinalPointCode);
     }
@@ -95,7 +96,7 @@ class PayScaleSpinalPoint extends ModelBase
     /**
      * @param string $spinalPointName
      */
-    public function setSpinalPointName($spinalPointName = null)
+    public function setSpinalPointName(string $spinalPointName = null)
     {
         $this->setProperty('spinalPointName', $spinalPointName);
     }
@@ -111,7 +112,7 @@ class PayScaleSpinalPoint extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

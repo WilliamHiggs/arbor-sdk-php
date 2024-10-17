@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentBatchTarget extends ModelBase
 {
-    const STANDARDIZED_ASSESSMENT_BATCH = 'standardizedAssessmentBatch';
+    public const STANDARDIZED_ASSESSMENT_BATCH = 'standardizedAssessmentBatch';
 
-    const TARGET = 'target';
+    public const TARGET = 'target';
 
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_BATCH_TARGET;
 
@@ -17,7 +18,7 @@ class StandardizedAssessmentBatchTarget extends ModelBase
      * @return StandardizedAssessmentBatchTarget[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class StandardizedAssessmentBatchTarget extends ModelBase
     }
 
     /**
-     * @return StandardizedAssessmentBatch
+     * @return \Arbor\Model\StandardizedAssessmentBatch
      */
     public function getStandardizedAssessmentBatch()
     {
@@ -57,9 +58,9 @@ class StandardizedAssessmentBatchTarget extends ModelBase
     }
 
     /**
-     * @param StandardizedAssessmentBatch $standardizedAssessmentBatch
+     * @param \Arbor\Model\StandardizedAssessmentBatch $standardizedAssessmentBatch
      */
-    public function setStandardizedAssessmentBatch(StandardizedAssessmentBatch $standardizedAssessmentBatch = null)
+    public function setStandardizedAssessmentBatch(\Arbor\Model\StandardizedAssessmentBatch $standardizedAssessmentBatch = null)
     {
         $this->setProperty('standardizedAssessmentBatch', $standardizedAssessmentBatch);
     }
@@ -75,7 +76,7 @@ class StandardizedAssessmentBatchTarget extends ModelBase
     /**
      * @param ModelBase $target
      */
-    public function setTarget(ModelBase $target = null)
+    public function setTarget(\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }

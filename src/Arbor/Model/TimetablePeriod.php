@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TimetablePeriod extends ModelBase
 {
-    const TIMETABLE_PERIOD_GROUPING = 'timetablePeriodGrouping';
+    public const TIMETABLE_PERIOD_GROUPING = 'timetablePeriodGrouping';
 
-    const DAY_OF_CYCLE = 'dayOfCycle';
+    public const DAY_OF_CYCLE = 'dayOfCycle';
 
-    const DAY_OF_WEEK = 'dayOfWeek';
+    public const DAY_OF_WEEK = 'dayOfWeek';
 
-    const START_TIME = 'startTime';
+    public const START_TIME = 'startTime';
 
-    const END_TIME = 'endTime';
+    public const END_TIME = 'endTime';
 
     protected $_resourceType = ResourceType::TIMETABLE_PERIOD;
 
@@ -23,7 +24,7 @@ class TimetablePeriod extends ModelBase
      * @return TimetablePeriod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class TimetablePeriod extends ModelBase
     }
 
     /**
-     * @return TimetablePeriodGrouping
+     * @return \Arbor\Model\TimetablePeriodGrouping
      */
     public function getTimetablePeriodGrouping()
     {
@@ -63,9 +64,9 @@ class TimetablePeriod extends ModelBase
     }
 
     /**
-     * @param TimetablePeriodGrouping $timetablePeriodGrouping
+     * @param \Arbor\Model\TimetablePeriodGrouping $timetablePeriodGrouping
      */
-    public function setTimetablePeriodGrouping(TimetablePeriodGrouping $timetablePeriodGrouping = null)
+    public function setTimetablePeriodGrouping(\Arbor\Model\TimetablePeriodGrouping $timetablePeriodGrouping = null)
     {
         $this->setProperty('timetablePeriodGrouping', $timetablePeriodGrouping);
     }
@@ -81,7 +82,7 @@ class TimetablePeriod extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle($dayOfCycle = null)
+    public function setDayOfCycle(int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -97,7 +98,7 @@ class TimetablePeriod extends ModelBase
     /**
      * @param int $dayOfWeek
      */
-    public function setDayOfWeek($dayOfWeek = null)
+    public function setDayOfWeek(int $dayOfWeek = null)
     {
         $this->setProperty('dayOfWeek', $dayOfWeek);
     }
@@ -113,7 +114,7 @@ class TimetablePeriod extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime($startTime = null)
+    public function setStartTime(string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -129,7 +130,7 @@ class TimetablePeriod extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime($endTime = null)
+    public function setEndTime(string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }

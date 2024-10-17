@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class EventParticipantInvitation extends ModelBase
 {
-    const EVENT_PARTICIPANT = 'eventParticipant';
+    public const EVENT_PARTICIPANT = 'eventParticipant';
 
-    const INVITEE = 'invitee';
+    public const INVITEE = 'invitee';
 
-    const INVITATION_DATETIME = 'invitationDatetime';
+    public const INVITATION_DATETIME = 'invitationDatetime';
 
-    const INVITATION_STATUS = 'invitationStatus';
+    public const INVITATION_STATUS = 'invitationStatus';
 
-    const STATUS_CHANGED_DATETIME = 'statusChangedDatetime';
+    public const STATUS_CHANGED_DATETIME = 'statusChangedDatetime';
 
-    const INVITATION_MESSAGE = 'invitationMessage';
+    public const INVITATION_MESSAGE = 'invitationMessage';
 
-    const INVITATION_REPLY = 'invitationReply';
+    public const INVITATION_REPLY = 'invitationReply';
 
     protected $_resourceType = ResourceType::EVENT_PARTICIPANT_INVITATION;
 
@@ -27,7 +28,7 @@ class EventParticipantInvitation extends ModelBase
      * @return EventParticipantInvitation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class EventParticipantInvitation extends ModelBase
     }
 
     /**
-     * @return EventParticipant
+     * @return \Arbor\Model\EventParticipant
      */
     public function getEventParticipant()
     {
@@ -67,9 +68,9 @@ class EventParticipantInvitation extends ModelBase
     }
 
     /**
-     * @param EventParticipant $eventParticipant
+     * @param \Arbor\Model\EventParticipant $eventParticipant
      */
-    public function setEventParticipant(EventParticipant $eventParticipant = null)
+    public function setEventParticipant(\Arbor\Model\EventParticipant $eventParticipant = null)
     {
         $this->setProperty('eventParticipant', $eventParticipant);
     }
@@ -85,7 +86,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param ModelBase $invitee
      */
-    public function setInvitee(ModelBase $invitee = null)
+    public function setInvitee(\ModelBase $invitee = null)
     {
         $this->setProperty('invitee', $invitee);
     }
@@ -117,7 +118,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param string $invitationStatus
      */
-    public function setInvitationStatus($invitationStatus = null)
+    public function setInvitationStatus(string $invitationStatus = null)
     {
         $this->setProperty('invitationStatus', $invitationStatus);
     }
@@ -149,7 +150,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param string $invitationMessage
      */
-    public function setInvitationMessage($invitationMessage = null)
+    public function setInvitationMessage(string $invitationMessage = null)
     {
         $this->setProperty('invitationMessage', $invitationMessage);
     }
@@ -165,7 +166,7 @@ class EventParticipantInvitation extends ModelBase
     /**
      * @param string $invitationReply
      */
-    public function setInvitationReply($invitationReply = null)
+    public function setInvitationReply(string $invitationReply = null)
     {
         $this->setProperty('invitationReply', $invitationReply);
     }

@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AcademicUnitQualificationAward extends ModelBase
 {
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const QUALIFICATION_AWARD = 'qualificationAward';
+    public const QUALIFICATION_AWARD = 'qualificationAward';
 
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_QUALIFICATION_AWARD;
 
@@ -17,7 +18,7 @@ class AcademicUnitQualificationAward extends ModelBase
      * @return AcademicUnitQualificationAward[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class AcademicUnitQualificationAward extends ModelBase
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -57,15 +58,15 @@ class AcademicUnitQualificationAward extends ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
 
     /**
-     * @return QualificationAward
+     * @return \Arbor\Model\QualificationAward
      */
     public function getQualificationAward()
     {
@@ -73,9 +74,9 @@ class AcademicUnitQualificationAward extends ModelBase
     }
 
     /**
-     * @param QualificationAward $qualificationAward
+     * @param \Arbor\Model\QualificationAward $qualificationAward
      */
-    public function setQualificationAward(QualificationAward $qualificationAward = null)
+    public function setQualificationAward(\Arbor\Model\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }

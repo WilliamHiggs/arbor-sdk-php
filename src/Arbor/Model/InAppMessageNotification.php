@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InAppMessageNotification extends ModelBase
 {
-    const IN_APP_MESSAGE = 'inAppMessage';
+    public const IN_APP_MESSAGE = 'inAppMessage';
 
-    const NOTIFICATION_CHANNEL = 'notificationChannel';
+    public const NOTIFICATION_CHANNEL = 'notificationChannel';
 
     protected $_resourceType = ResourceType::IN_APP_MESSAGE_NOTIFICATION;
 
@@ -17,7 +18,7 @@ class InAppMessageNotification extends ModelBase
      * @return InAppMessageNotification[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class InAppMessageNotification extends ModelBase
     /**
      * @param ModelBase $inAppMessage
      */
-    public function setInAppMessage(ModelBase $inAppMessage = null)
+    public function setInAppMessage(\ModelBase $inAppMessage = null)
     {
         $this->setProperty('inAppMessage', $inAppMessage);
     }
@@ -75,7 +76,7 @@ class InAppMessageNotification extends ModelBase
     /**
      * @param ModelBase $notificationChannel
      */
-    public function setNotificationChannel(ModelBase $notificationChannel = null)
+    public function setNotificationChannel(\ModelBase $notificationChannel = null)
     {
         $this->setProperty('notificationChannel', $notificationChannel);
     }

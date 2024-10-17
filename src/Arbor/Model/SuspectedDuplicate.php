@@ -3,30 +3,31 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class SuspectedDuplicate extends ModelBase
 {
-    const SUSPECT_ONE = 'suspectOne';
+    public const SUSPECT_ONE = 'suspectOne';
 
-    const SUSPECT_TWO = 'suspectTwo';
+    public const SUSPECT_TWO = 'suspectTwo';
 
-    const UNIQUE_KEY = 'uniqueKey';
+    public const UNIQUE_KEY = 'uniqueKey';
 
-    const TOTAL_DUPLICATE_SCORE = 'totalDuplicateScore';
+    public const TOTAL_DUPLICATE_SCORE = 'totalDuplicateScore';
 
-    const DUPLICATE_SCORES = 'duplicateScores';
+    public const DUPLICATE_SCORES = 'duplicateScores';
 
-    const RESOLVED_DATETIME = 'resolvedDatetime';
+    public const RESOLVED_DATETIME = 'resolvedDatetime';
 
-    const RESOLUTION_APPROVAL_REQUESTED_BY_STAFF = 'resolutionApprovalRequestedByStaff';
+    public const RESOLUTION_APPROVAL_REQUESTED_BY_STAFF = 'resolutionApprovalRequestedByStaff';
 
-    const RESOLUTION_APPROVAL_REQUESTED_FROM_STAFF = 'resolutionApprovalRequestedFromStaff';
+    public const RESOLUTION_APPROVAL_REQUESTED_FROM_STAFF = 'resolutionApprovalRequestedFromStaff';
 
-    const RESOLUTION_APPROVED_BY_STAFF = 'resolutionApprovedByStaff';
+    public const RESOLUTION_APPROVED_BY_STAFF = 'resolutionApprovedByStaff';
 
-    const RESOLVED_BY_STAFF = 'resolvedByStaff';
+    public const RESOLVED_BY_STAFF = 'resolvedByStaff';
 
-    const RESOLUTION = 'resolution';
+    public const RESOLUTION = 'resolution';
 
     protected $_resourceType = ResourceType::SUSPECTED_DUPLICATE;
 
@@ -35,7 +36,7 @@ class SuspectedDuplicate extends ModelBase
      * @return SuspectedDuplicate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +78,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param ModelBase $suspectOne
      */
-    public function setSuspectOne(ModelBase $suspectOne = null)
+    public function setSuspectOne(\ModelBase $suspectOne = null)
     {
         $this->setProperty('suspectOne', $suspectOne);
     }
@@ -93,7 +94,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param ModelBase $suspectTwo
      */
-    public function setSuspectTwo(ModelBase $suspectTwo = null)
+    public function setSuspectTwo(\ModelBase $suspectTwo = null)
     {
         $this->setProperty('suspectTwo', $suspectTwo);
     }
@@ -109,7 +110,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param string $uniqueKey
      */
-    public function setUniqueKey($uniqueKey = null)
+    public function setUniqueKey(string $uniqueKey = null)
     {
         $this->setProperty('uniqueKey', $uniqueKey);
     }
@@ -125,7 +126,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param int $totalDuplicateScore
      */
-    public function setTotalDuplicateScore($totalDuplicateScore = null)
+    public function setTotalDuplicateScore(int $totalDuplicateScore = null)
     {
         $this->setProperty('totalDuplicateScore', $totalDuplicateScore);
     }
@@ -141,7 +142,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param string $duplicateScores
      */
-    public function setDuplicateScores($duplicateScores = null)
+    public function setDuplicateScores(string $duplicateScores = null)
     {
         $this->setProperty('duplicateScores', $duplicateScores);
     }
@@ -163,7 +164,7 @@ class SuspectedDuplicate extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getResolutionApprovalRequestedByStaff()
     {
@@ -171,15 +172,15 @@ class SuspectedDuplicate extends ModelBase
     }
 
     /**
-     * @param Staff $resolutionApprovalRequestedByStaff
+     * @param \Arbor\Model\Staff $resolutionApprovalRequestedByStaff
      */
-    public function setResolutionApprovalRequestedByStaff(Staff $resolutionApprovalRequestedByStaff = null)
+    public function setResolutionApprovalRequestedByStaff(\Arbor\Model\Staff $resolutionApprovalRequestedByStaff = null)
     {
         $this->setProperty('resolutionApprovalRequestedByStaff', $resolutionApprovalRequestedByStaff);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getResolutionApprovalRequestedFromStaff()
     {
@@ -187,15 +188,15 @@ class SuspectedDuplicate extends ModelBase
     }
 
     /**
-     * @param Staff $resolutionApprovalRequestedFromStaff
+     * @param \Arbor\Model\Staff $resolutionApprovalRequestedFromStaff
      */
-    public function setResolutionApprovalRequestedFromStaff(Staff $resolutionApprovalRequestedFromStaff = null)
+    public function setResolutionApprovalRequestedFromStaff(\Arbor\Model\Staff $resolutionApprovalRequestedFromStaff = null)
     {
         $this->setProperty('resolutionApprovalRequestedFromStaff', $resolutionApprovalRequestedFromStaff);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getResolutionApprovedByStaff()
     {
@@ -203,15 +204,15 @@ class SuspectedDuplicate extends ModelBase
     }
 
     /**
-     * @param Staff $resolutionApprovedByStaff
+     * @param \Arbor\Model\Staff $resolutionApprovedByStaff
      */
-    public function setResolutionApprovedByStaff(Staff $resolutionApprovedByStaff = null)
+    public function setResolutionApprovedByStaff(\Arbor\Model\Staff $resolutionApprovedByStaff = null)
     {
         $this->setProperty('resolutionApprovedByStaff', $resolutionApprovedByStaff);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getResolvedByStaff()
     {
@@ -219,9 +220,9 @@ class SuspectedDuplicate extends ModelBase
     }
 
     /**
-     * @param Staff $resolvedByStaff
+     * @param \Arbor\Model\Staff $resolvedByStaff
      */
-    public function setResolvedByStaff(Staff $resolvedByStaff = null)
+    public function setResolvedByStaff(\Arbor\Model\Staff $resolvedByStaff = null)
     {
         $this->setProperty('resolvedByStaff', $resolvedByStaff);
     }
@@ -237,7 +238,7 @@ class SuspectedDuplicate extends ModelBase
     /**
      * @param string $resolution
      */
-    public function setResolution($resolution = null)
+    public function setResolution(string $resolution = null)
     {
         $this->setProperty('resolution', $resolution);
     }

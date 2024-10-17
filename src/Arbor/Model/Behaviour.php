@@ -3,18 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Behaviour extends ModelBase
 {
-    const BEHAVIOUR_NAME = 'behaviourName';
+    public const BEHAVIOUR_NAME = 'behaviourName';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const SEVERITY = 'severity';
+    public const BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW = 'behaviouralIncidentLevelWorkflow';
 
-    const ACTIVE = 'active';
+    public const SEVERITY = 'severity';
 
-    const IS_MY_CLASSROOM_DEFAULT = 'isMyClassroomDefault';
+    public const ACTIVE = 'active';
+
+    public const IS_MY_CLASSROOM_DEFAULT = 'isMyClassroomDefault';
 
     protected $_resourceType = ResourceType::BEHAVIOUR;
 
@@ -23,7 +26,7 @@ class Behaviour extends ModelBase
      * @return Behaviour[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +68,7 @@ class Behaviour extends ModelBase
     /**
      * @param string $behaviourName
      */
-    public function setBehaviourName($behaviourName = null)
+    public function setBehaviourName(string $behaviourName = null)
     {
         $this->setProperty('behaviourName', $behaviourName);
     }
@@ -81,9 +84,26 @@ class Behaviour extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
+    }
+
+    /**
+     * @return \Arbor\Model\BehaviouralIncidentLevelWorkflow
+     */
+    public function getBehaviouralIncidentLevelWorkflow()
+    {
+        return $this->getProperty('behaviouralIncidentLevelWorkflow');
+    }
+
+    /**
+     * @param \Arbor\Model\BehaviouralIncidentLevelWorkflow
+     * $behaviouralIncidentLevelWorkflow
+     */
+    public function setBehaviouralIncidentLevelWorkflow(\Arbor\Model\BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
+    {
+        $this->setProperty('behaviouralIncidentLevelWorkflow', $behaviouralIncidentLevelWorkflow);
     }
 
     /**
@@ -97,7 +117,7 @@ class Behaviour extends ModelBase
     /**
      * @param string $severity
      */
-    public function setSeverity($severity = null)
+    public function setSeverity(string $severity = null)
     {
         $this->setProperty('severity', $severity);
     }
@@ -113,7 +133,7 @@ class Behaviour extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -129,7 +149,7 @@ class Behaviour extends ModelBase
     /**
      * @param bool $isMyClassroomDefault
      */
-    public function setIsMyClassroomDefault($isMyClassroomDefault = null)
+    public function setIsMyClassroomDefault(bool $isMyClassroomDefault = null)
     {
         $this->setProperty('isMyClassroomDefault', $isMyClassroomDefault);
     }

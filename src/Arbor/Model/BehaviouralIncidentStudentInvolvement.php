@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BehaviouralIncidentStudentInvolvement extends ModelBase
 {
-    const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
+    public const BEHAVIOURAL_INCIDENT = 'behaviouralIncident';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const RESOLVED_BY = 'resolvedBy';
+    public const RESOLVED_BY = 'resolvedBy';
 
-    const RESOLVED_DATETIME = 'resolvedDatetime';
+    public const RESOLVED_DATETIME = 'resolvedDatetime';
 
-    const COMMENT = 'comment';
+    public const COMMENT = 'comment';
 
-    const SEVERITY = 'severity';
+    public const SEVERITY = 'severity';
 
-    const ASSIGNEE = 'assignee';
+    public const ASSIGNEE = 'assignee';
 
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_STUDENT_INVOLVEMENT;
 
@@ -27,7 +28,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
      * @return BehaviouralIncidentStudentInvolvement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     }
 
     /**
-     * @return BehaviouralIncident
+     * @return \Arbor\Model\BehaviouralIncident
      */
     public function getBehaviouralIncident()
     {
@@ -67,15 +68,15 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     }
 
     /**
-     * @param BehaviouralIncident $behaviouralIncident
+     * @param \Arbor\Model\BehaviouralIncident $behaviouralIncident
      */
-    public function setBehaviouralIncident(BehaviouralIncident $behaviouralIncident = null)
+    public function setBehaviouralIncident(\Arbor\Model\BehaviouralIncident $behaviouralIncident = null)
     {
         $this->setProperty('behaviouralIncident', $behaviouralIncident);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -83,15 +84,15 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getResolvedBy()
     {
@@ -99,9 +100,9 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     }
 
     /**
-     * @param Staff $resolvedBy
+     * @param \Arbor\Model\Staff $resolvedBy
      */
-    public function setResolvedBy(Staff $resolvedBy = null)
+    public function setResolvedBy(\Arbor\Model\Staff $resolvedBy = null)
     {
         $this->setProperty('resolvedBy', $resolvedBy);
     }
@@ -133,7 +134,7 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment($comment = null)
+    public function setComment(string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }
@@ -149,13 +150,13 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     /**
      * @param int $severity
      */
-    public function setSeverity($severity = null)
+    public function setSeverity(int $severity = null)
     {
         $this->setProperty('severity', $severity);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getAssignee()
     {
@@ -163,9 +164,9 @@ class BehaviouralIncidentStudentInvolvement extends ModelBase
     }
 
     /**
-     * @param Staff $assignee
+     * @param \Arbor\Model\Staff $assignee
      */
-    public function setAssignee(Staff $assignee = null)
+    public function setAssignee(\Arbor\Model\Staff $assignee = null)
     {
         $this->setProperty('assignee', $assignee);
     }

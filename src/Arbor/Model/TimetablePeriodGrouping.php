@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TimetablePeriodGrouping extends ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const DISPLAY_ORDER = 'displayOrder';
+    public const DISPLAY_ORDER = 'displayOrder';
 
     protected $_resourceType = ResourceType::TIMETABLE_PERIOD_GROUPING;
 
@@ -21,7 +22,7 @@ class TimetablePeriodGrouping extends ModelBase
      * @return TimetablePeriodGrouping[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class TimetablePeriodGrouping extends ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -61,9 +62,9 @@ class TimetablePeriodGrouping extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -79,7 +80,7 @@ class TimetablePeriodGrouping extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -95,7 +96,7 @@ class TimetablePeriodGrouping extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -111,7 +112,7 @@ class TimetablePeriodGrouping extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder($displayOrder = null)
+    public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }

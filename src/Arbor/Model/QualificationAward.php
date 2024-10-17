@@ -3,58 +3,59 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class QualificationAward extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const QUALIFICATION_SCHEME = 'qualificationScheme';
+    public const QUALIFICATION_SCHEME = 'qualificationScheme';
 
-    const QUALIFICATION_SUBJECT = 'qualificationSubject';
+    public const QUALIFICATION_SUBJECT = 'qualificationSubject';
 
-    const AWARDING_ORGANIZATION = 'awardingOrganization';
+    public const AWARDING_ORGANIZATION = 'awardingOrganization';
 
-    const AWARD_IDENTIFIER = 'awardIdentifier';
+    public const AWARD_IDENTIFIER = 'awardIdentifier';
 
-    const TITLE = 'title';
+    public const TITLE = 'title';
 
-    const SHORT_TITLE = 'shortTitle';
+    public const SHORT_TITLE = 'shortTitle';
 
-    const QUALIFICATION_AWARD_TYPE = 'qualificationAwardType';
+    public const QUALIFICATION_AWARD_TYPE = 'qualificationAwardType';
 
-    const QUALIFICATION_AWARD_SUBTYPE = 'qualificationAwardSubtype';
+    public const QUALIFICATION_AWARD_SUBTYPE = 'qualificationAwardSubtype';
 
-    const ACCREDITATION_START_DATE = 'accreditationStartDate';
+    public const ACCREDITATION_START_DATE = 'accreditationStartDate';
 
-    const ACCREDITATION_END_DATE = 'accreditationEndDate';
+    public const ACCREDITATION_END_DATE = 'accreditationEndDate';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const CERTIFICATION_END_DATE = 'certificationEndDate';
+    public const CERTIFICATION_END_DATE = 'certificationEndDate';
 
-    const OPERATIONAL_START_DATE = 'operationalStartDate';
+    public const OPERATIONAL_START_DATE = 'operationalStartDate';
 
-    const OPERATIONAL_END_DATE = 'operationalEndDate';
+    public const OPERATIONAL_END_DATE = 'operationalEndDate';
 
-    const IS_LINEAR_QUALIFICATION = 'isLinearQualification';
+    public const IS_LINEAR_QUALIFICATION = 'isLinearQualification';
 
-    const QCA_ACCREDITATION_NUMBER = 'qcaAccreditationNumber';
+    public const QCA_ACCREDITATION_NUMBER = 'qcaAccreditationNumber';
 
-    const KS4_DISCOUNT_CODE2014 = 'ks4DiscountCode2014';
+    public const KS4_DISCOUNT_CODE2014 = 'ks4DiscountCode2014';
 
-    const KS4_DISCOUNT_CODE2015 = 'ks4DiscountCode2015';
+    public const KS4_DISCOUNT_CODE2015 = 'ks4DiscountCode2015';
 
-    const KS4_DISCOUNT_CODE2016 = 'ks4DiscountCode2016';
+    public const KS4_DISCOUNT_CODE2016 = 'ks4DiscountCode2016';
 
-    const KS4_DISCOUNT_CODE2017 = 'ks4DiscountCode2017';
+    public const KS4_DISCOUNT_CODE2017 = 'ks4DiscountCode2017';
 
-    const POST16_DISCOUNT_CODE = 'post16DiscountCode';
+    public const POST16_DISCOUNT_CODE = 'post16DiscountCode';
 
     protected $_resourceType = ResourceType::QUALIFICATION_AWARD;
 
@@ -63,7 +64,7 @@ class QualificationAward extends ModelBase
      * @return QualificationAward[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -105,7 +106,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -121,7 +122,7 @@ class QualificationAward extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -137,13 +138,13 @@ class QualificationAward extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
-     * @return QualificationScheme
+     * @return \Arbor\Model\QualificationScheme
      */
     public function getQualificationScheme()
     {
@@ -151,15 +152,15 @@ class QualificationAward extends ModelBase
     }
 
     /**
-     * @param QualificationScheme $qualificationScheme
+     * @param \Arbor\Model\QualificationScheme $qualificationScheme
      */
-    public function setQualificationScheme(QualificationScheme $qualificationScheme = null)
+    public function setQualificationScheme(\Arbor\Model\QualificationScheme $qualificationScheme = null)
     {
         $this->setProperty('qualificationScheme', $qualificationScheme);
     }
 
     /**
-     * @return QualificationSubject
+     * @return \Arbor\Model\QualificationSubject
      */
     public function getQualificationSubject()
     {
@@ -167,15 +168,15 @@ class QualificationAward extends ModelBase
     }
 
     /**
-     * @param QualificationSubject $qualificationSubject
+     * @param \Arbor\Model\QualificationSubject $qualificationSubject
      */
-    public function setQualificationSubject(QualificationSubject $qualificationSubject = null)
+    public function setQualificationSubject(\Arbor\Model\QualificationSubject $qualificationSubject = null)
     {
         $this->setProperty('qualificationSubject', $qualificationSubject);
     }
 
     /**
-     * @return AwardingOrganization
+     * @return \Arbor\Model\AwardingOrganization
      */
     public function getAwardingOrganization()
     {
@@ -183,9 +184,9 @@ class QualificationAward extends ModelBase
     }
 
     /**
-     * @param AwardingOrganization $awardingOrganization
+     * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
@@ -201,7 +202,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $awardIdentifier
      */
-    public function setAwardIdentifier($awardIdentifier = null)
+    public function setAwardIdentifier(string $awardIdentifier = null)
     {
         $this->setProperty('awardIdentifier', $awardIdentifier);
     }
@@ -217,7 +218,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $title
      */
-    public function setTitle($title = null)
+    public function setTitle(string $title = null)
     {
         $this->setProperty('title', $title);
     }
@@ -233,13 +234,13 @@ class QualificationAward extends ModelBase
     /**
      * @param string $shortTitle
      */
-    public function setShortTitle($shortTitle = null)
+    public function setShortTitle(string $shortTitle = null)
     {
         $this->setProperty('shortTitle', $shortTitle);
     }
 
     /**
-     * @return QualificationAwardType
+     * @return \Arbor\Model\QualificationAwardType
      */
     public function getQualificationAwardType()
     {
@@ -247,15 +248,15 @@ class QualificationAward extends ModelBase
     }
 
     /**
-     * @param QualificationAwardType $qualificationAwardType
+     * @param \Arbor\Model\QualificationAwardType $qualificationAwardType
      */
-    public function setQualificationAwardType(QualificationAwardType $qualificationAwardType = null)
+    public function setQualificationAwardType(\Arbor\Model\QualificationAwardType $qualificationAwardType = null)
     {
         $this->setProperty('qualificationAwardType', $qualificationAwardType);
     }
 
     /**
-     * @return QualificationAwardSubtype
+     * @return \Arbor\Model\QualificationAwardSubtype
      */
     public function getQualificationAwardSubtype()
     {
@@ -263,9 +264,9 @@ class QualificationAward extends ModelBase
     }
 
     /**
-     * @param QualificationAwardSubtype $qualificationAwardSubtype
+     * @param \Arbor\Model\QualificationAwardSubtype $qualificationAwardSubtype
      */
-    public function setQualificationAwardSubtype(QualificationAwardSubtype $qualificationAwardSubtype = null)
+    public function setQualificationAwardSubtype(\Arbor\Model\QualificationAwardSubtype $qualificationAwardSubtype = null)
     {
         $this->setProperty('qualificationAwardSubtype', $qualificationAwardSubtype);
     }
@@ -393,7 +394,7 @@ class QualificationAward extends ModelBase
     /**
      * @param bool $isLinearQualification
      */
-    public function setIsLinearQualification($isLinearQualification = null)
+    public function setIsLinearQualification(bool $isLinearQualification = null)
     {
         $this->setProperty('isLinearQualification', $isLinearQualification);
     }
@@ -409,7 +410,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $qcaAccreditationNumber
      */
-    public function setQcaAccreditationNumber($qcaAccreditationNumber = null)
+    public function setQcaAccreditationNumber(string $qcaAccreditationNumber = null)
     {
         $this->setProperty('qcaAccreditationNumber', $qcaAccreditationNumber);
     }
@@ -425,7 +426,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2014
      */
-    public function setKs4DiscountCode2014($ks4DiscountCode2014 = null)
+    public function setKs4DiscountCode2014(string $ks4DiscountCode2014 = null)
     {
         $this->setProperty('ks4DiscountCode2014', $ks4DiscountCode2014);
     }
@@ -441,7 +442,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2015
      */
-    public function setKs4DiscountCode2015($ks4DiscountCode2015 = null)
+    public function setKs4DiscountCode2015(string $ks4DiscountCode2015 = null)
     {
         $this->setProperty('ks4DiscountCode2015', $ks4DiscountCode2015);
     }
@@ -457,7 +458,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2016
      */
-    public function setKs4DiscountCode2016($ks4DiscountCode2016 = null)
+    public function setKs4DiscountCode2016(string $ks4DiscountCode2016 = null)
     {
         $this->setProperty('ks4DiscountCode2016', $ks4DiscountCode2016);
     }
@@ -473,7 +474,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $ks4DiscountCode2017
      */
-    public function setKs4DiscountCode2017($ks4DiscountCode2017 = null)
+    public function setKs4DiscountCode2017(string $ks4DiscountCode2017 = null)
     {
         $this->setProperty('ks4DiscountCode2017', $ks4DiscountCode2017);
     }
@@ -489,7 +490,7 @@ class QualificationAward extends ModelBase
     /**
      * @param string $post16DiscountCode
      */
-    public function setPost16DiscountCode($post16DiscountCode = null)
+    public function setPost16DiscountCode(string $post16DiscountCode = null)
     {
         $this->setProperty('post16DiscountCode', $post16DiscountCode);
     }

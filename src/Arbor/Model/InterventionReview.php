@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InterventionReview extends ModelBase
 {
-    const INTERVENTION = 'intervention';
+    public const INTERVENTION = 'intervention';
 
-    const REVIEW_DUE_DATE = 'reviewDueDate';
+    public const REVIEW_DUE_DATE = 'reviewDueDate';
 
-    const REVIEW_COMPLETED_DATE = 'reviewCompletedDate';
+    public const REVIEW_COMPLETED_DATE = 'reviewCompletedDate';
 
-    const REVIEW = 'review';
+    public const REVIEW = 'review';
 
-    const RECOMMENDATIONS = 'recommendations';
+    public const RECOMMENDATIONS = 'recommendations';
 
     protected $_resourceType = ResourceType::INTERVENTION_REVIEW;
 
@@ -23,7 +24,7 @@ class InterventionReview extends ModelBase
      * @return InterventionReview[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class InterventionReview extends ModelBase
     }
 
     /**
-     * @return Intervention
+     * @return \Arbor\Model\Intervention
      */
     public function getIntervention()
     {
@@ -63,9 +64,9 @@ class InterventionReview extends ModelBase
     }
 
     /**
-     * @param Intervention $intervention
+     * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(Intervention $intervention = null)
+    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -113,7 +114,7 @@ class InterventionReview extends ModelBase
     /**
      * @param string $review
      */
-    public function setReview($review = null)
+    public function setReview(string $review = null)
     {
         $this->setProperty('review', $review);
     }
@@ -129,7 +130,7 @@ class InterventionReview extends ModelBase
     /**
      * @param string $recommendations
      */
-    public function setRecommendations($recommendations = null)
+    public function setRecommendations(string $recommendations = null)
     {
         $this->setProperty('recommendations', $recommendations);
     }

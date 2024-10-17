@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class DetentionSession extends ModelBase
 {
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const LOCATION_TEXT = 'locationText';
+    public const LOCATION_TEXT = 'locationText';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const DETENTION_TYPE = 'detentionType';
+    public const DETENTION_TYPE = 'detentionType';
 
-    const TIMETABLE_SLOT = 'timetableSlot';
+    public const TIMETABLE_SLOT = 'timetableSlot';
 
     protected $_resourceType = ResourceType::DETENTION_SESSION;
 
@@ -25,7 +26,7 @@ class DetentionSession extends ModelBase
      * @return DetentionSession[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -99,7 +100,7 @@ class DetentionSession extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText($locationText = null)
+    public function setLocationText(string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -115,13 +116,13 @@ class DetentionSession extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(ModelBase $location = null)
+    public function setLocation(\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
 
     /**
-     * @return DetentionType
+     * @return \Arbor\Model\DetentionType
      */
     public function getDetentionType()
     {
@@ -129,15 +130,15 @@ class DetentionSession extends ModelBase
     }
 
     /**
-     * @param DetentionType $detentionType
+     * @param \Arbor\Model\DetentionType $detentionType
      */
-    public function setDetentionType(DetentionType $detentionType = null)
+    public function setDetentionType(\Arbor\Model\DetentionType $detentionType = null)
     {
         $this->setProperty('detentionType', $detentionType);
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -145,9 +146,9 @@ class DetentionSession extends ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }

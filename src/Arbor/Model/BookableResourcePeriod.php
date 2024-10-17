@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BookableResourcePeriod extends ModelBase
 {
-    const RESOURCE = 'resource';
+    public const RESOURCE = 'resource';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
     protected $_resourceType = ResourceType::BOOKABLE_RESOURCE_PERIOD;
 
@@ -19,7 +20,7 @@ class BookableResourcePeriod extends ModelBase
      * @return BookableResourcePeriod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class BookableResourcePeriod extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getResource()
     {
@@ -59,9 +60,9 @@ class BookableResourcePeriod extends ModelBase
     }
 
     /**
-     * @param Staff $resource
+     * @param \Arbor\Model\Staff $resource
      */
-    public function setResource(Staff $resource = null)
+    public function setResource(\Arbor\Model\Staff $resource = null)
     {
         $this->setProperty('resource', $resource);
     }

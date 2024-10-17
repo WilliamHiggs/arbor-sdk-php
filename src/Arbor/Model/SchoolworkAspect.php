@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class SchoolworkAspect extends ModelBase
 {
-    const SCHOOLWORK = 'schoolwork';
+    public const SCHOOLWORK = 'schoolwork';
 
-    const ASPECT_NAME = 'aspectName';
+    public const ASPECT_NAME = 'aspectName';
 
-    const ASPECT_DATA_TYPE = 'aspectDataType';
+    public const ASPECT_DATA_TYPE = 'aspectDataType';
 
-    const GRADE_SET = 'gradeSet';
+    public const GRADE_SET = 'gradeSet';
 
-    const MARK_MIN_VALUE = 'markMinValue';
+    public const MARK_MIN_VALUE = 'markMinValue';
 
-    const MARK_MAX_VALUE = 'markMaxValue';
+    public const MARK_MAX_VALUE = 'markMaxValue';
 
-    const SCALE_DIRECTION = 'scaleDirection';
+    public const SCALE_DIRECTION = 'scaleDirection';
 
     protected $_resourceType = ResourceType::SCHOOLWORK_ASPECT;
 
@@ -27,7 +28,7 @@ class SchoolworkAspect extends ModelBase
      * @return SchoolworkAspect[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class SchoolworkAspect extends ModelBase
     }
 
     /**
-     * @return Schoolwork
+     * @return \Arbor\Model\Schoolwork
      */
     public function getSchoolwork()
     {
@@ -67,9 +68,9 @@ class SchoolworkAspect extends ModelBase
     }
 
     /**
-     * @param Schoolwork $schoolwork
+     * @param \Arbor\Model\Schoolwork $schoolwork
      */
-    public function setSchoolwork(Schoolwork $schoolwork = null)
+    public function setSchoolwork(\Arbor\Model\Schoolwork $schoolwork = null)
     {
         $this->setProperty('schoolwork', $schoolwork);
     }
@@ -85,7 +86,7 @@ class SchoolworkAspect extends ModelBase
     /**
      * @param string $aspectName
      */
-    public function setAspectName($aspectName = null)
+    public function setAspectName(string $aspectName = null)
     {
         $this->setProperty('aspectName', $aspectName);
     }
@@ -101,13 +102,13 @@ class SchoolworkAspect extends ModelBase
     /**
      * @param string $aspectDataType
      */
-    public function setAspectDataType($aspectDataType = null)
+    public function setAspectDataType(string $aspectDataType = null)
     {
         $this->setProperty('aspectDataType', $aspectDataType);
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getGradeSet()
     {
@@ -115,9 +116,9 @@ class SchoolworkAspect extends ModelBase
     }
 
     /**
-     * @param GradeSet $gradeSet
+     * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(GradeSet $gradeSet = null)
+    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -133,7 +134,7 @@ class SchoolworkAspect extends ModelBase
     /**
      * @param float $markMinValue
      */
-    public function setMarkMinValue($markMinValue = null)
+    public function setMarkMinValue(float $markMinValue = null)
     {
         $this->setProperty('markMinValue', $markMinValue);
     }
@@ -149,7 +150,7 @@ class SchoolworkAspect extends ModelBase
     /**
      * @param float $markMaxValue
      */
-    public function setMarkMaxValue($markMaxValue = null)
+    public function setMarkMaxValue(float $markMaxValue = null)
     {
         $this->setProperty('markMaxValue', $markMaxValue);
     }
@@ -165,7 +166,7 @@ class SchoolworkAspect extends ModelBase
     /**
      * @param string $scaleDirection
      */
-    public function setScaleDirection($scaleDirection = null)
+    public function setScaleDirection(string $scaleDirection = null)
     {
         $this->setProperty('scaleDirection', $scaleDirection);
     }

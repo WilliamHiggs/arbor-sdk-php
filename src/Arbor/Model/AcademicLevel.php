@@ -3,26 +3,27 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AcademicLevel extends ModelBase
 {
-    const ACADEMIC_LEVEL_NAME = 'academicLevelName';
+    public const ACADEMIC_LEVEL_NAME = 'academicLevelName';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const CURRICULUM_GRADE = 'curriculumGrade';
+    public const CURRICULUM_GRADE = 'curriculumGrade';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const PROMOTED_TO_ACADEMIC_LEVEL = 'promotedToAcademicLevel';
+    public const PROMOTED_TO_ACADEMIC_LEVEL = 'promotedToAcademicLevel';
 
-    const PROMOTED_DATETIME = 'promotedDatetime';
+    public const PROMOTED_DATETIME = 'promotedDatetime';
 
-    const COPIED_TO_ACADEMIC_LEVEL = 'copiedToAcademicLevel';
+    public const COPIED_TO_ACADEMIC_LEVEL = 'copiedToAcademicLevel';
 
-    const DISPLAY_ORDER = 'displayOrder';
+    public const DISPLAY_ORDER = 'displayOrder';
 
-    const TARGET_ENROLMENT = 'targetEnrolment';
+    public const TARGET_ENROLMENT = 'targetEnrolment';
 
     protected $_resourceType = ResourceType::ACADEMIC_LEVEL;
 
@@ -31,7 +32,7 @@ class AcademicLevel extends ModelBase
      * @return AcademicLevel[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +74,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param string $academicLevelName
      */
-    public function setAcademicLevelName($academicLevelName = null)
+    public function setAcademicLevelName(string $academicLevelName = null)
     {
         $this->setProperty('academicLevelName', $academicLevelName);
     }
@@ -89,13 +90,13 @@ class AcademicLevel extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
 
     /**
-     * @return CurriculumGrade
+     * @return \Arbor\Model\CurriculumGrade
      */
     public function getCurriculumGrade()
     {
@@ -103,15 +104,15 @@ class AcademicLevel extends ModelBase
     }
 
     /**
-     * @param CurriculumGrade $curriculumGrade
+     * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -119,15 +120,15 @@ class AcademicLevel extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
 
     /**
-     * @return AcademicLevel
+     * @return \Arbor\Model\AcademicLevel
      */
     public function getPromotedToAcademicLevel()
     {
@@ -135,9 +136,9 @@ class AcademicLevel extends ModelBase
     }
 
     /**
-     * @param AcademicLevel $promotedToAcademicLevel
+     * @param \Arbor\Model\AcademicLevel $promotedToAcademicLevel
      */
-    public function setPromotedToAcademicLevel(AcademicLevel $promotedToAcademicLevel = null)
+    public function setPromotedToAcademicLevel(\Arbor\Model\AcademicLevel $promotedToAcademicLevel = null)
     {
         $this->setProperty('promotedToAcademicLevel', $promotedToAcademicLevel);
     }
@@ -159,7 +160,7 @@ class AcademicLevel extends ModelBase
     }
 
     /**
-     * @return AcademicLevel
+     * @return \Arbor\Model\AcademicLevel
      */
     public function getCopiedToAcademicLevel()
     {
@@ -167,9 +168,9 @@ class AcademicLevel extends ModelBase
     }
 
     /**
-     * @param AcademicLevel $copiedToAcademicLevel
+     * @param \Arbor\Model\AcademicLevel $copiedToAcademicLevel
      */
-    public function setCopiedToAcademicLevel(AcademicLevel $copiedToAcademicLevel = null)
+    public function setCopiedToAcademicLevel(\Arbor\Model\AcademicLevel $copiedToAcademicLevel = null)
     {
         $this->setProperty('copiedToAcademicLevel', $copiedToAcademicLevel);
     }
@@ -185,7 +186,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder($displayOrder = null)
+    public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }
@@ -201,7 +202,7 @@ class AcademicLevel extends ModelBase
     /**
      * @param int $targetEnrolment
      */
-    public function setTargetEnrolment($targetEnrolment = null)
+    public function setTargetEnrolment(int $targetEnrolment = null)
     {
         $this->setProperty('targetEnrolment', $targetEnrolment);
     }

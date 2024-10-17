@@ -3,34 +3,35 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StaffAbsenceCategory extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const CATEGORY_NAME = 'categoryName';
+    public const CATEGORY_NAME = 'categoryName';
 
-    const IS_PAID_SICK_LEAVE = 'isPaidSickLeave';
+    public const IS_PAID_SICK_LEAVE = 'isPaidSickLeave';
 
-    const IS_UNPAID_SICK_LEAVE = 'isUnpaidSickLeave';
+    public const IS_UNPAID_SICK_LEAVE = 'isUnpaidSickLeave';
 
-    const IS_PAID_HOLIDAY = 'isPaidHoliday';
+    public const IS_PAID_HOLIDAY = 'isPaidHoliday';
 
-    const IS_UNPAID_HOLIDAY = 'isUnpaidHoliday';
+    public const IS_UNPAID_HOLIDAY = 'isUnpaidHoliday';
 
-    const IS_PAID_MATERNITY = 'isPaidMaternity';
+    public const IS_PAID_MATERNITY = 'isPaidMaternity';
 
-    const IS_UNPAID_MATERNITY = 'isUnpaidMaternity';
+    public const IS_UNPAID_MATERNITY = 'isUnpaidMaternity';
 
-    const IS_PAID_PATERNITY = 'isPaidPaternity';
+    public const IS_PAID_PATERNITY = 'isPaidPaternity';
 
-    const IS_UNPAID_PATERNITY = 'isUnpaidPaternity';
+    public const IS_UNPAID_PATERNITY = 'isUnpaidPaternity';
 
-    const IS_AUTHORIZED_ABSENCE = 'isAuthorizedAbsence';
+    public const IS_AUTHORIZED_ABSENCE = 'isAuthorizedAbsence';
 
     protected $_resourceType = ResourceType::STAFF_ABSENCE_CATEGORY;
 
@@ -39,7 +40,7 @@ class StaffAbsenceCategory extends ModelBase
      * @return StaffAbsenceCategory[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -81,7 +82,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -97,7 +98,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -113,7 +114,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -129,7 +130,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param string $categoryName
      */
-    public function setCategoryName($categoryName = null)
+    public function setCategoryName(string $categoryName = null)
     {
         $this->setProperty('categoryName', $categoryName);
     }
@@ -145,7 +146,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isPaidSickLeave
      */
-    public function setIsPaidSickLeave($isPaidSickLeave = null)
+    public function setIsPaidSickLeave(bool $isPaidSickLeave = null)
     {
         $this->setProperty('isPaidSickLeave', $isPaidSickLeave);
     }
@@ -161,7 +162,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isUnpaidSickLeave
      */
-    public function setIsUnpaidSickLeave($isUnpaidSickLeave = null)
+    public function setIsUnpaidSickLeave(bool $isUnpaidSickLeave = null)
     {
         $this->setProperty('isUnpaidSickLeave', $isUnpaidSickLeave);
     }
@@ -177,7 +178,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isPaidHoliday
      */
-    public function setIsPaidHoliday($isPaidHoliday = null)
+    public function setIsPaidHoliday(bool $isPaidHoliday = null)
     {
         $this->setProperty('isPaidHoliday', $isPaidHoliday);
     }
@@ -193,7 +194,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isUnpaidHoliday
      */
-    public function setIsUnpaidHoliday($isUnpaidHoliday = null)
+    public function setIsUnpaidHoliday(bool $isUnpaidHoliday = null)
     {
         $this->setProperty('isUnpaidHoliday', $isUnpaidHoliday);
     }
@@ -209,7 +210,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isPaidMaternity
      */
-    public function setIsPaidMaternity($isPaidMaternity = null)
+    public function setIsPaidMaternity(bool $isPaidMaternity = null)
     {
         $this->setProperty('isPaidMaternity', $isPaidMaternity);
     }
@@ -225,7 +226,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isUnpaidMaternity
      */
-    public function setIsUnpaidMaternity($isUnpaidMaternity = null)
+    public function setIsUnpaidMaternity(bool $isUnpaidMaternity = null)
     {
         $this->setProperty('isUnpaidMaternity', $isUnpaidMaternity);
     }
@@ -241,7 +242,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isPaidPaternity
      */
-    public function setIsPaidPaternity($isPaidPaternity = null)
+    public function setIsPaidPaternity(bool $isPaidPaternity = null)
     {
         $this->setProperty('isPaidPaternity', $isPaidPaternity);
     }
@@ -257,7 +258,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isUnpaidPaternity
      */
-    public function setIsUnpaidPaternity($isUnpaidPaternity = null)
+    public function setIsUnpaidPaternity(bool $isUnpaidPaternity = null)
     {
         $this->setProperty('isUnpaidPaternity', $isUnpaidPaternity);
     }
@@ -273,7 +274,7 @@ class StaffAbsenceCategory extends ModelBase
     /**
      * @param bool $isAuthorizedAbsence
      */
-    public function setIsAuthorizedAbsence($isAuthorizedAbsence = null)
+    public function setIsAuthorizedAbsence(bool $isAuthorizedAbsence = null)
     {
         $this->setProperty('isAuthorizedAbsence', $isAuthorizedAbsence);
     }

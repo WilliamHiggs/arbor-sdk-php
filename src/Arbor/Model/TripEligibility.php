@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TripEligibility extends ModelBase
 {
-    const TRIP = 'trip';
+    public const TRIP = 'trip';
 
-    const ELIGIBILE = 'eligibile';
+    public const ELIGIBILE = 'eligibile';
 
     protected $_resourceType = ResourceType::TRIP_ELIGIBILITY;
 
@@ -17,7 +18,7 @@ class TripEligibility extends ModelBase
      * @return TripEligibility[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class TripEligibility extends ModelBase
     }
 
     /**
-     * @return Trip
+     * @return \Arbor\Model\Trip
      */
     public function getTrip()
     {
@@ -57,9 +58,9 @@ class TripEligibility extends ModelBase
     }
 
     /**
-     * @param Trip $trip
+     * @param \Arbor\Model\Trip $trip
      */
-    public function setTrip(Trip $trip = null)
+    public function setTrip(\Arbor\Model\Trip $trip = null)
     {
         $this->setProperty('trip', $trip);
     }
@@ -75,7 +76,7 @@ class TripEligibility extends ModelBase
     /**
      * @param ModelBase $eligibile
      */
-    public function setEligibile(ModelBase $eligibile = null)
+    public function setEligibile(\ModelBase $eligibile = null)
     {
         $this->setProperty('eligibile', $eligibile);
     }

@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CandidateRegistrationAudit extends ModelBase
 {
-    const CANDIDATE_REGISTRATION = 'candidateRegistration';
+    public const CANDIDATE_REGISTRATION = 'candidateRegistration';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const ACTION_DATETIME = 'actionDatetime';
+    public const ACTION_DATETIME = 'actionDatetime';
 
     protected $_resourceType = ResourceType::CANDIDATE_REGISTRATION_AUDIT;
 
@@ -19,7 +20,7 @@ class CandidateRegistrationAudit extends ModelBase
      * @return CandidateRegistrationAudit[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class CandidateRegistrationAudit extends ModelBase
     }
 
     /**
-     * @return CandidateRegistration
+     * @return \Arbor\Model\CandidateRegistration
      */
     public function getCandidateRegistration()
     {
@@ -59,9 +60,9 @@ class CandidateRegistrationAudit extends ModelBase
     }
 
     /**
-     * @param CandidateRegistration $candidateRegistration
+     * @param \Arbor\Model\CandidateRegistration $candidateRegistration
      */
-    public function setCandidateRegistration(CandidateRegistration $candidateRegistration = null)
+    public function setCandidateRegistration(\Arbor\Model\CandidateRegistration $candidateRegistration = null)
     {
         $this->setProperty('candidateRegistration', $candidateRegistration);
     }
@@ -77,7 +78,7 @@ class CandidateRegistrationAudit extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }

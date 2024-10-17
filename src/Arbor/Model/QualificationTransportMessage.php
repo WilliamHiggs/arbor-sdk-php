@@ -3,24 +3,25 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class QualificationTransportMessage extends ModelBase
 {
-    const QUALIFICATION_TRANSPORT_CERTIFICATE = 'qualificationTransportCertificate';
+    public const QUALIFICATION_TRANSPORT_CERTIFICATE = 'qualificationTransportCertificate';
 
-    const CONTENT = 'content';
+    public const CONTENT = 'content';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const MESSAGE_ID = 'messageId';
+    public const MESSAGE_ID = 'messageId';
 
-    const DIRECTION = 'direction';
+    public const DIRECTION = 'direction';
 
-    const REF_TO_MESSAGE_ID = 'refToMessageId';
+    public const REF_TO_MESSAGE_ID = 'refToMessageId';
 
-    const DATETIME = 'datetime';
+    public const DATETIME = 'datetime';
 
-    const RAW_CONTENT = 'rawContent';
+    public const RAW_CONTENT = 'rawContent';
 
     protected $_resourceType = ResourceType::QUALIFICATION_TRANSPORT_MESSAGE;
 
@@ -29,7 +30,7 @@ class QualificationTransportMessage extends ModelBase
      * @return QualificationTransportMessage[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class QualificationTransportMessage extends ModelBase
     }
 
     /**
-     * @return QualificationTransportCertificate
+     * @return \Arbor\Model\QualificationTransportCertificate
      */
     public function getQualificationTransportCertificate()
     {
@@ -69,15 +70,16 @@ class QualificationTransportMessage extends ModelBase
     }
 
     /**
-     * @param QualificationTransportCertificate $qualificationTransportCertificate
+     * @param \Arbor\Model\QualificationTransportCertificate
+     * $qualificationTransportCertificate
      */
-    public function setQualificationTransportCertificate(QualificationTransportCertificate $qualificationTransportCertificate = null)
+    public function setQualificationTransportCertificate(\Arbor\Model\QualificationTransportCertificate $qualificationTransportCertificate = null)
     {
         $this->setProperty('qualificationTransportCertificate', $qualificationTransportCertificate);
     }
 
     /**
-     * @return Content
+     * @return \Arbor\Model\Content
      */
     public function getContent()
     {
@@ -85,9 +87,9 @@ class QualificationTransportMessage extends ModelBase
     }
 
     /**
-     * @param Content $content
+     * @param \Arbor\Model\Content $content
      */
-    public function setContent(Content $content = null)
+    public function setContent(\Arbor\Model\Content $content = null)
     {
         $this->setProperty('content', $content);
     }
@@ -103,7 +105,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
@@ -119,7 +121,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $messageId
      */
-    public function setMessageId($messageId = null)
+    public function setMessageId(string $messageId = null)
     {
         $this->setProperty('messageId', $messageId);
     }
@@ -135,7 +137,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $direction
      */
-    public function setDirection($direction = null)
+    public function setDirection(string $direction = null)
     {
         $this->setProperty('direction', $direction);
     }
@@ -151,7 +153,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $refToMessageId
      */
-    public function setRefToMessageId($refToMessageId = null)
+    public function setRefToMessageId(string $refToMessageId = null)
     {
         $this->setProperty('refToMessageId', $refToMessageId);
     }
@@ -183,7 +185,7 @@ class QualificationTransportMessage extends ModelBase
     /**
      * @param string $rawContent
      */
-    public function setRawContent($rawContent = null)
+    public function setRawContent(string $rawContent = null)
     {
         $this->setProperty('rawContent', $rawContent);
     }

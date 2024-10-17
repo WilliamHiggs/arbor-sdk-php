@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentTemplateAssessment extends ModelBase
 {
-    const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
+    public const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
 
-    const STANDARDIZED_ASSESSMENT = 'standardizedAssessment';
+    public const STANDARDIZED_ASSESSMENT = 'standardizedAssessment';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_TEMPLATE_ASSESSMENT;
 
@@ -19,7 +20,7 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
      * @return StandardizedAssessmentTemplateAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
     }
 
     /**
-     * @return StandardizedAssessmentTemplate
+     * @return \Arbor\Model\StandardizedAssessmentTemplate
      */
     public function getStandardizedAssessmentTemplate()
     {
@@ -59,15 +60,16 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
     }
 
     /**
-     * @param StandardizedAssessmentTemplate $standardizedAssessmentTemplate
+     * @param \Arbor\Model\StandardizedAssessmentTemplate
+     * $standardizedAssessmentTemplate
      */
-    public function setStandardizedAssessmentTemplate(StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
+    public function setStandardizedAssessmentTemplate(\Arbor\Model\StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
     {
         $this->setProperty('standardizedAssessmentTemplate', $standardizedAssessmentTemplate);
     }
 
     /**
-     * @return StandardizedAssessment
+     * @return \Arbor\Model\StandardizedAssessment
      */
     public function getStandardizedAssessment()
     {
@@ -75,9 +77,9 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
     }
 
     /**
-     * @param StandardizedAssessment $standardizedAssessment
+     * @param \Arbor\Model\StandardizedAssessment $standardizedAssessment
      */
-    public function setStandardizedAssessment(StandardizedAssessment $standardizedAssessment = null)
+    public function setStandardizedAssessment(\Arbor\Model\StandardizedAssessment $standardizedAssessment = null)
     {
         $this->setProperty('standardizedAssessment', $standardizedAssessment);
     }
@@ -93,7 +95,7 @@ class StandardizedAssessmentTemplateAssessment extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

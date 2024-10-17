@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class LessonPlanObjective extends ModelBase
 {
-    const OBJECTIVE_TITLE = 'objectiveTitle';
+    public const OBJECTIVE_TITLE = 'objectiveTitle';
 
-    const OBJECTIVE_DESCRIPTION = 'objectiveDescription';
+    public const OBJECTIVE_DESCRIPTION = 'objectiveDescription';
 
-    const CURRICULUM_STATEMENT = 'curriculumStatement';
+    public const CURRICULUM_STATEMENT = 'curriculumStatement';
 
     protected $_resourceType = ResourceType::LESSON_PLAN_OBJECTIVE;
 
@@ -19,7 +20,7 @@ class LessonPlanObjective extends ModelBase
      * @return LessonPlanObjective[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class LessonPlanObjective extends ModelBase
     /**
      * @param string $objectiveTitle
      */
-    public function setObjectiveTitle($objectiveTitle = null)
+    public function setObjectiveTitle(string $objectiveTitle = null)
     {
         $this->setProperty('objectiveTitle', $objectiveTitle);
     }
@@ -77,13 +78,13 @@ class LessonPlanObjective extends ModelBase
     /**
      * @param string $objectiveDescription
      */
-    public function setObjectiveDescription($objectiveDescription = null)
+    public function setObjectiveDescription(string $objectiveDescription = null)
     {
         $this->setProperty('objectiveDescription', $objectiveDescription);
     }
 
     /**
-     * @return CurriculumStatement
+     * @return \Arbor\Model\CurriculumStatement
      */
     public function getCurriculumStatement()
     {
@@ -91,9 +92,9 @@ class LessonPlanObjective extends ModelBase
     }
 
     /**
-     * @param CurriculumStatement $curriculumStatement
+     * @param \Arbor\Model\CurriculumStatement $curriculumStatement
      */
-    public function setCurriculumStatement(CurriculumStatement $curriculumStatement = null)
+    public function setCurriculumStatement(\Arbor\Model\CurriculumStatement $curriculumStatement = null)
     {
         $this->setProperty('curriculumStatement', $curriculumStatement);
     }

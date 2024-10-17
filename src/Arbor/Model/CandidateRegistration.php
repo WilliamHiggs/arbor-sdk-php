@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CandidateRegistration extends ModelBase
 {
-    const CANDIDATE = 'candidate';
+    public const CANDIDATE = 'candidate';
 
-    const QUALIFICATION_AWARD = 'qualificationAward';
+    public const QUALIFICATION_AWARD = 'qualificationAward';
 
-    const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
+    public const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
-    const ENTRY_STATUS = 'entryStatus';
+    public const ENTRY_STATUS = 'entryStatus';
 
-    const WITHDRAWAL_STATUS = 'withdrawalStatus';
+    public const WITHDRAWAL_STATUS = 'withdrawalStatus';
 
     protected $_resourceType = ResourceType::CANDIDATE_REGISTRATION;
 
@@ -23,7 +24,7 @@ class CandidateRegistration extends ModelBase
      * @return CandidateRegistration[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class CandidateRegistration extends ModelBase
     }
 
     /**
-     * @return Candidate
+     * @return \Arbor\Model\Candidate
      */
     public function getCandidate()
     {
@@ -63,15 +64,15 @@ class CandidateRegistration extends ModelBase
     }
 
     /**
-     * @param Candidate $candidate
+     * @param \Arbor\Model\Candidate $candidate
      */
-    public function setCandidate(Candidate $candidate = null)
+    public function setCandidate(\Arbor\Model\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
 
     /**
-     * @return QualificationAward
+     * @return \Arbor\Model\QualificationAward
      */
     public function getQualificationAward()
     {
@@ -79,15 +80,15 @@ class CandidateRegistration extends ModelBase
     }
 
     /**
-     * @param QualificationAward $qualificationAward
+     * @param \Arbor\Model\QualificationAward $qualificationAward
      */
-    public function setQualificationAward(QualificationAward $qualificationAward = null)
+    public function setQualificationAward(\Arbor\Model\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }
 
     /**
-     * @return QualificationAvailabilityInstance
+     * @return \Arbor\Model\QualificationAvailabilityInstance
      */
     public function getQualificationAvailabilityInstance()
     {
@@ -95,9 +96,10 @@ class CandidateRegistration extends ModelBase
     }
 
     /**
-     * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
+     * @param \Arbor\Model\QualificationAvailabilityInstance
+     * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }
@@ -113,7 +115,7 @@ class CandidateRegistration extends ModelBase
     /**
      * @param string $entryStatus
      */
-    public function setEntryStatus($entryStatus = null)
+    public function setEntryStatus(string $entryStatus = null)
     {
         $this->setProperty('entryStatus', $entryStatus);
     }
@@ -129,7 +131,7 @@ class CandidateRegistration extends ModelBase
     /**
      * @param string $withdrawalStatus
      */
-    public function setWithdrawalStatus($withdrawalStatus = null)
+    public function setWithdrawalStatus(string $withdrawalStatus = null)
     {
         $this->setProperty('withdrawalStatus', $withdrawalStatus);
     }

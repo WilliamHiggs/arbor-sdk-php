@@ -3,24 +3,25 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StandardizedAssessmentThreshold extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const MARK_STANDARDIZED_ASSESSMENT = 'markStandardizedAssessment';
+    public const MARK_STANDARDIZED_ASSESSMENT = 'markStandardizedAssessment';
 
-    const OUTCOME_STANDARDIZED_ASSESSMENT = 'outcomeStandardizedAssessment';
+    public const OUTCOME_STANDARDIZED_ASSESSMENT = 'outcomeStandardizedAssessment';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::STANDARDIZED_ASSESSMENT_THRESHOLD;
 
@@ -29,7 +30,7 @@ class StandardizedAssessmentThreshold extends ModelBase
      * @return StandardizedAssessmentThreshold[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +72,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -87,7 +88,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -103,7 +104,7 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -119,13 +120,13 @@ class StandardizedAssessmentThreshold extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
 
     /**
-     * @return StandardizedAssessment
+     * @return \Arbor\Model\StandardizedAssessment
      */
     public function getMarkStandardizedAssessment()
     {
@@ -133,15 +134,15 @@ class StandardizedAssessmentThreshold extends ModelBase
     }
 
     /**
-     * @param StandardizedAssessment $markStandardizedAssessment
+     * @param \Arbor\Model\StandardizedAssessment $markStandardizedAssessment
      */
-    public function setMarkStandardizedAssessment(StandardizedAssessment $markStandardizedAssessment = null)
+    public function setMarkStandardizedAssessment(\Arbor\Model\StandardizedAssessment $markStandardizedAssessment = null)
     {
         $this->setProperty('markStandardizedAssessment', $markStandardizedAssessment);
     }
 
     /**
-     * @return StandardizedAssessment
+     * @return \Arbor\Model\StandardizedAssessment
      */
     public function getOutcomeStandardizedAssessment()
     {
@@ -149,9 +150,9 @@ class StandardizedAssessmentThreshold extends ModelBase
     }
 
     /**
-     * @param StandardizedAssessment $outcomeStandardizedAssessment
+     * @param \Arbor\Model\StandardizedAssessment $outcomeStandardizedAssessment
      */
-    public function setOutcomeStandardizedAssessment(StandardizedAssessment $outcomeStandardizedAssessment = null)
+    public function setOutcomeStandardizedAssessment(\Arbor\Model\StandardizedAssessment $outcomeStandardizedAssessment = null)
     {
         $this->setProperty('outcomeStandardizedAssessment', $outcomeStandardizedAssessment);
     }

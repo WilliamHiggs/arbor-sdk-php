@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BankDetail extends ModelBase
 {
-    const ACCOUNT_HOLDER = 'accountHolder';
+    public const ACCOUNT_HOLDER = 'accountHolder';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const BANK = 'bank';
+    public const BANK = 'bank';
 
-    const ACCOUNT_NAME = 'accountName';
+    public const ACCOUNT_NAME = 'accountName';
 
-    const ACCOUNT_NUMBER = 'accountNumber';
+    public const ACCOUNT_NUMBER = 'accountNumber';
 
-    const SORT_CODE = 'sortCode';
+    public const SORT_CODE = 'sortCode';
 
     protected $_resourceType = ResourceType::BANK_DETAIL;
 
@@ -27,7 +28,7 @@ class BankDetail extends ModelBase
      * @return BankDetail[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class BankDetail extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getAccountHolder()
     {
@@ -67,9 +68,9 @@ class BankDetail extends ModelBase
     }
 
     /**
-     * @param Staff $accountHolder
+     * @param \Arbor\Model\Staff $accountHolder
      */
-    public function setAccountHolder(Staff $accountHolder = null)
+    public function setAccountHolder(\Arbor\Model\Staff $accountHolder = null)
     {
         $this->setProperty('accountHolder', $accountHolder);
     }
@@ -107,7 +108,7 @@ class BankDetail extends ModelBase
     }
 
     /**
-     * @return Bank
+     * @return \Arbor\Model\Bank
      */
     public function getBank()
     {
@@ -115,9 +116,9 @@ class BankDetail extends ModelBase
     }
 
     /**
-     * @param Bank $bank
+     * @param \Arbor\Model\Bank $bank
      */
-    public function setBank(Bank $bank = null)
+    public function setBank(\Arbor\Model\Bank $bank = null)
     {
         $this->setProperty('bank', $bank);
     }
@@ -133,7 +134,7 @@ class BankDetail extends ModelBase
     /**
      * @param string $accountName
      */
-    public function setAccountName($accountName = null)
+    public function setAccountName(string $accountName = null)
     {
         $this->setProperty('accountName', $accountName);
     }
@@ -149,7 +150,7 @@ class BankDetail extends ModelBase
     /**
      * @param string $accountNumber
      */
-    public function setAccountNumber($accountNumber = null)
+    public function setAccountNumber(string $accountNumber = null)
     {
         $this->setProperty('accountNumber', $accountNumber);
     }
@@ -165,7 +166,7 @@ class BankDetail extends ModelBase
     /**
      * @param string $sortCode
      */
-    public function setSortCode($sortCode = null)
+    public function setSortCode(string $sortCode = null)
     {
         $this->setProperty('sortCode', $sortCode);
     }

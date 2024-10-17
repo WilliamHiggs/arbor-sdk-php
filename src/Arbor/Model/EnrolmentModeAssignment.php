@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class EnrolmentModeAssignment extends ModelBase
 {
-    const ACADEMIC_YEAR_ENROLMENT = 'academicYearEnrolment';
+    public const ACADEMIC_YEAR_ENROLMENT = 'academicYearEnrolment';
 
-    const ENROLMENT_MODE = 'enrolmentMode';
+    public const ENROLMENT_MODE = 'enrolmentMode';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const OTHER_EDUCATIONAL_INSTITUTION = 'otherEducationalInstitution';
+    public const OTHER_EDUCATIONAL_INSTITUTION = 'otherEducationalInstitution';
 
     protected $_resourceType = ResourceType::ENROLMENT_MODE_ASSIGNMENT;
 
@@ -23,7 +24,7 @@ class EnrolmentModeAssignment extends ModelBase
      * @return EnrolmentModeAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class EnrolmentModeAssignment extends ModelBase
     }
 
     /**
-     * @return AcademicYearEnrolment
+     * @return \Arbor\Model\AcademicYearEnrolment
      */
     public function getAcademicYearEnrolment()
     {
@@ -63,15 +64,15 @@ class EnrolmentModeAssignment extends ModelBase
     }
 
     /**
-     * @param AcademicYearEnrolment $academicYearEnrolment
+     * @param \Arbor\Model\AcademicYearEnrolment $academicYearEnrolment
      */
-    public function setAcademicYearEnrolment(AcademicYearEnrolment $academicYearEnrolment = null)
+    public function setAcademicYearEnrolment(\Arbor\Model\AcademicYearEnrolment $academicYearEnrolment = null)
     {
         $this->setProperty('academicYearEnrolment', $academicYearEnrolment);
     }
 
     /**
-     * @return EnrolmentMode
+     * @return \Arbor\Model\EnrolmentMode
      */
     public function getEnrolmentMode()
     {
@@ -79,9 +80,9 @@ class EnrolmentModeAssignment extends ModelBase
     }
 
     /**
-     * @param EnrolmentMode $enrolmentMode
+     * @param \Arbor\Model\EnrolmentMode $enrolmentMode
      */
-    public function setEnrolmentMode(EnrolmentMode $enrolmentMode = null)
+    public function setEnrolmentMode(\Arbor\Model\EnrolmentMode $enrolmentMode = null)
     {
         $this->setProperty('enrolmentMode', $enrolmentMode);
     }
@@ -119,7 +120,7 @@ class EnrolmentModeAssignment extends ModelBase
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getOtherEducationalInstitution()
     {
@@ -127,9 +128,9 @@ class EnrolmentModeAssignment extends ModelBase
     }
 
     /**
-     * @param EducationalInstitution $otherEducationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $otherEducationalInstitution
      */
-    public function setOtherEducationalInstitution(EducationalInstitution $otherEducationalInstitution = null)
+    public function setOtherEducationalInstitution(\Arbor\Model\EducationalInstitution $otherEducationalInstitution = null)
     {
         $this->setProperty('otherEducationalInstitution', $otherEducationalInstitution);
     }

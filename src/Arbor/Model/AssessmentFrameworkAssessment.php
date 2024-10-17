@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AssessmentFrameworkAssessment extends ModelBase
 {
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const STEPS_COMPLETED = 'stepsCompleted';
+    public const STEPS_COMPLETED = 'stepsCompleted';
 
-    const SETUP_COMPLETED = 'setupCompleted';
+    public const SETUP_COMPLETED = 'setupCompleted';
 
     protected $_resourceType = ResourceType::ASSESSMENT_FRAMEWORK_ASSESSMENT;
 
@@ -19,7 +20,7 @@ class AssessmentFrameworkAssessment extends ModelBase
      * @return AssessmentFrameworkAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class AssessmentFrameworkAssessment extends ModelBase
     /**
      * @param ModelBase $assessment
      */
-    public function setAssessment(ModelBase $assessment = null)
+    public function setAssessment(\ModelBase $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -77,7 +78,7 @@ class AssessmentFrameworkAssessment extends ModelBase
     /**
      * @param int $stepsCompleted
      */
-    public function setStepsCompleted($stepsCompleted = null)
+    public function setStepsCompleted(int $stepsCompleted = null)
     {
         $this->setProperty('stepsCompleted', $stepsCompleted);
     }
@@ -93,7 +94,7 @@ class AssessmentFrameworkAssessment extends ModelBase
     /**
      * @param bool $setupCompleted
      */
-    public function setSetupCompleted($setupCompleted = null)
+    public function setSetupCompleted(bool $setupCompleted = null)
     {
         $this->setProperty('setupCompleted', $setupCompleted);
     }

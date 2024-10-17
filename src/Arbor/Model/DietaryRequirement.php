@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class DietaryRequirement extends ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const DIETARY_REQUIREMENT_TYPE = 'dietaryRequirementType';
+    public const DIETARY_REQUIREMENT_TYPE = 'dietaryRequirementType';
 
-    const NOTE = 'note';
+    public const NOTE = 'note';
 
     protected $_resourceType = ResourceType::DIETARY_REQUIREMENT;
 
@@ -19,7 +20,7 @@ class DietaryRequirement extends ModelBase
      * @return DietaryRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,13 +62,13 @@ class DietaryRequirement extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
 
     /**
-     * @return DietaryRequirementType
+     * @return \Arbor\Model\DietaryRequirementType
      */
     public function getDietaryRequirementType()
     {
@@ -75,9 +76,9 @@ class DietaryRequirement extends ModelBase
     }
 
     /**
-     * @param DietaryRequirementType $dietaryRequirementType
+     * @param \Arbor\Model\DietaryRequirementType $dietaryRequirementType
      */
-    public function setDietaryRequirementType(DietaryRequirementType $dietaryRequirementType = null)
+    public function setDietaryRequirementType(\Arbor\Model\DietaryRequirementType $dietaryRequirementType = null)
     {
         $this->setProperty('dietaryRequirementType', $dietaryRequirementType);
     }
@@ -93,7 +94,7 @@ class DietaryRequirement extends ModelBase
     /**
      * @param string $note
      */
-    public function setNote($note = null)
+    public function setNote(string $note = null)
     {
         $this->setProperty('note', $note);
     }

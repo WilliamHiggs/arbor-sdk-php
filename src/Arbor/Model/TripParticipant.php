@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TripParticipant extends ModelBase
 {
-    const TRIP = 'trip';
+    public const TRIP = 'trip';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CUSTOMER_INVOICE = 'customerInvoice';
+    public const CUSTOMER_INVOICE = 'customerInvoice';
 
-    const CONSENT_RECEIVED = 'consentReceived';
+    public const CONSENT_RECEIVED = 'consentReceived';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
     protected $_resourceType = ResourceType::TRIP_PARTICIPANT;
 
@@ -23,7 +24,7 @@ class TripParticipant extends ModelBase
      * @return TripParticipant[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class TripParticipant extends ModelBase
     }
 
     /**
-     * @return Trip
+     * @return \Arbor\Model\Trip
      */
     public function getTrip()
     {
@@ -63,15 +64,15 @@ class TripParticipant extends ModelBase
     }
 
     /**
-     * @param Trip $trip
+     * @param \Arbor\Model\Trip $trip
      */
-    public function setTrip(Trip $trip = null)
+    public function setTrip(\Arbor\Model\Trip $trip = null)
     {
         $this->setProperty('trip', $trip);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -79,15 +80,15 @@ class TripParticipant extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return CustomerInvoice
+     * @return \Arbor\Model\CustomerInvoice
      */
     public function getCustomerInvoice()
     {
@@ -95,9 +96,9 @@ class TripParticipant extends ModelBase
     }
 
     /**
-     * @param CustomerInvoice $customerInvoice
+     * @param \Arbor\Model\CustomerInvoice $customerInvoice
      */
-    public function setCustomerInvoice(CustomerInvoice $customerInvoice = null)
+    public function setCustomerInvoice(\Arbor\Model\CustomerInvoice $customerInvoice = null)
     {
         $this->setProperty('customerInvoice', $customerInvoice);
     }
@@ -113,7 +114,7 @@ class TripParticipant extends ModelBase
     /**
      * @param bool $consentReceived
      */
-    public function setConsentReceived($consentReceived = null)
+    public function setConsentReceived(bool $consentReceived = null)
     {
         $this->setProperty('consentReceived', $consentReceived);
     }
@@ -129,7 +130,7 @@ class TripParticipant extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus($status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }

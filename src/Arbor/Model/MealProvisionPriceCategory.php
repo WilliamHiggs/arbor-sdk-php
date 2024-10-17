@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class MealProvisionPriceCategory extends ModelBase
 {
-    const CATEGORY_NAME = 'categoryName';
+    public const CATEGORY_NAME = 'categoryName';
 
-    const MEAL_PROVISION = 'mealProvision';
+    public const MEAL_PROVISION = 'mealProvision';
 
-    const APPLIES_TO = 'appliesTo';
+    public const APPLIES_TO = 'appliesTo';
 
-    const GROUP = 'group';
+    public const GROUP = 'group';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::MEAL_PROVISION_PRICE_CATEGORY;
 
@@ -25,7 +26,7 @@ class MealProvisionPriceCategory extends ModelBase
      * @return MealProvisionPriceCategory[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,13 +68,13 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param string $categoryName
      */
-    public function setCategoryName($categoryName = null)
+    public function setCategoryName(string $categoryName = null)
     {
         $this->setProperty('categoryName', $categoryName);
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getMealProvision()
     {
@@ -81,9 +82,9 @@ class MealProvisionPriceCategory extends ModelBase
     }
 
     /**
-     * @param MealProvision $mealProvision
+     * @param \Arbor\Model\MealProvision $mealProvision
      */
-    public function setMealProvision(MealProvision $mealProvision = null)
+    public function setMealProvision(\Arbor\Model\MealProvision $mealProvision = null)
     {
         $this->setProperty('mealProvision', $mealProvision);
     }
@@ -99,7 +100,7 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param string $appliesTo
      */
-    public function setAppliesTo($appliesTo = null)
+    public function setAppliesTo(string $appliesTo = null)
     {
         $this->setProperty('appliesTo', $appliesTo);
     }
@@ -115,7 +116,7 @@ class MealProvisionPriceCategory extends ModelBase
     /**
      * @param ModelBase $group
      */
-    public function setGroup(ModelBase $group = null)
+    public function setGroup(\ModelBase $group = null)
     {
         $this->setProperty('group', $group);
     }

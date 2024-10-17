@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CalendarEntryMapping extends ModelBase
 {
-    const EVENT = 'event';
+    public const EVENT = 'event';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const MAPPED = 'mapped';
+    public const MAPPED = 'mapped';
 
-    const CALENDAR = 'calendar';
+    public const CALENDAR = 'calendar';
 
-    const TIMESLOT_BLOCKED = 'timeslotBlocked';
+    public const TIMESLOT_BLOCKED = 'timeslotBlocked';
 
     protected $_resourceType = ResourceType::CALENDAR_ENTRY_MAPPING;
 
@@ -25,7 +26,7 @@ class CalendarEntryMapping extends ModelBase
      * @return CalendarEntryMapping[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +68,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(ModelBase $event = null)
+    public function setEvent(\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -115,13 +116,13 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param ModelBase $mapped
      */
-    public function setMapped(ModelBase $mapped = null)
+    public function setMapped(\ModelBase $mapped = null)
     {
         $this->setProperty('mapped', $mapped);
     }
 
     /**
-     * @return Calendar
+     * @return \Arbor\Model\Calendar
      */
     public function getCalendar()
     {
@@ -129,9 +130,9 @@ class CalendarEntryMapping extends ModelBase
     }
 
     /**
-     * @param Calendar $calendar
+     * @param \Arbor\Model\Calendar $calendar
      */
-    public function setCalendar(Calendar $calendar = null)
+    public function setCalendar(\Arbor\Model\Calendar $calendar = null)
     {
         $this->setProperty('calendar', $calendar);
     }
@@ -147,7 +148,7 @@ class CalendarEntryMapping extends ModelBase
     /**
      * @param bool $timeslotBlocked
      */
-    public function setTimeslotBlocked($timeslotBlocked = null)
+    public function setTimeslotBlocked(bool $timeslotBlocked = null)
     {
         $this->setProperty('timeslotBlocked', $timeslotBlocked);
     }

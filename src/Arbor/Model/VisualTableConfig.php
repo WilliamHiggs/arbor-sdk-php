@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class VisualTableConfig extends ModelBase
 {
-    const PAGE_CONTEXT = 'pageContext';
+    public const PAGE_CONTEXT = 'pageContext';
 
-    const TABLE_URL = 'tableUrl';
+    public const TABLE_URL = 'tableUrl';
 
-    const USER = 'user';
+    public const USER = 'user';
 
-    const EXTRA_CONTEXT = 'extraContext';
+    public const EXTRA_CONTEXT = 'extraContext';
 
-    const CONFIG = 'config';
+    public const CONFIG = 'config';
 
     protected $_resourceType = ResourceType::VISUAL_TABLE_CONFIG;
 
@@ -23,7 +24,7 @@ class VisualTableConfig extends ModelBase
      * @return VisualTableConfig[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class VisualTableConfig extends ModelBase
     /**
      * @param string $pageContext
      */
-    public function setPageContext($pageContext = null)
+    public function setPageContext(string $pageContext = null)
     {
         $this->setProperty('pageContext', $pageContext);
     }
@@ -81,13 +82,13 @@ class VisualTableConfig extends ModelBase
     /**
      * @param string $tableUrl
      */
-    public function setTableUrl($tableUrl = null)
+    public function setTableUrl(string $tableUrl = null)
     {
         $this->setProperty('tableUrl', $tableUrl);
     }
 
     /**
-     * @return User
+     * @return \Arbor\Model\User
      */
     public function getUser()
     {
@@ -95,9 +96,9 @@ class VisualTableConfig extends ModelBase
     }
 
     /**
-     * @param User $user
+     * @param \Arbor\Model\User $user
      */
-    public function setUser(User $user = null)
+    public function setUser(\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }
@@ -113,7 +114,7 @@ class VisualTableConfig extends ModelBase
     /**
      * @param string $extraContext
      */
-    public function setExtraContext($extraContext = null)
+    public function setExtraContext(string $extraContext = null)
     {
         $this->setProperty('extraContext', $extraContext);
     }
@@ -129,7 +130,7 @@ class VisualTableConfig extends ModelBase
     /**
      * @param string $config
      */
-    public function setConfig($config = null)
+    public function setConfig(string $config = null)
     {
         $this->setProperty('config', $config);
     }

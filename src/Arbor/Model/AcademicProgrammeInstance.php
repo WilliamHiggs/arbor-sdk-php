@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AcademicProgrammeInstance extends ModelBase
 {
-    const ACADEMIC_PROGRAMME = 'academicProgramme';
+    public const ACADEMIC_PROGRAMME = 'academicProgramme';
 
-    const INSTANCE_NAME = 'instanceName';
+    public const INSTANCE_NAME = 'instanceName';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
     protected $_resourceType = ResourceType::ACADEMIC_PROGRAMME_INSTANCE;
 
@@ -19,7 +20,7 @@ class AcademicProgrammeInstance extends ModelBase
      * @return AcademicProgrammeInstance[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class AcademicProgrammeInstance extends ModelBase
     }
 
     /**
-     * @return AcademicProgramme
+     * @return \Arbor\Model\AcademicProgramme
      */
     public function getAcademicProgramme()
     {
@@ -59,9 +60,9 @@ class AcademicProgrammeInstance extends ModelBase
     }
 
     /**
-     * @param AcademicProgramme $academicProgramme
+     * @param \Arbor\Model\AcademicProgramme $academicProgramme
      */
-    public function setAcademicProgramme(AcademicProgramme $academicProgramme = null)
+    public function setAcademicProgramme(\Arbor\Model\AcademicProgramme $academicProgramme = null)
     {
         $this->setProperty('academicProgramme', $academicProgramme);
     }
@@ -77,13 +78,13 @@ class AcademicProgrammeInstance extends ModelBase
     /**
      * @param string $instanceName
      */
-    public function setInstanceName($instanceName = null)
+    public function setInstanceName(string $instanceName = null)
     {
         $this->setProperty('instanceName', $instanceName);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -91,9 +92,9 @@ class AcademicProgrammeInstance extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

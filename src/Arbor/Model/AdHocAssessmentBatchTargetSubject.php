@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AdHocAssessmentBatchTargetSubject extends ModelBase
 {
-    const AD_HOC_ASSESSMENT_BATCH_TARGET = 'adHocAssessmentBatchTarget';
+    public const AD_HOC_ASSESSMENT_BATCH_TARGET = 'adHocAssessmentBatchTarget';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
     protected $_resourceType = ResourceType::AD_HOC_ASSESSMENT_BATCH_TARGET_SUBJECT;
 
@@ -17,7 +18,7 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
      * @return AdHocAssessmentBatchTargetSubject[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
     }
 
     /**
-     * @return AdHocAssessmentBatchTarget
+     * @return \Arbor\Model\AdHocAssessmentBatchTarget
      */
     public function getAdHocAssessmentBatchTarget()
     {
@@ -57,15 +58,15 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
     }
 
     /**
-     * @param AdHocAssessmentBatchTarget $adHocAssessmentBatchTarget
+     * @param \Arbor\Model\AdHocAssessmentBatchTarget $adHocAssessmentBatchTarget
      */
-    public function setAdHocAssessmentBatchTarget(AdHocAssessmentBatchTarget $adHocAssessmentBatchTarget = null)
+    public function setAdHocAssessmentBatchTarget(\Arbor\Model\AdHocAssessmentBatchTarget $adHocAssessmentBatchTarget = null)
     {
         $this->setProperty('adHocAssessmentBatchTarget', $adHocAssessmentBatchTarget);
     }
 
     /**
-     * @return Subject
+     * @return \Arbor\Model\Subject
      */
     public function getSubject()
     {
@@ -73,9 +74,9 @@ class AdHocAssessmentBatchTargetSubject extends ModelBase
     }
 
     /**
-     * @param Subject $subject
+     * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(Subject $subject = null)
+    public function setSubject(\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }

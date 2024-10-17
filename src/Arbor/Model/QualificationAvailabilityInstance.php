@@ -3,24 +3,25 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class QualificationAvailabilityInstance extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const AWARDING_ORGANIZATION = 'awardingOrganization';
+    public const AWARDING_ORGANIZATION = 'awardingOrganization';
 
-    const QUALIFICATION_AVAILABILITY_IDENTIFIER = 'qualificationAvailabilityIdentifier';
+    public const QUALIFICATION_AVAILABILITY_IDENTIFIER = 'qualificationAvailabilityIdentifier';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const EDI_AWARDING_BODY_IDENTIFIER = 'ediAwardingBodyIdentifier';
+    public const EDI_AWARDING_BODY_IDENTIFIER = 'ediAwardingBodyIdentifier';
 
     protected $_resourceType = ResourceType::QUALIFICATION_AVAILABILITY_INSTANCE;
 
@@ -29,7 +30,7 @@ class QualificationAvailabilityInstance extends ModelBase
      * @return QualificationAvailabilityInstance[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +72,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -87,7 +88,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -103,13 +104,13 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
-     * @return AwardingOrganization
+     * @return \Arbor\Model\AwardingOrganization
      */
     public function getAwardingOrganization()
     {
@@ -117,9 +118,9 @@ class QualificationAvailabilityInstance extends ModelBase
     }
 
     /**
-     * @param AwardingOrganization $awardingOrganization
+     * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
@@ -135,7 +136,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $qualificationAvailabilityIdentifier
      */
-    public function setQualificationAvailabilityIdentifier($qualificationAvailabilityIdentifier = null)
+    public function setQualificationAvailabilityIdentifier(string $qualificationAvailabilityIdentifier = null)
     {
         $this->setProperty('qualificationAvailabilityIdentifier', $qualificationAvailabilityIdentifier);
     }
@@ -183,7 +184,7 @@ class QualificationAvailabilityInstance extends ModelBase
     /**
      * @param string $ediAwardingBodyIdentifier
      */
-    public function setEdiAwardingBodyIdentifier($ediAwardingBodyIdentifier = null)
+    public function setEdiAwardingBodyIdentifier(string $ediAwardingBodyIdentifier = null)
     {
         $this->setProperty('ediAwardingBodyIdentifier', $ediAwardingBodyIdentifier);
     }

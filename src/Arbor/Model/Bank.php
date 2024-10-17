@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Bank extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const BANK_NAME = 'bankName';
+    public const BANK_NAME = 'bankName';
 
-    const COUNTRY_CODE = 'countryCode';
+    public const COUNTRY_CODE = 'countryCode';
 
     protected $_resourceType = ResourceType::BANK;
 
@@ -23,7 +24,7 @@ class Bank extends ModelBase
      * @return Bank[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class Bank extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -81,7 +82,7 @@ class Bank extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -97,7 +98,7 @@ class Bank extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -113,7 +114,7 @@ class Bank extends ModelBase
     /**
      * @param string $bankName
      */
-    public function setBankName($bankName = null)
+    public function setBankName(string $bankName = null)
     {
         $this->setProperty('bankName', $bankName);
     }
@@ -129,7 +130,7 @@ class Bank extends ModelBase
     /**
      * @param string $countryCode
      */
-    public function setCountryCode($countryCode = null)
+    public function setCountryCode(string $countryCode = null)
     {
         $this->setProperty('countryCode', $countryCode);
     }

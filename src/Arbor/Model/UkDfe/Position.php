@@ -9,11 +9,11 @@ use Arbor\Model\ModelBase;
 
 class Position extends ModelBase
 {
-    const POSITION_CATEGORY = 'positionCategory';
+    public const POSITION_CATEGORY = 'positionCategory';
 
-    const WORKFORCE_VACANCY_POST = 'workforceVacancyPost';
+    public const WORKFORCE_VACANCY_POST = 'workforceVacancyPost';
 
-    const WORKFORCE_CENSUS_ROLE_IDENTIFIER = 'workforceCensusRoleIdentifier';
+    public const WORKFORCE_CENSUS_ROLE_IDENTIFIER = 'workforceCensusRoleIdentifier';
 
     protected $_resourceType = ResourceType::UK_DFE_POSITION;
 
@@ -22,7 +22,7 @@ class Position extends ModelBase
      * @return Position[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -54,7 +54,7 @@ class Position extends ModelBase
     }
 
     /**
-     * @return PositionCategory
+     * @return \Arbor\Model\UkDfe\PositionCategory
      */
     public function getPositionCategory()
     {
@@ -62,15 +62,15 @@ class Position extends ModelBase
     }
 
     /**
-     * @param PositionCategory $positionCategory
+     * @param \Arbor\Model\UkDfe\PositionCategory $positionCategory
      */
-    public function setPositionCategory(PositionCategory $positionCategory = null)
+    public function setPositionCategory(\Arbor\Model\UkDfe\PositionCategory $positionCategory = null)
     {
         $this->setProperty('positionCategory', $positionCategory);
     }
 
     /**
-     * @return SchoolWorkforceVacancyPost
+     * @return \Arbor\Model\UkDfe\SchoolWorkforceVacancyPost
      */
     public function getWorkforceVacancyPost()
     {
@@ -78,9 +78,9 @@ class Position extends ModelBase
     }
 
     /**
-     * @param SchoolWorkforceVacancyPost $workforceVacancyPost
+     * @param \Arbor\Model\UkDfe\SchoolWorkforceVacancyPost $workforceVacancyPost
      */
-    public function setWorkforceVacancyPost(SchoolWorkforceVacancyPost $workforceVacancyPost = null)
+    public function setWorkforceVacancyPost(\Arbor\Model\UkDfe\SchoolWorkforceVacancyPost $workforceVacancyPost = null)
     {
         $this->setProperty('workforceVacancyPost', $workforceVacancyPost);
     }
@@ -96,7 +96,7 @@ class Position extends ModelBase
     /**
      * @param string $workforceCensusRoleIdentifier
      */
-    public function setWorkforceCensusRoleIdentifier($workforceCensusRoleIdentifier = null)
+    public function setWorkforceCensusRoleIdentifier(string $workforceCensusRoleIdentifier = null)
     {
         $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }

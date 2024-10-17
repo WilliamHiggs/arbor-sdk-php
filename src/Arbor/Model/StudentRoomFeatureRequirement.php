@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentRoomFeatureRequirement extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ROOM_FEATURE = 'roomFeature';
+    public const ROOM_FEATURE = 'roomFeature';
 
     protected $_resourceType = ResourceType::STUDENT_ROOM_FEATURE_REQUIREMENT;
 
@@ -17,7 +18,7 @@ class StudentRoomFeatureRequirement extends ModelBase
      * @return StudentRoomFeatureRequirement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class StudentRoomFeatureRequirement extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -57,15 +58,15 @@ class StudentRoomFeatureRequirement extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return RoomFeature
+     * @return \Arbor\Model\RoomFeature
      */
     public function getRoomFeature()
     {
@@ -73,9 +74,9 @@ class StudentRoomFeatureRequirement extends ModelBase
     }
 
     /**
-     * @param RoomFeature $roomFeature
+     * @param \Arbor\Model\RoomFeature $roomFeature
      */
-    public function setRoomFeature(RoomFeature $roomFeature = null)
+    public function setRoomFeature(\Arbor\Model\RoomFeature $roomFeature = null)
     {
         $this->setProperty('roomFeature', $roomFeature);
     }

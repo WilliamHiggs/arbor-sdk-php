@@ -3,40 +3,41 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Trip extends ModelBase
 {
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const LOCATION_TEXT = 'locationText';
+    public const LOCATION_TEXT = 'locationText';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const LINK_TO = 'linkTo';
+    public const LINK_TO = 'linkTo';
 
-    const COPIED_TO_TRIP = 'copiedToTrip';
+    public const COPIED_TO_TRIP = 'copiedToTrip';
 
-    const MAX_PARTICIPANTS = 'maxParticipants';
+    public const MAX_PARTICIPANTS = 'maxParticipants';
 
-    const REQUIRE_CONSENT = 'requireConsent';
+    public const REQUIRE_CONSENT = 'requireConsent';
 
-    const GUARDIAN_SIGNUP_START_DATETIME = 'guardianSignupStartDatetime';
+    public const GUARDIAN_SIGNUP_START_DATETIME = 'guardianSignupStartDatetime';
 
-    const GUARDIAN_SIGNUP_END_DATETIME = 'guardianSignupEndDatetime';
+    public const GUARDIAN_SIGNUP_END_DATETIME = 'guardianSignupEndDatetime';
 
-    const FREE = 'free';
+    public const FREE = 'free';
 
-    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+    public const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
-    const ACCOUNTING_CODE = 'accountingCode';
+    public const ACCOUNTING_CODE = 'accountingCode';
 
     protected $_resourceType = ResourceType::TRIP;
 
@@ -45,7 +46,7 @@ class Trip extends ModelBase
      * @return Trip[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -119,7 +120,7 @@ class Trip extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText($locationText = null)
+    public function setLocationText(string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
@@ -135,7 +136,7 @@ class Trip extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(ModelBase $location = null)
+    public function setLocation(\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -151,7 +152,7 @@ class Trip extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -167,13 +168,13 @@ class Trip extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -181,9 +182,9 @@ class Trip extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -199,13 +200,13 @@ class Trip extends ModelBase
     /**
      * @param ModelBase $linkTo
      */
-    public function setLinkTo(ModelBase $linkTo = null)
+    public function setLinkTo(\ModelBase $linkTo = null)
     {
         $this->setProperty('linkTo', $linkTo);
     }
 
     /**
-     * @return Trip
+     * @return \Arbor\Model\Trip
      */
     public function getCopiedToTrip()
     {
@@ -213,9 +214,9 @@ class Trip extends ModelBase
     }
 
     /**
-     * @param Trip $copiedToTrip
+     * @param \Arbor\Model\Trip $copiedToTrip
      */
-    public function setCopiedToTrip(Trip $copiedToTrip = null)
+    public function setCopiedToTrip(\Arbor\Model\Trip $copiedToTrip = null)
     {
         $this->setProperty('copiedToTrip', $copiedToTrip);
     }
@@ -231,7 +232,7 @@ class Trip extends ModelBase
     /**
      * @param int $maxParticipants
      */
-    public function setMaxParticipants($maxParticipants = null)
+    public function setMaxParticipants(int $maxParticipants = null)
     {
         $this->setProperty('maxParticipants', $maxParticipants);
     }
@@ -247,7 +248,7 @@ class Trip extends ModelBase
     /**
      * @param bool $requireConsent
      */
-    public function setRequireConsent($requireConsent = null)
+    public function setRequireConsent(bool $requireConsent = null)
     {
         $this->setProperty('requireConsent', $requireConsent);
     }
@@ -295,13 +296,13 @@ class Trip extends ModelBase
     /**
      * @param bool $free
      */
-    public function setFree($free = null)
+    public function setFree(bool $free = null)
     {
         $this->setProperty('free', $free);
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -309,9 +310,9 @@ class Trip extends ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }
@@ -327,7 +328,7 @@ class Trip extends ModelBase
     /**
      * @param string $accountingCode
      */
-    public function setAccountingCode($accountingCode = null)
+    public function setAccountingCode(string $accountingCode = null)
     {
         $this->setProperty('accountingCode', $accountingCode);
     }

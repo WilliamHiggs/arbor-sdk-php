@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CandidateEntryAudit extends ModelBase
 {
-    const CANDIDATE_ENTRY = 'candidateEntry';
+    public const CANDIDATE_ENTRY = 'candidateEntry';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const ACTION_DATETIME = 'actionDatetime';
+    public const ACTION_DATETIME = 'actionDatetime';
 
     protected $_resourceType = ResourceType::CANDIDATE_ENTRY_AUDIT;
 
@@ -19,7 +20,7 @@ class CandidateEntryAudit extends ModelBase
      * @return CandidateEntryAudit[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class CandidateEntryAudit extends ModelBase
     }
 
     /**
-     * @return CandidateEntry
+     * @return \Arbor\Model\CandidateEntry
      */
     public function getCandidateEntry()
     {
@@ -59,9 +60,9 @@ class CandidateEntryAudit extends ModelBase
     }
 
     /**
-     * @param CandidateEntry $candidateEntry
+     * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
@@ -77,7 +78,7 @@ class CandidateEntryAudit extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }

@@ -3,34 +3,35 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Assessment extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ASSESSMENT_NAME = 'assessmentName';
+    public const ASSESSMENT_NAME = 'assessmentName';
 
-    const ASSESSMENT_SHORT_NAME = 'assessmentShortName';
+    public const ASSESSMENT_SHORT_NAME = 'assessmentShortName';
 
-    const USER_DEFINED_NAME = 'userDefinedName';
+    public const USER_DEFINED_NAME = 'userDefinedName';
 
-    const USER_DEFINED_SHORT_NAME = 'userDefinedShortName';
+    public const USER_DEFINED_SHORT_NAME = 'userDefinedShortName';
 
-    const SUBJECT = 'subject';
+    public const SUBJECT = 'subject';
 
-    const CURRICULUM_TIER = 'curriculumTier';
+    public const CURRICULUM_TIER = 'curriculumTier';
 
-    const GRADE_POINT_SCALE = 'gradePointScale';
+    public const GRADE_POINT_SCALE = 'gradePointScale';
 
-    const STUDENT_PROGRESS_BASELINE_CALCULATOR_CLASS_NAME = 'studentProgressBaselineCalculatorClassName';
+    public const STUDENT_PROGRESS_BASELINE_CALCULATOR_CLASS_NAME = 'studentProgressBaselineCalculatorClassName';
 
-    const IS_BASELINE_LOCKED = 'isBaselineLocked';
+    public const IS_BASELINE_LOCKED = 'isBaselineLocked';
 
-    const IS_TARGET_LOCKED = 'isTargetLocked';
+    public const IS_TARGET_LOCKED = 'isTargetLocked';
 
     protected $_resourceType = ResourceType::ASSESSMENT;
 
@@ -39,7 +40,7 @@ class Assessment extends ModelBase
      * @return Assessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -81,7 +82,7 @@ class Assessment extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -97,7 +98,7 @@ class Assessment extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -113,7 +114,7 @@ class Assessment extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -129,7 +130,7 @@ class Assessment extends ModelBase
     /**
      * @param string $assessmentName
      */
-    public function setAssessmentName($assessmentName = null)
+    public function setAssessmentName(string $assessmentName = null)
     {
         $this->setProperty('assessmentName', $assessmentName);
     }
@@ -145,7 +146,7 @@ class Assessment extends ModelBase
     /**
      * @param string $assessmentShortName
      */
-    public function setAssessmentShortName($assessmentShortName = null)
+    public function setAssessmentShortName(string $assessmentShortName = null)
     {
         $this->setProperty('assessmentShortName', $assessmentShortName);
     }
@@ -161,7 +162,7 @@ class Assessment extends ModelBase
     /**
      * @param string $userDefinedName
      */
-    public function setUserDefinedName($userDefinedName = null)
+    public function setUserDefinedName(string $userDefinedName = null)
     {
         $this->setProperty('userDefinedName', $userDefinedName);
     }
@@ -177,13 +178,13 @@ class Assessment extends ModelBase
     /**
      * @param string $userDefinedShortName
      */
-    public function setUserDefinedShortName($userDefinedShortName = null)
+    public function setUserDefinedShortName(string $userDefinedShortName = null)
     {
         $this->setProperty('userDefinedShortName', $userDefinedShortName);
     }
 
     /**
-     * @return Subject
+     * @return \Arbor\Model\Subject
      */
     public function getSubject()
     {
@@ -191,15 +192,15 @@ class Assessment extends ModelBase
     }
 
     /**
-     * @param Subject $subject
+     * @param \Arbor\Model\Subject $subject
      */
-    public function setSubject(Subject $subject = null)
+    public function setSubject(\Arbor\Model\Subject $subject = null)
     {
         $this->setProperty('subject', $subject);
     }
 
     /**
-     * @return CurriculumTier
+     * @return \Arbor\Model\CurriculumTier
      */
     public function getCurriculumTier()
     {
@@ -207,15 +208,15 @@ class Assessment extends ModelBase
     }
 
     /**
-     * @param CurriculumTier $curriculumTier
+     * @param \Arbor\Model\CurriculumTier $curriculumTier
      */
-    public function setCurriculumTier(CurriculumTier $curriculumTier = null)
+    public function setCurriculumTier(\Arbor\Model\CurriculumTier $curriculumTier = null)
     {
         $this->setProperty('curriculumTier', $curriculumTier);
     }
 
     /**
-     * @return GradePointScale
+     * @return \Arbor\Model\GradePointScale
      */
     public function getGradePointScale()
     {
@@ -223,9 +224,9 @@ class Assessment extends ModelBase
     }
 
     /**
-     * @param GradePointScale $gradePointScale
+     * @param \Arbor\Model\GradePointScale $gradePointScale
      */
-    public function setGradePointScale(GradePointScale $gradePointScale = null)
+    public function setGradePointScale(\Arbor\Model\GradePointScale $gradePointScale = null)
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
@@ -241,7 +242,7 @@ class Assessment extends ModelBase
     /**
      * @param string $studentProgressBaselineCalculatorClassName
      */
-    public function setStudentProgressBaselineCalculatorClassName($studentProgressBaselineCalculatorClassName = null)
+    public function setStudentProgressBaselineCalculatorClassName(string $studentProgressBaselineCalculatorClassName = null)
     {
         $this->setProperty('studentProgressBaselineCalculatorClassName', $studentProgressBaselineCalculatorClassName);
     }
@@ -257,7 +258,7 @@ class Assessment extends ModelBase
     /**
      * @param bool $isBaselineLocked
      */
-    public function setIsBaselineLocked($isBaselineLocked = null)
+    public function setIsBaselineLocked(bool $isBaselineLocked = null)
     {
         $this->setProperty('isBaselineLocked', $isBaselineLocked);
     }
@@ -273,7 +274,7 @@ class Assessment extends ModelBase
     /**
      * @param bool $isTargetLocked
      */
-    public function setIsTargetLocked($isTargetLocked = null)
+    public function setIsTargetLocked(bool $isTargetLocked = null)
     {
         $this->setProperty('isTargetLocked', $isTargetLocked);
     }

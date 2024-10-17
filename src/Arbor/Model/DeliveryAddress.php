@@ -3,24 +3,25 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class DeliveryAddress extends ModelBase
 {
-    const DELIVERY_ADDRESS_NAME = 'deliveryAddressName';
+    public const DELIVERY_ADDRESS_NAME = 'deliveryAddressName';
 
-    const OWNER = 'owner';
+    public const OWNER = 'owner';
 
-    const POSTAL_ADDRESS = 'postalAddress';
+    public const POSTAL_ADDRESS = 'postalAddress';
 
-    const DELIVERY_CONTACT_NAME = 'deliveryContactName';
+    public const DELIVERY_CONTACT_NAME = 'deliveryContactName';
 
-    const DELIVERY_CONTACT_NUMBER = 'deliveryContactNumber';
+    public const DELIVERY_CONTACT_NUMBER = 'deliveryContactNumber';
 
-    const DELIVERY_INSTRUCTIONS = 'deliveryInstructions';
+    public const DELIVERY_INSTRUCTIONS = 'deliveryInstructions';
 
-    const IS_DEFAULT = 'isDefault';
+    public const IS_DEFAULT = 'isDefault';
 
-    const IS_ADDRESS_FOR_REUSE = 'isAddressForReuse';
+    public const IS_ADDRESS_FOR_REUSE = 'isAddressForReuse';
 
     protected $_resourceType = ResourceType::DELIVERY_ADDRESS;
 
@@ -29,7 +30,7 @@ class DeliveryAddress extends ModelBase
      * @return DeliveryAddress[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +72,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param string $deliveryAddressName
      */
-    public function setDeliveryAddressName($deliveryAddressName = null)
+    public function setDeliveryAddressName(string $deliveryAddressName = null)
     {
         $this->setProperty('deliveryAddressName', $deliveryAddressName);
     }
@@ -87,13 +88,13 @@ class DeliveryAddress extends ModelBase
     /**
      * @param ModelBase $owner
      */
-    public function setOwner(ModelBase $owner = null)
+    public function setOwner(\ModelBase $owner = null)
     {
         $this->setProperty('owner', $owner);
     }
 
     /**
-     * @return PostalAddress
+     * @return \Arbor\Model\PostalAddress
      */
     public function getPostalAddress()
     {
@@ -101,9 +102,9 @@ class DeliveryAddress extends ModelBase
     }
 
     /**
-     * @param PostalAddress $postalAddress
+     * @param \Arbor\Model\PostalAddress $postalAddress
      */
-    public function setPostalAddress(PostalAddress $postalAddress = null)
+    public function setPostalAddress(\Arbor\Model\PostalAddress $postalAddress = null)
     {
         $this->setProperty('postalAddress', $postalAddress);
     }
@@ -119,7 +120,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param string $deliveryContactName
      */
-    public function setDeliveryContactName($deliveryContactName = null)
+    public function setDeliveryContactName(string $deliveryContactName = null)
     {
         $this->setProperty('deliveryContactName', $deliveryContactName);
     }
@@ -135,7 +136,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param string $deliveryContactNumber
      */
-    public function setDeliveryContactNumber($deliveryContactNumber = null)
+    public function setDeliveryContactNumber(string $deliveryContactNumber = null)
     {
         $this->setProperty('deliveryContactNumber', $deliveryContactNumber);
     }
@@ -151,7 +152,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param string $deliveryInstructions
      */
-    public function setDeliveryInstructions($deliveryInstructions = null)
+    public function setDeliveryInstructions(string $deliveryInstructions = null)
     {
         $this->setProperty('deliveryInstructions', $deliveryInstructions);
     }
@@ -167,7 +168,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param bool $isDefault
      */
-    public function setIsDefault($isDefault = null)
+    public function setIsDefault(bool $isDefault = null)
     {
         $this->setProperty('isDefault', $isDefault);
     }
@@ -183,7 +184,7 @@ class DeliveryAddress extends ModelBase
     /**
      * @param bool $isAddressForReuse
      */
-    public function setIsAddressForReuse($isAddressForReuse = null)
+    public function setIsAddressForReuse(bool $isAddressForReuse = null)
     {
         $this->setProperty('isAddressForReuse', $isAddressForReuse);
     }

@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class IntakeSeason extends ModelBase
 {
-    const INTAKE_SEASON_NAME = 'intakeSeasonName';
+    public const INTAKE_SEASON_NAME = 'intakeSeasonName';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const PUBLISHED_ADMISSIONS_NUMBER = 'publishedAdmissionsNumber';
+    public const PUBLISHED_ADMISSIONS_NUMBER = 'publishedAdmissionsNumber';
 
-    const TARGET_APPLICATION_NUMBER = 'targetApplicationNumber';
+    public const TARGET_APPLICATION_NUMBER = 'targetApplicationNumber';
 
     protected $_resourceType = ResourceType::INTAKE_SEASON;
 
@@ -25,7 +26,7 @@ class IntakeSeason extends ModelBase
      * @return IntakeSeason[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,13 +68,13 @@ class IntakeSeason extends ModelBase
     /**
      * @param string $intakeSeasonName
      */
-    public function setIntakeSeasonName($intakeSeasonName = null)
+    public function setIntakeSeasonName(string $intakeSeasonName = null)
     {
         $this->setProperty('intakeSeasonName', $intakeSeasonName);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -81,9 +82,9 @@ class IntakeSeason extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -131,7 +132,7 @@ class IntakeSeason extends ModelBase
     /**
      * @param int $publishedAdmissionsNumber
      */
-    public function setPublishedAdmissionsNumber($publishedAdmissionsNumber = null)
+    public function setPublishedAdmissionsNumber(int $publishedAdmissionsNumber = null)
     {
         $this->setProperty('publishedAdmissionsNumber', $publishedAdmissionsNumber);
     }
@@ -147,7 +148,7 @@ class IntakeSeason extends ModelBase
     /**
      * @param int $targetApplicationNumber
      */
-    public function setTargetApplicationNumber($targetApplicationNumber = null)
+    public function setTargetApplicationNumber(int $targetApplicationNumber = null)
     {
         $this->setProperty('targetApplicationNumber', $targetApplicationNumber);
     }

@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TimetablerImportResult extends ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const STEPS_COMPLETED = 'stepsCompleted';
+    public const STEPS_COMPLETED = 'stepsCompleted';
 
-    const STEP_IN_PROGRESS = 'stepInProgress';
+    public const STEP_IN_PROGRESS = 'stepInProgress';
 
-    const STARTED_DATETIME = 'startedDatetime';
+    public const STARTED_DATETIME = 'startedDatetime';
 
-    const COMPLETED_DATETIME = 'completedDatetime';
+    public const COMPLETED_DATETIME = 'completedDatetime';
 
-    const FILE_HASH = 'fileHash';
+    public const FILE_HASH = 'fileHash';
 
     protected $_resourceType = ResourceType::TIMETABLER_IMPORT_RESULT;
 
@@ -25,7 +26,7 @@ class TimetablerImportResult extends ModelBase
      * @return TimetablerImportResult[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +58,7 @@ class TimetablerImportResult extends ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -65,9 +66,9 @@ class TimetablerImportResult extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -83,7 +84,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param int $stepsCompleted
      */
-    public function setStepsCompleted($stepsCompleted = null)
+    public function setStepsCompleted(int $stepsCompleted = null)
     {
         $this->setProperty('stepsCompleted', $stepsCompleted);
     }
@@ -99,7 +100,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param int $stepInProgress
      */
-    public function setStepInProgress($stepInProgress = null)
+    public function setStepInProgress(int $stepInProgress = null)
     {
         $this->setProperty('stepInProgress', $stepInProgress);
     }
@@ -147,7 +148,7 @@ class TimetablerImportResult extends ModelBase
     /**
      * @param string $fileHash
      */
-    public function setFileHash($fileHash = null)
+    public function setFileHash(string $fileHash = null)
     {
         $this->setProperty('fileHash', $fileHash);
     }

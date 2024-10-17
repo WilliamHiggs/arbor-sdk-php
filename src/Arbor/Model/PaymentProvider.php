@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class PaymentProvider extends ModelBase
 {
-    const PAYMENT_PROVIDER_NAME = 'paymentProviderName';
+    public const PAYMENT_PROVIDER_NAME = 'paymentProviderName';
 
-    const PROVIDER_CODE = 'providerCode';
+    public const PROVIDER_CODE = 'providerCode';
 
-    const SECRET_KEY = 'secretKey';
+    public const SECRET_KEY = 'secretKey';
 
-    const PUBLISHABLE_KEY = 'publishableKey';
+    public const PUBLISHABLE_KEY = 'publishableKey';
 
-    const IS_ENABLED = 'isEnabled';
+    public const IS_ENABLED = 'isEnabled';
 
-    const MINIMUM_TRANSACTION_AMOUNT = 'minimumTransactionAmount';
+    public const MINIMUM_TRANSACTION_AMOUNT = 'minimumTransactionAmount';
 
     protected $_resourceType = ResourceType::PAYMENT_PROVIDER;
 
@@ -25,7 +26,7 @@ class PaymentProvider extends ModelBase
      * @return PaymentProvider[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +68,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param string $paymentProviderName
      */
-    public function setPaymentProviderName($paymentProviderName = null)
+    public function setPaymentProviderName(string $paymentProviderName = null)
     {
         $this->setProperty('paymentProviderName', $paymentProviderName);
     }
@@ -83,7 +84,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param string $providerCode
      */
-    public function setProviderCode($providerCode = null)
+    public function setProviderCode(string $providerCode = null)
     {
         $this->setProperty('providerCode', $providerCode);
     }
@@ -99,7 +100,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param string $secretKey
      */
-    public function setSecretKey($secretKey = null)
+    public function setSecretKey(string $secretKey = null)
     {
         $this->setProperty('secretKey', $secretKey);
     }
@@ -115,7 +116,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param string $publishableKey
      */
-    public function setPublishableKey($publishableKey = null)
+    public function setPublishableKey(string $publishableKey = null)
     {
         $this->setProperty('publishableKey', $publishableKey);
     }
@@ -131,7 +132,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param bool $isEnabled
      */
-    public function setIsEnabled($isEnabled = null)
+    public function setIsEnabled(bool $isEnabled = null)
     {
         $this->setProperty('isEnabled', $isEnabled);
     }
@@ -147,7 +148,7 @@ class PaymentProvider extends ModelBase
     /**
      * @param string $minimumTransactionAmount
      */
-    public function setMinimumTransactionAmount($minimumTransactionAmount = null)
+    public function setMinimumTransactionAmount(string $minimumTransactionAmount = null)
     {
         $this->setProperty('minimumTransactionAmount', $minimumTransactionAmount);
     }

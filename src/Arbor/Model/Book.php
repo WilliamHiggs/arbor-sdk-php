@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Book extends ModelBase
 {
-    const BOOK_TYPE = 'bookType';
+    public const BOOK_TYPE = 'bookType';
 
-    const PREFIX = 'prefix';
+    public const PREFIX = 'prefix';
 
-    const FIRST_NUMBER = 'firstNumber';
+    public const FIRST_NUMBER = 'firstNumber';
 
-    const LAST_NUMBER = 'lastNumber';
+    public const LAST_NUMBER = 'lastNumber';
 
-    const NEXT_NUMBER = 'nextNumber';
+    public const NEXT_NUMBER = 'nextNumber';
 
-    const OPEN = 'open';
+    public const OPEN = 'open';
 
-    const BANK_ACCOUNT = 'bankAccount';
+    public const BANK_ACCOUNT = 'bankAccount';
 
     protected $_resourceType = ResourceType::BOOK;
 
@@ -27,7 +28,7 @@ class Book extends ModelBase
      * @return Book[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +70,7 @@ class Book extends ModelBase
     /**
      * @param string $bookType
      */
-    public function setBookType($bookType = null)
+    public function setBookType(string $bookType = null)
     {
         $this->setProperty('bookType', $bookType);
     }
@@ -85,7 +86,7 @@ class Book extends ModelBase
     /**
      * @param string $prefix
      */
-    public function setPrefix($prefix = null)
+    public function setPrefix(string $prefix = null)
     {
         $this->setProperty('prefix', $prefix);
     }
@@ -101,7 +102,7 @@ class Book extends ModelBase
     /**
      * @param int $firstNumber
      */
-    public function setFirstNumber($firstNumber = null)
+    public function setFirstNumber(int $firstNumber = null)
     {
         $this->setProperty('firstNumber', $firstNumber);
     }
@@ -117,7 +118,7 @@ class Book extends ModelBase
     /**
      * @param int $lastNumber
      */
-    public function setLastNumber($lastNumber = null)
+    public function setLastNumber(int $lastNumber = null)
     {
         $this->setProperty('lastNumber', $lastNumber);
     }
@@ -133,7 +134,7 @@ class Book extends ModelBase
     /**
      * @param int $nextNumber
      */
-    public function setNextNumber($nextNumber = null)
+    public function setNextNumber(int $nextNumber = null)
     {
         $this->setProperty('nextNumber', $nextNumber);
     }
@@ -149,13 +150,13 @@ class Book extends ModelBase
     /**
      * @param bool $open
      */
-    public function setOpen($open = null)
+    public function setOpen(bool $open = null)
     {
         $this->setProperty('open', $open);
     }
 
     /**
-     * @return BankAccount
+     * @return \Arbor\Model\BankAccount
      */
     public function getBankAccount()
     {
@@ -163,9 +164,9 @@ class Book extends ModelBase
     }
 
     /**
-     * @param BankAccount $bankAccount
+     * @param \Arbor\Model\BankAccount $bankAccount
      */
-    public function setBankAccount(BankAccount $bankAccount = null)
+    public function setBankAccount(\Arbor\Model\BankAccount $bankAccount = null)
     {
         $this->setProperty('bankAccount', $bankAccount);
     }

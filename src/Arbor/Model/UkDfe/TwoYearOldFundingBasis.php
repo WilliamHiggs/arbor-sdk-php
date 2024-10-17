@@ -6,13 +6,12 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Student;
 
 class TwoYearOldFundingBasis extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const FUNDING_BASIS = 'fundingBasis';
+    public const FUNDING_BASIS = 'fundingBasis';
 
     protected $_resourceType = ResourceType::UK_DFE_TWO_YEAR_OLD_FUNDING_BASIS;
 
@@ -21,7 +20,7 @@ class TwoYearOldFundingBasis extends ModelBase
      * @return TwoYearOldFundingBasis[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +52,7 @@ class TwoYearOldFundingBasis extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -61,9 +60,9 @@ class TwoYearOldFundingBasis extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -79,7 +78,7 @@ class TwoYearOldFundingBasis extends ModelBase
     /**
      * @param string $fundingBasis
      */
-    public function setFundingBasis($fundingBasis = null)
+    public function setFundingBasis(string $fundingBasis = null)
     {
         $this->setProperty('fundingBasis', $fundingBasis);
     }

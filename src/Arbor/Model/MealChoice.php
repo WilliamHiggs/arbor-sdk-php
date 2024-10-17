@@ -3,32 +3,33 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class MealChoice extends ModelBase
 {
-    const ATTENDEE = 'attendee';
+    public const ATTENDEE = 'attendee';
 
-    const MEAL = 'meal';
+    public const MEAL = 'meal';
 
-    const MEAL_PROVISION = 'mealProvision';
+    public const MEAL_PROVISION = 'mealProvision';
 
-    const APPLIES_MONDAY = 'appliesMonday';
+    public const APPLIES_MONDAY = 'appliesMonday';
 
-    const APPLIES_TUESDAY = 'appliesTuesday';
+    public const APPLIES_TUESDAY = 'appliesTuesday';
 
-    const APPLIES_WEDNESDAY = 'appliesWednesday';
+    public const APPLIES_WEDNESDAY = 'appliesWednesday';
 
-    const APPLIES_THURSDAY = 'appliesThursday';
+    public const APPLIES_THURSDAY = 'appliesThursday';
 
-    const APPLIES_FRIDAY = 'appliesFriday';
+    public const APPLIES_FRIDAY = 'appliesFriday';
 
-    const APPLIES_SATURDAY = 'appliesSaturday';
+    public const APPLIES_SATURDAY = 'appliesSaturday';
 
-    const APPLIES_SUNDAY = 'appliesSunday';
+    public const APPLIES_SUNDAY = 'appliesSunday';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::MEAL_CHOICE;
 
@@ -37,7 +38,7 @@ class MealChoice extends ModelBase
      * @return MealChoice[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,13 +80,13 @@ class MealChoice extends ModelBase
     /**
      * @param ModelBase $attendee
      */
-    public function setAttendee(ModelBase $attendee = null)
+    public function setAttendee(\ModelBase $attendee = null)
     {
         $this->setProperty('attendee', $attendee);
     }
 
     /**
-     * @return Meal
+     * @return \Arbor\Model\Meal
      */
     public function getMeal()
     {
@@ -93,15 +94,15 @@ class MealChoice extends ModelBase
     }
 
     /**
-     * @param Meal $meal
+     * @param \Arbor\Model\Meal $meal
      */
-    public function setMeal(Meal $meal = null)
+    public function setMeal(\Arbor\Model\Meal $meal = null)
     {
         $this->setProperty('meal', $meal);
     }
 
     /**
-     * @return MealProvision
+     * @return \Arbor\Model\MealProvision
      */
     public function getMealProvision()
     {
@@ -109,9 +110,9 @@ class MealChoice extends ModelBase
     }
 
     /**
-     * @param MealProvision $mealProvision
+     * @param \Arbor\Model\MealProvision $mealProvision
      */
-    public function setMealProvision(MealProvision $mealProvision = null)
+    public function setMealProvision(\Arbor\Model\MealProvision $mealProvision = null)
     {
         $this->setProperty('mealProvision', $mealProvision);
     }
@@ -127,7 +128,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesMonday
      */
-    public function setAppliesMonday($appliesMonday = null)
+    public function setAppliesMonday(bool $appliesMonday = null)
     {
         $this->setProperty('appliesMonday', $appliesMonday);
     }
@@ -143,7 +144,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesTuesday
      */
-    public function setAppliesTuesday($appliesTuesday = null)
+    public function setAppliesTuesday(bool $appliesTuesday = null)
     {
         $this->setProperty('appliesTuesday', $appliesTuesday);
     }
@@ -159,7 +160,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesWednesday
      */
-    public function setAppliesWednesday($appliesWednesday = null)
+    public function setAppliesWednesday(bool $appliesWednesday = null)
     {
         $this->setProperty('appliesWednesday', $appliesWednesday);
     }
@@ -175,7 +176,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesThursday
      */
-    public function setAppliesThursday($appliesThursday = null)
+    public function setAppliesThursday(bool $appliesThursday = null)
     {
         $this->setProperty('appliesThursday', $appliesThursday);
     }
@@ -191,7 +192,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesFriday
      */
-    public function setAppliesFriday($appliesFriday = null)
+    public function setAppliesFriday(bool $appliesFriday = null)
     {
         $this->setProperty('appliesFriday', $appliesFriday);
     }
@@ -207,7 +208,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesSaturday
      */
-    public function setAppliesSaturday($appliesSaturday = null)
+    public function setAppliesSaturday(bool $appliesSaturday = null)
     {
         $this->setProperty('appliesSaturday', $appliesSaturday);
     }
@@ -223,7 +224,7 @@ class MealChoice extends ModelBase
     /**
      * @param bool $appliesSunday
      */
-    public function setAppliesSunday($appliesSunday = null)
+    public function setAppliesSunday(bool $appliesSunday = null)
     {
         $this->setProperty('appliesSunday', $appliesSunday);
     }

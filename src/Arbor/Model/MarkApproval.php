@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class MarkApproval extends ModelBase
 {
-    const MARK = 'mark';
+    public const MARK = 'mark';
 
-    const APPROVAL_LEVEL = 'approvalLevel';
+    public const APPROVAL_LEVEL = 'approvalLevel';
 
-    const ASSESSMENT_DATA_COLLECTION_ITEM = 'assessmentDataCollectionItem';
+    public const ASSESSMENT_DATA_COLLECTION_ITEM = 'assessmentDataCollectionItem';
 
     protected $_resourceType = ResourceType::MARK_APPROVAL;
 
@@ -19,7 +20,7 @@ class MarkApproval extends ModelBase
      * @return MarkApproval[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class MarkApproval extends ModelBase
     /**
      * @param ModelBase $mark
      */
-    public function setMark(ModelBase $mark = null)
+    public function setMark(\ModelBase $mark = null)
     {
         $this->setProperty('mark', $mark);
     }
@@ -77,13 +78,13 @@ class MarkApproval extends ModelBase
     /**
      * @param string $approvalLevel
      */
-    public function setApprovalLevel($approvalLevel = null)
+    public function setApprovalLevel(string $approvalLevel = null)
     {
         $this->setProperty('approvalLevel', $approvalLevel);
     }
 
     /**
-     * @return AssessmentDataCollectionItem
+     * @return \Arbor\Model\AssessmentDataCollectionItem
      */
     public function getAssessmentDataCollectionItem()
     {
@@ -91,9 +92,9 @@ class MarkApproval extends ModelBase
     }
 
     /**
-     * @param AssessmentDataCollectionItem $assessmentDataCollectionItem
+     * @param \Arbor\Model\AssessmentDataCollectionItem $assessmentDataCollectionItem
      */
-    public function setAssessmentDataCollectionItem(AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
+    public function setAssessmentDataCollectionItem(\Arbor\Model\AssessmentDataCollectionItem $assessmentDataCollectionItem = null)
     {
         $this->setProperty('assessmentDataCollectionItem', $assessmentDataCollectionItem);
     }

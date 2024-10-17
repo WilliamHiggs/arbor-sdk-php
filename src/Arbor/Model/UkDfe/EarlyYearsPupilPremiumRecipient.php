@@ -6,19 +6,18 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Student;
 
 class EarlyYearsPupilPremiumRecipient extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const RECIPIENT_FOR_ECONOMIC_REASONS = 'recipientForEconomicReasons';
+    public const RECIPIENT_FOR_ECONOMIC_REASONS = 'recipientForEconomicReasons';
 
-    const RECIPIENT_FOR_OTHER_REASONS = 'recipientForOtherReasons';
+    public const RECIPIENT_FOR_OTHER_REASONS = 'recipientForOtherReasons';
 
     protected $_resourceType = ResourceType::UK_DFE_EARLY_YEARS_PUPIL_PREMIUM_RECIPIENT;
 
@@ -27,7 +26,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
      * @return EarlyYearsPupilPremiumRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +58,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -67,9 +66,9 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -117,7 +116,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     /**
      * @param bool $recipientForEconomicReasons
      */
-    public function setRecipientForEconomicReasons($recipientForEconomicReasons = null)
+    public function setRecipientForEconomicReasons(bool $recipientForEconomicReasons = null)
     {
         $this->setProperty('recipientForEconomicReasons', $recipientForEconomicReasons);
     }
@@ -133,7 +132,7 @@ class EarlyYearsPupilPremiumRecipient extends ModelBase
     /**
      * @param bool $recipientForOtherReasons
      */
-    public function setRecipientForOtherReasons($recipientForOtherReasons = null)
+    public function setRecipientForOtherReasons(bool $recipientForOtherReasons = null)
     {
         $this->setProperty('recipientForOtherReasons', $recipientForOtherReasons);
     }

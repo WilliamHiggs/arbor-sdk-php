@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AssessmentMetricAssessment extends ModelBase
 {
-    const ASSESSMENT_METRIC = 'assessmentMetric';
+    public const ASSESSMENT_METRIC = 'assessmentMetric';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const ASSESSMENT_METRIC_ASSESSMENT_BATCH = 'assessmentMetricAssessmentBatch';
+    public const ASSESSMENT_METRIC_ASSESSMENT_BATCH = 'assessmentMetricAssessmentBatch';
 
     protected $_resourceType = ResourceType::ASSESSMENT_METRIC_ASSESSMENT;
 
@@ -19,7 +20,7 @@ class AssessmentMetricAssessment extends ModelBase
      * @return AssessmentMetricAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class AssessmentMetricAssessment extends ModelBase
     }
 
     /**
-     * @return AssessmentMetric
+     * @return \Arbor\Model\AssessmentMetric
      */
     public function getAssessmentMetric()
     {
@@ -59,15 +60,15 @@ class AssessmentMetricAssessment extends ModelBase
     }
 
     /**
-     * @param AssessmentMetric $assessmentMetric
+     * @param \Arbor\Model\AssessmentMetric $assessmentMetric
      */
-    public function setAssessmentMetric(AssessmentMetric $assessmentMetric = null)
+    public function setAssessmentMetric(\Arbor\Model\AssessmentMetric $assessmentMetric = null)
     {
         $this->setProperty('assessmentMetric', $assessmentMetric);
     }
 
     /**
-     * @return Assessment
+     * @return \Arbor\Model\Assessment
      */
     public function getAssessment()
     {
@@ -75,15 +76,15 @@ class AssessmentMetricAssessment extends ModelBase
     }
 
     /**
-     * @param Assessment $assessment
+     * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
 
     /**
-     * @return AssessmentMetricAssessmentBatch
+     * @return \Arbor\Model\AssessmentMetricAssessmentBatch
      */
     public function getAssessmentMetricAssessmentBatch()
     {
@@ -91,9 +92,10 @@ class AssessmentMetricAssessment extends ModelBase
     }
 
     /**
-     * @param AssessmentMetricAssessmentBatch $assessmentMetricAssessmentBatch
+     * @param \Arbor\Model\AssessmentMetricAssessmentBatch
+     * $assessmentMetricAssessmentBatch
      */
-    public function setAssessmentMetricAssessmentBatch(AssessmentMetricAssessmentBatch $assessmentMetricAssessmentBatch = null)
+    public function setAssessmentMetricAssessmentBatch(\Arbor\Model\AssessmentMetricAssessmentBatch $assessmentMetricAssessmentBatch = null)
     {
         $this->setProperty('assessmentMetricAssessmentBatch', $assessmentMetricAssessmentBatch);
     }

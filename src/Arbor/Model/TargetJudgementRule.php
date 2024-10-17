@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TargetJudgementRule extends ModelBase
 {
-    const ASSESSMENT_ASPECT = 'assessmentAspect';
+    public const ASSESSMENT_ASPECT = 'assessmentAspect';
 
-    const TARGET_JUDGEMENT = 'targetJudgement';
+    public const TARGET_JUDGEMENT = 'targetJudgement';
 
-    const AMOUNT = 'amount';
+    public const AMOUNT = 'amount';
 
-    const AMOUNT_UNIT = 'amountUnit';
+    public const AMOUNT_UNIT = 'amountUnit';
 
     protected $_resourceType = ResourceType::TARGET_JUDGEMENT_RULE;
 
@@ -21,7 +22,7 @@ class TargetJudgementRule extends ModelBase
      * @return TargetJudgementRule[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class TargetJudgementRule extends ModelBase
     }
 
     /**
-     * @return AssessmentAspect
+     * @return \Arbor\Model\AssessmentAspect
      */
     public function getAssessmentAspect()
     {
@@ -61,15 +62,15 @@ class TargetJudgementRule extends ModelBase
     }
 
     /**
-     * @param AssessmentAspect $assessmentAspect
+     * @param \Arbor\Model\AssessmentAspect $assessmentAspect
      */
-    public function setAssessmentAspect(AssessmentAspect $assessmentAspect = null)
+    public function setAssessmentAspect(\Arbor\Model\AssessmentAspect $assessmentAspect = null)
     {
         $this->setProperty('assessmentAspect', $assessmentAspect);
     }
 
     /**
-     * @return TargetJudgement
+     * @return \Arbor\Model\TargetJudgement
      */
     public function getTargetJudgement()
     {
@@ -77,9 +78,9 @@ class TargetJudgementRule extends ModelBase
     }
 
     /**
-     * @param TargetJudgement $targetJudgement
+     * @param \Arbor\Model\TargetJudgement $targetJudgement
      */
-    public function setTargetJudgement(TargetJudgement $targetJudgement = null)
+    public function setTargetJudgement(\Arbor\Model\TargetJudgement $targetJudgement = null)
     {
         $this->setProperty('targetJudgement', $targetJudgement);
     }
@@ -95,7 +96,7 @@ class TargetJudgementRule extends ModelBase
     /**
      * @param float $amount
      */
-    public function setAmount($amount = null)
+    public function setAmount(float $amount = null)
     {
         $this->setProperty('amount', $amount);
     }
@@ -111,7 +112,7 @@ class TargetJudgementRule extends ModelBase
     /**
      * @param string $amountUnit
      */
-    public function setAmountUnit($amountUnit = null)
+    public function setAmountUnit(string $amountUnit = null)
     {
         $this->setProperty('amountUnit', $amountUnit);
     }

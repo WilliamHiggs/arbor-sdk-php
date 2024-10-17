@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TimetableSlotLocation extends ModelBase
 {
-    const TIMETABLE_SLOT = 'timetableSlot';
+    public const TIMETABLE_SLOT = 'timetableSlot';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::TIMETABLE_SLOT_LOCATION;
 
@@ -21,7 +22,7 @@ class TimetableSlotLocation extends ModelBase
      * @return TimetableSlotLocation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class TimetableSlotLocation extends ModelBase
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -61,15 +62,15 @@ class TimetableSlotLocation extends ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
 
     /**
-     * @return Room
+     * @return \Arbor\Model\Room
      */
     public function getLocation()
     {
@@ -77,9 +78,9 @@ class TimetableSlotLocation extends ModelBase
     }
 
     /**
-     * @param Room $location
+     * @param \Arbor\Model\Room $location
      */
-    public function setLocation(Room $location = null)
+    public function setLocation(\Arbor\Model\Room $location = null)
     {
         $this->setProperty('location', $location);
     }

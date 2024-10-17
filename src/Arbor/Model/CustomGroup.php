@@ -3,28 +3,29 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CustomGroup extends ModelBase
 {
-    const CUSTOM_GROUP_NAME = 'customGroupName';
+    public const CUSTOM_GROUP_NAME = 'customGroupName';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const CONTAINS_STUDENTS = 'containsStudents';
+    public const CONTAINS_STUDENTS = 'containsStudents';
 
-    const CONTAINS_GUARDIANS = 'containsGuardians';
+    public const CONTAINS_GUARDIANS = 'containsGuardians';
 
-    const CONTAINS_STAFF = 'containsStaff';
+    public const CONTAINS_STAFF = 'containsStaff';
 
-    const IS_DYNAMIC = 'isDynamic';
+    public const IS_DYNAMIC = 'isDynamic';
 
-    const IDENTIFIER = 'identifier';
+    public const IDENTIFIER = 'identifier';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::CUSTOM_GROUP;
 
@@ -33,7 +34,7 @@ class CustomGroup extends ModelBase
      * @return CustomGroup[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +76,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $customGroupName
      */
-    public function setCustomGroupName($customGroupName = null)
+    public function setCustomGroupName(string $customGroupName = null)
     {
         $this->setProperty('customGroupName', $customGroupName);
     }
@@ -91,13 +92,13 @@ class CustomGroup extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -105,9 +106,9 @@ class CustomGroup extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -123,7 +124,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $containsStudents
      */
-    public function setContainsStudents($containsStudents = null)
+    public function setContainsStudents(string $containsStudents = null)
     {
         $this->setProperty('containsStudents', $containsStudents);
     }
@@ -139,7 +140,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $containsGuardians
      */
-    public function setContainsGuardians($containsGuardians = null)
+    public function setContainsGuardians(string $containsGuardians = null)
     {
         $this->setProperty('containsGuardians', $containsGuardians);
     }
@@ -155,7 +156,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $containsStaff
      */
-    public function setContainsStaff($containsStaff = null)
+    public function setContainsStaff(string $containsStaff = null)
     {
         $this->setProperty('containsStaff', $containsStaff);
     }
@@ -171,7 +172,7 @@ class CustomGroup extends ModelBase
     /**
      * @param bool $isDynamic
      */
-    public function setIsDynamic($isDynamic = null)
+    public function setIsDynamic(bool $isDynamic = null)
     {
         $this->setProperty('isDynamic', $isDynamic);
     }
@@ -187,7 +188,7 @@ class CustomGroup extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier($identifier = null)
+    public function setIdentifier(string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }

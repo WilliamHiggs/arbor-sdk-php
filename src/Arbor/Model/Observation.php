@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Observation extends ModelBase
 {
-    const OBSERVING_STAFF = 'observingStaff';
+    public const OBSERVING_STAFF = 'observingStaff';
 
-    const OBSERVED_STAFF = 'observedStaff';
+    public const OBSERVED_STAFF = 'observedStaff';
 
-    const SESSION = 'session';
+    public const SESSION = 'session';
 
-    const OBSERVATION_START_DATETIME = 'observationStartDatetime';
+    public const OBSERVATION_START_DATETIME = 'observationStartDatetime';
 
-    const OBSERVATION_END_DATETIME = 'observationEndDatetime';
+    public const OBSERVATION_END_DATETIME = 'observationEndDatetime';
 
-    const SUBMITTED_DATETIME = 'submittedDatetime';
+    public const SUBMITTED_DATETIME = 'submittedDatetime';
 
-    const OBSERVATION_FOCUS = 'observationFocus';
+    public const OBSERVATION_FOCUS = 'observationFocus';
 
     protected $_resourceType = ResourceType::OBSERVATION;
 
@@ -27,7 +28,7 @@ class Observation extends ModelBase
      * @return Observation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class Observation extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getObservingStaff()
     {
@@ -67,15 +68,15 @@ class Observation extends ModelBase
     }
 
     /**
-     * @param Staff $observingStaff
+     * @param \Arbor\Model\Staff $observingStaff
      */
-    public function setObservingStaff(Staff $observingStaff = null)
+    public function setObservingStaff(\Arbor\Model\Staff $observingStaff = null)
     {
         $this->setProperty('observingStaff', $observingStaff);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getObservedStaff()
     {
@@ -83,15 +84,15 @@ class Observation extends ModelBase
     }
 
     /**
-     * @param Staff $observedStaff
+     * @param \Arbor\Model\Staff $observedStaff
      */
-    public function setObservedStaff(Staff $observedStaff = null)
+    public function setObservedStaff(\Arbor\Model\Staff $observedStaff = null)
     {
         $this->setProperty('observedStaff', $observedStaff);
     }
 
     /**
-     * @return Session
+     * @return \Arbor\Model\Session
      */
     public function getSession()
     {
@@ -99,9 +100,9 @@ class Observation extends ModelBase
     }
 
     /**
-     * @param Session $session
+     * @param \Arbor\Model\Session $session
      */
-    public function setSession(Session $session = null)
+    public function setSession(\Arbor\Model\Session $session = null)
     {
         $this->setProperty('session', $session);
     }
@@ -165,7 +166,7 @@ class Observation extends ModelBase
     /**
      * @param string $observationFocus
      */
-    public function setObservationFocus($observationFocus = null)
+    public function setObservationFocus(string $observationFocus = null)
     {
         $this->setProperty('observationFocus', $observationFocus);
     }

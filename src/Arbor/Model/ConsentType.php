@@ -3,26 +3,27 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ConsentType extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const CONSENT_TYPE_NAME = 'consentTypeName';
+    public const CONSENT_TYPE_NAME = 'consentTypeName';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const DEFAULT_DESCRIPTION = 'defaultDescription';
+    public const DEFAULT_DESCRIPTION = 'defaultDescription';
 
-    const AUTO_REQUEST_FROM_GUARDIANS = 'autoRequestFromGuardians';
+    public const AUTO_REQUEST_FROM_GUARDIANS = 'autoRequestFromGuardians';
 
-    const CONSENTED_BY_STUDENT = 'consentedByStudent';
+    public const CONSENTED_BY_STUDENT = 'consentedByStudent';
 
-    const CONSENTED_BY_GUARDIAN = 'consentedByGuardian';
+    public const CONSENTED_BY_GUARDIAN = 'consentedByGuardian';
 
     protected $_resourceType = ResourceType::CONSENT_TYPE;
 
@@ -31,7 +32,7 @@ class ConsentType extends ModelBase
      * @return ConsentType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +74,7 @@ class ConsentType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -89,7 +90,7 @@ class ConsentType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -105,7 +106,7 @@ class ConsentType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -121,7 +122,7 @@ class ConsentType extends ModelBase
     /**
      * @param string $consentTypeName
      */
-    public function setConsentTypeName($consentTypeName = null)
+    public function setConsentTypeName(string $consentTypeName = null)
     {
         $this->setProperty('consentTypeName', $consentTypeName);
     }
@@ -137,7 +138,7 @@ class ConsentType extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -153,7 +154,7 @@ class ConsentType extends ModelBase
     /**
      * @param string $defaultDescription
      */
-    public function setDefaultDescription($defaultDescription = null)
+    public function setDefaultDescription(string $defaultDescription = null)
     {
         $this->setProperty('defaultDescription', $defaultDescription);
     }
@@ -169,7 +170,7 @@ class ConsentType extends ModelBase
     /**
      * @param bool $autoRequestFromGuardians
      */
-    public function setAutoRequestFromGuardians($autoRequestFromGuardians = null)
+    public function setAutoRequestFromGuardians(bool $autoRequestFromGuardians = null)
     {
         $this->setProperty('autoRequestFromGuardians', $autoRequestFromGuardians);
     }
@@ -185,7 +186,7 @@ class ConsentType extends ModelBase
     /**
      * @param bool $consentedByStudent
      */
-    public function setConsentedByStudent($consentedByStudent = null)
+    public function setConsentedByStudent(bool $consentedByStudent = null)
     {
         $this->setProperty('consentedByStudent', $consentedByStudent);
     }
@@ -201,7 +202,7 @@ class ConsentType extends ModelBase
     /**
      * @param bool $consentedByGuardian
      */
-    public function setConsentedByGuardian($consentedByGuardian = null)
+    public function setConsentedByGuardian(bool $consentedByGuardian = null)
     {
         $this->setProperty('consentedByGuardian', $consentedByGuardian);
     }

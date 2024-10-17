@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BehaviourDefaultWatcher extends ModelBase
 {
-    const BEHAVIOUR = 'behaviour';
+    public const BEHAVIOUR = 'behaviour';
 
-    const RELATION_TO_STUDENT = 'relationToStudent';
+    public const RELATION_TO_STUDENT = 'relationToStudent';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
     protected $_resourceType = ResourceType::BEHAVIOUR_DEFAULT_WATCHER;
 
@@ -19,7 +20,7 @@ class BehaviourDefaultWatcher extends ModelBase
      * @return BehaviourDefaultWatcher[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class BehaviourDefaultWatcher extends ModelBase
     }
 
     /**
-     * @return Behaviour
+     * @return \Arbor\Model\Behaviour
      */
     public function getBehaviour()
     {
@@ -59,9 +60,9 @@ class BehaviourDefaultWatcher extends ModelBase
     }
 
     /**
-     * @param Behaviour $behaviour
+     * @param \Arbor\Model\Behaviour $behaviour
      */
-    public function setBehaviour(Behaviour $behaviour = null)
+    public function setBehaviour(\Arbor\Model\Behaviour $behaviour = null)
     {
         $this->setProperty('behaviour', $behaviour);
     }
@@ -77,13 +78,13 @@ class BehaviourDefaultWatcher extends ModelBase
     /**
      * @param string $relationToStudent
      */
-    public function setRelationToStudent($relationToStudent = null)
+    public function setRelationToStudent(string $relationToStudent = null)
     {
         $this->setProperty('relationToStudent', $relationToStudent);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -91,9 +92,9 @@ class BehaviourDefaultWatcher extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

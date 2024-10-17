@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class MedicalPlan extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const SUMMARY = 'summary';
+    public const SUMMARY = 'summary';
 
-    const CONTENT = 'content';
+    public const CONTENT = 'content';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const SCHEDULED_REVIEW_DATE = 'scheduledReviewDate';
+    public const SCHEDULED_REVIEW_DATE = 'scheduledReviewDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::MEDICAL_PLAN;
 
@@ -25,7 +26,7 @@ class MedicalPlan extends ModelBase
      * @return MedicalPlan[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +58,7 @@ class MedicalPlan extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -65,9 +66,9 @@ class MedicalPlan extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -83,7 +84,7 @@ class MedicalPlan extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary($summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -99,7 +100,7 @@ class MedicalPlan extends ModelBase
     /**
      * @param string $content
      */
-    public function setContent($content = null)
+    public function setContent(string $content = null)
     {
         $this->setProperty('content', $content);
     }

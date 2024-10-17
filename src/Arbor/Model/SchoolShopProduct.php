@@ -3,26 +3,27 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class SchoolShopProduct extends ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const QUANTITY = 'quantity';
+    public const QUANTITY = 'quantity';
 
-    const MAX_ITEMS_PER_STUDENT = 'maxItemsPerStudent';
+    public const MAX_ITEMS_PER_STUDENT = 'maxItemsPerStudent';
 
-    const IS_PUBLISHED = 'isPublished';
+    public const IS_PUBLISHED = 'isPublished';
 
-    const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
+    public const CUSTOMER_ACCOUNT_TYPE = 'customerAccountType';
 
-    const ACCOUNTING_CODE = 'accountingCode';
+    public const ACCOUNTING_CODE = 'accountingCode';
 
     protected $_resourceType = ResourceType::SCHOOL_SHOP_PRODUCT;
 
@@ -31,7 +32,7 @@ class SchoolShopProduct extends ModelBase
      * @return SchoolShopProduct[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +74,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -89,7 +90,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -137,7 +138,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param int $quantity
      */
-    public function setQuantity($quantity = null)
+    public function setQuantity(int $quantity = null)
     {
         $this->setProperty('quantity', $quantity);
     }
@@ -153,7 +154,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param int $maxItemsPerStudent
      */
-    public function setMaxItemsPerStudent($maxItemsPerStudent = null)
+    public function setMaxItemsPerStudent(int $maxItemsPerStudent = null)
     {
         $this->setProperty('maxItemsPerStudent', $maxItemsPerStudent);
     }
@@ -169,13 +170,13 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param bool $isPublished
      */
-    public function setIsPublished($isPublished = null)
+    public function setIsPublished(bool $isPublished = null)
     {
         $this->setProperty('isPublished', $isPublished);
     }
 
     /**
-     * @return CustomerAccountType
+     * @return \Arbor\Model\CustomerAccountType
      */
     public function getCustomerAccountType()
     {
@@ -183,9 +184,9 @@ class SchoolShopProduct extends ModelBase
     }
 
     /**
-     * @param CustomerAccountType $customerAccountType
+     * @param \Arbor\Model\CustomerAccountType $customerAccountType
      */
-    public function setCustomerAccountType(CustomerAccountType $customerAccountType = null)
+    public function setCustomerAccountType(\Arbor\Model\CustomerAccountType $customerAccountType = null)
     {
         $this->setProperty('customerAccountType', $customerAccountType);
     }
@@ -201,7 +202,7 @@ class SchoolShopProduct extends ModelBase
     /**
      * @param string $accountingCode
      */
-    public function setAccountingCode($accountingCode = null)
+    public function setAccountingCode(string $accountingCode = null)
     {
         $this->setProperty('accountingCode', $accountingCode);
     }

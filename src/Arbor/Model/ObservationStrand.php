@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ObservationStrand extends ModelBase
 {
-    const OBSERVATION_THEME = 'observationTheme';
+    public const OBSERVATION_THEME = 'observationTheme';
 
-    const OBSERVATION_GRADE_SET = 'observationGradeSet';
+    public const OBSERVATION_GRADE_SET = 'observationGradeSet';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const USE_COMMENT = 'useComment';
+    public const USE_COMMENT = 'useComment';
 
     protected $_resourceType = ResourceType::OBSERVATION_STRAND;
 
@@ -21,7 +22,7 @@ class ObservationStrand extends ModelBase
      * @return ObservationStrand[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class ObservationStrand extends ModelBase
     }
 
     /**
-     * @return ObservationTheme
+     * @return \Arbor\Model\ObservationTheme
      */
     public function getObservationTheme()
     {
@@ -61,15 +62,15 @@ class ObservationStrand extends ModelBase
     }
 
     /**
-     * @param ObservationTheme $observationTheme
+     * @param \Arbor\Model\ObservationTheme $observationTheme
      */
-    public function setObservationTheme(ObservationTheme $observationTheme = null)
+    public function setObservationTheme(\Arbor\Model\ObservationTheme $observationTheme = null)
     {
         $this->setProperty('observationTheme', $observationTheme);
     }
 
     /**
-     * @return ObservationGradeSet
+     * @return \Arbor\Model\ObservationGradeSet
      */
     public function getObservationGradeSet()
     {
@@ -77,9 +78,9 @@ class ObservationStrand extends ModelBase
     }
 
     /**
-     * @param ObservationGradeSet $observationGradeSet
+     * @param \Arbor\Model\ObservationGradeSet $observationGradeSet
      */
-    public function setObservationGradeSet(ObservationGradeSet $observationGradeSet = null)
+    public function setObservationGradeSet(\Arbor\Model\ObservationGradeSet $observationGradeSet = null)
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }
@@ -95,7 +96,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -111,7 +112,7 @@ class ObservationStrand extends ModelBase
     /**
      * @param bool $useComment
      */
-    public function setUseComment($useComment = null)
+    public function setUseComment(bool $useComment = null)
     {
         $this->setProperty('useComment', $useComment);
     }

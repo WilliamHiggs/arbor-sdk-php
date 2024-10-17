@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class PhantomModel extends ModelBase
 {
-    const ENTITY_TYPE = 'entityType';
+    public const ENTITY_TYPE = 'entityType';
 
-    const USER = 'user';
+    public const USER = 'user';
 
-    const MODEL_CREATED_DATETIME = 'modelCreatedDatetime';
+    public const MODEL_CREATED_DATETIME = 'modelCreatedDatetime';
 
     protected $_resourceType = ResourceType::PHANTOM_MODEL;
 
@@ -19,7 +20,7 @@ class PhantomModel extends ModelBase
      * @return PhantomModel[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,13 +62,13 @@ class PhantomModel extends ModelBase
     /**
      * @param int $entityType
      */
-    public function setEntityType($entityType = null)
+    public function setEntityType(int $entityType = null)
     {
         $this->setProperty('entityType', $entityType);
     }
 
     /**
-     * @return User
+     * @return \Arbor\Model\User
      */
     public function getUser()
     {
@@ -75,9 +76,9 @@ class PhantomModel extends ModelBase
     }
 
     /**
-     * @param User $user
+     * @param \Arbor\Model\User $user
      */
-    public function setUser(User $user = null)
+    public function setUser(\Arbor\Model\User $user = null)
     {
         $this->setProperty('user', $user);
     }

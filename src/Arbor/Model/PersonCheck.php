@@ -3,30 +3,31 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class PersonCheck extends ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const CHECK_TYPE = 'checkType';
+    public const CHECK_TYPE = 'checkType';
 
-    const CHECK_CLEARANCE_LEVEL = 'checkClearanceLevel';
+    public const CHECK_CLEARANCE_LEVEL = 'checkClearanceLevel';
 
-    const REQUESTED_DATE = 'requestedDate';
+    public const REQUESTED_DATE = 'requestedDate';
 
-    const RETURNED_DATE = 'returnedDate';
+    public const RETURNED_DATE = 'returnedDate';
 
-    const EXPIRY_DATE = 'expiryDate';
+    public const EXPIRY_DATE = 'expiryDate';
 
-    const REFERENCE_NUMBER = 'referenceNumber';
+    public const REFERENCE_NUMBER = 'referenceNumber';
 
-    const AUTHENTICATED_DATE = 'authenticatedDate';
+    public const AUTHENTICATED_DATE = 'authenticatedDate';
 
-    const AUTHENTICATED_BY_STAFF = 'authenticatedByStaff';
+    public const AUTHENTICATED_BY_STAFF = 'authenticatedByStaff';
 
-    const EVIDENCE_RECORDED_DATE = 'evidenceRecordedDate';
+    public const EVIDENCE_RECORDED_DATE = 'evidenceRecordedDate';
 
-    const COMMENT = 'comment';
+    public const COMMENT = 'comment';
 
     protected $_resourceType = ResourceType::PERSON_CHECK;
 
@@ -35,7 +36,7 @@ class PersonCheck extends ModelBase
      * @return PersonCheck[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,13 +78,13 @@ class PersonCheck extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
 
     /**
-     * @return CheckType
+     * @return \Arbor\Model\CheckType
      */
     public function getCheckType()
     {
@@ -91,15 +92,15 @@ class PersonCheck extends ModelBase
     }
 
     /**
-     * @param CheckType $checkType
+     * @param \Arbor\Model\CheckType $checkType
      */
-    public function setCheckType(CheckType $checkType = null)
+    public function setCheckType(\Arbor\Model\CheckType $checkType = null)
     {
         $this->setProperty('checkType', $checkType);
     }
 
     /**
-     * @return CheckClearanceLevel
+     * @return \Arbor\Model\CheckClearanceLevel
      */
     public function getCheckClearanceLevel()
     {
@@ -107,9 +108,9 @@ class PersonCheck extends ModelBase
     }
 
     /**
-     * @param CheckClearanceLevel $checkClearanceLevel
+     * @param \Arbor\Model\CheckClearanceLevel $checkClearanceLevel
      */
-    public function setCheckClearanceLevel(CheckClearanceLevel $checkClearanceLevel = null)
+    public function setCheckClearanceLevel(\Arbor\Model\CheckClearanceLevel $checkClearanceLevel = null)
     {
         $this->setProperty('checkClearanceLevel', $checkClearanceLevel);
     }
@@ -173,7 +174,7 @@ class PersonCheck extends ModelBase
     /**
      * @param string $referenceNumber
      */
-    public function setReferenceNumber($referenceNumber = null)
+    public function setReferenceNumber(string $referenceNumber = null)
     {
         $this->setProperty('referenceNumber', $referenceNumber);
     }
@@ -195,7 +196,7 @@ class PersonCheck extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getAuthenticatedByStaff()
     {
@@ -203,9 +204,9 @@ class PersonCheck extends ModelBase
     }
 
     /**
-     * @param Staff $authenticatedByStaff
+     * @param \Arbor\Model\Staff $authenticatedByStaff
      */
-    public function setAuthenticatedByStaff(Staff $authenticatedByStaff = null)
+    public function setAuthenticatedByStaff(\Arbor\Model\Staff $authenticatedByStaff = null)
     {
         $this->setProperty('authenticatedByStaff', $authenticatedByStaff);
     }
@@ -237,7 +238,7 @@ class PersonCheck extends ModelBase
     /**
      * @param string $comment
      */
-    public function setComment($comment = null)
+    public function setComment(string $comment = null)
     {
         $this->setProperty('comment', $comment);
     }

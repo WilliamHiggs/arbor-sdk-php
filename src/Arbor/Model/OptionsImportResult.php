@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class OptionsImportResult extends ModelBase
 {
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const STEPS_COMPLETED = 'stepsCompleted';
+    public const STEPS_COMPLETED = 'stepsCompleted';
 
-    const STEP_IN_PROGRESS = 'stepInProgress';
+    public const STEP_IN_PROGRESS = 'stepInProgress';
 
-    const STARTED_DATETIME = 'startedDatetime';
+    public const STARTED_DATETIME = 'startedDatetime';
 
-    const COMPLETED_DATETIME = 'completedDatetime';
+    public const COMPLETED_DATETIME = 'completedDatetime';
 
-    const ENROLMENT_START_DATE = 'enrolmentStartDate';
+    public const ENROLMENT_START_DATE = 'enrolmentStartDate';
 
-    const ENROLMENT_END_DATE = 'enrolmentEndDate';
+    public const ENROLMENT_END_DATE = 'enrolmentEndDate';
 
     protected $_resourceType = ResourceType::OPTIONS_IMPORT_RESULT;
 
@@ -27,7 +28,7 @@ class OptionsImportResult extends ModelBase
      * @return OptionsImportResult[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class OptionsImportResult extends ModelBase
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -67,9 +68,9 @@ class OptionsImportResult extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -85,7 +86,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param int $stepsCompleted
      */
-    public function setStepsCompleted($stepsCompleted = null)
+    public function setStepsCompleted(int $stepsCompleted = null)
     {
         $this->setProperty('stepsCompleted', $stepsCompleted);
     }
@@ -101,7 +102,7 @@ class OptionsImportResult extends ModelBase
     /**
      * @param int $stepInProgress
      */
-    public function setStepInProgress($stepInProgress = null)
+    public function setStepInProgress(int $stepInProgress = null)
     {
         $this->setProperty('stepInProgress', $stepInProgress);
     }

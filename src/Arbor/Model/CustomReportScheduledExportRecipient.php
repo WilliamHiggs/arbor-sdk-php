@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CustomReportScheduledExportRecipient extends ModelBase
 {
-    const CUSTOM_REPORT_SCHEDULED_EXPORT = 'customReportScheduledExport';
+    public const CUSTOM_REPORT_SCHEDULED_EXPORT = 'customReportScheduledExport';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const EMAIL_ADDRESS = 'emailAddress';
+    public const EMAIL_ADDRESS = 'emailAddress';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_SCHEDULED_EXPORT_RECIPIENT;
 
@@ -19,7 +20,7 @@ class CustomReportScheduledExportRecipient extends ModelBase
      * @return CustomReportScheduledExportRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class CustomReportScheduledExportRecipient extends ModelBase
     }
 
     /**
-     * @return CustomReportScheduledExport
+     * @return \Arbor\Model\CustomReportScheduledExport
      */
     public function getCustomReportScheduledExport()
     {
@@ -59,15 +60,15 @@ class CustomReportScheduledExportRecipient extends ModelBase
     }
 
     /**
-     * @param CustomReportScheduledExport $customReportScheduledExport
+     * @param \Arbor\Model\CustomReportScheduledExport $customReportScheduledExport
      */
-    public function setCustomReportScheduledExport(CustomReportScheduledExport $customReportScheduledExport = null)
+    public function setCustomReportScheduledExport(\Arbor\Model\CustomReportScheduledExport $customReportScheduledExport = null)
     {
         $this->setProperty('customReportScheduledExport', $customReportScheduledExport);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -75,9 +76,9 @@ class CustomReportScheduledExportRecipient extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -93,7 +94,7 @@ class CustomReportScheduledExportRecipient extends ModelBase
     /**
      * @param string $emailAddress
      */
-    public function setEmailAddress($emailAddress = null)
+    public function setEmailAddress(string $emailAddress = null)
     {
         $this->setProperty('emailAddress', $emailAddress);
     }

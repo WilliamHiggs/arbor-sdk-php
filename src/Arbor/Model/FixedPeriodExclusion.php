@@ -3,30 +3,31 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class FixedPeriodExclusion extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const EXCLUSION_REASON = 'exclusionReason';
+    public const EXCLUSION_REASON = 'exclusionReason';
 
-    const FROM_DATETIME = 'fromDatetime';
+    public const FROM_DATETIME = 'fromDatetime';
 
-    const UNTIL_DATETIME = 'untilDatetime';
+    public const UNTIL_DATETIME = 'untilDatetime';
 
-    const DAILY_START_TIME = 'dailyStartTime';
+    public const DAILY_START_TIME = 'dailyStartTime';
 
-    const DAILY_END_TIME = 'dailyEndTime';
+    public const DAILY_END_TIME = 'dailyEndTime';
 
-    const DECISION_DATETIME = 'decisionDatetime';
+    public const DECISION_DATETIME = 'decisionDatetime';
 
-    const NOTIFIED_STUDENT_DATETIME = 'notifiedStudentDatetime';
+    public const NOTIFIED_STUDENT_DATETIME = 'notifiedStudentDatetime';
 
-    const NOTIFIED_GUARDIANS_DATETIME = 'notifiedGuardiansDatetime';
+    public const NOTIFIED_GUARDIANS_DATETIME = 'notifiedGuardiansDatetime';
 
-    const STATISTICAL_DAYS_EXCLUDED = 'statisticalDaysExcluded';
+    public const STATISTICAL_DAYS_EXCLUDED = 'statisticalDaysExcluded';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::FIXED_PERIOD_EXCLUSION;
 
@@ -35,7 +36,7 @@ class FixedPeriodExclusion extends ModelBase
      * @return FixedPeriodExclusion[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +68,7 @@ class FixedPeriodExclusion extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -75,15 +76,15 @@ class FixedPeriodExclusion extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return ExclusionReason
+     * @return \Arbor\Model\ExclusionReason
      */
     public function getExclusionReason()
     {
@@ -91,9 +92,9 @@ class FixedPeriodExclusion extends ModelBase
     }
 
     /**
-     * @param ExclusionReason $exclusionReason
+     * @param \Arbor\Model\ExclusionReason $exclusionReason
      */
-    public function setExclusionReason(ExclusionReason $exclusionReason = null)
+    public function setExclusionReason(\Arbor\Model\ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
@@ -141,7 +142,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param string $dailyStartTime
      */
-    public function setDailyStartTime($dailyStartTime = null)
+    public function setDailyStartTime(string $dailyStartTime = null)
     {
         $this->setProperty('dailyStartTime', $dailyStartTime);
     }
@@ -157,7 +158,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param string $dailyEndTime
      */
-    public function setDailyEndTime($dailyEndTime = null)
+    public function setDailyEndTime(string $dailyEndTime = null)
     {
         $this->setProperty('dailyEndTime', $dailyEndTime);
     }
@@ -221,7 +222,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param float $statisticalDaysExcluded
      */
-    public function setStatisticalDaysExcluded($statisticalDaysExcluded = null)
+    public function setStatisticalDaysExcluded(float $statisticalDaysExcluded = null)
     {
         $this->setProperty('statisticalDaysExcluded', $statisticalDaysExcluded);
     }
@@ -237,7 +238,7 @@ class FixedPeriodExclusion extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

@@ -6,29 +6,32 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Student;
 
 class UcasImportRecord extends ModelBase
 {
-    const UCAS_IMPORT = 'ucasImport';
+    public const UCAS_IMPORT = 'ucasImport';
 
-    const CSV_ROW = 'csvRow';
+    public const CSV_ROW = 'csvRow';
 
-    const MAPPED_STUDENT = 'mappedStudent';
+    public const MAPPED_STUDENT = 'mappedStudent';
 
-    const YEAR_OF_ENTRY = 'yearOfEntry';
+    public const YEAR_OF_ENTRY = 'yearOfEntry';
 
-    const APPLICATION_SCHEME_CODE = 'applicationSchemeCode';
+    public const APPLICATION_SCHEME_CODE = 'applicationSchemeCode';
 
-    const INSTITUTION_CODE = 'institutionCode';
+    public const INSTITUTION_CODE = 'institutionCode';
 
-    const INSTITUTION_NAME = 'institutionName';
+    public const INSTITUTION_NAME = 'institutionName';
 
-    const COURSE_CODE = 'courseCode';
+    public const COURSE_CODE = 'courseCode';
 
-    const COURSE_NAME = 'courseName';
+    public const COURSE_NAME = 'courseName';
 
-    const CAMPUS_CODE = 'campusCode';
+    public const CAMPUS_CODE = 'campusCode';
+
+    public const POINT_OF_ENTRY = 'pointOfEntry';
+
+    public const COURSE_START_DATE = 'courseStartDate';
 
     protected $_resourceType = ResourceType::UK_DFE_UCAS_IMPORT_RECORD;
 
@@ -37,7 +40,7 @@ class UcasImportRecord extends ModelBase
      * @return UcasImportRecord[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +72,7 @@ class UcasImportRecord extends ModelBase
     }
 
     /**
-     * @return UcasImport
+     * @return \Arbor\Model\UkDfe\UcasImport
      */
     public function getUcasImport()
     {
@@ -77,9 +80,9 @@ class UcasImportRecord extends ModelBase
     }
 
     /**
-     * @param UcasImport $ucasImport
+     * @param \Arbor\Model\UkDfe\UcasImport $ucasImport
      */
-    public function setUcasImport(UcasImport $ucasImport = null)
+    public function setUcasImport(\Arbor\Model\UkDfe\UcasImport $ucasImport = null)
     {
         $this->setProperty('ucasImport', $ucasImport);
     }
@@ -95,13 +98,13 @@ class UcasImportRecord extends ModelBase
     /**
      * @param int $csvRow
      */
-    public function setCsvRow($csvRow = null)
+    public function setCsvRow(int $csvRow = null)
     {
         $this->setProperty('csvRow', $csvRow);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getMappedStudent()
     {
@@ -109,9 +112,9 @@ class UcasImportRecord extends ModelBase
     }
 
     /**
-     * @param Student $mappedStudent
+     * @param \Arbor\Model\Student $mappedStudent
      */
-    public function setMappedStudent(Student $mappedStudent = null)
+    public function setMappedStudent(\Arbor\Model\Student $mappedStudent = null)
     {
         $this->setProperty('mappedStudent', $mappedStudent);
     }
@@ -127,7 +130,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param int $yearOfEntry
      */
-    public function setYearOfEntry($yearOfEntry = null)
+    public function setYearOfEntry(int $yearOfEntry = null)
     {
         $this->setProperty('yearOfEntry', $yearOfEntry);
     }
@@ -143,7 +146,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $applicationSchemeCode
      */
-    public function setApplicationSchemeCode($applicationSchemeCode = null)
+    public function setApplicationSchemeCode(string $applicationSchemeCode = null)
     {
         $this->setProperty('applicationSchemeCode', $applicationSchemeCode);
     }
@@ -159,7 +162,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $institutionCode
      */
-    public function setInstitutionCode($institutionCode = null)
+    public function setInstitutionCode(string $institutionCode = null)
     {
         $this->setProperty('institutionCode', $institutionCode);
     }
@@ -175,7 +178,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $institutionName
      */
-    public function setInstitutionName($institutionName = null)
+    public function setInstitutionName(string $institutionName = null)
     {
         $this->setProperty('institutionName', $institutionName);
     }
@@ -191,7 +194,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $courseCode
      */
-    public function setCourseCode($courseCode = null)
+    public function setCourseCode(string $courseCode = null)
     {
         $this->setProperty('courseCode', $courseCode);
     }
@@ -207,7 +210,7 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $courseName
      */
-    public function setCourseName($courseName = null)
+    public function setCourseName(string $courseName = null)
     {
         $this->setProperty('courseName', $courseName);
     }
@@ -223,8 +226,40 @@ class UcasImportRecord extends ModelBase
     /**
      * @param string $campusCode
      */
-    public function setCampusCode($campusCode = null)
+    public function setCampusCode(string $campusCode = null)
     {
         $this->setProperty('campusCode', $campusCode);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPointOfEntry()
+    {
+        return $this->getProperty('pointOfEntry');
+    }
+
+    /**
+     * @param string $pointOfEntry
+     */
+    public function setPointOfEntry(string $pointOfEntry = null)
+    {
+        $this->setProperty('pointOfEntry', $pointOfEntry);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCourseStartDate()
+    {
+        return $this->getProperty('courseStartDate');
+    }
+
+    /**
+     * @param \DateTime $courseStartDate
+     */
+    public function setCourseStartDate(\DateTime $courseStartDate = null)
+    {
+        $this->setProperty('courseStartDate', $courseStartDate);
     }
 }

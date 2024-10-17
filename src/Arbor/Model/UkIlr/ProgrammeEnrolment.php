@@ -9,47 +9,63 @@ use Arbor\Model\ModelBase;
 
 class ProgrammeEnrolment extends ModelBase
 {
-    const PROGRAMME_TYPE = 'programmeType';
+    public const PROGRAMME_TYPE = 'programmeType';
 
-    const FUNDING_MODEL = 'fundingModel';
+    public const FUNDING_MODEL = 'fundingModel';
 
-    const PRIOR_LEARNING_FUNDING_ADJUSTMENT = 'priorLearningFundingAdjustment';
+    public const PRIOR_LEARNING_FUNDING_ADJUSTMENT = 'priorLearningFundingAdjustment';
 
-    const OTHER_FUNDING_ADJUSTMENT = 'otherFundingAdjustment';
+    public const OTHER_FUNDING_ADJUSTMENT = 'otherFundingAdjustment';
 
-    const OUTCOME = 'outcome';
+    public const OUTCOME = 'outcome';
 
-    const EMPLOYMENT_OUTCOME = 'employmentOutcome';
+    public const EMPLOYMENT_OUTCOME = 'employmentOutcome';
 
-    const SOURCE_OF_FUNDING = 'sourceOfFunding';
+    public const SOURCE_OF_FUNDING = 'sourceOfFunding';
 
-    const FULL_FUNDING_INDICATOR = 'fullFundingIndicator';
+    public const FULL_FUNDING_INDICATOR = 'fullFundingIndicator';
 
-    const WORKPLACE_LEARNING = 'workplaceLearning';
+    public const WORKPLACE_LEARNING = 'workplaceLearning';
 
-    const EEF_ELIGIBILITY = 'eefEligibility';
+    public const EEF_ELIGIBILITY = 'eefEligibility';
 
-    const LDM_CODE1 = 'ldmCode1';
+    public const LDM_CODE1 = 'ldmCode1';
 
-    const LDM_CODE2 = 'ldmCode2';
+    public const LDM_CODE2 = 'ldmCode2';
 
-    const LDM_CODE3 = 'ldmCode3';
+    public const LDM_CODE3 = 'ldmCode3';
 
-    const LDM_CODE4 = 'ldmCode4';
+    public const LDM_CODE4 = 'ldmCode4';
 
-    const SPECIAL_PROJECT_CODE = 'specialProjectCode';
+    public const FRAMEWORK_CODE = 'frameworkCode';
 
-    const WORK_PROGRAMME_PARTICIPATION = 'workProgrammeParticipation';
+    public const PATHWAY_CODE = 'pathwayCode';
 
-    const PERCENTAGE_ONLINE_DELIVERY = 'percentageOnlineDelivery';
+    public const SPECIAL_PROJECT_CODE = 'specialProjectCode';
 
-    const COMMUNITY_LEARNING_PROVISION_TYPE = 'communityLearningProvisionType';
+    public const WORK_PROGRAMME_PARTICIPATION = 'workProgrammeParticipation';
 
-    const SW_SUP_AIM_ID = 'swSupAimId';
+    public const PERCENTAGE_ONLINE_DELIVERY = 'percentageOnlineDelivery';
 
-    const OUTCOME_GRADE = 'outcomeGrade';
+    public const COMMUNITY_LEARNING_PROVISION_TYPE = 'communityLearningProvisionType';
 
-    const DELIVERY_ORGANISATION = 'deliveryOrganisation';
+    public const SW_SUP_AIM_ID = 'swSupAimId';
+
+    public const OUTCOME_GRADE = 'outcomeGrade';
+
+    public const DELIVERY_ORGANISATION = 'deliveryOrganisation';
+
+    public const DAM_CODE1 = 'damCode1';
+
+    public const DAM_CODE2 = 'damCode2';
+
+    public const DAM_CODE3 = 'damCode3';
+
+    public const DAM_CODE4 = 'damCode4';
+
+    public const ORIGINAL_LEARNING_START_DATE = 'originalLearningStartDate';
+
+    public const ADDITIONAL_DELIVERY_HOURS = 'additionalDeliveryHours';
 
     protected $_resourceType = ResourceType::UK_ILR_PROGRAMME_ENROLMENT;
 
@@ -58,7 +74,7 @@ class ProgrammeEnrolment extends ModelBase
      * @return ProgrammeEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -100,7 +116,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $programmeType
      */
-    public function setProgrammeType($programmeType = null)
+    public function setProgrammeType(string $programmeType = null)
     {
         $this->setProperty('programmeType', $programmeType);
     }
@@ -116,7 +132,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $fundingModel
      */
-    public function setFundingModel($fundingModel = null)
+    public function setFundingModel(string $fundingModel = null)
     {
         $this->setProperty('fundingModel', $fundingModel);
     }
@@ -132,7 +148,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $priorLearningFundingAdjustment
      */
-    public function setPriorLearningFundingAdjustment($priorLearningFundingAdjustment = null)
+    public function setPriorLearningFundingAdjustment(int $priorLearningFundingAdjustment = null)
     {
         $this->setProperty('priorLearningFundingAdjustment', $priorLearningFundingAdjustment);
     }
@@ -148,7 +164,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param int $otherFundingAdjustment
      */
-    public function setOtherFundingAdjustment($otherFundingAdjustment = null)
+    public function setOtherFundingAdjustment(int $otherFundingAdjustment = null)
     {
         $this->setProperty('otherFundingAdjustment', $otherFundingAdjustment);
     }
@@ -164,7 +180,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $outcome
      */
-    public function setOutcome($outcome = null)
+    public function setOutcome(string $outcome = null)
     {
         $this->setProperty('outcome', $outcome);
     }
@@ -180,7 +196,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $employmentOutcome
      */
-    public function setEmploymentOutcome($employmentOutcome = null)
+    public function setEmploymentOutcome(string $employmentOutcome = null)
     {
         $this->setProperty('employmentOutcome', $employmentOutcome);
     }
@@ -196,7 +212,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $sourceOfFunding
      */
-    public function setSourceOfFunding($sourceOfFunding = null)
+    public function setSourceOfFunding(string $sourceOfFunding = null)
     {
         $this->setProperty('sourceOfFunding', $sourceOfFunding);
     }
@@ -212,7 +228,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $fullFundingIndicator
      */
-    public function setFullFundingIndicator($fullFundingIndicator = null)
+    public function setFullFundingIndicator(string $fullFundingIndicator = null)
     {
         $this->setProperty('fullFundingIndicator', $fullFundingIndicator);
     }
@@ -228,7 +244,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param bool $workplaceLearning
      */
-    public function setWorkplaceLearning($workplaceLearning = null)
+    public function setWorkplaceLearning(bool $workplaceLearning = null)
     {
         $this->setProperty('workplaceLearning', $workplaceLearning);
     }
@@ -244,7 +260,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $eefEligibility
      */
-    public function setEefEligibility($eefEligibility = null)
+    public function setEefEligibility(string $eefEligibility = null)
     {
         $this->setProperty('eefEligibility', $eefEligibility);
     }
@@ -260,7 +276,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode1
      */
-    public function setLdmCode1($ldmCode1 = null)
+    public function setLdmCode1(string $ldmCode1 = null)
     {
         $this->setProperty('ldmCode1', $ldmCode1);
     }
@@ -276,7 +292,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode2
      */
-    public function setLdmCode2($ldmCode2 = null)
+    public function setLdmCode2(string $ldmCode2 = null)
     {
         $this->setProperty('ldmCode2', $ldmCode2);
     }
@@ -292,7 +308,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode3
      */
-    public function setLdmCode3($ldmCode3 = null)
+    public function setLdmCode3(string $ldmCode3 = null)
     {
         $this->setProperty('ldmCode3', $ldmCode3);
     }
@@ -308,9 +324,41 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $ldmCode4
      */
-    public function setLdmCode4($ldmCode4 = null)
+    public function setLdmCode4(string $ldmCode4 = null)
     {
         $this->setProperty('ldmCode4', $ldmCode4);
+    }
+
+    /**
+     * @return string
+     */
+    public function getFrameworkCode()
+    {
+        return $this->getProperty('frameworkCode');
+    }
+
+    /**
+     * @param string $frameworkCode
+     */
+    public function setFrameworkCode(string $frameworkCode = null)
+    {
+        $this->setProperty('frameworkCode', $frameworkCode);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPathwayCode()
+    {
+        return $this->getProperty('pathwayCode');
+    }
+
+    /**
+     * @param string $pathwayCode
+     */
+    public function setPathwayCode(string $pathwayCode = null)
+    {
+        $this->setProperty('pathwayCode', $pathwayCode);
     }
 
     /**
@@ -324,7 +372,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $specialProjectCode
      */
-    public function setSpecialProjectCode($specialProjectCode = null)
+    public function setSpecialProjectCode(string $specialProjectCode = null)
     {
         $this->setProperty('specialProjectCode', $specialProjectCode);
     }
@@ -340,7 +388,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param bool $workProgrammeParticipation
      */
-    public function setWorkProgrammeParticipation($workProgrammeParticipation = null)
+    public function setWorkProgrammeParticipation(bool $workProgrammeParticipation = null)
     {
         $this->setProperty('workProgrammeParticipation', $workProgrammeParticipation);
     }
@@ -356,7 +404,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $percentageOnlineDelivery
      */
-    public function setPercentageOnlineDelivery($percentageOnlineDelivery = null)
+    public function setPercentageOnlineDelivery(string $percentageOnlineDelivery = null)
     {
         $this->setProperty('percentageOnlineDelivery', $percentageOnlineDelivery);
     }
@@ -372,7 +420,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $communityLearningProvisionType
      */
-    public function setCommunityLearningProvisionType($communityLearningProvisionType = null)
+    public function setCommunityLearningProvisionType(string $communityLearningProvisionType = null)
     {
         $this->setProperty('communityLearningProvisionType', $communityLearningProvisionType);
     }
@@ -388,7 +436,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $swSupAimId
      */
-    public function setSwSupAimId($swSupAimId = null)
+    public function setSwSupAimId(string $swSupAimId = null)
     {
         $this->setProperty('swSupAimId', $swSupAimId);
     }
@@ -404,7 +452,7 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $outcomeGrade
      */
-    public function setOutcomeGrade($outcomeGrade = null)
+    public function setOutcomeGrade(string $outcomeGrade = null)
     {
         $this->setProperty('outcomeGrade', $outcomeGrade);
     }
@@ -420,8 +468,104 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param ModelBase $deliveryOrganisation
      */
-    public function setDeliveryOrganisation(ModelBase $deliveryOrganisation = null)
+    public function setDeliveryOrganisation(\ModelBase $deliveryOrganisation = null)
     {
         $this->setProperty('deliveryOrganisation', $deliveryOrganisation);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDamCode1()
+    {
+        return $this->getProperty('damCode1');
+    }
+
+    /**
+     * @param string $damCode1
+     */
+    public function setDamCode1(string $damCode1 = null)
+    {
+        $this->setProperty('damCode1', $damCode1);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDamCode2()
+    {
+        return $this->getProperty('damCode2');
+    }
+
+    /**
+     * @param string $damCode2
+     */
+    public function setDamCode2(string $damCode2 = null)
+    {
+        $this->setProperty('damCode2', $damCode2);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDamCode3()
+    {
+        return $this->getProperty('damCode3');
+    }
+
+    /**
+     * @param string $damCode3
+     */
+    public function setDamCode3(string $damCode3 = null)
+    {
+        $this->setProperty('damCode3', $damCode3);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDamCode4()
+    {
+        return $this->getProperty('damCode4');
+    }
+
+    /**
+     * @param string $damCode4
+     */
+    public function setDamCode4(string $damCode4 = null)
+    {
+        $this->setProperty('damCode4', $damCode4);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getOriginalLearningStartDate()
+    {
+        return $this->getProperty('originalLearningStartDate');
+    }
+
+    /**
+     * @param \DateTime $originalLearningStartDate
+     */
+    public function setOriginalLearningStartDate(\DateTime $originalLearningStartDate = null)
+    {
+        $this->setProperty('originalLearningStartDate', $originalLearningStartDate);
+    }
+
+    /**
+     * @return int
+     */
+    public function getAdditionalDeliveryHours()
+    {
+        return $this->getProperty('additionalDeliveryHours');
+    }
+
+    /**
+     * @param int $additionalDeliveryHours
+     */
+    public function setAdditionalDeliveryHours(int $additionalDeliveryHours = null)
+    {
+        $this->setProperty('additionalDeliveryHours', $additionalDeliveryHours);
     }
 }

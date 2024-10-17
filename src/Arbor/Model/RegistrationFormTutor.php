@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class RegistrationFormTutor extends ModelBase
 {
-    const REGISTRATION_FORM = 'registrationForm';
+    public const REGISTRATION_FORM = 'registrationForm';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::REGISTRATION_FORM_TUTOR;
 
@@ -21,7 +22,7 @@ class RegistrationFormTutor extends ModelBase
      * @return RegistrationFormTutor[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class RegistrationFormTutor extends ModelBase
     }
 
     /**
-     * @return RegistrationForm
+     * @return \Arbor\Model\RegistrationForm
      */
     public function getRegistrationForm()
     {
@@ -61,15 +62,15 @@ class RegistrationFormTutor extends ModelBase
     }
 
     /**
-     * @param RegistrationForm $registrationForm
+     * @param \Arbor\Model\RegistrationForm $registrationForm
      */
-    public function setRegistrationForm(RegistrationForm $registrationForm = null)
+    public function setRegistrationForm(\Arbor\Model\RegistrationForm $registrationForm = null)
     {
         $this->setProperty('registrationForm', $registrationForm);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -77,9 +78,9 @@ class RegistrationFormTutor extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

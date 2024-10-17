@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
 {
-    const PROGRESS_ASSESSMENT_BATCH_TARGET = 'progressAssessmentBatchTarget';
+    public const PROGRESS_ASSESSMENT_BATCH_TARGET = 'progressAssessmentBatchTarget';
 
-    const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
+    public const PROGRESS_MEASUREMENT_PERIOD = 'progressMeasurementPeriod';
 
-    const MARKING_STARTED_DATETIME = 'markingStartedDatetime';
+    public const MARKING_STARTED_DATETIME = 'markingStartedDatetime';
 
-    const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
+    public const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
-    const MARKING_FINALIZED_DATETIME = 'markingFinalizedDatetime';
+    public const MARKING_FINALIZED_DATETIME = 'markingFinalizedDatetime';
 
-    const ALL_MARKS_APPROVED = 'allMarksApproved';
+    public const ALL_MARKS_APPROVED = 'allMarksApproved';
 
     protected $_resourceType = ResourceType::PROGRESS_ASSESSMENT_BATCH_TARGET_MEASUREMENT_PERIOD;
 
@@ -25,7 +26,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
      * @return ProgressAssessmentBatchTargetMeasurementPeriod[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +58,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     }
 
     /**
-     * @return ProgressAssessmentBatchTarget
+     * @return \Arbor\Model\ProgressAssessmentBatchTarget
      */
     public function getProgressAssessmentBatchTarget()
     {
@@ -65,15 +66,15 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     }
 
     /**
-     * @param ProgressAssessmentBatchTarget $progressAssessmentBatchTarget
+     * @param \Arbor\Model\ProgressAssessmentBatchTarget $progressAssessmentBatchTarget
      */
-    public function setProgressAssessmentBatchTarget(ProgressAssessmentBatchTarget $progressAssessmentBatchTarget = null)
+    public function setProgressAssessmentBatchTarget(\Arbor\Model\ProgressAssessmentBatchTarget $progressAssessmentBatchTarget = null)
     {
         $this->setProperty('progressAssessmentBatchTarget', $progressAssessmentBatchTarget);
     }
 
     /**
-     * @return ProgressMeasurementPeriod
+     * @return \Arbor\Model\ProgressMeasurementPeriod
      */
     public function getProgressMeasurementPeriod()
     {
@@ -81,9 +82,9 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     }
 
     /**
-     * @param ProgressMeasurementPeriod $progressMeasurementPeriod
+     * @param \Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod
      */
-    public function setProgressMeasurementPeriod(ProgressMeasurementPeriod $progressMeasurementPeriod = null)
+    public function setProgressMeasurementPeriod(\Arbor\Model\ProgressMeasurementPeriod $progressMeasurementPeriod = null)
     {
         $this->setProperty('progressMeasurementPeriod', $progressMeasurementPeriod);
     }
@@ -147,7 +148,7 @@ class ProgressAssessmentBatchTargetMeasurementPeriod extends ModelBase
     /**
      * @param bool $allMarksApproved
      */
-    public function setAllMarksApproved($allMarksApproved = null)
+    public function setAllMarksApproved(bool $allMarksApproved = null)
     {
         $this->setProperty('allMarksApproved', $allMarksApproved);
     }

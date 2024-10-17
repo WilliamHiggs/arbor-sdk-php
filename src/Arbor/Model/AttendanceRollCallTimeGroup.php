@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AttendanceRollCallTimeGroup extends ModelBase
 {
-    const ATTENDANCE_ROLL_CALL_TIME = 'attendanceRollCallTime';
+    public const ATTENDANCE_ROLL_CALL_TIME = 'attendanceRollCallTime';
 
-    const STUDENT_GROUP = 'studentGroup';
+    public const STUDENT_GROUP = 'studentGroup';
 
     protected $_resourceType = ResourceType::ATTENDANCE_ROLL_CALL_TIME_GROUP;
 
@@ -17,7 +18,7 @@ class AttendanceRollCallTimeGroup extends ModelBase
      * @return AttendanceRollCallTimeGroup[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class AttendanceRollCallTimeGroup extends ModelBase
     }
 
     /**
-     * @return AttendanceRollCallTime
+     * @return \Arbor\Model\AttendanceRollCallTime
      */
     public function getAttendanceRollCallTime()
     {
@@ -57,9 +58,9 @@ class AttendanceRollCallTimeGroup extends ModelBase
     }
 
     /**
-     * @param AttendanceRollCallTime $attendanceRollCallTime
+     * @param \Arbor\Model\AttendanceRollCallTime $attendanceRollCallTime
      */
-    public function setAttendanceRollCallTime(AttendanceRollCallTime $attendanceRollCallTime = null)
+    public function setAttendanceRollCallTime(\Arbor\Model\AttendanceRollCallTime $attendanceRollCallTime = null)
     {
         $this->setProperty('attendanceRollCallTime', $attendanceRollCallTime);
     }
@@ -75,7 +76,7 @@ class AttendanceRollCallTimeGroup extends ModelBase
     /**
      * @param ModelBase $studentGroup
      */
-    public function setStudentGroup(ModelBase $studentGroup = null)
+    public function setStudentGroup(\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }

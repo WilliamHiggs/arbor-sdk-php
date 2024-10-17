@@ -3,28 +3,29 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentOtherSchoolAttendanceRecord extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
+    public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
-    const YEAR = 'year';
+    public const YEAR = 'year';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const SESSIONS_POSSIBLE = 'sessionsPossible';
+    public const SESSIONS_POSSIBLE = 'sessionsPossible';
 
-    const SESSIONS_ATTENDED = 'sessionsAttended';
+    public const SESSIONS_ATTENDED = 'sessionsAttended';
 
-    const SESSIONS_AUTHORIZED_ABSENCE = 'sessionsAuthorizedAbsence';
+    public const SESSIONS_AUTHORIZED_ABSENCE = 'sessionsAuthorizedAbsence';
 
-    const SESSIONS_UNAUTHORIZED_ABSENCE = 'sessionsUnauthorizedAbsence';
+    public const SESSIONS_UNAUTHORIZED_ABSENCE = 'sessionsUnauthorizedAbsence';
 
-    const ATTENDANCE_START_DATE = 'attendanceStartDate';
+    public const ATTENDANCE_START_DATE = 'attendanceStartDate';
 
-    const ATTENDANCE_MARKS = 'attendanceMarks';
+    public const ATTENDANCE_MARKS = 'attendanceMarks';
 
     protected $_resourceType = ResourceType::STUDENT_OTHER_SCHOOL_ATTENDANCE_RECORD;
 
@@ -33,7 +34,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
      * @return StudentOtherSchoolAttendanceRecord[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -73,15 +74,15 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getEducationalInstitution()
     {
@@ -89,9 +90,9 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     }
 
     /**
-     * @param EducationalInstitution $educationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -107,13 +108,13 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param string $year
      */
-    public function setYear($year = null)
+    public function setYear(string $year = null)
     {
         $this->setProperty('year', $year);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -121,9 +122,9 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }
@@ -139,7 +140,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param int $sessionsPossible
      */
-    public function setSessionsPossible($sessionsPossible = null)
+    public function setSessionsPossible(int $sessionsPossible = null)
     {
         $this->setProperty('sessionsPossible', $sessionsPossible);
     }
@@ -155,7 +156,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param int $sessionsAttended
      */
-    public function setSessionsAttended($sessionsAttended = null)
+    public function setSessionsAttended(int $sessionsAttended = null)
     {
         $this->setProperty('sessionsAttended', $sessionsAttended);
     }
@@ -171,7 +172,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param int $sessionsAuthorizedAbsence
      */
-    public function setSessionsAuthorizedAbsence($sessionsAuthorizedAbsence = null)
+    public function setSessionsAuthorizedAbsence(int $sessionsAuthorizedAbsence = null)
     {
         $this->setProperty('sessionsAuthorizedAbsence', $sessionsAuthorizedAbsence);
     }
@@ -187,7 +188,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param int $sessionsUnauthorizedAbsence
      */
-    public function setSessionsUnauthorizedAbsence($sessionsUnauthorizedAbsence = null)
+    public function setSessionsUnauthorizedAbsence(int $sessionsUnauthorizedAbsence = null)
     {
         $this->setProperty('sessionsUnauthorizedAbsence', $sessionsUnauthorizedAbsence);
     }
@@ -219,7 +220,7 @@ class StudentOtherSchoolAttendanceRecord extends ModelBase
     /**
      * @param string $attendanceMarks
      */
-    public function setAttendanceMarks($attendanceMarks = null)
+    public function setAttendanceMarks(string $attendanceMarks = null)
     {
         $this->setProperty('attendanceMarks', $attendanceMarks);
     }

@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BusinessRoleAssignment extends ModelBase
 {
-    const BUSINESS_ROLE = 'businessRole';
+    public const BUSINESS_ROLE = 'businessRole';
 
-    const STAFF_CONTRACT_POST = 'staffContractPost';
+    public const STAFF_CONTRACT_POST = 'staffContractPost';
 
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::BUSINESS_ROLE_ASSIGNMENT;
 
@@ -23,7 +24,7 @@ class BusinessRoleAssignment extends ModelBase
      * @return BusinessRoleAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class BusinessRoleAssignment extends ModelBase
     }
 
     /**
-     * @return BusinessRole
+     * @return \Arbor\Model\BusinessRole
      */
     public function getBusinessRole()
     {
@@ -63,15 +64,15 @@ class BusinessRoleAssignment extends ModelBase
     }
 
     /**
-     * @param BusinessRole $businessRole
+     * @param \Arbor\Model\BusinessRole $businessRole
      */
-    public function setBusinessRole(BusinessRole $businessRole = null)
+    public function setBusinessRole(\Arbor\Model\BusinessRole $businessRole = null)
     {
         $this->setProperty('businessRole', $businessRole);
     }
 
     /**
-     * @return StaffContractPost
+     * @return \Arbor\Model\StaffContractPost
      */
     public function getStaffContractPost()
     {
@@ -79,9 +80,9 @@ class BusinessRoleAssignment extends ModelBase
     }
 
     /**
-     * @param StaffContractPost $staffContractPost
+     * @param \Arbor\Model\StaffContractPost $staffContractPost
      */
-    public function setStaffContractPost(StaffContractPost $staffContractPost = null)
+    public function setStaffContractPost(\Arbor\Model\StaffContractPost $staffContractPost = null)
     {
         $this->setProperty('staffContractPost', $staffContractPost);
     }
@@ -97,7 +98,7 @@ class BusinessRoleAssignment extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }

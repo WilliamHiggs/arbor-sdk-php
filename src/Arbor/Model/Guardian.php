@@ -3,32 +3,33 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Guardian extends ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const EMPLOYER = 'employer';
+    public const EMPLOYER = 'employer';
 
-    const RELIGION = 'religion';
+    public const RELIGION = 'religion';
 
-    const ETHNICITY = 'ethnicity';
+    public const ETHNICITY = 'ethnicity';
 
-    const JOB_POSITION = 'jobPosition';
+    public const JOB_POSITION = 'jobPosition';
 
-    const BLOOD_GROUP = 'bloodGroup';
+    public const BLOOD_GROUP = 'bloodGroup';
 
-    const SHARE_CONTACT_DETAILS = 'shareContactDetails';
+    public const SHARE_CONTACT_DETAILS = 'shareContactDetails';
 
-    const PREFERRED_CONTACT_METHOD = 'preferredContactMethod';
+    public const PREFERRED_CONTACT_METHOD = 'preferredContactMethod';
 
-    const LEGACY_SYSTEM_ID = 'legacySystemId';
+    public const LEGACY_SYSTEM_ID = 'legacySystemId';
 
-    const IS_KEY_WORKER = 'isKeyWorker';
+    public const IS_KEY_WORKER = 'isKeyWorker';
 
-    const IS_ACTIVE_OUTGOING_SYNC = 'isActiveOutgoingSync';
+    public const IS_ACTIVE_OUTGOING_SYNC = 'isActiveOutgoingSync';
 
-    const IS_ACTIVE_INCOMING_SYNC = 'isActiveIncomingSync';
+    public const IS_ACTIVE_INCOMING_SYNC = 'isActiveIncomingSync';
 
     protected $_resourceType = ResourceType::GUARDIAN;
 
@@ -37,7 +38,7 @@ class Guardian extends ModelBase
      * @return Guardian[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +70,7 @@ class Guardian extends ModelBase
     }
 
     /**
-     * @return Person
+     * @return \Arbor\Model\Person
      */
     public function getPerson()
     {
@@ -77,9 +78,9 @@ class Guardian extends ModelBase
     }
 
     /**
-     * @param Person $person
+     * @param \Arbor\Model\Person $person
      */
-    public function setPerson(Person $person = null)
+    public function setPerson(\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -95,13 +96,13 @@ class Guardian extends ModelBase
     /**
      * @param string $employer
      */
-    public function setEmployer($employer = null)
+    public function setEmployer(string $employer = null)
     {
         $this->setProperty('employer', $employer);
     }
 
     /**
-     * @return Religion
+     * @return \Arbor\Model\Religion
      */
     public function getReligion()
     {
@@ -109,15 +110,15 @@ class Guardian extends ModelBase
     }
 
     /**
-     * @param Religion $religion
+     * @param \Arbor\Model\Religion $religion
      */
-    public function setReligion(Religion $religion = null)
+    public function setReligion(\Arbor\Model\Religion $religion = null)
     {
         $this->setProperty('religion', $religion);
     }
 
     /**
-     * @return Ethnicity
+     * @return \Arbor\Model\Ethnicity
      */
     public function getEthnicity()
     {
@@ -125,9 +126,9 @@ class Guardian extends ModelBase
     }
 
     /**
-     * @param Ethnicity $ethnicity
+     * @param \Arbor\Model\Ethnicity $ethnicity
      */
-    public function setEthnicity(Ethnicity $ethnicity = null)
+    public function setEthnicity(\Arbor\Model\Ethnicity $ethnicity = null)
     {
         $this->setProperty('ethnicity', $ethnicity);
     }
@@ -143,7 +144,7 @@ class Guardian extends ModelBase
     /**
      * @param string $jobPosition
      */
-    public function setJobPosition($jobPosition = null)
+    public function setJobPosition(string $jobPosition = null)
     {
         $this->setProperty('jobPosition', $jobPosition);
     }
@@ -159,7 +160,7 @@ class Guardian extends ModelBase
     /**
      * @param string $bloodGroup
      */
-    public function setBloodGroup($bloodGroup = null)
+    public function setBloodGroup(string $bloodGroup = null)
     {
         $this->setProperty('bloodGroup', $bloodGroup);
     }
@@ -175,7 +176,7 @@ class Guardian extends ModelBase
     /**
      * @param bool $shareContactDetails
      */
-    public function setShareContactDetails($shareContactDetails = null)
+    public function setShareContactDetails(bool $shareContactDetails = null)
     {
         $this->setProperty('shareContactDetails', $shareContactDetails);
     }
@@ -191,7 +192,7 @@ class Guardian extends ModelBase
     /**
      * @param string $preferredContactMethod
      */
-    public function setPreferredContactMethod($preferredContactMethod = null)
+    public function setPreferredContactMethod(string $preferredContactMethod = null)
     {
         $this->setProperty('preferredContactMethod', $preferredContactMethod);
     }
@@ -207,7 +208,7 @@ class Guardian extends ModelBase
     /**
      * @param string $legacySystemId
      */
-    public function setLegacySystemId($legacySystemId = null)
+    public function setLegacySystemId(string $legacySystemId = null)
     {
         $this->setProperty('legacySystemId', $legacySystemId);
     }
@@ -223,7 +224,7 @@ class Guardian extends ModelBase
     /**
      * @param bool $isKeyWorker
      */
-    public function setIsKeyWorker($isKeyWorker = null)
+    public function setIsKeyWorker(bool $isKeyWorker = null)
     {
         $this->setProperty('isKeyWorker', $isKeyWorker);
     }
@@ -239,7 +240,7 @@ class Guardian extends ModelBase
     /**
      * @param bool $isActiveOutgoingSync
      */
-    public function setIsActiveOutgoingSync($isActiveOutgoingSync = null)
+    public function setIsActiveOutgoingSync(bool $isActiveOutgoingSync = null)
     {
         $this->setProperty('isActiveOutgoingSync', $isActiveOutgoingSync);
     }
@@ -255,7 +256,7 @@ class Guardian extends ModelBase
     /**
      * @param bool $isActiveIncomingSync
      */
-    public function setIsActiveIncomingSync($isActiveIncomingSync = null)
+    public function setIsActiveIncomingSync(bool $isActiveIncomingSync = null)
     {
         $this->setProperty('isActiveIncomingSync', $isActiveIncomingSync);
     }

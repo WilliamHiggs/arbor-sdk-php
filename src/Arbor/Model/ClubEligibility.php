@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ClubEligibility extends ModelBase
 {
-    const CLUB = 'club';
+    public const CLUB = 'club';
 
-    const ELIGIBLE = 'eligible';
+    public const ELIGIBLE = 'eligible';
 
     protected $_resourceType = ResourceType::CLUB_ELIGIBILITY;
 
@@ -17,7 +18,7 @@ class ClubEligibility extends ModelBase
      * @return ClubEligibility[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class ClubEligibility extends ModelBase
     }
 
     /**
-     * @return Club
+     * @return \Arbor\Model\Club
      */
     public function getClub()
     {
@@ -57,9 +58,9 @@ class ClubEligibility extends ModelBase
     }
 
     /**
-     * @param Club $club
+     * @param \Arbor\Model\Club $club
      */
-    public function setClub(Club $club = null)
+    public function setClub(\Arbor\Model\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
@@ -75,7 +76,7 @@ class ClubEligibility extends ModelBase
     /**
      * @param ModelBase $eligible
      */
-    public function setEligible(ModelBase $eligible = null)
+    public function setEligible(\ModelBase $eligible = null)
     {
         $this->setProperty('eligible', $eligible);
     }

@@ -3,24 +3,25 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InternalExclusion extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ISSUED_BY_STAFF = 'issuedByStaff';
+    public const ISSUED_BY_STAFF = 'issuedByStaff';
 
-    const INTERNAL_EXCLUSION_SESSION = 'internalExclusionSession';
+    public const INTERNAL_EXCLUSION_SESSION = 'internalExclusionSession';
 
-    const INTERNAL_EXCLUSION_TYPE = 'internalExclusionType';
+    public const INTERNAL_EXCLUSION_TYPE = 'internalExclusionType';
 
-    const EXCLUSION_REASON = 'exclusionReason';
+    public const EXCLUSION_REASON = 'exclusionReason';
 
-    const INTERNAL_EXCLUSION_REASON = 'internalExclusionReason';
+    public const INTERNAL_EXCLUSION_REASON = 'internalExclusionReason';
 
-    const ISSUED_DATETIME = 'issuedDatetime';
+    public const ISSUED_DATETIME = 'issuedDatetime';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::INTERNAL_EXCLUSION;
 
@@ -29,7 +30,7 @@ class InternalExclusion extends ModelBase
      * @return InternalExclusion[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class InternalExclusion extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -69,15 +70,15 @@ class InternalExclusion extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getIssuedByStaff()
     {
@@ -85,15 +86,15 @@ class InternalExclusion extends ModelBase
     }
 
     /**
-     * @param Staff $issuedByStaff
+     * @param \Arbor\Model\Staff $issuedByStaff
      */
-    public function setIssuedByStaff(Staff $issuedByStaff = null)
+    public function setIssuedByStaff(\Arbor\Model\Staff $issuedByStaff = null)
     {
         $this->setProperty('issuedByStaff', $issuedByStaff);
     }
 
     /**
-     * @return InternalExclusionSession
+     * @return \Arbor\Model\InternalExclusionSession
      */
     public function getInternalExclusionSession()
     {
@@ -101,15 +102,15 @@ class InternalExclusion extends ModelBase
     }
 
     /**
-     * @param InternalExclusionSession $internalExclusionSession
+     * @param \Arbor\Model\InternalExclusionSession $internalExclusionSession
      */
-    public function setInternalExclusionSession(InternalExclusionSession $internalExclusionSession = null)
+    public function setInternalExclusionSession(\Arbor\Model\InternalExclusionSession $internalExclusionSession = null)
     {
         $this->setProperty('internalExclusionSession', $internalExclusionSession);
     }
 
     /**
-     * @return InternalExclusionType
+     * @return \Arbor\Model\InternalExclusionType
      */
     public function getInternalExclusionType()
     {
@@ -117,15 +118,15 @@ class InternalExclusion extends ModelBase
     }
 
     /**
-     * @param InternalExclusionType $internalExclusionType
+     * @param \Arbor\Model\InternalExclusionType $internalExclusionType
      */
-    public function setInternalExclusionType(InternalExclusionType $internalExclusionType = null)
+    public function setInternalExclusionType(\Arbor\Model\InternalExclusionType $internalExclusionType = null)
     {
         $this->setProperty('internalExclusionType', $internalExclusionType);
     }
 
     /**
-     * @return ExclusionReason
+     * @return \Arbor\Model\ExclusionReason
      */
     public function getExclusionReason()
     {
@@ -133,15 +134,15 @@ class InternalExclusion extends ModelBase
     }
 
     /**
-     * @param ExclusionReason $exclusionReason
+     * @param \Arbor\Model\ExclusionReason $exclusionReason
      */
-    public function setExclusionReason(ExclusionReason $exclusionReason = null)
+    public function setExclusionReason(\Arbor\Model\ExclusionReason $exclusionReason = null)
     {
         $this->setProperty('exclusionReason', $exclusionReason);
     }
 
     /**
-     * @return InternalExclusionReason
+     * @return \Arbor\Model\InternalExclusionReason
      */
     public function getInternalExclusionReason()
     {
@@ -149,9 +150,9 @@ class InternalExclusion extends ModelBase
     }
 
     /**
-     * @param InternalExclusionReason $internalExclusionReason
+     * @param \Arbor\Model\InternalExclusionReason $internalExclusionReason
      */
-    public function setInternalExclusionReason(InternalExclusionReason $internalExclusionReason = null)
+    public function setInternalExclusionReason(\Arbor\Model\InternalExclusionReason $internalExclusionReason = null)
     {
         $this->setProperty('internalExclusionReason', $internalExclusionReason);
     }
@@ -183,7 +184,7 @@ class InternalExclusion extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

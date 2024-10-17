@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AchievementLevelSet extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const ACHIEVED_THRESHOLD = 'achievedThreshold';
+    public const ACHIEVED_THRESHOLD = 'achievedThreshold';
 
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    const CURRICULUM = 'curriculum';
+    public const CURRICULUM = 'curriculum';
 
     protected $_resourceType = ResourceType::ACHIEVEMENT_LEVEL_SET;
 
@@ -23,7 +24,7 @@ class AchievementLevelSet extends ModelBase
      * @return AchievementLevelSet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class AchievementLevelSet extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -81,7 +82,7 @@ class AchievementLevelSet extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -97,7 +98,7 @@ class AchievementLevelSet extends ModelBase
     /**
      * @param float $achievedThreshold
      */
-    public function setAchievedThreshold($achievedThreshold = null)
+    public function setAchievedThreshold(float $achievedThreshold = null)
     {
         $this->setProperty('achievedThreshold', $achievedThreshold);
     }
@@ -113,13 +114,13 @@ class AchievementLevelSet extends ModelBase
     /**
      * @param string $type
      */
-    public function setType($type = null)
+    public function setType(string $type = null)
     {
         $this->setProperty('type', $type);
     }
 
     /**
-     * @return Curriculum
+     * @return \Arbor\Model\Curriculum
      */
     public function getCurriculum()
     {
@@ -127,9 +128,9 @@ class AchievementLevelSet extends ModelBase
     }
 
     /**
-     * @param Curriculum $curriculum
+     * @param \Arbor\Model\Curriculum $curriculum
      */
-    public function setCurriculum(Curriculum $curriculum = null)
+    public function setCurriculum(\Arbor\Model\Curriculum $curriculum = null)
     {
         $this->setProperty('curriculum', $curriculum);
     }

@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Room extends ModelBase
 {
-    const SITE = 'site';
+    public const SITE = 'site';
 
-    const ROOM_NAME = 'roomName';
+    public const ROOM_NAME = 'roomName';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const STUDENT_CAPACITY = 'studentCapacity';
+    public const STUDENT_CAPACITY = 'studentCapacity';
 
-    const IS_INVIGILATION_ROOM = 'isInvigilationRoom';
+    public const IS_INVIGILATION_ROOM = 'isInvigilationRoom';
 
-    const INVIGILATION_CAPACITY = 'invigilationCapacity';
+    public const INVIGILATION_CAPACITY = 'invigilationCapacity';
 
     protected $_resourceType = ResourceType::ROOM;
 
@@ -25,7 +26,7 @@ class Room extends ModelBase
      * @return Room[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +58,7 @@ class Room extends ModelBase
     }
 
     /**
-     * @return Site
+     * @return \Arbor\Model\Site
      */
     public function getSite()
     {
@@ -65,9 +66,9 @@ class Room extends ModelBase
     }
 
     /**
-     * @param Site $site
+     * @param \Arbor\Model\Site $site
      */
-    public function setSite(Site $site = null)
+    public function setSite(\Arbor\Model\Site $site = null)
     {
         $this->setProperty('site', $site);
     }
@@ -83,7 +84,7 @@ class Room extends ModelBase
     /**
      * @param string $roomName
      */
-    public function setRoomName($roomName = null)
+    public function setRoomName(string $roomName = null)
     {
         $this->setProperty('roomName', $roomName);
     }
@@ -99,7 +100,7 @@ class Room extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -115,7 +116,7 @@ class Room extends ModelBase
     /**
      * @param int $studentCapacity
      */
-    public function setStudentCapacity($studentCapacity = null)
+    public function setStudentCapacity(int $studentCapacity = null)
     {
         $this->setProperty('studentCapacity', $studentCapacity);
     }
@@ -131,7 +132,7 @@ class Room extends ModelBase
     /**
      * @param bool $isInvigilationRoom
      */
-    public function setIsInvigilationRoom($isInvigilationRoom = null)
+    public function setIsInvigilationRoom(bool $isInvigilationRoom = null)
     {
         $this->setProperty('isInvigilationRoom', $isInvigilationRoom);
     }
@@ -147,7 +148,7 @@ class Room extends ModelBase
     /**
      * @param int $invigilationCapacity
      */
-    public function setInvigilationCapacity($invigilationCapacity = null)
+    public function setInvigilationCapacity(int $invigilationCapacity = null)
     {
         $this->setProperty('invigilationCapacity', $invigilationCapacity);
     }

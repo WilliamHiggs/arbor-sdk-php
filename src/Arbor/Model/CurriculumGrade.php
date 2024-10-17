@@ -3,28 +3,29 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CurriculumGrade extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const CURRICULUM_GRADE_NAME = 'curriculumGradeName';
+    public const CURRICULUM_GRADE_NAME = 'curriculumGradeName';
 
-    const CURRICULUM_TIER = 'curriculumTier';
+    public const CURRICULUM_TIER = 'curriculumTier';
 
-    const ACADEMIC_YEAR_INDEX = 'academicYearIndex';
+    public const ACADEMIC_YEAR_INDEX = 'academicYearIndex';
 
-    const MINIMUM_AGE_AT_START = 'minimumAgeAtStart';
+    public const MINIMUM_AGE_AT_START = 'minimumAgeAtStart';
 
-    const MAXIMUM_AGE_AT_START = 'maximumAgeAtStart';
+    public const MAXIMUM_AGE_AT_START = 'maximumAgeAtStart';
 
-    const D00020 = 'd00020';
+    public const D00020 = 'd00020';
 
-    const D00020_ORDER = 'd00020Order';
+    public const D00020_ORDER = 'd00020Order';
 
     protected $_resourceType = ResourceType::CURRICULUM_GRADE;
 
@@ -33,7 +34,7 @@ class CurriculumGrade extends ModelBase
      * @return CurriculumGrade[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +76,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -91,7 +92,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -107,7 +108,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -123,13 +124,13 @@ class CurriculumGrade extends ModelBase
     /**
      * @param string $curriculumGradeName
      */
-    public function setCurriculumGradeName($curriculumGradeName = null)
+    public function setCurriculumGradeName(string $curriculumGradeName = null)
     {
         $this->setProperty('curriculumGradeName', $curriculumGradeName);
     }
 
     /**
-     * @return CurriculumTier
+     * @return \Arbor\Model\CurriculumTier
      */
     public function getCurriculumTier()
     {
@@ -137,9 +138,9 @@ class CurriculumGrade extends ModelBase
     }
 
     /**
-     * @param CurriculumTier $curriculumTier
+     * @param \Arbor\Model\CurriculumTier $curriculumTier
      */
-    public function setCurriculumTier(CurriculumTier $curriculumTier = null)
+    public function setCurriculumTier(\Arbor\Model\CurriculumTier $curriculumTier = null)
     {
         $this->setProperty('curriculumTier', $curriculumTier);
     }
@@ -155,7 +156,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param int $academicYearIndex
      */
-    public function setAcademicYearIndex($academicYearIndex = null)
+    public function setAcademicYearIndex(int $academicYearIndex = null)
     {
         $this->setProperty('academicYearIndex', $academicYearIndex);
     }
@@ -171,7 +172,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param float $minimumAgeAtStart
      */
-    public function setMinimumAgeAtStart($minimumAgeAtStart = null)
+    public function setMinimumAgeAtStart(float $minimumAgeAtStart = null)
     {
         $this->setProperty('minimumAgeAtStart', $minimumAgeAtStart);
     }
@@ -187,7 +188,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param float $maximumAgeAtStart
      */
-    public function setMaximumAgeAtStart($maximumAgeAtStart = null)
+    public function setMaximumAgeAtStart(float $maximumAgeAtStart = null)
     {
         $this->setProperty('maximumAgeAtStart', $maximumAgeAtStart);
     }
@@ -203,7 +204,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param string $d00020
      */
-    public function setD00020($d00020 = null)
+    public function setD00020(string $d00020 = null)
     {
         $this->setProperty('d00020', $d00020);
     }
@@ -219,7 +220,7 @@ class CurriculumGrade extends ModelBase
     /**
      * @param int $d00020Order
      */
-    public function setD00020Order($d00020Order = null)
+    public function setD00020Order(int $d00020Order = null)
     {
         $this->setProperty('d00020Order', $d00020Order);
     }

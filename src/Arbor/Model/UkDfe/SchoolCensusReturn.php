@@ -6,39 +6,38 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\EducationalInstitution;
 
 class SchoolCensusReturn extends ModelBase
 {
-    const SCHOOL_CENSUS = 'schoolCensus';
+    public const SCHOOL_CENSUS = 'schoolCensus';
 
-    const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
+    public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
-    const CURRENT_RETURN_NUMBER = 'currentReturnNumber';
+    public const CURRENT_RETURN_NUMBER = 'currentReturnNumber';
 
-    const RETURN_FILENAME = 'returnFilename';
+    public const RETURN_FILENAME = 'returnFilename';
 
-    const RETURN_FILENAME_SEQUENCE_NUMBER = 'returnFilenameSequenceNumber';
+    public const RETURN_FILENAME_SEQUENCE_NUMBER = 'returnFilenameSequenceNumber';
 
-    const DATA_ERROR = 'dataError';
+    public const DATA_ERROR = 'dataError';
 
-    const XSD_ERROR = 'xsdError';
+    public const XSD_ERROR = 'xsdError';
 
-    const XSLT_ERROR = 'xsltError';
+    public const XSLT_ERROR = 'xsltError';
 
-    const SUMMARY_ERROR = 'summaryError';
+    public const SUMMARY_ERROR = 'summaryError';
 
-    const SUMMARY_ERROR_DESCRIPTION = 'summaryErrorDescription';
+    public const SUMMARY_ERROR_DESCRIPTION = 'summaryErrorDescription';
 
-    const STATUS_DESCRIPTION = 'statusDescription';
+    public const STATUS_DESCRIPTION = 'statusDescription';
 
-    const DATA_EXPORT_STARTED_DATETIME = 'dataExportStartedDatetime';
+    public const DATA_EXPORT_STARTED_DATETIME = 'dataExportStartedDatetime';
 
-    const DATA_EXPORT_COMPLETED_DATETIME = 'dataExportCompletedDatetime';
+    public const DATA_EXPORT_COMPLETED_DATETIME = 'dataExportCompletedDatetime';
 
-    const IS_DRY_RUN = 'isDryRun';
+    public const IS_DRY_RUN = 'isDryRun';
 
-    const SUBMITTED_DATETIME = 'submittedDatetime';
+    public const SUBMITTED_DATETIME = 'submittedDatetime';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_CENSUS_RETURN;
 
@@ -47,7 +46,7 @@ class SchoolCensusReturn extends ModelBase
      * @return SchoolCensusReturn[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -79,7 +78,7 @@ class SchoolCensusReturn extends ModelBase
     }
 
     /**
-     * @return SchoolCensus
+     * @return \Arbor\Model\UkDfe\SchoolCensus
      */
     public function getSchoolCensus()
     {
@@ -87,15 +86,15 @@ class SchoolCensusReturn extends ModelBase
     }
 
     /**
-     * @param SchoolCensus $schoolCensus
+     * @param \Arbor\Model\UkDfe\SchoolCensus $schoolCensus
      */
-    public function setSchoolCensus(SchoolCensus $schoolCensus = null)
+    public function setSchoolCensus(\Arbor\Model\UkDfe\SchoolCensus $schoolCensus = null)
     {
         $this->setProperty('schoolCensus', $schoolCensus);
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getEducationalInstitution()
     {
@@ -103,9 +102,9 @@ class SchoolCensusReturn extends ModelBase
     }
 
     /**
-     * @param EducationalInstitution $educationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -121,7 +120,7 @@ class SchoolCensusReturn extends ModelBase
     /**
      * @param int $currentReturnNumber
      */
-    public function setCurrentReturnNumber($currentReturnNumber = null)
+    public function setCurrentReturnNumber(int $currentReturnNumber = null)
     {
         $this->setProperty('currentReturnNumber', $currentReturnNumber);
     }
@@ -137,7 +136,7 @@ class SchoolCensusReturn extends ModelBase
     /**
      * @param string $returnFilename
      */
-    public function setReturnFilename($returnFilename = null)
+    public function setReturnFilename(string $returnFilename = null)
     {
         $this->setProperty('returnFilename', $returnFilename);
     }
@@ -153,7 +152,7 @@ class SchoolCensusReturn extends ModelBase
     /**
      * @param int $returnFilenameSequenceNumber
      */
-    public function setReturnFilenameSequenceNumber($returnFilenameSequenceNumber = null)
+    public function setReturnFilenameSequenceNumber(int $returnFilenameSequenceNumber = null)
     {
         $this->setProperty('returnFilenameSequenceNumber', $returnFilenameSequenceNumber);
     }
@@ -169,7 +168,7 @@ class SchoolCensusReturn extends ModelBase
     /**
      * @param bool $dataError
      */
-    public function setDataError($dataError = null)
+    public function setDataError(bool $dataError = null)
     {
         $this->setProperty('dataError', $dataError);
     }
@@ -185,7 +184,7 @@ class SchoolCensusReturn extends ModelBase
     /**
      * @param bool $xsdError
      */
-    public function setXsdError($xsdError = null)
+    public function setXsdError(bool $xsdError = null)
     {
         $this->setProperty('xsdError', $xsdError);
     }
@@ -201,7 +200,7 @@ class SchoolCensusReturn extends ModelBase
     /**
      * @param bool $xsltError
      */
-    public function setXsltError($xsltError = null)
+    public function setXsltError(bool $xsltError = null)
     {
         $this->setProperty('xsltError', $xsltError);
     }
@@ -217,7 +216,7 @@ class SchoolCensusReturn extends ModelBase
     /**
      * @param bool $summaryError
      */
-    public function setSummaryError($summaryError = null)
+    public function setSummaryError(bool $summaryError = null)
     {
         $this->setProperty('summaryError', $summaryError);
     }
@@ -233,7 +232,7 @@ class SchoolCensusReturn extends ModelBase
     /**
      * @param string $summaryErrorDescription
      */
-    public function setSummaryErrorDescription($summaryErrorDescription = null)
+    public function setSummaryErrorDescription(string $summaryErrorDescription = null)
     {
         $this->setProperty('summaryErrorDescription', $summaryErrorDescription);
     }
@@ -249,7 +248,7 @@ class SchoolCensusReturn extends ModelBase
     /**
      * @param string $statusDescription
      */
-    public function setStatusDescription($statusDescription = null)
+    public function setStatusDescription(string $statusDescription = null)
     {
         $this->setProperty('statusDescription', $statusDescription);
     }
@@ -297,7 +296,7 @@ class SchoolCensusReturn extends ModelBase
     /**
      * @param bool $isDryRun
      */
-    public function setIsDryRun($isDryRun = null)
+    public function setIsDryRun(bool $isDryRun = null)
     {
         $this->setProperty('isDryRun', $isDryRun);
     }

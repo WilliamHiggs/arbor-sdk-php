@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ApplicationSetting extends ModelBase
 {
-    const SETTING_NAME = 'settingName';
+    public const SETTING_NAME = 'settingName';
 
-    const SETTING_VALUE = 'settingValue';
+    public const SETTING_VALUE = 'settingValue';
 
-    const SETTING_CLASS = 'settingClass';
+    public const SETTING_CLASS = 'settingClass';
 
     protected $_resourceType = ResourceType::APPLICATION_SETTING;
 
@@ -19,7 +20,7 @@ class ApplicationSetting extends ModelBase
      * @return ApplicationSetting[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class ApplicationSetting extends ModelBase
     /**
      * @param string $settingName
      */
-    public function setSettingName($settingName = null)
+    public function setSettingName(string $settingName = null)
     {
         $this->setProperty('settingName', $settingName);
     }
@@ -77,7 +78,7 @@ class ApplicationSetting extends ModelBase
     /**
      * @param string $settingValue
      */
-    public function setSettingValue($settingValue = null)
+    public function setSettingValue(string $settingValue = null)
     {
         $this->setProperty('settingValue', $settingValue);
     }
@@ -93,7 +94,7 @@ class ApplicationSetting extends ModelBase
     /**
      * @param string $settingClass
      */
-    public function setSettingClass($settingClass = null)
+    public function setSettingClass(string $settingClass = null)
     {
         $this->setProperty('settingClass', $settingClass);
     }

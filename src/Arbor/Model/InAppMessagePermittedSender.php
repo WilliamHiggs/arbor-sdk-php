@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InAppMessagePermittedSender extends ModelBase
 {
-    const ACTION_TAKER = 'actionTaker';
+    public const ACTION_TAKER = 'actionTaker';
 
-    const SENDER = 'sender';
+    public const SENDER = 'sender';
 
-    const ALLOW = 'allow';
+    public const ALLOW = 'allow';
 
     protected $_resourceType = ResourceType::IN_APP_MESSAGE_PERMITTED_SENDER;
 
@@ -19,7 +20,7 @@ class InAppMessagePermittedSender extends ModelBase
      * @return InAppMessagePermittedSender[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class InAppMessagePermittedSender extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getActionTaker()
     {
@@ -59,9 +60,9 @@ class InAppMessagePermittedSender extends ModelBase
     }
 
     /**
-     * @param Staff $actionTaker
+     * @param \Arbor\Model\Staff $actionTaker
      */
-    public function setActionTaker(Staff $actionTaker = null)
+    public function setActionTaker(\Arbor\Model\Staff $actionTaker = null)
     {
         $this->setProperty('actionTaker', $actionTaker);
     }
@@ -77,7 +78,7 @@ class InAppMessagePermittedSender extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(ModelBase $sender = null)
+    public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -93,7 +94,7 @@ class InAppMessagePermittedSender extends ModelBase
     /**
      * @param bool $allow
      */
-    public function setAllow($allow = null)
+    public function setAllow(bool $allow = null)
     {
         $this->setProperty('allow', $allow);
     }

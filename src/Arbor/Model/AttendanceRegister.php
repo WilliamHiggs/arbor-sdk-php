@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AttendanceRegister extends ModelBase
 {
-    const EVENT = 'event';
+    public const EVENT = 'event';
 
-    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+    public const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
-    const OPENED_DATETIME = 'openedDatetime';
+    public const OPENED_DATETIME = 'openedDatetime';
 
-    const COMPLETED_DATETIME = 'completedDatetime';
+    public const COMPLETED_DATETIME = 'completedDatetime';
 
-    const VALIDATED_DATETIME = 'validatedDatetime';
+    public const VALIDATED_DATETIME = 'validatedDatetime';
 
-    const CLOSED_DATETIME = 'closedDatetime';
+    public const CLOSED_DATETIME = 'closedDatetime';
 
     protected $_resourceType = ResourceType::ATTENDANCE_REGISTER;
 
@@ -25,7 +26,7 @@ class AttendanceRegister extends ModelBase
      * @return AttendanceRegister[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,13 +68,13 @@ class AttendanceRegister extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(ModelBase $event = null)
+    public function setEvent(\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -81,9 +82,9 @@ class AttendanceRegister extends ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }

@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InCareStatusAssignment extends ModelBase
 {
-    const IN_CARE_STATUS = 'inCareStatus';
+    public const IN_CARE_STATUS = 'inCareStatus';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
+    public const RESPONSIBLE_LOCAL_AUTHORITY = 'responsibleLocalAuthority';
 
     protected $_resourceType = ResourceType::IN_CARE_STATUS_ASSIGNMENT;
 
@@ -23,7 +24,7 @@ class InCareStatusAssignment extends ModelBase
      * @return InCareStatusAssignment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class InCareStatusAssignment extends ModelBase
     }
 
     /**
-     * @return InCareStatus
+     * @return \Arbor\Model\InCareStatus
      */
     public function getInCareStatus()
     {
@@ -63,15 +64,15 @@ class InCareStatusAssignment extends ModelBase
     }
 
     /**
-     * @param InCareStatus $inCareStatus
+     * @param \Arbor\Model\InCareStatus $inCareStatus
      */
-    public function setInCareStatus(InCareStatus $inCareStatus = null)
+    public function setInCareStatus(\Arbor\Model\InCareStatus $inCareStatus = null)
     {
         $this->setProperty('inCareStatus', $inCareStatus);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -79,9 +80,9 @@ class InCareStatusAssignment extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -119,7 +120,7 @@ class InCareStatusAssignment extends ModelBase
     }
 
     /**
-     * @return LocalAuthority
+     * @return \Arbor\Model\LocalAuthority
      */
     public function getResponsibleLocalAuthority()
     {
@@ -127,9 +128,9 @@ class InCareStatusAssignment extends ModelBase
     }
 
     /**
-     * @param LocalAuthority $responsibleLocalAuthority
+     * @param \Arbor\Model\LocalAuthority $responsibleLocalAuthority
      */
-    public function setResponsibleLocalAuthority(LocalAuthority $responsibleLocalAuthority = null)
+    public function setResponsibleLocalAuthority(\Arbor\Model\LocalAuthority $responsibleLocalAuthority = null)
     {
         $this->setProperty('responsibleLocalAuthority', $responsibleLocalAuthority);
     }

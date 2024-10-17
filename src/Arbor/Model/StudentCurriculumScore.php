@@ -3,28 +3,29 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentCurriculumScore extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CURRICULUM_ENTITY = 'curriculumEntity';
+    public const CURRICULUM_ENTITY = 'curriculumEntity';
 
-    const ASSESSMENT_TYPE = 'assessmentType';
+    public const ASSESSMENT_TYPE = 'assessmentType';
 
-    const CURRICULUM_COMPLETION = 'curriculumCompletion';
+    public const CURRICULUM_COMPLETION = 'curriculumCompletion';
 
-    const PREDICTED_MASTERY = 'predictedMastery';
+    public const PREDICTED_MASTERY = 'predictedMastery';
 
-    const CURRENT_MASTERY = 'currentMastery';
+    public const CURRENT_MASTERY = 'currentMastery';
 
-    const PREDICTED_GRADE_POINT_VALUE = 'predictedGradePointValue';
+    public const PREDICTED_GRADE_POINT_VALUE = 'predictedGradePointValue';
 
-    const CURRENT_GRADE_POINT_VALUE = 'currentGradePointValue';
+    public const CURRENT_GRADE_POINT_VALUE = 'currentGradePointValue';
 
-    const GRADE_POINT_VALUE_CAP = 'gradePointValueCap';
+    public const GRADE_POINT_VALUE_CAP = 'gradePointValueCap';
 
-    const DATE = 'date';
+    public const DATE = 'date';
 
     protected $_resourceType = ResourceType::STUDENT_CURRICULUM_SCORE;
 
@@ -33,7 +34,7 @@ class StudentCurriculumScore extends ModelBase
      * @return StudentCurriculumScore[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class StudentCurriculumScore extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -73,9 +74,9 @@ class StudentCurriculumScore extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -91,7 +92,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param ModelBase $curriculumEntity
      */
-    public function setCurriculumEntity(ModelBase $curriculumEntity = null)
+    public function setCurriculumEntity(\ModelBase $curriculumEntity = null)
     {
         $this->setProperty('curriculumEntity', $curriculumEntity);
     }
@@ -107,7 +108,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param string $assessmentType
      */
-    public function setAssessmentType($assessmentType = null)
+    public function setAssessmentType(string $assessmentType = null)
     {
         $this->setProperty('assessmentType', $assessmentType);
     }
@@ -123,7 +124,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $curriculumCompletion
      */
-    public function setCurriculumCompletion($curriculumCompletion = null)
+    public function setCurriculumCompletion(float $curriculumCompletion = null)
     {
         $this->setProperty('curriculumCompletion', $curriculumCompletion);
     }
@@ -139,7 +140,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $predictedMastery
      */
-    public function setPredictedMastery($predictedMastery = null)
+    public function setPredictedMastery(float $predictedMastery = null)
     {
         $this->setProperty('predictedMastery', $predictedMastery);
     }
@@ -155,7 +156,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $currentMastery
      */
-    public function setCurrentMastery($currentMastery = null)
+    public function setCurrentMastery(float $currentMastery = null)
     {
         $this->setProperty('currentMastery', $currentMastery);
     }
@@ -171,7 +172,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $predictedGradePointValue
      */
-    public function setPredictedGradePointValue($predictedGradePointValue = null)
+    public function setPredictedGradePointValue(float $predictedGradePointValue = null)
     {
         $this->setProperty('predictedGradePointValue', $predictedGradePointValue);
     }
@@ -187,7 +188,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $currentGradePointValue
      */
-    public function setCurrentGradePointValue($currentGradePointValue = null)
+    public function setCurrentGradePointValue(float $currentGradePointValue = null)
     {
         $this->setProperty('currentGradePointValue', $currentGradePointValue);
     }
@@ -203,7 +204,7 @@ class StudentCurriculumScore extends ModelBase
     /**
      * @param float $gradePointValueCap
      */
-    public function setGradePointValueCap($gradePointValueCap = null)
+    public function setGradePointValueCap(float $gradePointValueCap = null)
     {
         $this->setProperty('gradePointValueCap', $gradePointValueCap);
     }

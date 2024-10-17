@@ -3,34 +3,35 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CustomerInvoice extends ModelBase
 {
-    const PREVIOUS_CUSTOMER_INVOICE = 'previousCustomerInvoice';
+    public const PREVIOUS_CUSTOMER_INVOICE = 'previousCustomerInvoice';
 
-    const CUSTOMER_ACCOUNT = 'customerAccount';
+    public const CUSTOMER_ACCOUNT = 'customerAccount';
 
-    const INVOICE_NUMBER = 'invoiceNumber';
+    public const INVOICE_NUMBER = 'invoiceNumber';
 
-    const INVOICE_DATE = 'invoiceDate';
+    public const INVOICE_DATE = 'invoiceDate';
 
-    const INVOICE_ISSUED_DATE = 'invoiceIssuedDate';
+    public const INVOICE_ISSUED_DATE = 'invoiceIssuedDate';
 
-    const PAYMENT_DUE_DATE = 'paymentDueDate';
+    public const PAYMENT_DUE_DATE = 'paymentDueDate';
 
-    const FULLY_PAID_DATE = 'fullyPaidDate';
+    public const FULLY_PAID_DATE = 'fullyPaidDate';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const TOTAL_AMOUNT_EX_VAT = 'totalAmountExVat';
+    public const TOTAL_AMOUNT_EX_VAT = 'totalAmountExVat';
 
-    const VAT_TOTAL = 'vatTotal';
+    public const VAT_TOTAL = 'vatTotal';
 
-    const BALANCE = 'balance';
+    public const BALANCE = 'balance';
 
-    const CANCELLED_DATE = 'cancelledDate';
+    public const CANCELLED_DATE = 'cancelledDate';
 
-    const REISSUED_DATE = 'reissuedDate';
+    public const REISSUED_DATE = 'reissuedDate';
 
     protected $_resourceType = ResourceType::CUSTOMER_INVOICE;
 
@@ -39,7 +40,7 @@ class CustomerInvoice extends ModelBase
      * @return CustomerInvoice[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,7 +72,7 @@ class CustomerInvoice extends ModelBase
     }
 
     /**
-     * @return CustomerInvoice
+     * @return \Arbor\Model\CustomerInvoice
      */
     public function getPreviousCustomerInvoice()
     {
@@ -79,15 +80,15 @@ class CustomerInvoice extends ModelBase
     }
 
     /**
-     * @param CustomerInvoice $previousCustomerInvoice
+     * @param \Arbor\Model\CustomerInvoice $previousCustomerInvoice
      */
-    public function setPreviousCustomerInvoice(CustomerInvoice $previousCustomerInvoice = null)
+    public function setPreviousCustomerInvoice(\Arbor\Model\CustomerInvoice $previousCustomerInvoice = null)
     {
         $this->setProperty('previousCustomerInvoice', $previousCustomerInvoice);
     }
 
     /**
-     * @return CustomerAccount
+     * @return \Arbor\Model\CustomerAccount
      */
     public function getCustomerAccount()
     {
@@ -95,9 +96,9 @@ class CustomerInvoice extends ModelBase
     }
 
     /**
-     * @param CustomerAccount $customerAccount
+     * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -113,7 +114,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param string $invoiceNumber
      */
-    public function setInvoiceNumber($invoiceNumber = null)
+    public function setInvoiceNumber(string $invoiceNumber = null)
     {
         $this->setProperty('invoiceNumber', $invoiceNumber);
     }
@@ -193,7 +194,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -209,7 +210,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param string $totalAmountExVat
      */
-    public function setTotalAmountExVat($totalAmountExVat = null)
+    public function setTotalAmountExVat(string $totalAmountExVat = null)
     {
         $this->setProperty('totalAmountExVat', $totalAmountExVat);
     }
@@ -225,7 +226,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param string $vatTotal
      */
-    public function setVatTotal($vatTotal = null)
+    public function setVatTotal(string $vatTotal = null)
     {
         $this->setProperty('vatTotal', $vatTotal);
     }
@@ -241,7 +242,7 @@ class CustomerInvoice extends ModelBase
     /**
      * @param string $balance
      */
-    public function setBalance($balance = null)
+    public function setBalance(string $balance = null)
     {
         $this->setProperty('balance', $balance);
     }

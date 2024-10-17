@@ -6,24 +6,22 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Student;
-use Arbor\Model\CurriculumGrade;
 
 class PupilPremiumRecipient extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const CURRICULUM_GRADE = 'curriculumGrade';
+    public const CURRICULUM_GRADE = 'curriculumGrade';
 
-    const FTE = 'fte';
+    public const FTE = 'fte';
 
-    const FTE_CASH_AMOUNT = 'fteCashAmount';
+    public const FTE_CASH_AMOUNT = 'fteCashAmount';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const LAST_FSM = 'lastFsm';
+    public const LAST_FSM = 'lastFsm';
 
     protected $_resourceType = ResourceType::UK_DFE_PUPIL_PREMIUM_RECIPIENT;
 
@@ -32,7 +30,7 @@ class PupilPremiumRecipient extends ModelBase
      * @return PupilPremiumRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -64,7 +62,7 @@ class PupilPremiumRecipient extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -72,15 +70,15 @@ class PupilPremiumRecipient extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return CurriculumGrade
+     * @return \Arbor\Model\CurriculumGrade
      */
     public function getCurriculumGrade()
     {
@@ -88,9 +86,9 @@ class PupilPremiumRecipient extends ModelBase
     }
 
     /**
-     * @param CurriculumGrade $curriculumGrade
+     * @param \Arbor\Model\CurriculumGrade $curriculumGrade
      */
-    public function setCurriculumGrade(CurriculumGrade $curriculumGrade = null)
+    public function setCurriculumGrade(\Arbor\Model\CurriculumGrade $curriculumGrade = null)
     {
         $this->setProperty('curriculumGrade', $curriculumGrade);
     }
@@ -106,7 +104,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param float $fte
      */
-    public function setFte($fte = null)
+    public function setFte(float $fte = null)
     {
         $this->setProperty('fte', $fte);
     }
@@ -122,7 +120,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param string $fteCashAmount
      */
-    public function setFteCashAmount($fteCashAmount = null)
+    public function setFteCashAmount(string $fteCashAmount = null)
     {
         $this->setProperty('fteCashAmount', $fteCashAmount);
     }
@@ -170,7 +168,7 @@ class PupilPremiumRecipient extends ModelBase
     /**
      * @param string $lastFsm
      */
-    public function setLastFsm($lastFsm = null)
+    public function setLastFsm(string $lastFsm = null)
     {
         $this->setProperty('lastFsm', $lastFsm);
     }

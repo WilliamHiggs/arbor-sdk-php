@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ApplicationAppeal extends ModelBase
 {
-    const APPLICATION = 'application';
+    public const APPLICATION = 'application';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const LODGED_DATE = 'lodgedDate';
+    public const LODGED_DATE = 'lodgedDate';
 
-    const WITHDRAWN_DATE = 'withdrawnDate';
+    public const WITHDRAWN_DATE = 'withdrawnDate';
 
-    const HEARING_DATE = 'hearingDate';
+    public const HEARING_DATE = 'hearingDate';
 
-    const DECISION_DATETIME = 'decisionDatetime';
+    public const DECISION_DATETIME = 'decisionDatetime';
 
-    const DECISION = 'decision';
+    public const DECISION = 'decision';
 
     protected $_resourceType = ResourceType::APPLICATION_APPEAL;
 
@@ -27,7 +28,7 @@ class ApplicationAppeal extends ModelBase
      * @return ApplicationAppeal[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class ApplicationAppeal extends ModelBase
     }
 
     /**
-     * @return Application
+     * @return \Arbor\Model\Application
      */
     public function getApplication()
     {
@@ -67,9 +68,9 @@ class ApplicationAppeal extends ModelBase
     }
 
     /**
-     * @param Application $application
+     * @param \Arbor\Model\Application $application
      */
-    public function setApplication(Application $application = null)
+    public function setApplication(\Arbor\Model\Application $application = null)
     {
         $this->setProperty('application', $application);
     }
@@ -85,7 +86,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -165,7 +166,7 @@ class ApplicationAppeal extends ModelBase
     /**
      * @param string $decision
      */
-    public function setDecision($decision = null)
+    public function setDecision(string $decision = null)
     {
         $this->setProperty('decision', $decision);
     }

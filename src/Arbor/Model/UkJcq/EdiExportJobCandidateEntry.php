@@ -6,13 +6,12 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\CandidateEntry;
 
 class EdiExportJobCandidateEntry extends ModelBase
 {
-    const EDI_EXPORT_JOB = 'ediExportJob';
+    public const EDI_EXPORT_JOB = 'ediExportJob';
 
-    const CANDIDATE_ENTRY = 'candidateEntry';
+    public const CANDIDATE_ENTRY = 'candidateEntry';
 
     protected $_resourceType = ResourceType::UK_JCQ_EDI_EXPORT_JOB_CANDIDATE_ENTRY;
 
@@ -21,7 +20,7 @@ class EdiExportJobCandidateEntry extends ModelBase
      * @return EdiExportJobCandidateEntry[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +52,7 @@ class EdiExportJobCandidateEntry extends ModelBase
     }
 
     /**
-     * @return EdiExportJob
+     * @return \Arbor\Model\UkJcq\EdiExportJob
      */
     public function getEdiExportJob()
     {
@@ -61,15 +60,15 @@ class EdiExportJobCandidateEntry extends ModelBase
     }
 
     /**
-     * @param EdiExportJob $ediExportJob
+     * @param \Arbor\Model\UkJcq\EdiExportJob $ediExportJob
      */
-    public function setEdiExportJob(EdiExportJob $ediExportJob = null)
+    public function setEdiExportJob(\Arbor\Model\UkJcq\EdiExportJob $ediExportJob = null)
     {
         $this->setProperty('ediExportJob', $ediExportJob);
     }
 
     /**
-     * @return CandidateEntry
+     * @return \Arbor\Model\CandidateEntry
      */
     public function getCandidateEntry()
     {
@@ -77,9 +76,9 @@ class EdiExportJobCandidateEntry extends ModelBase
     }
 
     /**
-     * @param CandidateEntry $candidateEntry
+     * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }

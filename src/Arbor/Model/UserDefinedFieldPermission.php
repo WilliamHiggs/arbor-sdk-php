@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class UserDefinedFieldPermission extends ModelBase
 {
-    const USER_DEFINED_FIELD = 'userDefinedField';
+    public const USER_DEFINED_FIELD = 'userDefinedField';
 
-    const IDENTIFIER = 'identifier';
+    public const IDENTIFIER = 'identifier';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
     protected $_resourceType = ResourceType::USER_DEFINED_FIELD_PERMISSION;
 
@@ -21,7 +22,7 @@ class UserDefinedFieldPermission extends ModelBase
      * @return UserDefinedFieldPermission[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class UserDefinedFieldPermission extends ModelBase
     }
 
     /**
-     * @return UserDefinedField
+     * @return \Arbor\Model\UserDefinedField
      */
     public function getUserDefinedField()
     {
@@ -61,9 +62,9 @@ class UserDefinedFieldPermission extends ModelBase
     }
 
     /**
-     * @param UserDefinedField $userDefinedField
+     * @param \Arbor\Model\UserDefinedField $userDefinedField
      */
-    public function setUserDefinedField(UserDefinedField $userDefinedField = null)
+    public function setUserDefinedField(\Arbor\Model\UserDefinedField $userDefinedField = null)
     {
         $this->setProperty('userDefinedField', $userDefinedField);
     }
@@ -79,7 +80,7 @@ class UserDefinedFieldPermission extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier($identifier = null)
+    public function setIdentifier(string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
@@ -95,7 +96,7 @@ class UserDefinedFieldPermission extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -111,7 +112,7 @@ class UserDefinedFieldPermission extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }

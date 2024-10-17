@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ReportCardBatchProgressAssessment extends ModelBase
 {
-    const REPORT_CARD_BATCH = 'reportCardBatch';
+    public const REPORT_CARD_BATCH = 'reportCardBatch';
 
-    const ORDER = 'order';
+    public const ORDER = 'order';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const DISPLAY_GRADE_SET = 'displayGradeSet';
+    public const DISPLAY_GRADE_SET = 'displayGradeSet';
 
-    const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
+    public const MARKING_COMPLETED_DATETIME = 'markingCompletedDatetime';
 
     protected $_resourceType = ResourceType::REPORT_CARD_BATCH_PROGRESS_ASSESSMENT;
 
@@ -23,7 +24,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
      * @return ReportCardBatchProgressAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class ReportCardBatchProgressAssessment extends ModelBase
     }
 
     /**
-     * @return NewReportCardBatch
+     * @return \Arbor\Model\NewReportCardBatch
      */
     public function getReportCardBatch()
     {
@@ -63,9 +64,9 @@ class ReportCardBatchProgressAssessment extends ModelBase
     }
 
     /**
-     * @param NewReportCardBatch $reportCardBatch
+     * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -81,13 +82,13 @@ class ReportCardBatchProgressAssessment extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder($order = null)
+    public function setOrder(int $order = null)
     {
         $this->setProperty('order', $order);
     }
 
     /**
-     * @return Assessment
+     * @return \Arbor\Model\Assessment
      */
     public function getAssessment()
     {
@@ -95,15 +96,15 @@ class ReportCardBatchProgressAssessment extends ModelBase
     }
 
     /**
-     * @param Assessment $assessment
+     * @param \Arbor\Model\Assessment $assessment
      */
-    public function setAssessment(Assessment $assessment = null)
+    public function setAssessment(\Arbor\Model\Assessment $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getDisplayGradeSet()
     {
@@ -111,9 +112,9 @@ class ReportCardBatchProgressAssessment extends ModelBase
     }
 
     /**
-     * @param GradeSet $displayGradeSet
+     * @param \Arbor\Model\GradeSet $displayGradeSet
      */
-    public function setDisplayGradeSet(GradeSet $displayGradeSet = null)
+    public function setDisplayGradeSet(\Arbor\Model\GradeSet $displayGradeSet = null)
     {
         $this->setProperty('displayGradeSet', $displayGradeSet);
     }

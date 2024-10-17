@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AcademicUnitDepartment extends ModelBase
 {
-    const DEPARTMENT = 'department';
+    public const DEPARTMENT = 'department';
 
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_DEPARTMENT;
 
@@ -21,7 +22,7 @@ class AcademicUnitDepartment extends ModelBase
      * @return AcademicUnitDepartment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class AcademicUnitDepartment extends ModelBase
     }
 
     /**
-     * @return Department
+     * @return \Arbor\Model\Department
      */
     public function getDepartment()
     {
@@ -61,15 +62,15 @@ class AcademicUnitDepartment extends ModelBase
     }
 
     /**
-     * @param Department $department
+     * @param \Arbor\Model\Department $department
      */
-    public function setDepartment(Department $department = null)
+    public function setDepartment(\Arbor\Model\Department $department = null)
     {
         $this->setProperty('department', $department);
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -77,9 +78,9 @@ class AcademicUnitDepartment extends ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }

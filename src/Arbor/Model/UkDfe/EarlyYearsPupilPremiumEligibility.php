@@ -6,19 +6,18 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\Student;
 
 class EarlyYearsPupilPremiumEligibility extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const ELIGIBLE_FOR_ECONOMIC_REASONS = 'eligibleForEconomicReasons';
+    public const ELIGIBLE_FOR_ECONOMIC_REASONS = 'eligibleForEconomicReasons';
 
-    const ELIGIBLE_FOR_OTHER_REASONS = 'eligibleForOtherReasons';
+    public const ELIGIBLE_FOR_OTHER_REASONS = 'eligibleForOtherReasons';
 
     protected $_resourceType = ResourceType::UK_DFE_EARLY_YEARS_PUPIL_PREMIUM_ELIGIBILITY;
 
@@ -27,7 +26,7 @@ class EarlyYearsPupilPremiumEligibility extends ModelBase
      * @return EarlyYearsPupilPremiumEligibility[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +58,7 @@ class EarlyYearsPupilPremiumEligibility extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -67,9 +66,9 @@ class EarlyYearsPupilPremiumEligibility extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -117,7 +116,7 @@ class EarlyYearsPupilPremiumEligibility extends ModelBase
     /**
      * @param bool $eligibleForEconomicReasons
      */
-    public function setEligibleForEconomicReasons($eligibleForEconomicReasons = null)
+    public function setEligibleForEconomicReasons(bool $eligibleForEconomicReasons = null)
     {
         $this->setProperty('eligibleForEconomicReasons', $eligibleForEconomicReasons);
     }
@@ -133,7 +132,7 @@ class EarlyYearsPupilPremiumEligibility extends ModelBase
     /**
      * @param bool $eligibleForOtherReasons
      */
-    public function setEligibleForOtherReasons($eligibleForOtherReasons = null)
+    public function setEligibleForOtherReasons(bool $eligibleForOtherReasons = null)
     {
         $this->setProperty('eligibleForOtherReasons', $eligibleForOtherReasons);
     }

@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class FacultyResponsibility extends ModelBase
 {
-    const FACULTY_RESPONSIBILITY_TYPE = 'facultyResponsibilityType';
+    public const FACULTY_RESPONSIBILITY_TYPE = 'facultyResponsibilityType';
 
-    const FACULTY = 'faculty';
+    public const FACULTY = 'faculty';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::FACULTY_RESPONSIBILITY;
 
@@ -21,7 +22,7 @@ class FacultyResponsibility extends ModelBase
      * @return FacultyResponsibility[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class FacultyResponsibility extends ModelBase
     }
 
     /**
-     * @return FacultyResponsibilityType
+     * @return \Arbor\Model\FacultyResponsibilityType
      */
     public function getFacultyResponsibilityType()
     {
@@ -61,15 +62,15 @@ class FacultyResponsibility extends ModelBase
     }
 
     /**
-     * @param FacultyResponsibilityType $facultyResponsibilityType
+     * @param \Arbor\Model\FacultyResponsibilityType $facultyResponsibilityType
      */
-    public function setFacultyResponsibilityType(FacultyResponsibilityType $facultyResponsibilityType = null)
+    public function setFacultyResponsibilityType(\Arbor\Model\FacultyResponsibilityType $facultyResponsibilityType = null)
     {
         $this->setProperty('facultyResponsibilityType', $facultyResponsibilityType);
     }
 
     /**
-     * @return Faculty
+     * @return \Arbor\Model\Faculty
      */
     public function getFaculty()
     {
@@ -77,9 +78,9 @@ class FacultyResponsibility extends ModelBase
     }
 
     /**
-     * @param Faculty $faculty
+     * @param \Arbor\Model\Faculty $faculty
      */
-    public function setFaculty(Faculty $faculty = null)
+    public function setFaculty(\Arbor\Model\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }

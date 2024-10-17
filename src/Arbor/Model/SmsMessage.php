@@ -3,44 +3,45 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class SmsMessage extends ModelBase
 {
-    const SMS_MESSAGE_DRAFT = 'smsMessageDraft';
+    public const SMS_MESSAGE_DRAFT = 'smsMessageDraft';
 
-    const MESSAGE_TYPE = 'messageType';
+    public const MESSAGE_TYPE = 'messageType';
 
-    const SENDER_NUMBER = 'senderNumber';
+    public const SENDER_NUMBER = 'senderNumber';
 
-    const SENDER = 'sender';
+    public const SENDER = 'sender';
 
-    const RECIPIENT_NUMBER = 'recipientNumber';
+    public const RECIPIENT_NUMBER = 'recipientNumber';
 
-    const RECIPIENT = 'recipient';
+    public const RECIPIENT = 'recipient';
 
-    const DRAFT_RECIPIENT = 'draftRecipient';
+    public const DRAFT_RECIPIENT = 'draftRecipient';
 
-    const MESSAGE_TEXT = 'messageText';
+    public const MESSAGE_TEXT = 'messageText';
 
-    const SENT_DATETIME = 'sentDatetime';
+    public const SENT_DATETIME = 'sentDatetime';
 
-    const READ_DATETIME = 'readDatetime';
+    public const READ_DATETIME = 'readDatetime';
 
-    const RECEIVED_DATETIME = 'receivedDatetime';
+    public const RECEIVED_DATETIME = 'receivedDatetime';
 
-    const FAILED_DATETIME = 'failedDatetime';
+    public const FAILED_DATETIME = 'failedDatetime';
 
-    const TOTAL_COST = 'totalCost';
+    public const TOTAL_COST = 'totalCost';
 
-    const CREDITS_USED = 'creditsUsed';
+    public const CREDITS_USED = 'creditsUsed';
 
-    const FREE = 'free';
+    public const FREE = 'free';
 
-    const MESSAGE_PARTS = 'messageParts';
+    public const MESSAGE_PARTS = 'messageParts';
 
-    const RECIPIENT_NETWORK_CODE = 'recipientNetworkCode';
+    public const RECIPIENT_NETWORK_CODE = 'recipientNetworkCode';
 
-    const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
+    public const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
 
     protected $_resourceType = ResourceType::SMS_MESSAGE;
 
@@ -49,7 +50,7 @@ class SmsMessage extends ModelBase
      * @return SmsMessage[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -81,7 +82,7 @@ class SmsMessage extends ModelBase
     }
 
     /**
-     * @return SmsMessageDraft
+     * @return \Arbor\Model\SmsMessageDraft
      */
     public function getSmsMessageDraft()
     {
@@ -89,9 +90,9 @@ class SmsMessage extends ModelBase
     }
 
     /**
-     * @param SmsMessageDraft $smsMessageDraft
+     * @param \Arbor\Model\SmsMessageDraft $smsMessageDraft
      */
-    public function setSmsMessageDraft(SmsMessageDraft $smsMessageDraft = null)
+    public function setSmsMessageDraft(\Arbor\Model\SmsMessageDraft $smsMessageDraft = null)
     {
         $this->setProperty('smsMessageDraft', $smsMessageDraft);
     }
@@ -107,7 +108,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $messageType
      */
-    public function setMessageType($messageType = null)
+    public function setMessageType(string $messageType = null)
     {
         $this->setProperty('messageType', $messageType);
     }
@@ -123,7 +124,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $senderNumber
      */
-    public function setSenderNumber($senderNumber = null)
+    public function setSenderNumber(string $senderNumber = null)
     {
         $this->setProperty('senderNumber', $senderNumber);
     }
@@ -139,7 +140,7 @@ class SmsMessage extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(ModelBase $sender = null)
+    public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -155,7 +156,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $recipientNumber
      */
-    public function setRecipientNumber($recipientNumber = null)
+    public function setRecipientNumber(string $recipientNumber = null)
     {
         $this->setProperty('recipientNumber', $recipientNumber);
     }
@@ -171,13 +172,13 @@ class SmsMessage extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(ModelBase $recipient = null)
+    public function setRecipient(\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
 
     /**
-     * @return MessageDraftRecipient
+     * @return \Arbor\Model\MessageDraftRecipient
      */
     public function getDraftRecipient()
     {
@@ -185,9 +186,9 @@ class SmsMessage extends ModelBase
     }
 
     /**
-     * @param MessageDraftRecipient $draftRecipient
+     * @param \Arbor\Model\MessageDraftRecipient $draftRecipient
      */
-    public function setDraftRecipient(MessageDraftRecipient $draftRecipient = null)
+    public function setDraftRecipient(\Arbor\Model\MessageDraftRecipient $draftRecipient = null)
     {
         $this->setProperty('draftRecipient', $draftRecipient);
     }
@@ -203,7 +204,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $messageText
      */
-    public function setMessageText($messageText = null)
+    public function setMessageText(string $messageText = null)
     {
         $this->setProperty('messageText', $messageText);
     }
@@ -283,7 +284,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $totalCost
      */
-    public function setTotalCost($totalCost = null)
+    public function setTotalCost(string $totalCost = null)
     {
         $this->setProperty('totalCost', $totalCost);
     }
@@ -299,7 +300,7 @@ class SmsMessage extends ModelBase
     /**
      * @param float $creditsUsed
      */
-    public function setCreditsUsed($creditsUsed = null)
+    public function setCreditsUsed(float $creditsUsed = null)
     {
         $this->setProperty('creditsUsed', $creditsUsed);
     }
@@ -315,7 +316,7 @@ class SmsMessage extends ModelBase
     /**
      * @param bool $free
      */
-    public function setFree($free = null)
+    public function setFree(bool $free = null)
     {
         $this->setProperty('free', $free);
     }
@@ -331,7 +332,7 @@ class SmsMessage extends ModelBase
     /**
      * @param int $messageParts
      */
-    public function setMessageParts($messageParts = null)
+    public function setMessageParts(int $messageParts = null)
     {
         $this->setProperty('messageParts', $messageParts);
     }
@@ -347,7 +348,7 @@ class SmsMessage extends ModelBase
     /**
      * @param string $recipientNetworkCode
      */
-    public function setRecipientNetworkCode($recipientNetworkCode = null)
+    public function setRecipientNetworkCode(string $recipientNetworkCode = null)
     {
         $this->setProperty('recipientNetworkCode', $recipientNetworkCode);
     }

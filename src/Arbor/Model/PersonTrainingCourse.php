@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class PersonTrainingCourse extends ModelBase
 {
-    const TRAINING_COURSE = 'trainingCourse';
+    public const TRAINING_COURSE = 'trainingCourse';
 
-    const TRAINED_PERSON = 'trainedPerson';
+    public const TRAINED_PERSON = 'trainedPerson';
 
-    const FEE_COSTS = 'feeCosts';
+    public const FEE_COSTS = 'feeCosts';
 
     protected $_resourceType = ResourceType::PERSON_TRAINING_COURSE;
 
@@ -19,7 +20,7 @@ class PersonTrainingCourse extends ModelBase
      * @return PersonTrainingCourse[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class PersonTrainingCourse extends ModelBase
     }
 
     /**
-     * @return TrainingCourse
+     * @return \Arbor\Model\TrainingCourse
      */
     public function getTrainingCourse()
     {
@@ -59,9 +60,9 @@ class PersonTrainingCourse extends ModelBase
     }
 
     /**
-     * @param TrainingCourse $trainingCourse
+     * @param \Arbor\Model\TrainingCourse $trainingCourse
      */
-    public function setTrainingCourse(TrainingCourse $trainingCourse = null)
+    public function setTrainingCourse(\Arbor\Model\TrainingCourse $trainingCourse = null)
     {
         $this->setProperty('trainingCourse', $trainingCourse);
     }
@@ -77,7 +78,7 @@ class PersonTrainingCourse extends ModelBase
     /**
      * @param ModelBase $trainedPerson
      */
-    public function setTrainedPerson(ModelBase $trainedPerson = null)
+    public function setTrainedPerson(\ModelBase $trainedPerson = null)
     {
         $this->setProperty('trainedPerson', $trainedPerson);
     }
@@ -93,7 +94,7 @@ class PersonTrainingCourse extends ModelBase
     /**
      * @param float $feeCosts
      */
-    public function setFeeCosts($feeCosts = null)
+    public function setFeeCosts(float $feeCosts = null)
     {
         $this->setProperty('feeCosts', $feeCosts);
     }

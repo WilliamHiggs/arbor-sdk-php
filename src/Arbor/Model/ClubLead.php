@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ClubLead extends ModelBase
 {
-    const CLUB = 'club';
+    public const CLUB = 'club';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::CLUB_LEAD;
 
@@ -21,7 +22,7 @@ class ClubLead extends ModelBase
      * @return ClubLead[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class ClubLead extends ModelBase
     }
 
     /**
-     * @return Club
+     * @return \Arbor\Model\Club
      */
     public function getClub()
     {
@@ -61,15 +62,15 @@ class ClubLead extends ModelBase
     }
 
     /**
-     * @param Club $club
+     * @param \Arbor\Model\Club $club
      */
-    public function setClub(Club $club = null)
+    public function setClub(\Arbor\Model\Club $club = null)
     {
         $this->setProperty('club', $club);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -77,9 +78,9 @@ class ClubLead extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

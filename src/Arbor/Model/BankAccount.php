@@ -3,24 +3,27 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BankAccount extends ModelBase
 {
-    const BANK = 'bank';
+    public const BANK = 'bank';
 
-    const PAYMENT_PROVIDER = 'paymentProvider';
+    public const PAYMENT_PROVIDER = 'paymentProvider';
 
-    const ACCOUNT_HOLDER_NAME = 'accountHolderName';
+    public const ACCOUNT_HOLDER_NAME = 'accountHolderName';
 
-    const ACCOUNT_NUMBER = 'accountNumber';
+    public const ACCOUNT_NUMBER = 'accountNumber';
 
-    const SORT_CODE = 'sortCode';
+    public const SORT_CODE = 'sortCode';
 
-    const SWIFT_CODE = 'swiftCode';
+    public const SWIFT_CODE = 'swiftCode';
 
-    const IBAN = 'iban';
+    public const IBAN = 'iban';
 
-    const BACS_USER_NUMBER = 'bacsUserNumber';
+    public const BACS_USER_NUMBER = 'bacsUserNumber';
+
+    public const ENABLED = 'enabled';
 
     protected $_resourceType = ResourceType::BANK_ACCOUNT;
 
@@ -29,7 +32,7 @@ class BankAccount extends ModelBase
      * @return BankAccount[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +64,7 @@ class BankAccount extends ModelBase
     }
 
     /**
-     * @return Bank
+     * @return \Arbor\Model\Bank
      */
     public function getBank()
     {
@@ -69,15 +72,15 @@ class BankAccount extends ModelBase
     }
 
     /**
-     * @param Bank $bank
+     * @param \Arbor\Model\Bank $bank
      */
-    public function setBank(Bank $bank = null)
+    public function setBank(\Arbor\Model\Bank $bank = null)
     {
         $this->setProperty('bank', $bank);
     }
 
     /**
-     * @return PaymentProvider
+     * @return \Arbor\Model\PaymentProvider
      */
     public function getPaymentProvider()
     {
@@ -85,9 +88,9 @@ class BankAccount extends ModelBase
     }
 
     /**
-     * @param PaymentProvider $paymentProvider
+     * @param \Arbor\Model\PaymentProvider $paymentProvider
      */
-    public function setPaymentProvider(PaymentProvider $paymentProvider = null)
+    public function setPaymentProvider(\Arbor\Model\PaymentProvider $paymentProvider = null)
     {
         $this->setProperty('paymentProvider', $paymentProvider);
     }
@@ -103,7 +106,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $accountHolderName
      */
-    public function setAccountHolderName($accountHolderName = null)
+    public function setAccountHolderName(string $accountHolderName = null)
     {
         $this->setProperty('accountHolderName', $accountHolderName);
     }
@@ -119,7 +122,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $accountNumber
      */
-    public function setAccountNumber($accountNumber = null)
+    public function setAccountNumber(string $accountNumber = null)
     {
         $this->setProperty('accountNumber', $accountNumber);
     }
@@ -135,7 +138,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $sortCode
      */
-    public function setSortCode($sortCode = null)
+    public function setSortCode(string $sortCode = null)
     {
         $this->setProperty('sortCode', $sortCode);
     }
@@ -151,7 +154,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $swiftCode
      */
-    public function setSwiftCode($swiftCode = null)
+    public function setSwiftCode(string $swiftCode = null)
     {
         $this->setProperty('swiftCode', $swiftCode);
     }
@@ -167,7 +170,7 @@ class BankAccount extends ModelBase
     /**
      * @param string $iban
      */
-    public function setIban($iban = null)
+    public function setIban(string $iban = null)
     {
         $this->setProperty('iban', $iban);
     }
@@ -183,8 +186,24 @@ class BankAccount extends ModelBase
     /**
      * @param string $bacsUserNumber
      */
-    public function setBacsUserNumber($bacsUserNumber = null)
+    public function setBacsUserNumber(string $bacsUserNumber = null)
     {
         $this->setProperty('bacsUserNumber', $bacsUserNumber);
+    }
+
+    /**
+     * @return bool
+     */
+    public function getEnabled()
+    {
+        return $this->getProperty('enabled');
+    }
+
+    /**
+     * @param bool $enabled
+     */
+    public function setEnabled(bool $enabled = null)
+    {
+        $this->setProperty('enabled', $enabled);
     }
 }

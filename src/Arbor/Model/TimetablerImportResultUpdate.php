@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TimetablerImportResultUpdate extends ModelBase
 {
-    const TIMETABLER_IMPORT_RESULT = 'timetablerImportResult';
+    public const TIMETABLER_IMPORT_RESULT = 'timetablerImportResult';
 
-    const UPDATED = 'updated';
+    public const UPDATED = 'updated';
 
     protected $_resourceType = ResourceType::TIMETABLER_IMPORT_RESULT_UPDATE;
 
@@ -17,7 +18,7 @@ class TimetablerImportResultUpdate extends ModelBase
      * @return TimetablerImportResultUpdate[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class TimetablerImportResultUpdate extends ModelBase
     }
 
     /**
-     * @return TimetablerImportResult
+     * @return \Arbor\Model\TimetablerImportResult
      */
     public function getTimetablerImportResult()
     {
@@ -57,9 +58,9 @@ class TimetablerImportResultUpdate extends ModelBase
     }
 
     /**
-     * @param TimetablerImportResult $timetablerImportResult
+     * @param \Arbor\Model\TimetablerImportResult $timetablerImportResult
      */
-    public function setTimetablerImportResult(TimetablerImportResult $timetablerImportResult = null)
+    public function setTimetablerImportResult(\Arbor\Model\TimetablerImportResult $timetablerImportResult = null)
     {
         $this->setProperty('timetablerImportResult', $timetablerImportResult);
     }
@@ -75,7 +76,7 @@ class TimetablerImportResultUpdate extends ModelBase
     /**
      * @param ModelBase $updated
      */
-    public function setUpdated(ModelBase $updated = null)
+    public function setUpdated(\ModelBase $updated = null)
     {
         $this->setProperty('updated', $updated);
     }

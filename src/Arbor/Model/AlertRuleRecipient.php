@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AlertRuleRecipient extends ModelBase
 {
-    const ALERT_RULE = 'alertRule';
+    public const ALERT_RULE = 'alertRule';
 
-    const CHANNEL = 'channel';
+    public const CHANNEL = 'channel';
 
-    const RECIPIENT = 'recipient';
+    public const RECIPIENT = 'recipient';
 
-    const RECIPIENT_FIELD = 'recipientField';
+    public const RECIPIENT_FIELD = 'recipientField';
 
-    const RECIPIENT_RESOLVER = 'recipientResolver';
+    public const RECIPIENT_RESOLVER = 'recipientResolver';
 
     protected $_resourceType = ResourceType::ALERT_RULE_RECIPIENT;
 
@@ -23,7 +24,7 @@ class AlertRuleRecipient extends ModelBase
      * @return AlertRuleRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class AlertRuleRecipient extends ModelBase
     }
 
     /**
-     * @return AlertRule
+     * @return \Arbor\Model\AlertRule
      */
     public function getAlertRule()
     {
@@ -63,9 +64,9 @@ class AlertRuleRecipient extends ModelBase
     }
 
     /**
-     * @param AlertRule $alertRule
+     * @param \Arbor\Model\AlertRule $alertRule
      */
-    public function setAlertRule(AlertRule $alertRule = null)
+    public function setAlertRule(\Arbor\Model\AlertRule $alertRule = null)
     {
         $this->setProperty('alertRule', $alertRule);
     }
@@ -81,7 +82,7 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param string $channel
      */
-    public function setChannel($channel = null)
+    public function setChannel(string $channel = null)
     {
         $this->setProperty('channel', $channel);
     }
@@ -97,7 +98,7 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(ModelBase $recipient = null)
+    public function setRecipient(\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -113,7 +114,7 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param string $recipientField
      */
-    public function setRecipientField($recipientField = null)
+    public function setRecipientField(string $recipientField = null)
     {
         $this->setProperty('recipientField', $recipientField);
     }
@@ -129,7 +130,7 @@ class AlertRuleRecipient extends ModelBase
     /**
      * @param string $recipientResolver
      */
-    public function setRecipientResolver($recipientResolver = null)
+    public function setRecipientResolver(string $recipientResolver = null)
     {
         $this->setProperty('recipientResolver', $recipientResolver);
     }

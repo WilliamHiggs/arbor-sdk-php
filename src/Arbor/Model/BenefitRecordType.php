@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BenefitRecordType extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const APPLIES_TO_STUDENT = 'appliesToStudent';
+    public const APPLIES_TO_STUDENT = 'appliesToStudent';
 
-    const APPLIES_TO_STAFF = 'appliesToStaff';
+    public const APPLIES_TO_STAFF = 'appliesToStaff';
 
-    const APPLIES_TO_GUARDIAN = 'appliesToGuardian';
+    public const APPLIES_TO_GUARDIAN = 'appliesToGuardian';
 
     protected $_resourceType = ResourceType::BENEFIT_RECORD_TYPE;
 
@@ -27,7 +28,7 @@ class BenefitRecordType extends ModelBase
      * @return BenefitRecordType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +70,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -85,7 +86,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -101,7 +102,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -117,7 +118,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -133,7 +134,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param bool $appliesToStudent
      */
-    public function setAppliesToStudent($appliesToStudent = null)
+    public function setAppliesToStudent(bool $appliesToStudent = null)
     {
         $this->setProperty('appliesToStudent', $appliesToStudent);
     }
@@ -149,7 +150,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param bool $appliesToStaff
      */
-    public function setAppliesToStaff($appliesToStaff = null)
+    public function setAppliesToStaff(bool $appliesToStaff = null)
     {
         $this->setProperty('appliesToStaff', $appliesToStaff);
     }
@@ -165,7 +166,7 @@ class BenefitRecordType extends ModelBase
     /**
      * @param bool $appliesToGuardian
      */
-    public function setAppliesToGuardian($appliesToGuardian = null)
+    public function setAppliesToGuardian(bool $appliesToGuardian = null)
     {
         $this->setProperty('appliesToGuardian', $appliesToGuardian);
     }

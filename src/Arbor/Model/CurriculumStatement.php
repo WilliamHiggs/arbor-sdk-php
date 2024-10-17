@@ -3,28 +3,29 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CurriculumStatement extends ModelBase
 {
-    const CURRICULUM_SECTION = 'curriculumSection';
+    public const CURRICULUM_SECTION = 'curriculumSection';
 
-    const CURRICULUM_STATEMENT_BAND = 'curriculumStatementBand';
+    public const CURRICULUM_STATEMENT_BAND = 'curriculumStatementBand';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const EXAMPLES = 'examples';
+    public const EXAMPLES = 'examples';
 
-    const WEIGHTING = 'weighting';
+    public const WEIGHTING = 'weighting';
 
-    const REQUIREMENT_FOR_HIGHER = 'requirementForHigher';
+    public const REQUIREMENT_FOR_HIGHER = 'requirementForHigher';
 
-    const ORDER = 'order';
+    public const ORDER = 'order';
 
     protected $_resourceType = ResourceType::CURRICULUM_STATEMENT;
 
@@ -33,7 +34,7 @@ class CurriculumStatement extends ModelBase
      * @return CurriculumStatement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class CurriculumStatement extends ModelBase
     }
 
     /**
-     * @return CurriculumSection
+     * @return \Arbor\Model\CurriculumSection
      */
     public function getCurriculumSection()
     {
@@ -73,15 +74,15 @@ class CurriculumStatement extends ModelBase
     }
 
     /**
-     * @param CurriculumSection $curriculumSection
+     * @param \Arbor\Model\CurriculumSection $curriculumSection
      */
-    public function setCurriculumSection(CurriculumSection $curriculumSection = null)
+    public function setCurriculumSection(\Arbor\Model\CurriculumSection $curriculumSection = null)
     {
         $this->setProperty('curriculumSection', $curriculumSection);
     }
 
     /**
-     * @return CurriculumStatementBand
+     * @return \Arbor\Model\CurriculumStatementBand
      */
     public function getCurriculumStatementBand()
     {
@@ -89,9 +90,9 @@ class CurriculumStatement extends ModelBase
     }
 
     /**
-     * @param CurriculumStatementBand $curriculumStatementBand
+     * @param \Arbor\Model\CurriculumStatementBand $curriculumStatementBand
      */
-    public function setCurriculumStatementBand(CurriculumStatementBand $curriculumStatementBand = null)
+    public function setCurriculumStatementBand(\Arbor\Model\CurriculumStatementBand $curriculumStatementBand = null)
     {
         $this->setProperty('curriculumStatementBand', $curriculumStatementBand);
     }
@@ -107,7 +108,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -123,7 +124,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -139,7 +140,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -155,7 +156,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
@@ -171,7 +172,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param string $examples
      */
-    public function setExamples($examples = null)
+    public function setExamples(string $examples = null)
     {
         $this->setProperty('examples', $examples);
     }
@@ -187,7 +188,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param float $weighting
      */
-    public function setWeighting($weighting = null)
+    public function setWeighting(float $weighting = null)
     {
         $this->setProperty('weighting', $weighting);
     }
@@ -203,7 +204,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param bool $requirementForHigher
      */
-    public function setRequirementForHigher($requirementForHigher = null)
+    public function setRequirementForHigher(bool $requirementForHigher = null)
     {
         $this->setProperty('requirementForHigher', $requirementForHigher);
     }
@@ -219,7 +220,7 @@ class CurriculumStatement extends ModelBase
     /**
      * @param int $order
      */
-    public function setOrder($order = null)
+    public function setOrder(int $order = null)
     {
         $this->setProperty('order', $order);
     }

@@ -3,28 +3,29 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Country extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const LONG_NAME = 'longName';
+    public const LONG_NAME = 'longName';
 
-    const ISO31661_ALPHA2 = 'iso31661Alpha2';
+    public const ISO31661_ALPHA2 = 'iso31661Alpha2';
 
-    const ISO31661_ALPHA3 = 'iso31661Alpha3';
+    public const ISO31661_ALPHA3 = 'iso31661Alpha3';
 
-    const ISO31661_NUMERIC = 'iso31661Numeric';
+    public const ISO31661_NUMERIC = 'iso31661Numeric';
 
-    const NOTE = 'note';
+    public const NOTE = 'note';
 
-    const APPLIES_TO_POSTAL_ADDRESS = 'appliesToPostalAddress';
+    public const APPLIES_TO_POSTAL_ADDRESS = 'appliesToPostalAddress';
 
     protected $_resourceType = ResourceType::COUNTRY;
 
@@ -33,7 +34,7 @@ class Country extends ModelBase
      * @return Country[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +76,7 @@ class Country extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -91,7 +92,7 @@ class Country extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -107,7 +108,7 @@ class Country extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -123,7 +124,7 @@ class Country extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -139,7 +140,7 @@ class Country extends ModelBase
     /**
      * @param string $longName
      */
-    public function setLongName($longName = null)
+    public function setLongName(string $longName = null)
     {
         $this->setProperty('longName', $longName);
     }
@@ -155,7 +156,7 @@ class Country extends ModelBase
     /**
      * @param string $iso31661Alpha2
      */
-    public function setIso31661Alpha2($iso31661Alpha2 = null)
+    public function setIso31661Alpha2(string $iso31661Alpha2 = null)
     {
         $this->setProperty('iso31661Alpha2', $iso31661Alpha2);
     }
@@ -171,7 +172,7 @@ class Country extends ModelBase
     /**
      * @param string $iso31661Alpha3
      */
-    public function setIso31661Alpha3($iso31661Alpha3 = null)
+    public function setIso31661Alpha3(string $iso31661Alpha3 = null)
     {
         $this->setProperty('iso31661Alpha3', $iso31661Alpha3);
     }
@@ -187,7 +188,7 @@ class Country extends ModelBase
     /**
      * @param string $iso31661Numeric
      */
-    public function setIso31661Numeric($iso31661Numeric = null)
+    public function setIso31661Numeric(string $iso31661Numeric = null)
     {
         $this->setProperty('iso31661Numeric', $iso31661Numeric);
     }
@@ -203,7 +204,7 @@ class Country extends ModelBase
     /**
      * @param string $note
      */
-    public function setNote($note = null)
+    public function setNote(string $note = null)
     {
         $this->setProperty('note', $note);
     }
@@ -219,7 +220,7 @@ class Country extends ModelBase
     /**
      * @param bool $appliesToPostalAddress
      */
-    public function setAppliesToPostalAddress($appliesToPostalAddress = null)
+    public function setAppliesToPostalAddress(bool $appliesToPostalAddress = null)
     {
         $this->setProperty('appliesToPostalAddress', $appliesToPostalAddress);
     }

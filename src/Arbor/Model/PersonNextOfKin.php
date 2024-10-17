@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class PersonNextOfKin extends ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const RELATED_PERSON = 'relatedPerson';
+    public const RELATED_PERSON = 'relatedPerson';
 
-    const RELATIONSHIP = 'relationship';
+    public const RELATIONSHIP = 'relationship';
 
     protected $_resourceType = ResourceType::PERSON_NEXT_OF_KIN;
 
@@ -19,7 +20,7 @@ class PersonNextOfKin extends ModelBase
      * @return PersonNextOfKin[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class PersonNextOfKin extends ModelBase
     }
 
     /**
-     * @return Person
+     * @return \Arbor\Model\Person
      */
     public function getPerson()
     {
@@ -59,9 +60,9 @@ class PersonNextOfKin extends ModelBase
     }
 
     /**
-     * @param Person $person
+     * @param \Arbor\Model\Person $person
      */
-    public function setPerson(Person $person = null)
+    public function setPerson(\Arbor\Model\Person $person = null)
     {
         $this->setProperty('person', $person);
     }
@@ -77,13 +78,13 @@ class PersonNextOfKin extends ModelBase
     /**
      * @param ModelBase $relatedPerson
      */
-    public function setRelatedPerson(ModelBase $relatedPerson = null)
+    public function setRelatedPerson(\ModelBase $relatedPerson = null)
     {
         $this->setProperty('relatedPerson', $relatedPerson);
     }
 
     /**
-     * @return NextOfKinRelationship
+     * @return \Arbor\Model\NextOfKinRelationship
      */
     public function getRelationship()
     {
@@ -91,9 +92,9 @@ class PersonNextOfKin extends ModelBase
     }
 
     /**
-     * @param NextOfKinRelationship $relationship
+     * @param \Arbor\Model\NextOfKinRelationship $relationship
      */
-    public function setRelationship(NextOfKinRelationship $relationship = null)
+    public function setRelationship(\Arbor\Model\NextOfKinRelationship $relationship = null)
     {
         $this->setProperty('relationship', $relationship);
     }

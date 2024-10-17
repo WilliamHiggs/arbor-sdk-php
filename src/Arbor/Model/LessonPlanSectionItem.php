@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class LessonPlanSectionItem extends ModelBase
 {
-    const LESSON_PLAN_SECTION = 'lessonPlanSection';
+    public const LESSON_PLAN_SECTION = 'lessonPlanSection';
 
-    const LINKED_ITEM = 'linkedItem';
+    public const LINKED_ITEM = 'linkedItem';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const TEACHER_NOTES = 'teacherNotes';
+    public const TEACHER_NOTES = 'teacherNotes';
 
-    const DISPLAY_ORDER = 'displayOrder';
+    public const DISPLAY_ORDER = 'displayOrder';
 
     protected $_resourceType = ResourceType::LESSON_PLAN_SECTION_ITEM;
 
@@ -23,7 +24,7 @@ class LessonPlanSectionItem extends ModelBase
      * @return LessonPlanSectionItem[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class LessonPlanSectionItem extends ModelBase
     }
 
     /**
-     * @return LessonPlanSection
+     * @return \Arbor\Model\LessonPlanSection
      */
     public function getLessonPlanSection()
     {
@@ -63,9 +64,9 @@ class LessonPlanSectionItem extends ModelBase
     }
 
     /**
-     * @param LessonPlanSection $lessonPlanSection
+     * @param \Arbor\Model\LessonPlanSection $lessonPlanSection
      */
-    public function setLessonPlanSection(LessonPlanSection $lessonPlanSection = null)
+    public function setLessonPlanSection(\Arbor\Model\LessonPlanSection $lessonPlanSection = null)
     {
         $this->setProperty('lessonPlanSection', $lessonPlanSection);
     }
@@ -81,7 +82,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param ModelBase $linkedItem
      */
-    public function setLinkedItem(ModelBase $linkedItem = null)
+    public function setLinkedItem(\ModelBase $linkedItem = null)
     {
         $this->setProperty('linkedItem', $linkedItem);
     }
@@ -97,7 +98,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -113,7 +114,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param string $teacherNotes
      */
-    public function setTeacherNotes($teacherNotes = null)
+    public function setTeacherNotes(string $teacherNotes = null)
     {
         $this->setProperty('teacherNotes', $teacherNotes);
     }
@@ -129,7 +130,7 @@ class LessonPlanSectionItem extends ModelBase
     /**
      * @param int $displayOrder
      */
-    public function setDisplayOrder($displayOrder = null)
+    public function setDisplayOrder(int $displayOrder = null)
     {
         $this->setProperty('displayOrder', $displayOrder);
     }

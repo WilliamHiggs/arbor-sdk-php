@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Programme extends ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const IDENTIFIER = 'identifier';
+    public const IDENTIFIER = 'identifier';
 
-    const FACULTY = 'faculty';
+    public const FACULTY = 'faculty';
 
-    const IS_TRAINEESHIP = 'isTraineeship';
+    public const IS_TRAINEESHIP = 'isTraineeship';
 
     protected $_resourceType = ResourceType::PROGRAMME;
 
@@ -23,7 +24,7 @@ class Programme extends ModelBase
      * @return Programme[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class Programme extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -81,7 +82,7 @@ class Programme extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -97,13 +98,13 @@ class Programme extends ModelBase
     /**
      * @param string $identifier
      */
-    public function setIdentifier($identifier = null)
+    public function setIdentifier(string $identifier = null)
     {
         $this->setProperty('identifier', $identifier);
     }
 
     /**
-     * @return Faculty
+     * @return \Arbor\Model\Faculty
      */
     public function getFaculty()
     {
@@ -111,9 +112,9 @@ class Programme extends ModelBase
     }
 
     /**
-     * @param Faculty $faculty
+     * @param \Arbor\Model\Faculty $faculty
      */
-    public function setFaculty(Faculty $faculty = null)
+    public function setFaculty(\Arbor\Model\Faculty $faculty = null)
     {
         $this->setProperty('faculty', $faculty);
     }
@@ -129,7 +130,7 @@ class Programme extends ModelBase
     /**
      * @param bool $isTraineeship
      */
-    public function setIsTraineeship($isTraineeship = null)
+    public function setIsTraineeship(bool $isTraineeship = null)
     {
         $this->setProperty('isTraineeship', $isTraineeship);
     }

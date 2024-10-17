@@ -9,7 +9,7 @@ use Arbor\Model\ModelBase;
 
 class AcademicYearEnrolment extends ModelBase
 {
-    const LEARNING_SUPPORT_COST = 'learningSupportCost';
+    public const LEARNING_SUPPORT_COST = 'learningSupportCost';
 
     protected $_resourceType = ResourceType::UK_ILR_ACADEMIC_YEAR_ENROLMENT;
 
@@ -18,7 +18,7 @@ class AcademicYearEnrolment extends ModelBase
      * @return AcademicYearEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -60,7 +60,7 @@ class AcademicYearEnrolment extends ModelBase
     /**
      * @param string $learningSupportCost
      */
-    public function setLearningSupportCost($learningSupportCost = null)
+    public function setLearningSupportCost(string $learningSupportCost = null)
     {
         $this->setProperty('learningSupportCost', $learningSupportCost);
     }

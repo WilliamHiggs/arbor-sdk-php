@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InterventionCategory extends ModelBase
 {
-    const INTERVENTION_CATEGORY_NAME = 'interventionCategoryName';
+    public const INTERVENTION_CATEGORY_NAME = 'interventionCategoryName';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
     protected $_resourceType = ResourceType::INTERVENTION_CATEGORY;
 
@@ -23,7 +24,7 @@ class InterventionCategory extends ModelBase
      * @return InterventionCategory[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class InterventionCategory extends ModelBase
     /**
      * @param string $interventionCategoryName
      */
-    public function setInterventionCategoryName($interventionCategoryName = null)
+    public function setInterventionCategoryName(string $interventionCategoryName = null)
     {
         $this->setProperty('interventionCategoryName', $interventionCategoryName);
     }
@@ -81,7 +82,7 @@ class InterventionCategory extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -97,7 +98,7 @@ class InterventionCategory extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -113,7 +114,7 @@ class InterventionCategory extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -129,7 +130,7 @@ class InterventionCategory extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }

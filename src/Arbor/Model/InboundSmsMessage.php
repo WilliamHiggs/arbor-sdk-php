@@ -3,28 +3,29 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InboundSmsMessage extends ModelBase
 {
-    const MESSAGE_TYPE = 'messageType';
+    public const MESSAGE_TYPE = 'messageType';
 
-    const SENDER_NUMBER = 'senderNumber';
+    public const SENDER_NUMBER = 'senderNumber';
 
-    const SENDER = 'sender';
+    public const SENDER = 'sender';
 
-    const RECIPIENT_NUMBER = 'recipientNumber';
+    public const RECIPIENT_NUMBER = 'recipientNumber';
 
-    const RECIPIENT = 'recipient';
+    public const RECIPIENT = 'recipient';
 
-    const MESSAGE_TEXT = 'messageText';
+    public const MESSAGE_TEXT = 'messageText';
 
-    const MESSAGE_IDENTIFIER = 'messageIdentifier';
+    public const MESSAGE_IDENTIFIER = 'messageIdentifier';
 
-    const RECEIVED_DATETIME = 'receivedDatetime';
+    public const RECEIVED_DATETIME = 'receivedDatetime';
 
-    const READ_DATETIME = 'readDatetime';
+    public const READ_DATETIME = 'readDatetime';
 
-    const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
+    public const ACTION_REQUIRED_BY_DATETIME = 'actionRequiredByDatetime';
 
     protected $_resourceType = ResourceType::INBOUND_SMS_MESSAGE;
 
@@ -33,7 +34,7 @@ class InboundSmsMessage extends ModelBase
      * @return InboundSmsMessage[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -75,7 +76,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $messageType
      */
-    public function setMessageType($messageType = null)
+    public function setMessageType(string $messageType = null)
     {
         $this->setProperty('messageType', $messageType);
     }
@@ -91,7 +92,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $senderNumber
      */
-    public function setSenderNumber($senderNumber = null)
+    public function setSenderNumber(string $senderNumber = null)
     {
         $this->setProperty('senderNumber', $senderNumber);
     }
@@ -107,7 +108,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param ModelBase $sender
      */
-    public function setSender(ModelBase $sender = null)
+    public function setSender(\ModelBase $sender = null)
     {
         $this->setProperty('sender', $sender);
     }
@@ -123,13 +124,13 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $recipientNumber
      */
-    public function setRecipientNumber($recipientNumber = null)
+    public function setRecipientNumber(string $recipientNumber = null)
     {
         $this->setProperty('recipientNumber', $recipientNumber);
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getRecipient()
     {
@@ -137,9 +138,9 @@ class InboundSmsMessage extends ModelBase
     }
 
     /**
-     * @param EducationalInstitution $recipient
+     * @param \Arbor\Model\EducationalInstitution $recipient
      */
-    public function setRecipient(EducationalInstitution $recipient = null)
+    public function setRecipient(\Arbor\Model\EducationalInstitution $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -155,7 +156,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $messageText
      */
-    public function setMessageText($messageText = null)
+    public function setMessageText(string $messageText = null)
     {
         $this->setProperty('messageText', $messageText);
     }
@@ -171,7 +172,7 @@ class InboundSmsMessage extends ModelBase
     /**
      * @param string $messageIdentifier
      */
-    public function setMessageIdentifier($messageIdentifier = null)
+    public function setMessageIdentifier(string $messageIdentifier = null)
     {
         $this->setProperty('messageIdentifier', $messageIdentifier);
     }

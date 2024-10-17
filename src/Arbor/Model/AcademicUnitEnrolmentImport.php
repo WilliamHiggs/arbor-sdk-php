@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AcademicUnitEnrolmentImport extends ModelBase
 {
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
-    const IMPORT_STARTED_DATETIME = 'importStartedDatetime';
+    public const IMPORT_STARTED_DATETIME = 'importStartedDatetime';
 
-    const IMPORT_COMPLETED_DATETIME = 'importCompletedDatetime';
+    public const IMPORT_COMPLETED_DATETIME = 'importCompletedDatetime';
 
-    const ENROLMENT_START_DATE = 'enrolmentStartDate';
+    public const ENROLMENT_START_DATE = 'enrolmentStartDate';
 
-    const ENROLMENT_END_DATE = 'enrolmentEndDate';
+    public const ENROLMENT_END_DATE = 'enrolmentEndDate';
 
     protected $_resourceType = ResourceType::ACADEMIC_UNIT_ENROLMENT_IMPORT;
 
@@ -25,7 +26,7 @@ class AcademicUnitEnrolmentImport extends ModelBase
      * @return AcademicUnitEnrolmentImport[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,13 +68,13 @@ class AcademicUnitEnrolmentImport extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -81,9 +82,9 @@ class AcademicUnitEnrolmentImport extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BehaviourFollowUp extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const FOLLOW_UP_DATETIME = 'followUpDatetime';
+    public const FOLLOW_UP_DATETIME = 'followUpDatetime';
 
-    const SUMMARY = 'summary';
+    public const SUMMARY = 'summary';
 
     protected $_resourceType = ResourceType::BEHAVIOUR_FOLLOW_UP;
 
@@ -21,7 +22,7 @@ class BehaviourFollowUp extends ModelBase
      * @return BehaviourFollowUp[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class BehaviourFollowUp extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -61,15 +62,15 @@ class BehaviourFollowUp extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -77,9 +78,9 @@ class BehaviourFollowUp extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -111,7 +112,7 @@ class BehaviourFollowUp extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary($summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }

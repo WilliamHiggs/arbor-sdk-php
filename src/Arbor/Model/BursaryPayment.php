@@ -3,24 +3,25 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BursaryPayment extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const BURSARY_LEVEL_AMOUNT = 'bursaryLevelAmount';
+    public const BURSARY_LEVEL_AMOUNT = 'bursaryLevelAmount';
 
-    const BURSARY_PAYMENT_DATE = 'bursaryPaymentDate';
+    public const BURSARY_PAYMENT_DATE = 'bursaryPaymentDate';
 
-    const APPROVED_DATE = 'approvedDate';
+    public const APPROVED_DATE = 'approvedDate';
 
-    const APPROVED_BY_STAFF = 'approvedByStaff';
+    public const APPROVED_BY_STAFF = 'approvedByStaff';
 
-    const REJECTED_DATE = 'rejectedDate';
+    public const REJECTED_DATE = 'rejectedDate';
 
-    const REJECTED_BY_STAFF = 'rejectedByStaff';
+    public const REJECTED_BY_STAFF = 'rejectedByStaff';
 
-    const PAID_DATE = 'paidDate';
+    public const PAID_DATE = 'paidDate';
 
     protected $_resourceType = ResourceType::BURSARY_PAYMENT;
 
@@ -29,7 +30,7 @@ class BursaryPayment extends ModelBase
      * @return BursaryPayment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class BursaryPayment extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -69,15 +70,15 @@ class BursaryPayment extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return BursaryLevelAmount
+     * @return \Arbor\Model\BursaryLevelAmount
      */
     public function getBursaryLevelAmount()
     {
@@ -85,15 +86,15 @@ class BursaryPayment extends ModelBase
     }
 
     /**
-     * @param BursaryLevelAmount $bursaryLevelAmount
+     * @param \Arbor\Model\BursaryLevelAmount $bursaryLevelAmount
      */
-    public function setBursaryLevelAmount(BursaryLevelAmount $bursaryLevelAmount = null)
+    public function setBursaryLevelAmount(\Arbor\Model\BursaryLevelAmount $bursaryLevelAmount = null)
     {
         $this->setProperty('bursaryLevelAmount', $bursaryLevelAmount);
     }
 
     /**
-     * @return BursaryPaymentDate
+     * @return \Arbor\Model\BursaryPaymentDate
      */
     public function getBursaryPaymentDate()
     {
@@ -101,9 +102,9 @@ class BursaryPayment extends ModelBase
     }
 
     /**
-     * @param BursaryPaymentDate $bursaryPaymentDate
+     * @param \Arbor\Model\BursaryPaymentDate $bursaryPaymentDate
      */
-    public function setBursaryPaymentDate(BursaryPaymentDate $bursaryPaymentDate = null)
+    public function setBursaryPaymentDate(\Arbor\Model\BursaryPaymentDate $bursaryPaymentDate = null)
     {
         $this->setProperty('bursaryPaymentDate', $bursaryPaymentDate);
     }
@@ -125,7 +126,7 @@ class BursaryPayment extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getApprovedByStaff()
     {
@@ -133,9 +134,9 @@ class BursaryPayment extends ModelBase
     }
 
     /**
-     * @param Staff $approvedByStaff
+     * @param \Arbor\Model\Staff $approvedByStaff
      */
-    public function setApprovedByStaff(Staff $approvedByStaff = null)
+    public function setApprovedByStaff(\Arbor\Model\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -157,7 +158,7 @@ class BursaryPayment extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getRejectedByStaff()
     {
@@ -165,9 +166,9 @@ class BursaryPayment extends ModelBase
     }
 
     /**
-     * @param Staff $rejectedByStaff
+     * @param \Arbor\Model\Staff $rejectedByStaff
      */
-    public function setRejectedByStaff(Staff $rejectedByStaff = null)
+    public function setRejectedByStaff(\Arbor\Model\Staff $rejectedByStaff = null)
     {
         $this->setProperty('rejectedByStaff', $rejectedByStaff);
     }

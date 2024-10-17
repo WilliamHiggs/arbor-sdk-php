@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CustomReportCollation extends ModelBase
 {
-    const CUSTOM_REPORT = 'customReport';
+    public const CUSTOM_REPORT = 'customReport';
 
-    const FIELD_CLASS = 'fieldClass';
+    public const FIELD_CLASS = 'fieldClass';
 
-    const FIELD_PARAMS = 'fieldParams';
+    public const FIELD_PARAMS = 'fieldParams';
 
-    const TRANSFORMATION_CLASS = 'transformationClass';
+    public const TRANSFORMATION_CLASS = 'transformationClass';
 
-    const CUSTOM_LABEL = 'customLabel';
+    public const CUSTOM_LABEL = 'customLabel';
 
     protected $_resourceType = ResourceType::CUSTOM_REPORT_COLLATION;
 
@@ -23,7 +24,7 @@ class CustomReportCollation extends ModelBase
      * @return CustomReportCollation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class CustomReportCollation extends ModelBase
     }
 
     /**
-     * @return CustomReport
+     * @return \Arbor\Model\CustomReport
      */
     public function getCustomReport()
     {
@@ -63,9 +64,9 @@ class CustomReportCollation extends ModelBase
     }
 
     /**
-     * @param CustomReport $customReport
+     * @param \Arbor\Model\CustomReport $customReport
      */
-    public function setCustomReport(CustomReport $customReport = null)
+    public function setCustomReport(\Arbor\Model\CustomReport $customReport = null)
     {
         $this->setProperty('customReport', $customReport);
     }
@@ -81,7 +82,7 @@ class CustomReportCollation extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass($fieldClass = null)
+    public function setFieldClass(string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -97,7 +98,7 @@ class CustomReportCollation extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams($fieldParams = null)
+    public function setFieldParams(string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -113,7 +114,7 @@ class CustomReportCollation extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass($transformationClass = null)
+    public function setTransformationClass(string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -129,7 +130,7 @@ class CustomReportCollation extends ModelBase
     /**
      * @param string $customLabel
      */
-    public function setCustomLabel($customLabel = null)
+    public function setCustomLabel(string $customLabel = null)
     {
         $this->setProperty('customLabel', $customLabel);
     }

@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AssessmentStudentGroup extends ModelBase
 {
-    const ACADEMIC_YEAR_ASSESSMENT = 'academicYearAssessment';
+    public const ACADEMIC_YEAR_ASSESSMENT = 'academicYearAssessment';
 
-    const STUDENT_GROUP = 'studentGroup';
+    public const STUDENT_GROUP = 'studentGroup';
 
     protected $_resourceType = ResourceType::ASSESSMENT_STUDENT_GROUP;
 
@@ -17,7 +18,7 @@ class AssessmentStudentGroup extends ModelBase
      * @return AssessmentStudentGroup[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class AssessmentStudentGroup extends ModelBase
     }
 
     /**
-     * @return AcademicYearAssessment
+     * @return \Arbor\Model\AcademicYearAssessment
      */
     public function getAcademicYearAssessment()
     {
@@ -57,9 +58,9 @@ class AssessmentStudentGroup extends ModelBase
     }
 
     /**
-     * @param AcademicYearAssessment $academicYearAssessment
+     * @param \Arbor\Model\AcademicYearAssessment $academicYearAssessment
      */
-    public function setAcademicYearAssessment(AcademicYearAssessment $academicYearAssessment = null)
+    public function setAcademicYearAssessment(\Arbor\Model\AcademicYearAssessment $academicYearAssessment = null)
     {
         $this->setProperty('academicYearAssessment', $academicYearAssessment);
     }
@@ -75,7 +76,7 @@ class AssessmentStudentGroup extends ModelBase
     /**
      * @param ModelBase $studentGroup
      */
-    public function setStudentGroup(ModelBase $studentGroup = null)
+    public function setStudentGroup(\ModelBase $studentGroup = null)
     {
         $this->setProperty('studentGroup', $studentGroup);
     }

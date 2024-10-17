@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class SenEventOutcome extends ModelBase
 {
-    const SEN_EVENT = 'senEvent';
+    public const SEN_EVENT = 'senEvent';
 
-    const SEN_EVENT_OUTCOME_TYPE = 'senEventOutcomeType';
+    public const SEN_EVENT_OUTCOME_TYPE = 'senEventOutcomeType';
 
-    const COMMENTS = 'comments';
+    public const COMMENTS = 'comments';
 
     protected $_resourceType = ResourceType::SEN_EVENT_OUTCOME;
 
@@ -19,7 +20,7 @@ class SenEventOutcome extends ModelBase
      * @return SenEventOutcome[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class SenEventOutcome extends ModelBase
     }
 
     /**
-     * @return SenEvent
+     * @return \Arbor\Model\SenEvent
      */
     public function getSenEvent()
     {
@@ -59,15 +60,15 @@ class SenEventOutcome extends ModelBase
     }
 
     /**
-     * @param SenEvent $senEvent
+     * @param \Arbor\Model\SenEvent $senEvent
      */
-    public function setSenEvent(SenEvent $senEvent = null)
+    public function setSenEvent(\Arbor\Model\SenEvent $senEvent = null)
     {
         $this->setProperty('senEvent', $senEvent);
     }
 
     /**
-     * @return SenEventOutcomeType
+     * @return \Arbor\Model\SenEventOutcomeType
      */
     public function getSenEventOutcomeType()
     {
@@ -75,9 +76,9 @@ class SenEventOutcome extends ModelBase
     }
 
     /**
-     * @param SenEventOutcomeType $senEventOutcomeType
+     * @param \Arbor\Model\SenEventOutcomeType $senEventOutcomeType
      */
-    public function setSenEventOutcomeType(SenEventOutcomeType $senEventOutcomeType = null)
+    public function setSenEventOutcomeType(\Arbor\Model\SenEventOutcomeType $senEventOutcomeType = null)
     {
         $this->setProperty('senEventOutcomeType', $senEventOutcomeType);
     }
@@ -93,7 +94,7 @@ class SenEventOutcome extends ModelBase
     /**
      * @param string $comments
      */
-    public function setComments($comments = null)
+    public function setComments(string $comments = null)
     {
         $this->setProperty('comments', $comments);
     }

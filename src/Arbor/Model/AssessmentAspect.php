@@ -3,30 +3,31 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AssessmentAspect extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const ASSESSMENT = 'assessment';
+    public const ASSESSMENT = 'assessment';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const MARK_TYPE = 'markType';
+    public const MARK_TYPE = 'markType';
 
-    const MARK_MIN_VALUE = 'markMinValue';
+    public const MARK_MIN_VALUE = 'markMinValue';
 
-    const MARK_MAX_VALUE = 'markMaxValue';
+    public const MARK_MAX_VALUE = 'markMaxValue';
 
-    const GRADE_SET = 'gradeSet';
+    public const GRADE_SET = 'gradeSet';
 
-    const DEFAULT_GRADE_SET = 'defaultGradeSet';
+    public const DEFAULT_GRADE_SET = 'defaultGradeSet';
 
     protected $_resourceType = ResourceType::ASSESSMENT_ASPECT;
 
@@ -35,7 +36,7 @@ class AssessmentAspect extends ModelBase
      * @return AssessmentAspect[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +78,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -93,7 +94,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -109,7 +110,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -125,7 +126,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param ModelBase $assessment
      */
-    public function setAssessment(ModelBase $assessment = null)
+    public function setAssessment(\ModelBase $assessment = null)
     {
         $this->setProperty('assessment', $assessment);
     }
@@ -173,7 +174,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param string $markType
      */
-    public function setMarkType($markType = null)
+    public function setMarkType(string $markType = null)
     {
         $this->setProperty('markType', $markType);
     }
@@ -189,7 +190,7 @@ class AssessmentAspect extends ModelBase
     /**
      * @param float $markMinValue
      */
-    public function setMarkMinValue($markMinValue = null)
+    public function setMarkMinValue(float $markMinValue = null)
     {
         $this->setProperty('markMinValue', $markMinValue);
     }
@@ -205,13 +206,13 @@ class AssessmentAspect extends ModelBase
     /**
      * @param float $markMaxValue
      */
-    public function setMarkMaxValue($markMaxValue = null)
+    public function setMarkMaxValue(float $markMaxValue = null)
     {
         $this->setProperty('markMaxValue', $markMaxValue);
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getGradeSet()
     {
@@ -219,15 +220,15 @@ class AssessmentAspect extends ModelBase
     }
 
     /**
-     * @param GradeSet $gradeSet
+     * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(GradeSet $gradeSet = null)
+    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getDefaultGradeSet()
     {
@@ -235,9 +236,9 @@ class AssessmentAspect extends ModelBase
     }
 
     /**
-     * @param GradeSet $defaultGradeSet
+     * @param \Arbor\Model\GradeSet $defaultGradeSet
      */
-    public function setDefaultGradeSet(GradeSet $defaultGradeSet = null)
+    public function setDefaultGradeSet(\Arbor\Model\GradeSet $defaultGradeSet = null)
     {
         $this->setProperty('defaultGradeSet', $defaultGradeSet);
     }

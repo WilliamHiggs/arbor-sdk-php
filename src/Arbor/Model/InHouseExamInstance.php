@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InHouseExamInstance extends ModelBase
 {
-    const IN_HOUSE_EXAM = 'inHouseExam';
+    public const IN_HOUSE_EXAM = 'inHouseExam';
 
-    const EXPECTED_START_DATETIME = 'expectedStartDatetime';
+    public const EXPECTED_START_DATETIME = 'expectedStartDatetime';
 
-    const EXPECTED_END_DATETIME = 'expectedEndDatetime';
+    public const EXPECTED_END_DATETIME = 'expectedEndDatetime';
 
     protected $_resourceType = ResourceType::IN_HOUSE_EXAM_INSTANCE;
 
@@ -19,7 +20,7 @@ class InHouseExamInstance extends ModelBase
      * @return InHouseExamInstance[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class InHouseExamInstance extends ModelBase
     }
 
     /**
-     * @return InHouseExam
+     * @return \Arbor\Model\InHouseExam
      */
     public function getInHouseExam()
     {
@@ -59,9 +60,9 @@ class InHouseExamInstance extends ModelBase
     }
 
     /**
-     * @param InHouseExam $inHouseExam
+     * @param \Arbor\Model\InHouseExam $inHouseExam
      */
-    public function setInHouseExam(InHouseExam $inHouseExam = null)
+    public function setInHouseExam(\Arbor\Model\InHouseExam $inHouseExam = null)
     {
         $this->setProperty('inHouseExam', $inHouseExam);
     }

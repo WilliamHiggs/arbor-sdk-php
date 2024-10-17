@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class GradePointScaleLevelGradeSet extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const GRADE_POINT_SCALE = 'gradePointScale';
+    public const GRADE_POINT_SCALE = 'gradePointScale';
 
-    const GRADE_SET = 'gradeSet';
+    public const GRADE_SET = 'gradeSet';
 
-    const LEVEL_TYPE = 'levelType';
+    public const LEVEL_TYPE = 'levelType';
 
-    const APPLIES_TO_SEN_STUDENT_ONLY = 'appliesToSenStudentOnly';
+    public const APPLIES_TO_SEN_STUDENT_ONLY = 'appliesToSenStudentOnly';
 
     protected $_resourceType = ResourceType::GRADE_POINT_SCALE_LEVEL_GRADE_SET;
 
@@ -27,7 +28,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
      * @return GradePointScaleLevelGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +70,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -85,7 +86,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -101,13 +102,13 @@ class GradePointScaleLevelGradeSet extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
-     * @return GradePointScale
+     * @return \Arbor\Model\GradePointScale
      */
     public function getGradePointScale()
     {
@@ -115,15 +116,15 @@ class GradePointScaleLevelGradeSet extends ModelBase
     }
 
     /**
-     * @param GradePointScale $gradePointScale
+     * @param \Arbor\Model\GradePointScale $gradePointScale
      */
-    public function setGradePointScale(GradePointScale $gradePointScale = null)
+    public function setGradePointScale(\Arbor\Model\GradePointScale $gradePointScale = null)
     {
         $this->setProperty('gradePointScale', $gradePointScale);
     }
 
     /**
-     * @return GradeSet
+     * @return \Arbor\Model\GradeSet
      */
     public function getGradeSet()
     {
@@ -131,9 +132,9 @@ class GradePointScaleLevelGradeSet extends ModelBase
     }
 
     /**
-     * @param GradeSet $gradeSet
+     * @param \Arbor\Model\GradeSet $gradeSet
      */
-    public function setGradeSet(GradeSet $gradeSet = null)
+    public function setGradeSet(\Arbor\Model\GradeSet $gradeSet = null)
     {
         $this->setProperty('gradeSet', $gradeSet);
     }
@@ -149,7 +150,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
     /**
      * @param string $levelType
      */
-    public function setLevelType($levelType = null)
+    public function setLevelType(string $levelType = null)
     {
         $this->setProperty('levelType', $levelType);
     }
@@ -165,7 +166,7 @@ class GradePointScaleLevelGradeSet extends ModelBase
     /**
      * @param bool $appliesToSenStudentOnly
      */
-    public function setAppliesToSenStudentOnly($appliesToSenStudentOnly = null)
+    public function setAppliesToSenStudentOnly(bool $appliesToSenStudentOnly = null)
     {
         $this->setProperty('appliesToSenStudentOnly', $appliesToSenStudentOnly);
     }

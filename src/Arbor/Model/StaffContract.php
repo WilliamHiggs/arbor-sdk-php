@@ -3,36 +3,37 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StaffContract extends ModelBase
 {
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const STAFF_EMPLOYMENT_TYPE = 'staffEmploymentType';
+    public const STAFF_EMPLOYMENT_TYPE = 'staffEmploymentType';
 
-    const CONTRACT_NAME = 'contractName';
+    public const CONTRACT_NAME = 'contractName';
 
-    const CONTRACT_REFERENCE = 'contractReference';
+    public const CONTRACT_REFERENCE = 'contractReference';
 
-    const ISSUED_DATE = 'issuedDate';
+    public const ISSUED_DATE = 'issuedDate';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const EXPECTED_END_DATE = 'expectedEndDate';
+    public const EXPECTED_END_DATE = 'expectedEndDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const PAYROLL_NUMBER = 'payrollNumber';
+    public const PAYROLL_NUMBER = 'payrollNumber';
 
-    const STAFF_ORIGIN = 'staffOrigin';
+    public const STAFF_ORIGIN = 'staffOrigin';
 
-    const STAFF_DESTINATION = 'staffDestination';
+    public const STAFF_DESTINATION = 'staffDestination';
 
-    const STAFF_LEAVING_REASON = 'staffLeavingReason';
+    public const STAFF_LEAVING_REASON = 'staffLeavingReason';
 
-    const SUPERANNUATION_SCHEME = 'superannuationScheme';
+    public const SUPERANNUATION_SCHEME = 'superannuationScheme';
 
-    const LAST_PAY_REVIEW_DATE = 'lastPayReviewDate';
+    public const LAST_PAY_REVIEW_DATE = 'lastPayReviewDate';
 
     protected $_resourceType = ResourceType::STAFF_CONTRACT;
 
@@ -41,7 +42,7 @@ class StaffContract extends ModelBase
      * @return StaffContract[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +74,7 @@ class StaffContract extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -81,15 +82,15 @@ class StaffContract extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
 
     /**
-     * @return StaffEmploymentType
+     * @return \Arbor\Model\StaffEmploymentType
      */
     public function getStaffEmploymentType()
     {
@@ -97,9 +98,9 @@ class StaffContract extends ModelBase
     }
 
     /**
-     * @param StaffEmploymentType $staffEmploymentType
+     * @param \Arbor\Model\StaffEmploymentType $staffEmploymentType
      */
-    public function setStaffEmploymentType(StaffEmploymentType $staffEmploymentType = null)
+    public function setStaffEmploymentType(\Arbor\Model\StaffEmploymentType $staffEmploymentType = null)
     {
         $this->setProperty('staffEmploymentType', $staffEmploymentType);
     }
@@ -115,7 +116,7 @@ class StaffContract extends ModelBase
     /**
      * @param string $contractName
      */
-    public function setContractName($contractName = null)
+    public function setContractName(string $contractName = null)
     {
         $this->setProperty('contractName', $contractName);
     }
@@ -131,7 +132,7 @@ class StaffContract extends ModelBase
     /**
      * @param string $contractReference
      */
-    public function setContractReference($contractReference = null)
+    public function setContractReference(string $contractReference = null)
     {
         $this->setProperty('contractReference', $contractReference);
     }
@@ -211,13 +212,13 @@ class StaffContract extends ModelBase
     /**
      * @param string $payrollNumber
      */
-    public function setPayrollNumber($payrollNumber = null)
+    public function setPayrollNumber(string $payrollNumber = null)
     {
         $this->setProperty('payrollNumber', $payrollNumber);
     }
 
     /**
-     * @return StaffOrigin
+     * @return \Arbor\Model\StaffOrigin
      */
     public function getStaffOrigin()
     {
@@ -225,15 +226,15 @@ class StaffContract extends ModelBase
     }
 
     /**
-     * @param StaffOrigin $staffOrigin
+     * @param \Arbor\Model\StaffOrigin $staffOrigin
      */
-    public function setStaffOrigin(StaffOrigin $staffOrigin = null)
+    public function setStaffOrigin(\Arbor\Model\StaffOrigin $staffOrigin = null)
     {
         $this->setProperty('staffOrigin', $staffOrigin);
     }
 
     /**
-     * @return StaffDestination
+     * @return \Arbor\Model\StaffDestination
      */
     public function getStaffDestination()
     {
@@ -241,15 +242,15 @@ class StaffContract extends ModelBase
     }
 
     /**
-     * @param StaffDestination $staffDestination
+     * @param \Arbor\Model\StaffDestination $staffDestination
      */
-    public function setStaffDestination(StaffDestination $staffDestination = null)
+    public function setStaffDestination(\Arbor\Model\StaffDestination $staffDestination = null)
     {
         $this->setProperty('staffDestination', $staffDestination);
     }
 
     /**
-     * @return StaffLeavingReason
+     * @return \Arbor\Model\StaffLeavingReason
      */
     public function getStaffLeavingReason()
     {
@@ -257,15 +258,15 @@ class StaffContract extends ModelBase
     }
 
     /**
-     * @param StaffLeavingReason $staffLeavingReason
+     * @param \Arbor\Model\StaffLeavingReason $staffLeavingReason
      */
-    public function setStaffLeavingReason(StaffLeavingReason $staffLeavingReason = null)
+    public function setStaffLeavingReason(\Arbor\Model\StaffLeavingReason $staffLeavingReason = null)
     {
         $this->setProperty('staffLeavingReason', $staffLeavingReason);
     }
 
     /**
-     * @return SuperannuationScheme
+     * @return \Arbor\Model\SuperannuationScheme
      */
     public function getSuperannuationScheme()
     {
@@ -273,9 +274,9 @@ class StaffContract extends ModelBase
     }
 
     /**
-     * @param SuperannuationScheme $superannuationScheme
+     * @param \Arbor\Model\SuperannuationScheme $superannuationScheme
      */
-    public function setSuperannuationScheme(SuperannuationScheme $superannuationScheme = null)
+    public function setSuperannuationScheme(\Arbor\Model\SuperannuationScheme $superannuationScheme = null)
     {
         $this->setProperty('superannuationScheme', $superannuationScheme);
     }

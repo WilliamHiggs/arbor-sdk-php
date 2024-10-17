@@ -6,24 +6,22 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\AwardingOrganization;
-use Arbor\Model\QualificationAvailabilityInstance;
 
 class EdiExportJob extends ModelBase
 {
-    const FILE_NAME = 'fileName';
+    public const FILE_NAME = 'fileName';
 
-    const FILE_TYPE = 'fileType';
+    public const FILE_TYPE = 'fileType';
 
-    const EXPORTED_DATETIME = 'exportedDatetime';
+    public const EXPORTED_DATETIME = 'exportedDatetime';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
-    const SEQUENCE_NUMBER = 'sequenceNumber';
+    public const SEQUENCE_NUMBER = 'sequenceNumber';
 
-    const AWARDING_ORGANIZATION = 'awardingOrganization';
+    public const AWARDING_ORGANIZATION = 'awardingOrganization';
 
-    const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
+    public const QUALIFICATION_AVAILABILITY_INSTANCE = 'qualificationAvailabilityInstance';
 
     protected $_resourceType = ResourceType::UK_JCQ_EDI_EXPORT_JOB;
 
@@ -32,7 +30,7 @@ class EdiExportJob extends ModelBase
      * @return EdiExportJob[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -74,7 +72,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param string $fileName
      */
-    public function setFileName($fileName = null)
+    public function setFileName(string $fileName = null)
     {
         $this->setProperty('fileName', $fileName);
     }
@@ -90,7 +88,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param string $fileType
      */
-    public function setFileType($fileType = null)
+    public function setFileType(string $fileType = null)
     {
         $this->setProperty('fileType', $fileType);
     }
@@ -122,7 +120,7 @@ class EdiExportJob extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus($status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -138,13 +136,13 @@ class EdiExportJob extends ModelBase
     /**
      * @param int $sequenceNumber
      */
-    public function setSequenceNumber($sequenceNumber = null)
+    public function setSequenceNumber(int $sequenceNumber = null)
     {
         $this->setProperty('sequenceNumber', $sequenceNumber);
     }
 
     /**
-     * @return AwardingOrganization
+     * @return \Arbor\Model\AwardingOrganization
      */
     public function getAwardingOrganization()
     {
@@ -152,15 +150,15 @@ class EdiExportJob extends ModelBase
     }
 
     /**
-     * @param AwardingOrganization $awardingOrganization
+     * @param \Arbor\Model\AwardingOrganization $awardingOrganization
      */
-    public function setAwardingOrganization(AwardingOrganization $awardingOrganization = null)
+    public function setAwardingOrganization(\Arbor\Model\AwardingOrganization $awardingOrganization = null)
     {
         $this->setProperty('awardingOrganization', $awardingOrganization);
     }
 
     /**
-     * @return QualificationAvailabilityInstance
+     * @return \Arbor\Model\QualificationAvailabilityInstance
      */
     public function getQualificationAvailabilityInstance()
     {
@@ -168,9 +166,10 @@ class EdiExportJob extends ModelBase
     }
 
     /**
-     * @param QualificationAvailabilityInstance $qualificationAvailabilityInstance
+     * @param \Arbor\Model\QualificationAvailabilityInstance
+     * $qualificationAvailabilityInstance
      */
-    public function setQualificationAvailabilityInstance(QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
+    public function setQualificationAvailabilityInstance(\Arbor\Model\QualificationAvailabilityInstance $qualificationAvailabilityInstance = null)
     {
         $this->setProperty('qualificationAvailabilityInstance', $qualificationAvailabilityInstance);
     }

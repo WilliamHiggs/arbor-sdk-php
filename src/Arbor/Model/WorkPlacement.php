@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class WorkPlacement extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const EMPLOYER = 'employer';
+    public const EMPLOYER = 'employer';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const WORK_PLACEMENT_MODE = 'workPlacementMode';
+    public const WORK_PLACEMENT_MODE = 'workPlacementMode';
 
-    const PLANNED_HOURS = 'plannedHours';
+    public const TOTAL_PLANNED_HOURS = 'totalPlannedHours';
 
-    const PROGRAMME_ENROLMENT = 'programmeEnrolment';
+    public const PROGRAMME_ENROLMENT = 'programmeEnrolment';
 
     protected $_resourceType = ResourceType::WORK_PLACEMENT;
 
@@ -27,7 +28,7 @@ class WorkPlacement extends ModelBase
      * @return WorkPlacement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class WorkPlacement extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -67,15 +68,15 @@ class WorkPlacement extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Employer
+     * @return \Arbor\Model\Employer
      */
     public function getEmployer()
     {
@@ -83,9 +84,9 @@ class WorkPlacement extends ModelBase
     }
 
     /**
-     * @param Employer $employer
+     * @param \Arbor\Model\Employer $employer
      */
-    public function setEmployer(Employer $employer = null)
+    public function setEmployer(\Arbor\Model\Employer $employer = null)
     {
         $this->setProperty('employer', $employer);
     }
@@ -133,29 +134,29 @@ class WorkPlacement extends ModelBase
     /**
      * @param string $workPlacementMode
      */
-    public function setWorkPlacementMode($workPlacementMode = null)
+    public function setWorkPlacementMode(string $workPlacementMode = null)
     {
         $this->setProperty('workPlacementMode', $workPlacementMode);
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getPlannedHours()
+    public function getTotalPlannedHours()
     {
-        return $this->getProperty('plannedHours');
+        return $this->getProperty('totalPlannedHours');
     }
 
     /**
-     * @param string $plannedHours
+     * @param int $totalPlannedHours
      */
-    public function setPlannedHours($plannedHours = null)
+    public function setTotalPlannedHours(int $totalPlannedHours = null)
     {
-        $this->setProperty('plannedHours', $plannedHours);
+        $this->setProperty('totalPlannedHours', $totalPlannedHours);
     }
 
     /**
-     * @return ProgrammeEnrolment
+     * @return \Arbor\Model\ProgrammeEnrolment
      */
     public function getProgrammeEnrolment()
     {
@@ -163,9 +164,9 @@ class WorkPlacement extends ModelBase
     }
 
     /**
-     * @param ProgrammeEnrolment $programmeEnrolment
+     * @param \Arbor\Model\ProgrammeEnrolment $programmeEnrolment
      */
-    public function setProgrammeEnrolment(ProgrammeEnrolment $programmeEnrolment = null)
+    public function setProgrammeEnrolment(\Arbor\Model\ProgrammeEnrolment $programmeEnrolment = null)
     {
         $this->setProperty('programmeEnrolment', $programmeEnrolment);
     }

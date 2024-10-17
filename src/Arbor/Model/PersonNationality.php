@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class PersonNationality extends ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const COUNTRY = 'country';
+    public const COUNTRY = 'country';
 
-    const NATIONALITY_STATUS = 'nationalityStatus';
+    public const NATIONALITY_STATUS = 'nationalityStatus';
 
     protected $_resourceType = ResourceType::PERSON_NATIONALITY;
 
@@ -19,7 +20,7 @@ class PersonNationality extends ModelBase
      * @return PersonNationality[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,13 +62,13 @@ class PersonNationality extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
 
     /**
-     * @return Country
+     * @return \Arbor\Model\Country
      */
     public function getCountry()
     {
@@ -75,15 +76,15 @@ class PersonNationality extends ModelBase
     }
 
     /**
-     * @param Country $country
+     * @param \Arbor\Model\Country $country
      */
-    public function setCountry(Country $country = null)
+    public function setCountry(\Arbor\Model\Country $country = null)
     {
         $this->setProperty('country', $country);
     }
 
     /**
-     * @return NationalityStatus
+     * @return \Arbor\Model\NationalityStatus
      */
     public function getNationalityStatus()
     {
@@ -91,9 +92,9 @@ class PersonNationality extends ModelBase
     }
 
     /**
-     * @param NationalityStatus $nationalityStatus
+     * @param \Arbor\Model\NationalityStatus $nationalityStatus
      */
-    public function setNationalityStatus(NationalityStatus $nationalityStatus = null)
+    public function setNationalityStatus(\Arbor\Model\NationalityStatus $nationalityStatus = null)
     {
         $this->setProperty('nationalityStatus', $nationalityStatus);
     }

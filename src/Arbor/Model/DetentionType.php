@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class DetentionType extends ModelBase
 {
-    const DETENTION_TYPE_NAME = 'detentionTypeName';
+    public const DETENTION_TYPE_NAME = 'detentionTypeName';
 
-    const ACADEMIC_YEAR = 'academicYear';
+    public const ACADEMIC_YEAR = 'academicYear';
 
     protected $_resourceType = ResourceType::DETENTION_TYPE;
 
@@ -17,7 +18,7 @@ class DetentionType extends ModelBase
      * @return DetentionType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,13 +60,13 @@ class DetentionType extends ModelBase
     /**
      * @param string $detentionTypeName
      */
-    public function setDetentionTypeName($detentionTypeName = null)
+    public function setDetentionTypeName(string $detentionTypeName = null)
     {
         $this->setProperty('detentionTypeName', $detentionTypeName);
     }
 
     /**
-     * @return AcademicYear
+     * @return \Arbor\Model\AcademicYear
      */
     public function getAcademicYear()
     {
@@ -73,9 +74,9 @@ class DetentionType extends ModelBase
     }
 
     /**
-     * @param AcademicYear $academicYear
+     * @param \Arbor\Model\AcademicYear $academicYear
      */
-    public function setAcademicYear(AcademicYear $academicYear = null)
+    public function setAcademicYear(\Arbor\Model\AcademicYear $academicYear = null)
     {
         $this->setProperty('academicYear', $academicYear);
     }

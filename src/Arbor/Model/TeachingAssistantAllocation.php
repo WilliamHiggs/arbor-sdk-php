@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class TeachingAssistantAllocation extends ModelBase
 {
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const DAY_OF_CYCLE = 'dayOfCycle';
+    public const DAY_OF_CYCLE = 'dayOfCycle';
 
-    const START_TIME = 'startTime';
+    public const START_TIME = 'startTime';
 
-    const END_TIME = 'endTime';
+    public const END_TIME = 'endTime';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const ALLOCATED_TO = 'allocatedTo';
+    public const ALLOCATED_TO = 'allocatedTo';
 
     protected $_resourceType = ResourceType::TEACHING_ASSISTANT_ALLOCATION;
 
@@ -27,7 +28,7 @@ class TeachingAssistantAllocation extends ModelBase
      * @return TeachingAssistantAllocation[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class TeachingAssistantAllocation extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -67,9 +68,9 @@ class TeachingAssistantAllocation extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -85,7 +86,7 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param int $dayOfCycle
      */
-    public function setDayOfCycle($dayOfCycle = null)
+    public function setDayOfCycle(int $dayOfCycle = null)
     {
         $this->setProperty('dayOfCycle', $dayOfCycle);
     }
@@ -101,7 +102,7 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param string $startTime
      */
-    public function setStartTime($startTime = null)
+    public function setStartTime(string $startTime = null)
     {
         $this->setProperty('startTime', $startTime);
     }
@@ -117,7 +118,7 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param string $endTime
      */
-    public function setEndTime($endTime = null)
+    public function setEndTime(string $endTime = null)
     {
         $this->setProperty('endTime', $endTime);
     }
@@ -165,7 +166,7 @@ class TeachingAssistantAllocation extends ModelBase
     /**
      * @param ModelBase $allocatedTo
      */
-    public function setAllocatedTo(ModelBase $allocatedTo = null)
+    public function setAllocatedTo(\ModelBase $allocatedTo = null)
     {
         $this->setProperty('allocatedTo', $allocatedTo);
     }

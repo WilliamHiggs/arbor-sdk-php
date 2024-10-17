@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class EducationPlan extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const EDUCATION_PLAN_TYPE = 'educationPlanType';
+    public const EDUCATION_PLAN_TYPE = 'educationPlanType';
 
-    const SUMMARY = 'summary';
+    public const SUMMARY = 'summary';
 
-    const CONTENT = 'content';
+    public const CONTENT = 'content';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const SCHEDULED_REVIEW_DATE = 'scheduledReviewDate';
+    public const SCHEDULED_REVIEW_DATE = 'scheduledReviewDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::EDUCATION_PLAN;
 
@@ -27,7 +28,7 @@ class EducationPlan extends ModelBase
      * @return EducationPlan[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class EducationPlan extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -67,9 +68,9 @@ class EducationPlan extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -85,7 +86,7 @@ class EducationPlan extends ModelBase
     /**
      * @param string $educationPlanType
      */
-    public function setEducationPlanType($educationPlanType = null)
+    public function setEducationPlanType(string $educationPlanType = null)
     {
         $this->setProperty('educationPlanType', $educationPlanType);
     }
@@ -101,7 +102,7 @@ class EducationPlan extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary($summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -117,7 +118,7 @@ class EducationPlan extends ModelBase
     /**
      * @param string $content
      */
-    public function setContent($content = null)
+    public function setContent(string $content = null)
     {
         $this->setProperty('content', $content);
     }

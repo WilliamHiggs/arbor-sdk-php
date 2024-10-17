@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class MealPrice extends ModelBase
 {
-    const MEAL_PROVISION_PRICE_CATEGORY = 'mealProvisionPriceCategory';
+    public const MEAL_PROVISION_PRICE_CATEGORY = 'mealProvisionPriceCategory';
 
-    const PRICE_EX_VAT = 'priceExVat';
+    public const PRICE_EX_VAT = 'priceExVat';
 
-    const VAT_AMOUNT = 'vatAmount';
+    public const VAT_AMOUNT = 'vatAmount';
 
-    const VAT_RATE = 'vatRate';
+    public const VAT_RATE = 'vatRate';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::MEAL_PRICE;
 
@@ -25,7 +26,7 @@ class MealPrice extends ModelBase
      * @return MealPrice[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -57,7 +58,7 @@ class MealPrice extends ModelBase
     }
 
     /**
-     * @return MealProvisionPriceCategory
+     * @return \Arbor\Model\MealProvisionPriceCategory
      */
     public function getMealProvisionPriceCategory()
     {
@@ -65,9 +66,9 @@ class MealPrice extends ModelBase
     }
 
     /**
-     * @param MealProvisionPriceCategory $mealProvisionPriceCategory
+     * @param \Arbor\Model\MealProvisionPriceCategory $mealProvisionPriceCategory
      */
-    public function setMealProvisionPriceCategory(MealProvisionPriceCategory $mealProvisionPriceCategory = null)
+    public function setMealProvisionPriceCategory(\Arbor\Model\MealProvisionPriceCategory $mealProvisionPriceCategory = null)
     {
         $this->setProperty('mealProvisionPriceCategory', $mealProvisionPriceCategory);
     }
@@ -83,7 +84,7 @@ class MealPrice extends ModelBase
     /**
      * @param string $priceExVat
      */
-    public function setPriceExVat($priceExVat = null)
+    public function setPriceExVat(string $priceExVat = null)
     {
         $this->setProperty('priceExVat', $priceExVat);
     }
@@ -99,13 +100,13 @@ class MealPrice extends ModelBase
     /**
      * @param string $vatAmount
      */
-    public function setVatAmount($vatAmount = null)
+    public function setVatAmount(string $vatAmount = null)
     {
         $this->setProperty('vatAmount', $vatAmount);
     }
 
     /**
-     * @return VatRate
+     * @return \Arbor\Model\VatRate
      */
     public function getVatRate()
     {
@@ -113,9 +114,9 @@ class MealPrice extends ModelBase
     }
 
     /**
-     * @param VatRate $vatRate
+     * @param \Arbor\Model\VatRate $vatRate
      */
-    public function setVatRate(VatRate $vatRate = null)
+    public function setVatRate(\Arbor\Model\VatRate $vatRate = null)
     {
         $this->setProperty('vatRate', $vatRate);
     }

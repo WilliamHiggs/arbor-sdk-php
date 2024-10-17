@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentStandardizedAssessment extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
+    public const STANDARDIZED_ASSESSMENT_TEMPLATE = 'standardizedAssessmentTemplate';
 
-    const ASSESSMENT_DATE = 'assessmentDate';
+    public const ASSESSMENT_DATE = 'assessmentDate';
 
-    const COMPLETED_DATE = 'completedDate';
+    public const COMPLETED_DATE = 'completedDate';
 
     protected $_resourceType = ResourceType::STUDENT_STANDARDIZED_ASSESSMENT;
 
@@ -21,7 +22,7 @@ class StudentStandardizedAssessment extends ModelBase
      * @return StudentStandardizedAssessment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class StudentStandardizedAssessment extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -61,15 +62,15 @@ class StudentStandardizedAssessment extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return StandardizedAssessmentTemplate
+     * @return \Arbor\Model\StandardizedAssessmentTemplate
      */
     public function getStandardizedAssessmentTemplate()
     {
@@ -77,9 +78,10 @@ class StudentStandardizedAssessment extends ModelBase
     }
 
     /**
-     * @param StandardizedAssessmentTemplate $standardizedAssessmentTemplate
+     * @param \Arbor\Model\StandardizedAssessmentTemplate
+     * $standardizedAssessmentTemplate
      */
-    public function setStandardizedAssessmentTemplate(StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
+    public function setStandardizedAssessmentTemplate(\Arbor\Model\StandardizedAssessmentTemplate $standardizedAssessmentTemplate = null)
     {
         $this->setProperty('standardizedAssessmentTemplate', $standardizedAssessmentTemplate);
     }

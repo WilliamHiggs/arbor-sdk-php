@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class SiteOperatingPeriodException extends ModelBase
 {
-    const SITE = 'site';
+    public const SITE = 'site';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
     protected $_resourceType = ResourceType::SITE_OPERATING_PERIOD_EXCEPTION;
 
@@ -19,7 +20,7 @@ class SiteOperatingPeriodException extends ModelBase
      * @return SiteOperatingPeriodException[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class SiteOperatingPeriodException extends ModelBase
     }
 
     /**
-     * @return Site
+     * @return \Arbor\Model\Site
      */
     public function getSite()
     {
@@ -59,9 +60,9 @@ class SiteOperatingPeriodException extends ModelBase
     }
 
     /**
-     * @param Site $site
+     * @param \Arbor\Model\Site $site
      */
-    public function setSite(Site $site = null)
+    public function setSite(\Arbor\Model\Site $site = null)
     {
         $this->setProperty('site', $site);
     }

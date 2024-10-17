@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AcademicNote extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const ACADEMIC_UNIT = 'academicUnit';
+    public const ACADEMIC_UNIT = 'academicUnit';
 
-    const SUMMARY = 'summary';
+    public const SUMMARY = 'summary';
 
-    const CONTENT = 'content';
+    public const CONTENT = 'content';
 
-    const NOTE_CREATED_DATETIME = 'noteCreatedDatetime';
+    public const NOTE_CREATED_DATETIME = 'noteCreatedDatetime';
 
     protected $_resourceType = ResourceType::ACADEMIC_NOTE;
 
@@ -23,7 +24,7 @@ class AcademicNote extends ModelBase
      * @return AcademicNote[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class AcademicNote extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -63,15 +64,15 @@ class AcademicNote extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return AcademicUnit
+     * @return \Arbor\Model\AcademicUnit
      */
     public function getAcademicUnit()
     {
@@ -79,9 +80,9 @@ class AcademicNote extends ModelBase
     }
 
     /**
-     * @param AcademicUnit $academicUnit
+     * @param \Arbor\Model\AcademicUnit $academicUnit
      */
-    public function setAcademicUnit(AcademicUnit $academicUnit = null)
+    public function setAcademicUnit(\Arbor\Model\AcademicUnit $academicUnit = null)
     {
         $this->setProperty('academicUnit', $academicUnit);
     }
@@ -97,7 +98,7 @@ class AcademicNote extends ModelBase
     /**
      * @param string $summary
      */
-    public function setSummary($summary = null)
+    public function setSummary(string $summary = null)
     {
         $this->setProperty('summary', $summary);
     }
@@ -113,7 +114,7 @@ class AcademicNote extends ModelBase
     /**
      * @param string $content
      */
-    public function setContent($content = null)
+    public function setContent(string $content = null)
     {
         $this->setProperty('content', $content);
     }

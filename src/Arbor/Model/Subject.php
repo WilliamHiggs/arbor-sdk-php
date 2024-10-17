@@ -3,26 +3,27 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class Subject extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const SUBJECT_NAME = 'subjectName';
+    public const SUBJECT_NAME = 'subjectName';
 
-    const PARENT_SUBJECT = 'parentSubject';
+    public const PARENT_SUBJECT = 'parentSubject';
 
-    const USED_IN_SWF_ONLY = 'usedInSwfOnly';
+    public const USED_IN_SWF_ONLY = 'usedInSwfOnly';
 
-    const USED_IN_CBDS_ONLY = 'usedInCbdsOnly';
+    public const USED_IN_CBDS_ONLY = 'usedInCbdsOnly';
 
-    const D00115 = 'd00115';
+    public const D00115 = 'd00115';
 
-    const D00220 = 'd00220';
+    public const D00220 = 'd00220';
 
     protected $_resourceType = ResourceType::SUBJECT;
 
@@ -31,7 +32,7 @@ class Subject extends ModelBase
      * @return Subject[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -73,7 +74,7 @@ class Subject extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -89,7 +90,7 @@ class Subject extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -105,7 +106,7 @@ class Subject extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -121,13 +122,13 @@ class Subject extends ModelBase
     /**
      * @param string $subjectName
      */
-    public function setSubjectName($subjectName = null)
+    public function setSubjectName(string $subjectName = null)
     {
         $this->setProperty('subjectName', $subjectName);
     }
 
     /**
-     * @return Subject
+     * @return \Arbor\Model\Subject
      */
     public function getParentSubject()
     {
@@ -135,9 +136,9 @@ class Subject extends ModelBase
     }
 
     /**
-     * @param Subject $parentSubject
+     * @param \Arbor\Model\Subject $parentSubject
      */
-    public function setParentSubject(Subject $parentSubject = null)
+    public function setParentSubject(\Arbor\Model\Subject $parentSubject = null)
     {
         $this->setProperty('parentSubject', $parentSubject);
     }
@@ -153,7 +154,7 @@ class Subject extends ModelBase
     /**
      * @param bool $usedInSwfOnly
      */
-    public function setUsedInSwfOnly($usedInSwfOnly = null)
+    public function setUsedInSwfOnly(bool $usedInSwfOnly = null)
     {
         $this->setProperty('usedInSwfOnly', $usedInSwfOnly);
     }
@@ -169,7 +170,7 @@ class Subject extends ModelBase
     /**
      * @param bool $usedInCbdsOnly
      */
-    public function setUsedInCbdsOnly($usedInCbdsOnly = null)
+    public function setUsedInCbdsOnly(bool $usedInCbdsOnly = null)
     {
         $this->setProperty('usedInCbdsOnly', $usedInCbdsOnly);
     }
@@ -185,7 +186,7 @@ class Subject extends ModelBase
     /**
      * @param string $d00115
      */
-    public function setD00115($d00115 = null)
+    public function setD00115(string $d00115 = null)
     {
         $this->setProperty('d00115', $d00115);
     }
@@ -201,7 +202,7 @@ class Subject extends ModelBase
     /**
      * @param string $d00220
      */
-    public function setD00220($d00220 = null)
+    public function setD00220(string $d00220 = null)
     {
         $this->setProperty('d00220', $d00220);
     }

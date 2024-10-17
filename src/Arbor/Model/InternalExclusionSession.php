@@ -3,28 +3,29 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InternalExclusionSession extends ModelBase
 {
-    const INTERNAL_EXCLUSION_TYPE = 'internalExclusionType';
+    public const INTERNAL_EXCLUSION_TYPE = 'internalExclusionType';
 
-    const SESSION_NAME = 'sessionName';
+    public const SESSION_NAME = 'sessionName';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const LOCATION_TEXT = 'locationText';
+    public const LOCATION_TEXT = 'locationText';
 
-    const TIMETABLE_SLOT = 'timetableSlot';
+    public const TIMETABLE_SLOT = 'timetableSlot';
 
-    const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
+    public const ATTENDANCE_REGISTER_TYPE = 'attendanceRegisterType';
 
-    const ATTENDANCE_REGISTER_OPENED_DATETIME = 'attendanceRegisterOpenedDatetime';
+    public const ATTENDANCE_REGISTER_OPENED_DATETIME = 'attendanceRegisterOpenedDatetime';
 
-    const ATTENDANCE_REGISTER_CLOSED_DATETIME = 'attendanceRegisterClosedDatetime';
+    public const ATTENDANCE_REGISTER_CLOSED_DATETIME = 'attendanceRegisterClosedDatetime';
 
     protected $_resourceType = ResourceType::INTERNAL_EXCLUSION_SESSION;
 
@@ -33,7 +34,7 @@ class InternalExclusionSession extends ModelBase
      * @return InternalExclusionSession[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class InternalExclusionSession extends ModelBase
     }
 
     /**
-     * @return InternalExclusionType
+     * @return \Arbor\Model\InternalExclusionType
      */
     public function getInternalExclusionType()
     {
@@ -73,9 +74,9 @@ class InternalExclusionSession extends ModelBase
     }
 
     /**
-     * @param InternalExclusionType $internalExclusionType
+     * @param \Arbor\Model\InternalExclusionType $internalExclusionType
      */
-    public function setInternalExclusionType(InternalExclusionType $internalExclusionType = null)
+    public function setInternalExclusionType(\Arbor\Model\InternalExclusionType $internalExclusionType = null)
     {
         $this->setProperty('internalExclusionType', $internalExclusionType);
     }
@@ -91,7 +92,7 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param string $sessionName
      */
-    public function setSessionName($sessionName = null)
+    public function setSessionName(string $sessionName = null)
     {
         $this->setProperty('sessionName', $sessionName);
     }
@@ -129,7 +130,7 @@ class InternalExclusionSession extends ModelBase
     }
 
     /**
-     * @return Room
+     * @return \Arbor\Model\Room
      */
     public function getLocation()
     {
@@ -137,9 +138,9 @@ class InternalExclusionSession extends ModelBase
     }
 
     /**
-     * @param Room $location
+     * @param \Arbor\Model\Room $location
      */
-    public function setLocation(Room $location = null)
+    public function setLocation(\Arbor\Model\Room $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -155,13 +156,13 @@ class InternalExclusionSession extends ModelBase
     /**
      * @param string $locationText
      */
-    public function setLocationText($locationText = null)
+    public function setLocationText(string $locationText = null)
     {
         $this->setProperty('locationText', $locationText);
     }
 
     /**
-     * @return TimetableSlot
+     * @return \Arbor\Model\TimetableSlot
      */
     public function getTimetableSlot()
     {
@@ -169,15 +170,15 @@ class InternalExclusionSession extends ModelBase
     }
 
     /**
-     * @param TimetableSlot $timetableSlot
+     * @param \Arbor\Model\TimetableSlot $timetableSlot
      */
-    public function setTimetableSlot(TimetableSlot $timetableSlot = null)
+    public function setTimetableSlot(\Arbor\Model\TimetableSlot $timetableSlot = null)
     {
         $this->setProperty('timetableSlot', $timetableSlot);
     }
 
     /**
-     * @return AttendanceRegisterType
+     * @return \Arbor\Model\AttendanceRegisterType
      */
     public function getAttendanceRegisterType()
     {
@@ -185,9 +186,9 @@ class InternalExclusionSession extends ModelBase
     }
 
     /**
-     * @param AttendanceRegisterType $attendanceRegisterType
+     * @param \Arbor\Model\AttendanceRegisterType $attendanceRegisterType
      */
-    public function setAttendanceRegisterType(AttendanceRegisterType $attendanceRegisterType = null)
+    public function setAttendanceRegisterType(\Arbor\Model\AttendanceRegisterType $attendanceRegisterType = null)
     {
         $this->setProperty('attendanceRegisterType', $attendanceRegisterType);
     }

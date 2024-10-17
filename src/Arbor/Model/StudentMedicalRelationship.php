@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentMedicalRelationship extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const MEDICAL_INSTITUTION = 'medicalInstitution';
+    public const MEDICAL_INSTITUTION = 'medicalInstitution';
 
-    const MEDICAL_INSTITUTION_STAFF = 'medicalInstitutionStaff';
+    public const MEDICAL_INSTITUTION_STAFF = 'medicalInstitutionStaff';
 
-    const MEDICAL_RELATIONSHIP_TYPE = 'medicalRelationshipType';
+    public const MEDICAL_RELATIONSHIP_TYPE = 'medicalRelationshipType';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const NOTES = 'notes';
+    public const NOTES = 'notes';
 
     protected $_resourceType = ResourceType::STUDENT_MEDICAL_RELATIONSHIP;
 
@@ -27,7 +28,7 @@ class StudentMedicalRelationship extends ModelBase
      * @return StudentMedicalRelationship[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class StudentMedicalRelationship extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -67,15 +68,15 @@ class StudentMedicalRelationship extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return MedicalInstitution
+     * @return \Arbor\Model\MedicalInstitution
      */
     public function getMedicalInstitution()
     {
@@ -83,15 +84,15 @@ class StudentMedicalRelationship extends ModelBase
     }
 
     /**
-     * @param MedicalInstitution $medicalInstitution
+     * @param \Arbor\Model\MedicalInstitution $medicalInstitution
      */
-    public function setMedicalInstitution(MedicalInstitution $medicalInstitution = null)
+    public function setMedicalInstitution(\Arbor\Model\MedicalInstitution $medicalInstitution = null)
     {
         $this->setProperty('medicalInstitution', $medicalInstitution);
     }
 
     /**
-     * @return MedicalInstitutionStaff
+     * @return \Arbor\Model\MedicalInstitutionStaff
      */
     public function getMedicalInstitutionStaff()
     {
@@ -99,15 +100,15 @@ class StudentMedicalRelationship extends ModelBase
     }
 
     /**
-     * @param MedicalInstitutionStaff $medicalInstitutionStaff
+     * @param \Arbor\Model\MedicalInstitutionStaff $medicalInstitutionStaff
      */
-    public function setMedicalInstitutionStaff(MedicalInstitutionStaff $medicalInstitutionStaff = null)
+    public function setMedicalInstitutionStaff(\Arbor\Model\MedicalInstitutionStaff $medicalInstitutionStaff = null)
     {
         $this->setProperty('medicalInstitutionStaff', $medicalInstitutionStaff);
     }
 
     /**
-     * @return MedicalRelationshipType
+     * @return \Arbor\Model\MedicalRelationshipType
      */
     public function getMedicalRelationshipType()
     {
@@ -115,9 +116,9 @@ class StudentMedicalRelationship extends ModelBase
     }
 
     /**
-     * @param MedicalRelationshipType $medicalRelationshipType
+     * @param \Arbor\Model\MedicalRelationshipType $medicalRelationshipType
      */
-    public function setMedicalRelationshipType(MedicalRelationshipType $medicalRelationshipType = null)
+    public function setMedicalRelationshipType(\Arbor\Model\MedicalRelationshipType $medicalRelationshipType = null)
     {
         $this->setProperty('medicalRelationshipType', $medicalRelationshipType);
     }
@@ -165,7 +166,7 @@ class StudentMedicalRelationship extends ModelBase
     /**
      * @param string $notes
      */
-    public function setNotes($notes = null)
+    public function setNotes(string $notes = null)
     {
         $this->setProperty('notes', $notes);
     }

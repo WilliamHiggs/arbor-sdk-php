@@ -3,24 +3,25 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class MedicalCondition extends ModelBase
 {
-    const PERSON = 'person';
+    public const PERSON = 'person';
 
-    const MEDICAL_CONDITION_TYPE = 'medicalConditionType';
+    public const MEDICAL_CONDITION_TYPE = 'medicalConditionType';
 
-    const MEDICAL_CONDITION_NAME = 'medicalConditionName';
+    public const MEDICAL_CONDITION_NAME = 'medicalConditionName';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const SEVERITY = 'severity';
+    public const SEVERITY = 'severity';
 
-    const SYMPTOMS = 'symptoms';
+    public const SYMPTOMS = 'symptoms';
 
-    const TREATMENT = 'treatment';
+    public const TREATMENT = 'treatment';
 
     protected $_resourceType = ResourceType::MEDICAL_CONDITION;
 
@@ -29,7 +30,7 @@ class MedicalCondition extends ModelBase
      * @return MedicalCondition[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -71,13 +72,13 @@ class MedicalCondition extends ModelBase
     /**
      * @param ModelBase $person
      */
-    public function setPerson(ModelBase $person = null)
+    public function setPerson(\ModelBase $person = null)
     {
         $this->setProperty('person', $person);
     }
 
     /**
-     * @return MedicalConditionType
+     * @return \Arbor\Model\MedicalConditionType
      */
     public function getMedicalConditionType()
     {
@@ -85,9 +86,9 @@ class MedicalCondition extends ModelBase
     }
 
     /**
-     * @param MedicalConditionType $medicalConditionType
+     * @param \Arbor\Model\MedicalConditionType $medicalConditionType
      */
-    public function setMedicalConditionType(MedicalConditionType $medicalConditionType = null)
+    public function setMedicalConditionType(\Arbor\Model\MedicalConditionType $medicalConditionType = null)
     {
         $this->setProperty('medicalConditionType', $medicalConditionType);
     }
@@ -103,7 +104,7 @@ class MedicalCondition extends ModelBase
     /**
      * @param string $medicalConditionName
      */
-    public function setMedicalConditionName($medicalConditionName = null)
+    public function setMedicalConditionName(string $medicalConditionName = null)
     {
         $this->setProperty('medicalConditionName', $medicalConditionName);
     }
@@ -151,7 +152,7 @@ class MedicalCondition extends ModelBase
     /**
      * @param string $severity
      */
-    public function setSeverity($severity = null)
+    public function setSeverity(string $severity = null)
     {
         $this->setProperty('severity', $severity);
     }
@@ -167,7 +168,7 @@ class MedicalCondition extends ModelBase
     /**
      * @param string $symptoms
      */
-    public function setSymptoms($symptoms = null)
+    public function setSymptoms(string $symptoms = null)
     {
         $this->setProperty('symptoms', $symptoms);
     }
@@ -183,7 +184,7 @@ class MedicalCondition extends ModelBase
     /**
      * @param string $treatment
      */
-    public function setTreatment($treatment = null)
+    public function setTreatment(string $treatment = null)
     {
         $this->setProperty('treatment', $treatment);
     }

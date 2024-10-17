@@ -3,40 +3,41 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StaffAbsence extends ModelBase
 {
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
-    const STAFF_ABSENCE_CATEGORY = 'staffAbsenceCategory';
+    public const STAFF_ABSENCE_CATEGORY = 'staffAbsenceCategory';
 
-    const SICKNESS_CATEGORY = 'sicknessCategory';
+    public const SICKNESS_CATEGORY = 'sicknessCategory';
 
-    const SICKNESS_SUBCATEGORY = 'sicknessSubcategory';
+    public const SICKNESS_SUBCATEGORY = 'sicknessSubcategory';
 
-    const INTEGRATIONS_HR_FINANCE_PROVIDER = 'integrationsHrFinanceProvider';
+    public const INTEGRATIONS_HR_FINANCE_PROVIDER = 'integrationsHrFinanceProvider';
 
-    const APPROVED_DATETIME = 'approvedDatetime';
+    public const APPROVED_DATETIME = 'approvedDatetime';
 
-    const APPROVED_BY_STAFF = 'approvedByStaff';
+    public const APPROVED_BY_STAFF = 'approvedByStaff';
 
-    const CALCULATED_WORKING_DAYS = 'calculatedWorkingDays';
+    public const CALCULATED_WORKING_DAYS = 'calculatedWorkingDays';
 
-    const ACTUAL_WORKING_DAYS = 'actualWorkingDays';
+    public const ACTUAL_WORKING_DAYS = 'actualWorkingDays';
 
-    const WORKING_DAYS = 'workingDays';
+    public const WORKING_DAYS = 'workingDays';
 
-    const CALCULATED_WORKING_HOURS = 'calculatedWorkingHours';
+    public const CALCULATED_WORKING_HOURS = 'calculatedWorkingHours';
 
-    const ACTUAL_WORKING_HOURS = 'actualWorkingHours';
+    public const ACTUAL_WORKING_HOURS = 'actualWorkingHours';
 
-    const WORKING_HOURS = 'workingHours';
+    public const WORKING_HOURS = 'workingHours';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::STAFF_ABSENCE;
 
@@ -45,7 +46,7 @@ class StaffAbsence extends ModelBase
      * @return StaffAbsence[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +78,7 @@ class StaffAbsence extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -85,9 +86,9 @@ class StaffAbsence extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -125,7 +126,7 @@ class StaffAbsence extends ModelBase
     }
 
     /**
-     * @return StaffAbsenceCategory
+     * @return \Arbor\Model\StaffAbsenceCategory
      */
     public function getStaffAbsenceCategory()
     {
@@ -133,15 +134,15 @@ class StaffAbsence extends ModelBase
     }
 
     /**
-     * @param StaffAbsenceCategory $staffAbsenceCategory
+     * @param \Arbor\Model\StaffAbsenceCategory $staffAbsenceCategory
      */
-    public function setStaffAbsenceCategory(StaffAbsenceCategory $staffAbsenceCategory = null)
+    public function setStaffAbsenceCategory(\Arbor\Model\StaffAbsenceCategory $staffAbsenceCategory = null)
     {
         $this->setProperty('staffAbsenceCategory', $staffAbsenceCategory);
     }
 
     /**
-     * @return StaffAbsenceSicknessCategory
+     * @return \Arbor\Model\StaffAbsenceSicknessCategory
      */
     public function getSicknessCategory()
     {
@@ -149,15 +150,15 @@ class StaffAbsence extends ModelBase
     }
 
     /**
-     * @param StaffAbsenceSicknessCategory $sicknessCategory
+     * @param \Arbor\Model\StaffAbsenceSicknessCategory $sicknessCategory
      */
-    public function setSicknessCategory(StaffAbsenceSicknessCategory $sicknessCategory = null)
+    public function setSicknessCategory(\Arbor\Model\StaffAbsenceSicknessCategory $sicknessCategory = null)
     {
         $this->setProperty('sicknessCategory', $sicknessCategory);
     }
 
     /**
-     * @return StaffAbsenceSicknessSubcategory
+     * @return \Arbor\Model\StaffAbsenceSicknessSubcategory
      */
     public function getSicknessSubcategory()
     {
@@ -165,15 +166,15 @@ class StaffAbsence extends ModelBase
     }
 
     /**
-     * @param StaffAbsenceSicknessSubcategory $sicknessSubcategory
+     * @param \Arbor\Model\StaffAbsenceSicknessSubcategory $sicknessSubcategory
      */
-    public function setSicknessSubcategory(StaffAbsenceSicknessSubcategory $sicknessSubcategory = null)
+    public function setSicknessSubcategory(\Arbor\Model\StaffAbsenceSicknessSubcategory $sicknessSubcategory = null)
     {
         $this->setProperty('sicknessSubcategory', $sicknessSubcategory);
     }
 
     /**
-     * @return IntegrationsHrFinanceProvider
+     * @return \Arbor\Model\IntegrationsHrFinanceProvider
      */
     public function getIntegrationsHrFinanceProvider()
     {
@@ -181,9 +182,9 @@ class StaffAbsence extends ModelBase
     }
 
     /**
-     * @param IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
+     * @param \Arbor\Model\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider
      */
-    public function setIntegrationsHrFinanceProvider(IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
+    public function setIntegrationsHrFinanceProvider(\Arbor\Model\IntegrationsHrFinanceProvider $integrationsHrFinanceProvider = null)
     {
         $this->setProperty('integrationsHrFinanceProvider', $integrationsHrFinanceProvider);
     }
@@ -205,7 +206,7 @@ class StaffAbsence extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getApprovedByStaff()
     {
@@ -213,9 +214,9 @@ class StaffAbsence extends ModelBase
     }
 
     /**
-     * @param Staff $approvedByStaff
+     * @param \Arbor\Model\Staff $approvedByStaff
      */
-    public function setApprovedByStaff(Staff $approvedByStaff = null)
+    public function setApprovedByStaff(\Arbor\Model\Staff $approvedByStaff = null)
     {
         $this->setProperty('approvedByStaff', $approvedByStaff);
     }
@@ -231,7 +232,7 @@ class StaffAbsence extends ModelBase
     /**
      * @param float $calculatedWorkingDays
      */
-    public function setCalculatedWorkingDays($calculatedWorkingDays = null)
+    public function setCalculatedWorkingDays(float $calculatedWorkingDays = null)
     {
         $this->setProperty('calculatedWorkingDays', $calculatedWorkingDays);
     }
@@ -247,7 +248,7 @@ class StaffAbsence extends ModelBase
     /**
      * @param float $actualWorkingDays
      */
-    public function setActualWorkingDays($actualWorkingDays = null)
+    public function setActualWorkingDays(float $actualWorkingDays = null)
     {
         $this->setProperty('actualWorkingDays', $actualWorkingDays);
     }
@@ -263,7 +264,7 @@ class StaffAbsence extends ModelBase
     /**
      * @param float $workingDays
      */
-    public function setWorkingDays($workingDays = null)
+    public function setWorkingDays(float $workingDays = null)
     {
         $this->setProperty('workingDays', $workingDays);
     }
@@ -279,7 +280,7 @@ class StaffAbsence extends ModelBase
     /**
      * @param float $calculatedWorkingHours
      */
-    public function setCalculatedWorkingHours($calculatedWorkingHours = null)
+    public function setCalculatedWorkingHours(float $calculatedWorkingHours = null)
     {
         $this->setProperty('calculatedWorkingHours', $calculatedWorkingHours);
     }
@@ -295,7 +296,7 @@ class StaffAbsence extends ModelBase
     /**
      * @param float $actualWorkingHours
      */
-    public function setActualWorkingHours($actualWorkingHours = null)
+    public function setActualWorkingHours(float $actualWorkingHours = null)
     {
         $this->setProperty('actualWorkingHours', $actualWorkingHours);
     }
@@ -311,7 +312,7 @@ class StaffAbsence extends ModelBase
     /**
      * @param float $workingHours
      */
-    public function setWorkingHours($workingHours = null)
+    public function setWorkingHours(float $workingHours = null)
     {
         $this->setProperty('workingHours', $workingHours);
     }
@@ -327,7 +328,7 @@ class StaffAbsence extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

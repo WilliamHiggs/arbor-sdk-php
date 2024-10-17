@@ -3,14 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BehaviouralIncidentDefaultWatcher extends ModelBase
 {
-    const LEVEL_OF_INCIDENT = 'levelOfIncident';
+    public const LEVEL_OF_INCIDENT = 'levelOfIncident';
 
-    const RELATION_TO_STUDENT = 'relationToStudent';
+    public const BEHAVIOURAL_INCIDENT_LEVEL_WORKFLOW = 'behaviouralIncidentLevelWorkflow';
 
-    const STAFF = 'staff';
+    public const RELATION_TO_STUDENT = 'relationToStudent';
+
+    public const STAFF = 'staff';
 
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT_DEFAULT_WATCHER;
 
@@ -19,7 +22,7 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
      * @return BehaviouralIncidentDefaultWatcher[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,9 +64,26 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     /**
      * @param int $levelOfIncident
      */
-    public function setLevelOfIncident($levelOfIncident = null)
+    public function setLevelOfIncident(int $levelOfIncident = null)
     {
         $this->setProperty('levelOfIncident', $levelOfIncident);
+    }
+
+    /**
+     * @return \Arbor\Model\BehaviouralIncidentLevelWorkflow
+     */
+    public function getBehaviouralIncidentLevelWorkflow()
+    {
+        return $this->getProperty('behaviouralIncidentLevelWorkflow');
+    }
+
+    /**
+     * @param \Arbor\Model\BehaviouralIncidentLevelWorkflow
+     * $behaviouralIncidentLevelWorkflow
+     */
+    public function setBehaviouralIncidentLevelWorkflow(\Arbor\Model\BehaviouralIncidentLevelWorkflow $behaviouralIncidentLevelWorkflow = null)
+    {
+        $this->setProperty('behaviouralIncidentLevelWorkflow', $behaviouralIncidentLevelWorkflow);
     }
 
     /**
@@ -77,13 +97,13 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     /**
      * @param string $relationToStudent
      */
-    public function setRelationToStudent($relationToStudent = null)
+    public function setRelationToStudent(string $relationToStudent = null)
     {
         $this->setProperty('relationToStudent', $relationToStudent);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -91,9 +111,9 @@ class BehaviouralIncidentDefaultWatcher extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }

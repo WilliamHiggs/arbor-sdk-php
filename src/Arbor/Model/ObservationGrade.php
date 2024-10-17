@@ -3,30 +3,31 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ObservationGrade extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const OBSERVATION_GRADE_SET = 'observationGradeSet';
+    public const OBSERVATION_GRADE_SET = 'observationGradeSet';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const OBSERVATION_GRADE_VALUE = 'observationGradeValue';
+    public const OBSERVATION_GRADE_VALUE = 'observationGradeValue';
 
-    const LOWER_VALUE = 'lowerValue';
+    public const LOWER_VALUE = 'lowerValue';
 
-    const UPPER_VALUE = 'upperValue';
+    public const UPPER_VALUE = 'upperValue';
 
-    const STATISTICAL_VALUE = 'statisticalValue';
+    public const STATISTICAL_VALUE = 'statisticalValue';
 
-    const GRADE_ORDER = 'gradeOrder';
+    public const GRADE_ORDER = 'gradeOrder';
 
     protected $_resourceType = ResourceType::OBSERVATION_GRADE;
 
@@ -35,7 +36,7 @@ class ObservationGrade extends ModelBase
      * @return ObservationGrade[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -77,7 +78,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -93,7 +94,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -109,13 +110,13 @@ class ObservationGrade extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
 
     /**
-     * @return ObservationGradeSet
+     * @return \Arbor\Model\ObservationGradeSet
      */
     public function getObservationGradeSet()
     {
@@ -123,9 +124,9 @@ class ObservationGrade extends ModelBase
     }
 
     /**
-     * @param ObservationGradeSet $observationGradeSet
+     * @param \Arbor\Model\ObservationGradeSet $observationGradeSet
      */
-    public function setObservationGradeSet(ObservationGradeSet $observationGradeSet = null)
+    public function setObservationGradeSet(\Arbor\Model\ObservationGradeSet $observationGradeSet = null)
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }
@@ -141,7 +142,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -157,7 +158,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -173,7 +174,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param float $observationGradeValue
      */
-    public function setObservationGradeValue($observationGradeValue = null)
+    public function setObservationGradeValue(float $observationGradeValue = null)
     {
         $this->setProperty('observationGradeValue', $observationGradeValue);
     }
@@ -189,7 +190,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param float $lowerValue
      */
-    public function setLowerValue($lowerValue = null)
+    public function setLowerValue(float $lowerValue = null)
     {
         $this->setProperty('lowerValue', $lowerValue);
     }
@@ -205,7 +206,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param float $upperValue
      */
-    public function setUpperValue($upperValue = null)
+    public function setUpperValue(float $upperValue = null)
     {
         $this->setProperty('upperValue', $upperValue);
     }
@@ -221,7 +222,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param float $statisticalValue
      */
-    public function setStatisticalValue($statisticalValue = null)
+    public function setStatisticalValue(float $statisticalValue = null)
     {
         $this->setProperty('statisticalValue', $statisticalValue);
     }
@@ -237,7 +238,7 @@ class ObservationGrade extends ModelBase
     /**
      * @param int $gradeOrder
      */
-    public function setGradeOrder($gradeOrder = null)
+    public function setGradeOrder(int $gradeOrder = null)
     {
         $this->setProperty('gradeOrder', $gradeOrder);
     }

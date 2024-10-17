@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class PointAwardCategory extends ModelBase
 {
-    const DESCRIPTION = 'description';
+    public const DESCRIPTION = 'description';
 
-    const POINT_AWARD_SCALE = 'pointAwardScale';
+    public const POINT_AWARD_SCALE = 'pointAwardScale';
 
-    const DEFAULT_POINTS = 'defaultPoints';
+    public const DEFAULT_POINTS = 'defaultPoints';
 
     protected $_resourceType = ResourceType::POINT_AWARD_CATEGORY;
 
@@ -19,7 +20,7 @@ class PointAwardCategory extends ModelBase
      * @return PointAwardCategory[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,13 +62,13 @@ class PointAwardCategory extends ModelBase
     /**
      * @param string $description
      */
-    public function setDescription($description = null)
+    public function setDescription(string $description = null)
     {
         $this->setProperty('description', $description);
     }
 
     /**
-     * @return PointAwardScale
+     * @return \Arbor\Model\PointAwardScale
      */
     public function getPointAwardScale()
     {
@@ -75,9 +76,9 @@ class PointAwardCategory extends ModelBase
     }
 
     /**
-     * @param PointAwardScale $pointAwardScale
+     * @param \Arbor\Model\PointAwardScale $pointAwardScale
      */
-    public function setPointAwardScale(PointAwardScale $pointAwardScale = null)
+    public function setPointAwardScale(\Arbor\Model\PointAwardScale $pointAwardScale = null)
     {
         $this->setProperty('pointAwardScale', $pointAwardScale);
     }
@@ -93,7 +94,7 @@ class PointAwardCategory extends ModelBase
     /**
      * @param float $defaultPoints
      */
-    public function setDefaultPoints($defaultPoints = null)
+    public function setDefaultPoints(float $defaultPoints = null)
     {
         $this->setProperty('defaultPoints', $defaultPoints);
     }

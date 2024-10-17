@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AcademicWorkingDay extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const EFFECTIVE_DATE = 'effectiveDate';
+    public const EFFECTIVE_DATE = 'effectiveDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const DAY_OF_CALENDAR_WEEK = 'dayOfCalendarWeek';
+    public const DAY_OF_CALENDAR_WEEK = 'dayOfCalendarWeek';
 
     protected $_resourceType = ResourceType::ACADEMIC_WORKING_DAY;
 
@@ -25,7 +26,7 @@ class AcademicWorkingDay extends ModelBase
      * @return AcademicWorkingDay[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +68,7 @@ class AcademicWorkingDay extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -83,7 +84,7 @@ class AcademicWorkingDay extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -99,7 +100,7 @@ class AcademicWorkingDay extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -147,7 +148,7 @@ class AcademicWorkingDay extends ModelBase
     /**
      * @param int $dayOfCalendarWeek
      */
-    public function setDayOfCalendarWeek($dayOfCalendarWeek = null)
+    public function setDayOfCalendarWeek(int $dayOfCalendarWeek = null)
     {
         $this->setProperty('dayOfCalendarWeek', $dayOfCalendarWeek);
     }

@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class NewReportCardBatchTarget extends ModelBase
 {
-    const REPORT_CARD_BATCH = 'reportCardBatch';
+    public const REPORT_CARD_BATCH = 'reportCardBatch';
 
-    const TARGET = 'target';
+    public const TARGET = 'target';
 
-    const REPORTS_GENERATING = 'reportsGenerating';
+    public const REPORTS_GENERATING = 'reportsGenerating';
 
     protected $_resourceType = ResourceType::NEW_REPORT_CARD_BATCH_TARGET;
 
@@ -19,7 +20,7 @@ class NewReportCardBatchTarget extends ModelBase
      * @return NewReportCardBatchTarget[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class NewReportCardBatchTarget extends ModelBase
     }
 
     /**
-     * @return NewReportCardBatch
+     * @return \Arbor\Model\NewReportCardBatch
      */
     public function getReportCardBatch()
     {
@@ -59,9 +60,9 @@ class NewReportCardBatchTarget extends ModelBase
     }
 
     /**
-     * @param NewReportCardBatch $reportCardBatch
+     * @param \Arbor\Model\NewReportCardBatch $reportCardBatch
      */
-    public function setReportCardBatch(NewReportCardBatch $reportCardBatch = null)
+    public function setReportCardBatch(\Arbor\Model\NewReportCardBatch $reportCardBatch = null)
     {
         $this->setProperty('reportCardBatch', $reportCardBatch);
     }
@@ -77,7 +78,7 @@ class NewReportCardBatchTarget extends ModelBase
     /**
      * @param ModelBase $target
      */
-    public function setTarget(ModelBase $target = null)
+    public function setTarget(\ModelBase $target = null)
     {
         $this->setProperty('target', $target);
     }
@@ -93,7 +94,7 @@ class NewReportCardBatchTarget extends ModelBase
     /**
      * @param bool $reportsGenerating
      */
-    public function setReportsGenerating($reportsGenerating = null)
+    public function setReportsGenerating(bool $reportsGenerating = null)
     {
         $this->setProperty('reportsGenerating', $reportsGenerating);
     }

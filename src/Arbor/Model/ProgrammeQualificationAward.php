@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ProgrammeQualificationAward extends ModelBase
 {
-    const PROGRAMME_INSTANCE = 'programmeInstance';
+    public const PROGRAMME_INSTANCE = 'programmeInstance';
 
-    const QUALIFICATION_AWARD = 'qualificationAward';
+    public const QUALIFICATION_AWARD = 'qualificationAward';
 
     protected $_resourceType = ResourceType::PROGRAMME_QUALIFICATION_AWARD;
 
@@ -17,7 +18,7 @@ class ProgrammeQualificationAward extends ModelBase
      * @return ProgrammeQualificationAward[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class ProgrammeQualificationAward extends ModelBase
     }
 
     /**
-     * @return ProgrammeInstance
+     * @return \Arbor\Model\ProgrammeInstance
      */
     public function getProgrammeInstance()
     {
@@ -57,15 +58,15 @@ class ProgrammeQualificationAward extends ModelBase
     }
 
     /**
-     * @param ProgrammeInstance $programmeInstance
+     * @param \Arbor\Model\ProgrammeInstance $programmeInstance
      */
-    public function setProgrammeInstance(ProgrammeInstance $programmeInstance = null)
+    public function setProgrammeInstance(\Arbor\Model\ProgrammeInstance $programmeInstance = null)
     {
         $this->setProperty('programmeInstance', $programmeInstance);
     }
 
     /**
-     * @return QualificationAward
+     * @return \Arbor\Model\QualificationAward
      */
     public function getQualificationAward()
     {
@@ -73,9 +74,9 @@ class ProgrammeQualificationAward extends ModelBase
     }
 
     /**
-     * @param QualificationAward $qualificationAward
+     * @param \Arbor\Model\QualificationAward $qualificationAward
      */
-    public function setQualificationAward(QualificationAward $qualificationAward = null)
+    public function setQualificationAward(\Arbor\Model\QualificationAward $qualificationAward = null)
     {
         $this->setProperty('qualificationAward', $qualificationAward);
     }

@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CashPayout extends ModelBase
 {
-    const CUSTOMER_ACCOUNT = 'customerAccount';
+    public const CUSTOMER_ACCOUNT = 'customerAccount';
 
-    const PAYOUT_DATETIME = 'payoutDatetime';
+    public const PAYOUT_DATETIME = 'payoutDatetime';
 
-    const PAYOUT = 'payout';
+    public const PAYOUT = 'payout';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::CASH_PAYOUT;
 
@@ -21,7 +22,7 @@ class CashPayout extends ModelBase
      * @return CashPayout[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class CashPayout extends ModelBase
     }
 
     /**
-     * @return CustomerAccount
+     * @return \Arbor\Model\CustomerAccount
      */
     public function getCustomerAccount()
     {
@@ -61,9 +62,9 @@ class CashPayout extends ModelBase
     }
 
     /**
-     * @param CustomerAccount $customerAccount
+     * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -95,7 +96,7 @@ class CashPayout extends ModelBase
     /**
      * @param string $payout
      */
-    public function setPayout($payout = null)
+    public function setPayout(string $payout = null)
     {
         $this->setProperty('payout', $payout);
     }
@@ -111,7 +112,7 @@ class CashPayout extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

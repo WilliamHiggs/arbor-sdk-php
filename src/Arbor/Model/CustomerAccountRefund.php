@@ -3,22 +3,23 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CustomerAccountRefund extends ModelBase
 {
-    const CUSTOMER_ACCOUNT = 'customerAccount';
+    public const CUSTOMER_ACCOUNT = 'customerAccount';
 
-    const REFUND_DATETIME = 'refundDatetime';
+    public const REFUND_DATETIME = 'refundDatetime';
 
-    const REFUND = 'refund';
+    public const REFUND = 'refund';
 
-    const TRANSACTION = 'transaction';
+    public const TRANSACTION = 'transaction';
 
-    const STRIPE_REFUND_TRANSACTION = 'stripeRefundTransaction';
+    public const STRIPE_REFUND_TRANSACTION = 'stripeRefundTransaction';
 
-    const REFUND_SUCCEEDED_DATETIME = 'refundSucceededDatetime';
+    public const REFUND_SUCCEEDED_DATETIME = 'refundSucceededDatetime';
 
-    const REFUND_FAILED_DATETIME = 'refundFailedDatetime';
+    public const REFUND_FAILED_DATETIME = 'refundFailedDatetime';
 
     protected $_resourceType = ResourceType::CUSTOMER_ACCOUNT_REFUND;
 
@@ -27,7 +28,7 @@ class CustomerAccountRefund extends ModelBase
      * @return CustomerAccountRefund[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class CustomerAccountRefund extends ModelBase
     }
 
     /**
-     * @return CustomerAccount
+     * @return \Arbor\Model\CustomerAccount
      */
     public function getCustomerAccount()
     {
@@ -67,9 +68,9 @@ class CustomerAccountRefund extends ModelBase
     }
 
     /**
-     * @param CustomerAccount $customerAccount
+     * @param \Arbor\Model\CustomerAccount $customerAccount
      */
-    public function setCustomerAccount(CustomerAccount $customerAccount = null)
+    public function setCustomerAccount(\Arbor\Model\CustomerAccount $customerAccount = null)
     {
         $this->setProperty('customerAccount', $customerAccount);
     }
@@ -101,7 +102,7 @@ class CustomerAccountRefund extends ModelBase
     /**
      * @param string $refund
      */
-    public function setRefund($refund = null)
+    public function setRefund(string $refund = null)
     {
         $this->setProperty('refund', $refund);
     }
@@ -117,13 +118,13 @@ class CustomerAccountRefund extends ModelBase
     /**
      * @param ModelBase $transaction
      */
-    public function setTransaction(ModelBase $transaction = null)
+    public function setTransaction(\ModelBase $transaction = null)
     {
         $this->setProperty('transaction', $transaction);
     }
 
     /**
-     * @return StripeRefundTransaction
+     * @return \Arbor\Model\StripeRefundTransaction
      */
     public function getStripeRefundTransaction()
     {
@@ -131,9 +132,9 @@ class CustomerAccountRefund extends ModelBase
     }
 
     /**
-     * @param StripeRefundTransaction $stripeRefundTransaction
+     * @param \Arbor\Model\StripeRefundTransaction $stripeRefundTransaction
      */
-    public function setStripeRefundTransaction(StripeRefundTransaction $stripeRefundTransaction = null)
+    public function setStripeRefundTransaction(\Arbor\Model\StripeRefundTransaction $stripeRefundTransaction = null)
     {
         $this->setProperty('stripeRefundTransaction', $stripeRefundTransaction);
     }

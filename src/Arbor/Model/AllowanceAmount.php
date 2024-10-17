@@ -3,16 +3,17 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class AllowanceAmount extends ModelBase
 {
-    const ALLOWANCE = 'allowance';
+    public const ALLOWANCE = 'allowance';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const ALLOWANCE_AMOUNT = 'allowanceAmount';
+    public const ALLOWANCE_AMOUNT = 'allowanceAmount';
 
     protected $_resourceType = ResourceType::ALLOWANCE_AMOUNT;
 
@@ -21,7 +22,7 @@ class AllowanceAmount extends ModelBase
      * @return AllowanceAmount[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -53,7 +54,7 @@ class AllowanceAmount extends ModelBase
     }
 
     /**
-     * @return Allowance
+     * @return \Arbor\Model\Allowance
      */
     public function getAllowance()
     {
@@ -61,9 +62,9 @@ class AllowanceAmount extends ModelBase
     }
 
     /**
-     * @param Allowance $allowance
+     * @param \Arbor\Model\Allowance $allowance
      */
-    public function setAllowance(Allowance $allowance = null)
+    public function setAllowance(\Arbor\Model\Allowance $allowance = null)
     {
         $this->setProperty('allowance', $allowance);
     }
@@ -111,7 +112,7 @@ class AllowanceAmount extends ModelBase
     /**
      * @param string $allowanceAmount
      */
-    public function setAllowanceAmount($allowanceAmount = null)
+    public function setAllowanceAmount(string $allowanceAmount = null)
     {
         $this->setProperty('allowanceAmount', $allowanceAmount);
     }

@@ -3,30 +3,31 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class KpiValue extends ModelBase
 {
-    const KPI = 'kpi';
+    public const KPI = 'kpi';
 
-    const KPI_CATEGORY = 'kpiCategory';
+    public const KPI_CATEGORY = 'kpiCategory';
 
-    const REFERENCE_DATETIME = 'referenceDatetime';
+    public const REFERENCE_DATETIME = 'referenceDatetime';
 
-    const CALCULATION_RANGE_START_DATETIME = 'calculationRangeStartDatetime';
+    public const CALCULATION_RANGE_START_DATETIME = 'calculationRangeStartDatetime';
 
-    const CALCULATION_RANGE_END_DATETIME = 'calculationRangeEndDatetime';
+    public const CALCULATION_RANGE_END_DATETIME = 'calculationRangeEndDatetime';
 
-    const BASIS = 'basis';
+    public const BASIS = 'basis';
 
-    const VALUE = 'value';
+    public const VALUE = 'value';
 
-    const KPI_RANGE = 'kpiRange';
+    public const KPI_RANGE = 'kpiRange';
 
-    const RECALCULATION_SCHEDULED_DATETIME = 'recalculationScheduledDatetime';
+    public const RECALCULATION_SCHEDULED_DATETIME = 'recalculationScheduledDatetime';
 
-    const RECALCULATION_STARTED_DATETIME = 'recalculationStartedDatetime';
+    public const RECALCULATION_STARTED_DATETIME = 'recalculationStartedDatetime';
 
-    const LAST_CALCULATED_DATETIME = 'lastCalculatedDatetime';
+    public const LAST_CALCULATED_DATETIME = 'lastCalculatedDatetime';
 
     protected $_resourceType = ResourceType::KPI_VALUE;
 
@@ -35,7 +36,7 @@ class KpiValue extends ModelBase
      * @return KpiValue[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +68,7 @@ class KpiValue extends ModelBase
     }
 
     /**
-     * @return Kpi
+     * @return \Arbor\Model\Kpi
      */
     public function getKpi()
     {
@@ -75,9 +76,9 @@ class KpiValue extends ModelBase
     }
 
     /**
-     * @param Kpi $kpi
+     * @param \Arbor\Model\Kpi $kpi
      */
-    public function setKpi(Kpi $kpi = null)
+    public function setKpi(\Arbor\Model\Kpi $kpi = null)
     {
         $this->setProperty('kpi', $kpi);
     }
@@ -93,7 +94,7 @@ class KpiValue extends ModelBase
     /**
      * @param string $kpiCategory
      */
-    public function setKpiCategory($kpiCategory = null)
+    public function setKpiCategory(string $kpiCategory = null)
     {
         $this->setProperty('kpiCategory', $kpiCategory);
     }
@@ -157,7 +158,7 @@ class KpiValue extends ModelBase
     /**
      * @param ModelBase $basis
      */
-    public function setBasis(ModelBase $basis = null)
+    public function setBasis(\ModelBase $basis = null)
     {
         $this->setProperty('basis', $basis);
     }
@@ -173,13 +174,13 @@ class KpiValue extends ModelBase
     /**
      * @param float $value
      */
-    public function setValue($value = null)
+    public function setValue(float $value = null)
     {
         $this->setProperty('value', $value);
     }
 
     /**
-     * @return KpiRange
+     * @return \Arbor\Model\KpiRange
      */
     public function getKpiRange()
     {
@@ -187,9 +188,9 @@ class KpiValue extends ModelBase
     }
 
     /**
-     * @param KpiRange $kpiRange
+     * @param \Arbor\Model\KpiRange $kpiRange
      */
-    public function setKpiRange(KpiRange $kpiRange = null)
+    public function setKpiRange(\Arbor\Model\KpiRange $kpiRange = null)
     {
         $this->setProperty('kpiRange', $kpiRange);
     }

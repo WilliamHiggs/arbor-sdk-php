@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class MessageDraftRecipient extends ModelBase
 {
-    const MESSAGE_DRAFT = 'messageDraft';
+    public const MESSAGE_DRAFT = 'messageDraft';
 
-    const RECIPIENT = 'recipient';
+    public const RECIPIENT = 'recipient';
 
-    const RESOLVER = 'resolver';
+    public const RESOLVER = 'resolver';
 
     protected $_resourceType = ResourceType::MESSAGE_DRAFT_RECIPIENT;
 
@@ -19,7 +20,7 @@ class MessageDraftRecipient extends ModelBase
      * @return MessageDraftRecipient[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class MessageDraftRecipient extends ModelBase
     /**
      * @param ModelBase $messageDraft
      */
-    public function setMessageDraft(ModelBase $messageDraft = null)
+    public function setMessageDraft(\ModelBase $messageDraft = null)
     {
         $this->setProperty('messageDraft', $messageDraft);
     }
@@ -77,7 +78,7 @@ class MessageDraftRecipient extends ModelBase
     /**
      * @param ModelBase $recipient
      */
-    public function setRecipient(ModelBase $recipient = null)
+    public function setRecipient(\ModelBase $recipient = null)
     {
         $this->setProperty('recipient', $recipient);
     }
@@ -93,7 +94,7 @@ class MessageDraftRecipient extends ModelBase
     /**
      * @param string $resolver
      */
-    public function setResolver($resolver = null)
+    public function setResolver(string $resolver = null)
     {
         $this->setProperty('resolver', $resolver);
     }

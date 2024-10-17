@@ -3,26 +3,27 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class BehaviouralIncident extends ModelBase
 {
-    const BEHAVIOUR = 'behaviour';
+    public const BEHAVIOUR = 'behaviour';
 
-    const INCIDENT_NAME = 'incidentName';
+    public const INCIDENT_NAME = 'incidentName';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
-    const INCIDENT_DATETIME = 'incidentDatetime';
+    public const INCIDENT_DATETIME = 'incidentDatetime';
 
-    const SEVERITY = 'severity';
+    public const SEVERITY = 'severity';
 
-    const EVENT = 'event';
+    public const EVENT = 'event';
 
-    const LOCATION = 'location';
+    public const LOCATION = 'location';
 
-    const RESOLVED_DATETIME = 'resolvedDatetime';
+    public const RESOLVED_DATETIME = 'resolvedDatetime';
 
-    const LOGGED_BY_STAFF = 'loggedByStaff';
+    public const LOGGED_BY_STAFF = 'loggedByStaff';
 
     protected $_resourceType = ResourceType::BEHAVIOURAL_INCIDENT;
 
@@ -31,7 +32,7 @@ class BehaviouralIncident extends ModelBase
      * @return BehaviouralIncident[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +64,7 @@ class BehaviouralIncident extends ModelBase
     }
 
     /**
-     * @return Behaviour
+     * @return \Arbor\Model\Behaviour
      */
     public function getBehaviour()
     {
@@ -71,9 +72,9 @@ class BehaviouralIncident extends ModelBase
     }
 
     /**
-     * @param Behaviour $behaviour
+     * @param \Arbor\Model\Behaviour $behaviour
      */
-    public function setBehaviour(Behaviour $behaviour = null)
+    public function setBehaviour(\Arbor\Model\Behaviour $behaviour = null)
     {
         $this->setProperty('behaviour', $behaviour);
     }
@@ -89,7 +90,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param string $incidentName
      */
-    public function setIncidentName($incidentName = null)
+    public function setIncidentName(string $incidentName = null)
     {
         $this->setProperty('incidentName', $incidentName);
     }
@@ -105,7 +106,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }
@@ -137,7 +138,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param string $severity
      */
-    public function setSeverity($severity = null)
+    public function setSeverity(string $severity = null)
     {
         $this->setProperty('severity', $severity);
     }
@@ -153,7 +154,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param ModelBase $event
      */
-    public function setEvent(ModelBase $event = null)
+    public function setEvent(\ModelBase $event = null)
     {
         $this->setProperty('event', $event);
     }
@@ -169,7 +170,7 @@ class BehaviouralIncident extends ModelBase
     /**
      * @param ModelBase $location
      */
-    public function setLocation(ModelBase $location = null)
+    public function setLocation(\ModelBase $location = null)
     {
         $this->setProperty('location', $location);
     }
@@ -191,7 +192,7 @@ class BehaviouralIncident extends ModelBase
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getLoggedByStaff()
     {
@@ -199,9 +200,9 @@ class BehaviouralIncident extends ModelBase
     }
 
     /**
-     * @param Staff $loggedByStaff
+     * @param \Arbor\Model\Staff $loggedByStaff
      */
-    public function setLoggedByStaff(Staff $loggedByStaff = null)
+    public function setLoggedByStaff(\Arbor\Model\Staff $loggedByStaff = null)
     {
         $this->setProperty('loggedByStaff', $loggedByStaff);
     }

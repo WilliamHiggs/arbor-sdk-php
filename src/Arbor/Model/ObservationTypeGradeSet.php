@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ObservationTypeGradeSet extends ModelBase
 {
-    const OBSERVATION_TYPE = 'observationType';
+    public const OBSERVATION_TYPE = 'observationType';
 
-    const OBSERVATION_GRADE_SET = 'observationGradeSet';
+    public const OBSERVATION_GRADE_SET = 'observationGradeSet';
 
     protected $_resourceType = ResourceType::OBSERVATION_TYPE_GRADE_SET;
 
@@ -17,7 +18,7 @@ class ObservationTypeGradeSet extends ModelBase
      * @return ObservationTypeGradeSet[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class ObservationTypeGradeSet extends ModelBase
     }
 
     /**
-     * @return ObservationType
+     * @return \Arbor\Model\ObservationType
      */
     public function getObservationType()
     {
@@ -57,15 +58,15 @@ class ObservationTypeGradeSet extends ModelBase
     }
 
     /**
-     * @param ObservationType $observationType
+     * @param \Arbor\Model\ObservationType $observationType
      */
-    public function setObservationType(ObservationType $observationType = null)
+    public function setObservationType(\Arbor\Model\ObservationType $observationType = null)
     {
         $this->setProperty('observationType', $observationType);
     }
 
     /**
-     * @return ObservationGradeSet
+     * @return \Arbor\Model\ObservationGradeSet
      */
     public function getObservationGradeSet()
     {
@@ -73,9 +74,9 @@ class ObservationTypeGradeSet extends ModelBase
     }
 
     /**
-     * @param ObservationGradeSet $observationGradeSet
+     * @param \Arbor\Model\ObservationGradeSet $observationGradeSet
      */
-    public function setObservationGradeSet(ObservationGradeSet $observationGradeSet = null)
+    public function setObservationGradeSet(\Arbor\Model\ObservationGradeSet $observationGradeSet = null)
     {
         $this->setProperty('observationGradeSet', $observationGradeSet);
     }

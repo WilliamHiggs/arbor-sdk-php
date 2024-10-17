@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class StudentTalent extends ModelBase
 {
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const TALENT = 'talent';
+    public const TALENT = 'talent';
 
-    const START_DATE = 'startDate';
+    public const START_DATE = 'startDate';
 
-    const END_DATE = 'endDate';
+    public const END_DATE = 'endDate';
 
-    const NARRATIVE = 'narrative';
+    public const NARRATIVE = 'narrative';
 
     protected $_resourceType = ResourceType::STUDENT_TALENT;
 
@@ -23,7 +24,7 @@ class StudentTalent extends ModelBase
      * @return StudentTalent[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class StudentTalent extends ModelBase
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -63,15 +64,15 @@ class StudentTalent extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
 
     /**
-     * @return Talent
+     * @return \Arbor\Model\Talent
      */
     public function getTalent()
     {
@@ -79,9 +80,9 @@ class StudentTalent extends ModelBase
     }
 
     /**
-     * @param Talent $talent
+     * @param \Arbor\Model\Talent $talent
      */
-    public function setTalent(Talent $talent = null)
+    public function setTalent(\Arbor\Model\Talent $talent = null)
     {
         $this->setProperty('talent', $talent);
     }
@@ -129,7 +130,7 @@ class StudentTalent extends ModelBase
     /**
      * @param string $narrative
      */
-    public function setNarrative($narrative = null)
+    public function setNarrative(string $narrative = null)
     {
         $this->setProperty('narrative', $narrative);
     }

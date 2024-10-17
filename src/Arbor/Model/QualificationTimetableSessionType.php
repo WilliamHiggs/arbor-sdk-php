@@ -3,22 +3,25 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class QualificationTimetableSessionType extends ModelBase
 {
-    const CODE = 'code';
+    public const CODE = 'code';
 
-    const ACTIVE = 'active';
+    public const ACTIVE = 'active';
 
-    const DATA_ORDER = 'dataOrder';
+    public const DATA_ORDER = 'dataOrder';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const SHORT_NAME = 'shortName';
+    public const SHORT_NAME = 'shortName';
 
-    const START_TIME_FROM = 'startTimeFrom';
+    public const START_TIME_FROM = 'startTimeFrom';
 
-    const START_TIME_UNTIL = 'startTimeUntil';
+    public const USER_DEFINED_START_TIME_FROM = 'userDefinedStartTimeFrom';
+
+    public const START_TIME_UNTIL = 'startTimeUntil';
 
     protected $_resourceType = ResourceType::QUALIFICATION_TIMETABLE_SESSION_TYPE;
 
@@ -27,7 +30,7 @@ class QualificationTimetableSessionType extends ModelBase
      * @return QualificationTimetableSessionType[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -69,7 +72,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $code
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null)
     {
         $this->setProperty('code', $code);
     }
@@ -85,7 +88,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param bool $active
      */
-    public function setActive($active = null)
+    public function setActive(bool $active = null)
     {
         $this->setProperty('active', $active);
     }
@@ -101,7 +104,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param int $dataOrder
      */
-    public function setDataOrder($dataOrder = null)
+    public function setDataOrder(int $dataOrder = null)
     {
         $this->setProperty('dataOrder', $dataOrder);
     }
@@ -117,7 +120,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -133,7 +136,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $shortName
      */
-    public function setShortName($shortName = null)
+    public function setShortName(string $shortName = null)
     {
         $this->setProperty('shortName', $shortName);
     }
@@ -149,9 +152,25 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $startTimeFrom
      */
-    public function setStartTimeFrom($startTimeFrom = null)
+    public function setStartTimeFrom(string $startTimeFrom = null)
     {
         $this->setProperty('startTimeFrom', $startTimeFrom);
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserDefinedStartTimeFrom()
+    {
+        return $this->getProperty('userDefinedStartTimeFrom');
+    }
+
+    /**
+     * @param string $userDefinedStartTimeFrom
+     */
+    public function setUserDefinedStartTimeFrom(string $userDefinedStartTimeFrom = null)
+    {
+        $this->setProperty('userDefinedStartTimeFrom', $userDefinedStartTimeFrom);
     }
 
     /**
@@ -165,7 +184,7 @@ class QualificationTimetableSessionType extends ModelBase
     /**
      * @param string $startTimeUntil
      */
-    public function setStartTimeUntil($startTimeUntil = null)
+    public function setStartTimeUntil(string $startTimeUntil = null)
     {
         $this->setProperty('startTimeUntil', $startTimeUntil);
     }

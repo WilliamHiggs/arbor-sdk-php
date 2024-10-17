@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class RoomAsset extends ModelBase
 {
-    const ROOM_ASSET_NAME = 'roomAssetName';
+    public const ROOM_ASSET_NAME = 'roomAssetName';
 
-    const ASSIGN_TO_PEOPLE = 'assignToPeople';
+    public const ASSIGN_TO_PEOPLE = 'assignToPeople';
 
     protected $_resourceType = ResourceType::ROOM_ASSET;
 
@@ -17,7 +18,7 @@ class RoomAsset extends ModelBase
      * @return RoomAsset[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class RoomAsset extends ModelBase
     /**
      * @param string $roomAssetName
      */
-    public function setRoomAssetName($roomAssetName = null)
+    public function setRoomAssetName(string $roomAssetName = null)
     {
         $this->setProperty('roomAssetName', $roomAssetName);
     }
@@ -75,7 +76,7 @@ class RoomAsset extends ModelBase
     /**
      * @param bool $assignToPeople
      */
-    public function setAssignToPeople($assignToPeople = null)
+    public function setAssignToPeople(bool $assignToPeople = null)
     {
         $this->setProperty('assignToPeople', $assignToPeople);
     }

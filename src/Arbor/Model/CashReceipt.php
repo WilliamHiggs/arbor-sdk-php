@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CashReceipt extends ModelBase
 {
-    const BILL_PAYER = 'billPayer';
+    public const BILL_PAYER = 'billPayer';
 
-    const BANK_DEPOSIT = 'bankDeposit';
+    public const BANK_DEPOSIT = 'bankDeposit';
 
-    const RECEIVED_DATE = 'receivedDate';
+    public const RECEIVED_DATE = 'receivedDate';
 
-    const CANCELLED_DATETIME = 'cancelledDatetime';
+    public const CANCELLED_DATETIME = 'cancelledDatetime';
 
-    const RECEIVED_PAYMENT = 'receivedPayment';
+    public const RECEIVED_PAYMENT = 'receivedPayment';
 
     protected $_resourceType = ResourceType::CASH_RECEIPT;
 
@@ -23,7 +24,7 @@ class CashReceipt extends ModelBase
      * @return CashReceipt[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class CashReceipt extends ModelBase
     }
 
     /**
-     * @return BillPayer
+     * @return \Arbor\Model\BillPayer
      */
     public function getBillPayer()
     {
@@ -63,15 +64,15 @@ class CashReceipt extends ModelBase
     }
 
     /**
-     * @param BillPayer $billPayer
+     * @param \Arbor\Model\BillPayer $billPayer
      */
-    public function setBillPayer(BillPayer $billPayer = null)
+    public function setBillPayer(\Arbor\Model\BillPayer $billPayer = null)
     {
         $this->setProperty('billPayer', $billPayer);
     }
 
     /**
-     * @return BankDeposit
+     * @return \Arbor\Model\BankDeposit
      */
     public function getBankDeposit()
     {
@@ -79,9 +80,9 @@ class CashReceipt extends ModelBase
     }
 
     /**
-     * @param BankDeposit $bankDeposit
+     * @param \Arbor\Model\BankDeposit $bankDeposit
      */
-    public function setBankDeposit(BankDeposit $bankDeposit = null)
+    public function setBankDeposit(\Arbor\Model\BankDeposit $bankDeposit = null)
     {
         $this->setProperty('bankDeposit', $bankDeposit);
     }
@@ -129,7 +130,7 @@ class CashReceipt extends ModelBase
     /**
      * @param string $receivedPayment
      */
-    public function setReceivedPayment($receivedPayment = null)
+    public function setReceivedPayment(string $receivedPayment = null)
     {
         $this->setProperty('receivedPayment', $receivedPayment);
     }

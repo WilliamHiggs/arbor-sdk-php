@@ -3,26 +3,27 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CandidateAssessableEntry extends ModelBase
 {
-    const CANDIDATE_ENTRY = 'candidateEntry';
+    public const CANDIDATE_ENTRY = 'candidateEntry';
 
-    const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
+    public const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
 
-    const QUALIFICATION_ASSESSABLE_INSTANCE = 'qualificationAssessableInstance';
+    public const QUALIFICATION_ASSESSABLE_INSTANCE = 'qualificationAssessableInstance';
 
-    const INVIGILATION_SESSION = 'invigilationSession';
+    public const INVIGILATION_SESSION = 'invigilationSession';
 
-    const SEAT = 'seat';
+    public const SEAT = 'seat';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const EXTRA_TIME_PERCENTAGE = 'extraTimePercentage';
+    public const EXTRA_TIME_PERCENTAGE = 'extraTimePercentage';
 
-    const ATTENDANCE_MARK = 'attendanceMark';
+    public const ATTENDANCE_MARK = 'attendanceMark';
 
-    const MINUTES_LATE = 'minutesLate';
+    public const MINUTES_LATE = 'minutesLate';
 
     protected $_resourceType = ResourceType::CANDIDATE_ASSESSABLE_ENTRY;
 
@@ -31,7 +32,7 @@ class CandidateAssessableEntry extends ModelBase
      * @return CandidateAssessableEntry[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +64,7 @@ class CandidateAssessableEntry extends ModelBase
     }
 
     /**
-     * @return CandidateEntry
+     * @return \Arbor\Model\CandidateEntry
      */
     public function getCandidateEntry()
     {
@@ -71,15 +72,15 @@ class CandidateAssessableEntry extends ModelBase
     }
 
     /**
-     * @param CandidateEntry $candidateEntry
+     * @param \Arbor\Model\CandidateEntry $candidateEntry
      */
-    public function setCandidateEntry(CandidateEntry $candidateEntry = null)
+    public function setCandidateEntry(\Arbor\Model\CandidateEntry $candidateEntry = null)
     {
         $this->setProperty('candidateEntry', $candidateEntry);
     }
 
     /**
-     * @return QualificationAssessable
+     * @return \Arbor\Model\QualificationAssessable
      */
     public function getQualificationAssessable()
     {
@@ -87,15 +88,15 @@ class CandidateAssessableEntry extends ModelBase
     }
 
     /**
-     * @param QualificationAssessable $qualificationAssessable
+     * @param \Arbor\Model\QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }
 
     /**
-     * @return QualificationAssessableInstance
+     * @return \Arbor\Model\QualificationAssessableInstance
      */
     public function getQualificationAssessableInstance()
     {
@@ -103,15 +104,16 @@ class CandidateAssessableEntry extends ModelBase
     }
 
     /**
-     * @param QualificationAssessableInstance $qualificationAssessableInstance
+     * @param \Arbor\Model\QualificationAssessableInstance
+     * $qualificationAssessableInstance
      */
-    public function setQualificationAssessableInstance(QualificationAssessableInstance $qualificationAssessableInstance = null)
+    public function setQualificationAssessableInstance(\Arbor\Model\QualificationAssessableInstance $qualificationAssessableInstance = null)
     {
         $this->setProperty('qualificationAssessableInstance', $qualificationAssessableInstance);
     }
 
     /**
-     * @return InvigilationSession
+     * @return \Arbor\Model\InvigilationSession
      */
     public function getInvigilationSession()
     {
@@ -119,15 +121,15 @@ class CandidateAssessableEntry extends ModelBase
     }
 
     /**
-     * @param InvigilationSession $invigilationSession
+     * @param \Arbor\Model\InvigilationSession $invigilationSession
      */
-    public function setInvigilationSession(InvigilationSession $invigilationSession = null)
+    public function setInvigilationSession(\Arbor\Model\InvigilationSession $invigilationSession = null)
     {
         $this->setProperty('invigilationSession', $invigilationSession);
     }
 
     /**
-     * @return RoomLayoutSeat
+     * @return \Arbor\Model\RoomLayoutSeat
      */
     public function getSeat()
     {
@@ -135,9 +137,9 @@ class CandidateAssessableEntry extends ModelBase
     }
 
     /**
-     * @param RoomLayoutSeat $seat
+     * @param \Arbor\Model\RoomLayoutSeat $seat
      */
-    public function setSeat(RoomLayoutSeat $seat = null)
+    public function setSeat(\Arbor\Model\RoomLayoutSeat $seat = null)
     {
         $this->setProperty('seat', $seat);
     }
@@ -169,7 +171,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param float $extraTimePercentage
      */
-    public function setExtraTimePercentage($extraTimePercentage = null)
+    public function setExtraTimePercentage(float $extraTimePercentage = null)
     {
         $this->setProperty('extraTimePercentage', $extraTimePercentage);
     }
@@ -185,7 +187,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param string $attendanceMark
      */
-    public function setAttendanceMark($attendanceMark = null)
+    public function setAttendanceMark(string $attendanceMark = null)
     {
         $this->setProperty('attendanceMark', $attendanceMark);
     }
@@ -201,7 +203,7 @@ class CandidateAssessableEntry extends ModelBase
     /**
      * @param int $minutesLate
      */
-    public function setMinutesLate($minutesLate = null)
+    public function setMinutesLate(int $minutesLate = null)
     {
         $this->setProperty('minutesLate', $minutesLate);
     }

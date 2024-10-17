@@ -3,20 +3,21 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class DataSharingRequest extends ModelBase
 {
-    const GROUP_APPLICATION_ID = 'groupApplicationId';
+    public const GROUP_APPLICATION_ID = 'groupApplicationId';
 
-    const PERMISSION_LEVEL = 'permissionLevel';
+    public const PERMISSION_LEVEL = 'permissionLevel';
 
-    const STATUS = 'status';
+    public const STATUS = 'status';
 
-    const REQUESTED_DATETIME = 'requestedDatetime';
+    public const REQUESTED_DATETIME = 'requestedDatetime';
 
-    const STATUS_UPDATED_BY_USER = 'statusUpdatedByUser';
+    public const STATUS_UPDATED_BY_USER = 'statusUpdatedByUser';
 
-    const STATUS_UPDATED_DATETIME = 'statusUpdatedDatetime';
+    public const STATUS_UPDATED_DATETIME = 'statusUpdatedDatetime';
 
     protected $_resourceType = ResourceType::DATA_SHARING_REQUEST;
 
@@ -25,7 +26,7 @@ class DataSharingRequest extends ModelBase
      * @return DataSharingRequest[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -67,7 +68,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param string $groupApplicationId
      */
-    public function setGroupApplicationId($groupApplicationId = null)
+    public function setGroupApplicationId(string $groupApplicationId = null)
     {
         $this->setProperty('groupApplicationId', $groupApplicationId);
     }
@@ -83,7 +84,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param string $permissionLevel
      */
-    public function setPermissionLevel($permissionLevel = null)
+    public function setPermissionLevel(string $permissionLevel = null)
     {
         $this->setProperty('permissionLevel', $permissionLevel);
     }
@@ -99,7 +100,7 @@ class DataSharingRequest extends ModelBase
     /**
      * @param string $status
      */
-    public function setStatus($status = null)
+    public function setStatus(string $status = null)
     {
         $this->setProperty('status', $status);
     }
@@ -121,7 +122,7 @@ class DataSharingRequest extends ModelBase
     }
 
     /**
-     * @return User
+     * @return \Arbor\Model\User
      */
     public function getStatusUpdatedByUser()
     {
@@ -129,9 +130,9 @@ class DataSharingRequest extends ModelBase
     }
 
     /**
-     * @param User $statusUpdatedByUser
+     * @param \Arbor\Model\User $statusUpdatedByUser
      */
-    public function setStatusUpdatedByUser(User $statusUpdatedByUser = null)
+    public function setStatusUpdatedByUser(\Arbor\Model\User $statusUpdatedByUser = null)
     {
         $this->setProperty('statusUpdatedByUser', $statusUpdatedByUser);
     }

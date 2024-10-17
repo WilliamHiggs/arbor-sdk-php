@@ -3,26 +3,27 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ProgrammeEnrolment extends ModelBase
 {
-    const PROGRAMME_INSTANCE = 'programmeInstance';
+    public const PROGRAMME_INSTANCE = 'programmeInstance';
 
-    const STUDENT = 'student';
+    public const STUDENT = 'student';
 
-    const MAIN_PROGRAMME = 'mainProgramme';
+    public const MAIN_PROGRAMME = 'mainProgramme';
 
-    const PROGRAMME_CLASSIFICATION = 'programmeClassification';
+    public const PROGRAMME_CLASSIFICATION = 'programmeClassification';
 
-    const PLANNED_START_DATE = 'plannedStartDate';
+    public const PLANNED_START_DATE = 'plannedStartDate';
 
-    const PLANNED_END_DATE = 'plannedEndDate';
+    public const PLANNED_END_DATE = 'plannedEndDate';
 
-    const ACTUAL_END_DATE = 'actualEndDate';
+    public const ACTUAL_END_DATE = 'actualEndDate';
 
-    const COMPLETION_STATUS = 'completionStatus';
+    public const COMPLETION_STATUS = 'completionStatus';
 
-    const WITHDRAWAL_REASON = 'withdrawalReason';
+    public const WITHDRAWAL_REASON = 'withdrawalReason';
 
     protected $_resourceType = ResourceType::PROGRAMME_ENROLMENT;
 
@@ -31,7 +32,7 @@ class ProgrammeEnrolment extends ModelBase
      * @return ProgrammeEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -63,7 +64,7 @@ class ProgrammeEnrolment extends ModelBase
     }
 
     /**
-     * @return ProgrammeInstance
+     * @return \Arbor\Model\ProgrammeInstance
      */
     public function getProgrammeInstance()
     {
@@ -71,15 +72,15 @@ class ProgrammeEnrolment extends ModelBase
     }
 
     /**
-     * @param ProgrammeInstance $programmeInstance
+     * @param \Arbor\Model\ProgrammeInstance $programmeInstance
      */
-    public function setProgrammeInstance(ProgrammeInstance $programmeInstance = null)
+    public function setProgrammeInstance(\Arbor\Model\ProgrammeInstance $programmeInstance = null)
     {
         $this->setProperty('programmeInstance', $programmeInstance);
     }
 
     /**
-     * @return Student
+     * @return \Arbor\Model\Student
      */
     public function getStudent()
     {
@@ -87,9 +88,9 @@ class ProgrammeEnrolment extends ModelBase
     }
 
     /**
-     * @param Student $student
+     * @param \Arbor\Model\Student $student
      */
-    public function setStudent(Student $student = null)
+    public function setStudent(\Arbor\Model\Student $student = null)
     {
         $this->setProperty('student', $student);
     }
@@ -105,13 +106,13 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param bool $mainProgramme
      */
-    public function setMainProgramme($mainProgramme = null)
+    public function setMainProgramme(bool $mainProgramme = null)
     {
         $this->setProperty('mainProgramme', $mainProgramme);
     }
 
     /**
-     * @return ProgrammeClassification
+     * @return \Arbor\Model\ProgrammeClassification
      */
     public function getProgrammeClassification()
     {
@@ -119,9 +120,9 @@ class ProgrammeEnrolment extends ModelBase
     }
 
     /**
-     * @param ProgrammeClassification $programmeClassification
+     * @param \Arbor\Model\ProgrammeClassification $programmeClassification
      */
-    public function setProgrammeClassification(ProgrammeClassification $programmeClassification = null)
+    public function setProgrammeClassification(\Arbor\Model\ProgrammeClassification $programmeClassification = null)
     {
         $this->setProperty('programmeClassification', $programmeClassification);
     }
@@ -185,13 +186,13 @@ class ProgrammeEnrolment extends ModelBase
     /**
      * @param string $completionStatus
      */
-    public function setCompletionStatus($completionStatus = null)
+    public function setCompletionStatus(string $completionStatus = null)
     {
         $this->setProperty('completionStatus', $completionStatus);
     }
 
     /**
-     * @return ProgrammeWithdrawalReason
+     * @return \Arbor\Model\ProgrammeWithdrawalReason
      */
     public function getWithdrawalReason()
     {
@@ -199,9 +200,9 @@ class ProgrammeEnrolment extends ModelBase
     }
 
     /**
-     * @param ProgrammeWithdrawalReason $withdrawalReason
+     * @param \Arbor\Model\ProgrammeWithdrawalReason $withdrawalReason
      */
-    public function setWithdrawalReason(ProgrammeWithdrawalReason $withdrawalReason = null)
+    public function setWithdrawalReason(\Arbor\Model\ProgrammeWithdrawalReason $withdrawalReason = null)
     {
         $this->setProperty('withdrawalReason', $withdrawalReason);
     }

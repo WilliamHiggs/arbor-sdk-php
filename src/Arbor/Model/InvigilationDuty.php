@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InvigilationDuty extends ModelBase
 {
-    const INVIGILATION_SESSION = 'invigilationSession';
+    public const INVIGILATION_SESSION = 'invigilationSession';
 
-    const STAFF = 'staff';
+    public const STAFF = 'staff';
 
-    const ADDITIONAL_ROLE = 'additionalRole';
+    public const ADDITIONAL_ROLE = 'additionalRole';
 
-    const START_DATETIME = 'startDatetime';
+    public const START_DATETIME = 'startDatetime';
 
-    const END_DATETIME = 'endDatetime';
+    public const END_DATETIME = 'endDatetime';
 
     protected $_resourceType = ResourceType::INVIGILATION_DUTY;
 
@@ -23,7 +24,7 @@ class InvigilationDuty extends ModelBase
      * @return InvigilationDuty[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class InvigilationDuty extends ModelBase
     }
 
     /**
-     * @return InvigilationSession
+     * @return \Arbor\Model\InvigilationSession
      */
     public function getInvigilationSession()
     {
@@ -63,15 +64,15 @@ class InvigilationDuty extends ModelBase
     }
 
     /**
-     * @param InvigilationSession $invigilationSession
+     * @param \Arbor\Model\InvigilationSession $invigilationSession
      */
-    public function setInvigilationSession(InvigilationSession $invigilationSession = null)
+    public function setInvigilationSession(\Arbor\Model\InvigilationSession $invigilationSession = null)
     {
         $this->setProperty('invigilationSession', $invigilationSession);
     }
 
     /**
-     * @return Staff
+     * @return \Arbor\Model\Staff
      */
     public function getStaff()
     {
@@ -79,9 +80,9 @@ class InvigilationDuty extends ModelBase
     }
 
     /**
-     * @param Staff $staff
+     * @param \Arbor\Model\Staff $staff
      */
-    public function setStaff(Staff $staff = null)
+    public function setStaff(\Arbor\Model\Staff $staff = null)
     {
         $this->setProperty('staff', $staff);
     }
@@ -97,7 +98,7 @@ class InvigilationDuty extends ModelBase
     /**
      * @param string $additionalRole
      */
-    public function setAdditionalRole($additionalRole = null)
+    public function setAdditionalRole(string $additionalRole = null)
     {
         $this->setProperty('additionalRole', $additionalRole);
     }

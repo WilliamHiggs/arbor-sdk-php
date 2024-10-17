@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ChequeBook extends ModelBase
 {
-    const BANK_ACCOUNT = 'bankAccount';
+    public const BANK_ACCOUNT = 'bankAccount';
 
-    const CHEQUE_NUMBER_LENGTH = 'chequeNumberLength';
+    public const CHEQUE_NUMBER_LENGTH = 'chequeNumberLength';
 
-    const CHEQUE_NUMBER_START = 'chequeNumberStart';
+    public const CHEQUE_NUMBER_START = 'chequeNumberStart';
 
-    const CHEQUE_NUMBER_END = 'chequeNumberEnd';
+    public const CHEQUE_NUMBER_END = 'chequeNumberEnd';
 
-    const NEXT_CHEQUE_NUMBER = 'nextChequeNumber';
+    public const NEXT_CHEQUE_NUMBER = 'nextChequeNumber';
 
     protected $_resourceType = ResourceType::CHEQUE_BOOK;
 
@@ -23,7 +24,7 @@ class ChequeBook extends ModelBase
      * @return ChequeBook[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -55,7 +56,7 @@ class ChequeBook extends ModelBase
     }
 
     /**
-     * @return BankAccount
+     * @return \Arbor\Model\BankAccount
      */
     public function getBankAccount()
     {
@@ -63,9 +64,9 @@ class ChequeBook extends ModelBase
     }
 
     /**
-     * @param BankAccount $bankAccount
+     * @param \Arbor\Model\BankAccount $bankAccount
      */
-    public function setBankAccount(BankAccount $bankAccount = null)
+    public function setBankAccount(\Arbor\Model\BankAccount $bankAccount = null)
     {
         $this->setProperty('bankAccount', $bankAccount);
     }
@@ -81,7 +82,7 @@ class ChequeBook extends ModelBase
     /**
      * @param int $chequeNumberLength
      */
-    public function setChequeNumberLength($chequeNumberLength = null)
+    public function setChequeNumberLength(int $chequeNumberLength = null)
     {
         $this->setProperty('chequeNumberLength', $chequeNumberLength);
     }
@@ -97,7 +98,7 @@ class ChequeBook extends ModelBase
     /**
      * @param int $chequeNumberStart
      */
-    public function setChequeNumberStart($chequeNumberStart = null)
+    public function setChequeNumberStart(int $chequeNumberStart = null)
     {
         $this->setProperty('chequeNumberStart', $chequeNumberStart);
     }
@@ -113,7 +114,7 @@ class ChequeBook extends ModelBase
     /**
      * @param int $chequeNumberEnd
      */
-    public function setChequeNumberEnd($chequeNumberEnd = null)
+    public function setChequeNumberEnd(int $chequeNumberEnd = null)
     {
         $this->setProperty('chequeNumberEnd', $chequeNumberEnd);
     }
@@ -129,7 +130,7 @@ class ChequeBook extends ModelBase
     /**
      * @param int $nextChequeNumber
      */
-    public function setNextChequeNumber($nextChequeNumber = null)
+    public function setNextChequeNumber(int $nextChequeNumber = null)
     {
         $this->setProperty('nextChequeNumber', $nextChequeNumber);
     }

@@ -3,18 +3,19 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class GoogleProvisioningSetting extends ModelBase
 {
-    const PROVISION_STAFF_USERS = 'provisionStaffUsers';
+    public const PROVISION_STAFF_USERS = 'provisionStaffUsers';
 
-    const PROVISION_STUDENT_USERS = 'provisionStudentUsers';
+    public const PROVISION_STUDENT_USERS = 'provisionStudentUsers';
 
-    const AUTH_CONFIG = 'authConfig';
+    public const AUTH_CONFIG = 'authConfig';
 
-    const ACCESS_TOKEN = 'accessToken';
+    public const ACCESS_TOKEN = 'accessToken';
 
-    const LAST_SYNC_DATETIME = 'lastSyncDatetime';
+    public const LAST_SYNC_DATETIME = 'lastSyncDatetime';
 
     protected $_resourceType = ResourceType::GOOGLE_PROVISIONING_SETTING;
 
@@ -23,7 +24,7 @@ class GoogleProvisioningSetting extends ModelBase
      * @return GoogleProvisioningSetting[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class GoogleProvisioningSetting extends ModelBase
     /**
      * @param bool $provisionStaffUsers
      */
-    public function setProvisionStaffUsers($provisionStaffUsers = null)
+    public function setProvisionStaffUsers(bool $provisionStaffUsers = null)
     {
         $this->setProperty('provisionStaffUsers', $provisionStaffUsers);
     }
@@ -81,7 +82,7 @@ class GoogleProvisioningSetting extends ModelBase
     /**
      * @param bool $provisionStudentUsers
      */
-    public function setProvisionStudentUsers($provisionStudentUsers = null)
+    public function setProvisionStudentUsers(bool $provisionStudentUsers = null)
     {
         $this->setProperty('provisionStudentUsers', $provisionStudentUsers);
     }
@@ -97,7 +98,7 @@ class GoogleProvisioningSetting extends ModelBase
     /**
      * @param string $authConfig
      */
-    public function setAuthConfig($authConfig = null)
+    public function setAuthConfig(string $authConfig = null)
     {
         $this->setProperty('authConfig', $authConfig);
     }
@@ -113,7 +114,7 @@ class GoogleProvisioningSetting extends ModelBase
     /**
      * @param string $accessToken
      */
-    public function setAccessToken($accessToken = null)
+    public function setAccessToken(string $accessToken = null)
     {
         $this->setProperty('accessToken', $accessToken);
     }

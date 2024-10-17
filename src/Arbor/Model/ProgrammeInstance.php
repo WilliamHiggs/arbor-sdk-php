@@ -3,28 +3,29 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class ProgrammeInstance extends ModelBase
 {
-    const PROGRAMME = 'programme';
+    public const PROGRAMME = 'programme';
 
-    const NAME = 'name';
+    public const NAME = 'name';
 
-    const PLANNED_START_DATE = 'plannedStartDate';
+    public const PLANNED_START_DATE = 'plannedStartDate';
 
-    const PLANNED_END_DATE = 'plannedEndDate';
+    public const PLANNED_END_DATE = 'plannedEndDate';
 
-    const PLACEHOLDER_QUALIFICATION_AWARD_NAME = 'placeholderQualificationAwardName';
+    public const PLACEHOLDER_QUALIFICATION_AWARD_NAME = 'placeholderQualificationAwardName';
 
-    const PLACEHOLDER_QUALIFICATION_AWARD_REFERENCE = 'placeholderQualificationAwardReference';
+    public const PLACEHOLDER_QUALIFICATION_AWARD_REFERENCE = 'placeholderQualificationAwardReference';
 
-    const PROGRAMME_CLASSIFICATION = 'programmeClassification';
+    public const PROGRAMME_CLASSIFICATION = 'programmeClassification';
 
-    const PARTNER_UKPRN = 'partnerUkprn';
+    public const PARTNER_UKPRN = 'partnerUkprn';
 
-    const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
+    public const PLANNED_LEARNING_HOURS = 'plannedLearningHours';
 
-    const PLANNED_LEARNING_HOURS_SECOND_YEAR = 'plannedLearningHoursSecondYear';
+    public const PLANNED_LEARNING_HOURS_SECOND_YEAR = 'plannedLearningHoursSecondYear';
 
     protected $_resourceType = ResourceType::PROGRAMME_INSTANCE;
 
@@ -33,7 +34,7 @@ class ProgrammeInstance extends ModelBase
      * @return ProgrammeInstance[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -65,7 +66,7 @@ class ProgrammeInstance extends ModelBase
     }
 
     /**
-     * @return Programme
+     * @return \Arbor\Model\Programme
      */
     public function getProgramme()
     {
@@ -73,9 +74,9 @@ class ProgrammeInstance extends ModelBase
     }
 
     /**
-     * @param Programme $programme
+     * @param \Arbor\Model\Programme $programme
      */
-    public function setProgramme(Programme $programme = null)
+    public function setProgramme(\Arbor\Model\Programme $programme = null)
     {
         $this->setProperty('programme', $programme);
     }
@@ -91,7 +92,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $name
      */
-    public function setName($name = null)
+    public function setName(string $name = null)
     {
         $this->setProperty('name', $name);
     }
@@ -139,7 +140,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $placeholderQualificationAwardName
      */
-    public function setPlaceholderQualificationAwardName($placeholderQualificationAwardName = null)
+    public function setPlaceholderQualificationAwardName(string $placeholderQualificationAwardName = null)
     {
         $this->setProperty('placeholderQualificationAwardName', $placeholderQualificationAwardName);
     }
@@ -155,13 +156,13 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $placeholderQualificationAwardReference
      */
-    public function setPlaceholderQualificationAwardReference($placeholderQualificationAwardReference = null)
+    public function setPlaceholderQualificationAwardReference(string $placeholderQualificationAwardReference = null)
     {
         $this->setProperty('placeholderQualificationAwardReference', $placeholderQualificationAwardReference);
     }
 
     /**
-     * @return ProgrammeClassification
+     * @return \Arbor\Model\ProgrammeClassification
      */
     public function getProgrammeClassification()
     {
@@ -169,9 +170,9 @@ class ProgrammeInstance extends ModelBase
     }
 
     /**
-     * @param ProgrammeClassification $programmeClassification
+     * @param \Arbor\Model\ProgrammeClassification $programmeClassification
      */
-    public function setProgrammeClassification(ProgrammeClassification $programmeClassification = null)
+    public function setProgrammeClassification(\Arbor\Model\ProgrammeClassification $programmeClassification = null)
     {
         $this->setProperty('programmeClassification', $programmeClassification);
     }
@@ -187,7 +188,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param string $partnerUkprn
      */
-    public function setPartnerUkprn($partnerUkprn = null)
+    public function setPartnerUkprn(string $partnerUkprn = null)
     {
         $this->setProperty('partnerUkprn', $partnerUkprn);
     }
@@ -203,7 +204,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param int $plannedLearningHours
      */
-    public function setPlannedLearningHours($plannedLearningHours = null)
+    public function setPlannedLearningHours(int $plannedLearningHours = null)
     {
         $this->setProperty('plannedLearningHours', $plannedLearningHours);
     }
@@ -219,7 +220,7 @@ class ProgrammeInstance extends ModelBase
     /**
      * @param int $plannedLearningHoursSecondYear
      */
-    public function setPlannedLearningHoursSecondYear($plannedLearningHoursSecondYear = null)
+    public function setPlannedLearningHoursSecondYear(int $plannedLearningHoursSecondYear = null)
     {
         $this->setProperty('plannedLearningHoursSecondYear', $plannedLearningHoursSecondYear);
     }

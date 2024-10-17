@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class DataSource extends ModelBase
 {
-    const DOMAIN = 'domain';
+    public const DOMAIN = 'domain';
 
-    const PROVIDER = 'provider';
+    public const PROVIDER = 'provider';
 
     protected $_resourceType = ResourceType::DATA_SOURCE;
 
@@ -17,7 +18,7 @@ class DataSource extends ModelBase
      * @return DataSource[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +60,7 @@ class DataSource extends ModelBase
     /**
      * @param string $domain
      */
-    public function setDomain($domain = null)
+    public function setDomain(string $domain = null)
     {
         $this->setProperty('domain', $domain);
     }
@@ -75,7 +76,7 @@ class DataSource extends ModelBase
     /**
      * @param string $provider
      */
-    public function setProvider($provider = null)
+    public function setProvider(string $provider = null)
     {
         $this->setProperty('provider', $provider);
     }

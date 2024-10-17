@@ -3,12 +3,13 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class HouseAutomaticEnrolment extends ModelBase
 {
-    const HOUSE = 'house';
+    public const HOUSE = 'house';
 
-    const TRIGGER = 'trigger';
+    public const TRIGGER = 'trigger';
 
     protected $_resourceType = ResourceType::HOUSE_AUTOMATIC_ENROLMENT;
 
@@ -17,7 +18,7 @@ class HouseAutomaticEnrolment extends ModelBase
      * @return HouseAutomaticEnrolment[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -49,7 +50,7 @@ class HouseAutomaticEnrolment extends ModelBase
     }
 
     /**
-     * @return House
+     * @return \Arbor\Model\House
      */
     public function getHouse()
     {
@@ -57,15 +58,15 @@ class HouseAutomaticEnrolment extends ModelBase
     }
 
     /**
-     * @param House $house
+     * @param \Arbor\Model\House $house
      */
-    public function setHouse(House $house = null)
+    public function setHouse(\Arbor\Model\House $house = null)
     {
         $this->setProperty('house', $house);
     }
 
     /**
-     * @return RegistrationForm
+     * @return \Arbor\Model\RegistrationForm
      */
     public function getTrigger()
     {
@@ -73,9 +74,9 @@ class HouseAutomaticEnrolment extends ModelBase
     }
 
     /**
-     * @param RegistrationForm $trigger
+     * @param \Arbor\Model\RegistrationForm $trigger
      */
-    public function setTrigger(RegistrationForm $trigger = null)
+    public function setTrigger(\Arbor\Model\RegistrationForm $trigger = null)
     {
         $this->setProperty('trigger', $trigger);
     }

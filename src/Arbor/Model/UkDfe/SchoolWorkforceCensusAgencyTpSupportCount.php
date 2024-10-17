@@ -6,19 +6,18 @@ use Arbor\Query\Query;
 use Arbor\Model\Collection;
 use Arbor\Model\Exception;
 use Arbor\Model\ModelBase;
-use Arbor\Model\EducationalInstitution;
 
 class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
 {
-    const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
+    public const SCHOOL_WORKFORCE_CENSUS = 'schoolWorkforceCensus';
 
-    const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
+    public const EDUCATIONAL_INSTITUTION = 'educationalInstitution';
 
-    const WORKFORCE_CENSUS_ROLE_IDENTIFIER = 'workforceCensusRoleIdentifier';
+    public const WORKFORCE_CENSUS_ROLE_IDENTIFIER = 'workforceCensusRoleIdentifier';
 
-    const AGENCY_TP_SUPPORT_CATEGORY = 'agencyTpSupportCategory';
+    public const AGENCY_TP_SUPPORT_CATEGORY = 'agencyTpSupportCategory';
 
-    const SUP_HEAD_COUNT = 'supHeadCount';
+    public const SUP_HEAD_COUNT = 'supHeadCount';
 
     protected $_resourceType = ResourceType::UK_DFE_SCHOOL_WORKFORCE_CENSUS_AGENCY_TP_SUPPORT_COUNT;
 
@@ -27,7 +26,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
      * @return SchoolWorkforceCensusAgencyTpSupportCount[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -59,7 +58,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     }
 
     /**
-     * @return SchoolWorkforceCensus
+     * @return \Arbor\Model\UkDfe\SchoolWorkforceCensus
      */
     public function getSchoolWorkforceCensus()
     {
@@ -67,15 +66,15 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     }
 
     /**
-     * @param SchoolWorkforceCensus $schoolWorkforceCensus
+     * @param \Arbor\Model\UkDfe\SchoolWorkforceCensus $schoolWorkforceCensus
      */
-    public function setSchoolWorkforceCensus(SchoolWorkforceCensus $schoolWorkforceCensus = null)
+    public function setSchoolWorkforceCensus(\Arbor\Model\UkDfe\SchoolWorkforceCensus $schoolWorkforceCensus = null)
     {
         $this->setProperty('schoolWorkforceCensus', $schoolWorkforceCensus);
     }
 
     /**
-     * @return EducationalInstitution
+     * @return \Arbor\Model\EducationalInstitution
      */
     public function getEducationalInstitution()
     {
@@ -83,9 +82,9 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     }
 
     /**
-     * @param EducationalInstitution $educationalInstitution
+     * @param \Arbor\Model\EducationalInstitution $educationalInstitution
      */
-    public function setEducationalInstitution(EducationalInstitution $educationalInstitution = null)
+    public function setEducationalInstitution(\Arbor\Model\EducationalInstitution $educationalInstitution = null)
     {
         $this->setProperty('educationalInstitution', $educationalInstitution);
     }
@@ -101,7 +100,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     /**
      * @param string $workforceCensusRoleIdentifier
      */
-    public function setWorkforceCensusRoleIdentifier($workforceCensusRoleIdentifier = null)
+    public function setWorkforceCensusRoleIdentifier(string $workforceCensusRoleIdentifier = null)
     {
         $this->setProperty('workforceCensusRoleIdentifier', $workforceCensusRoleIdentifier);
     }
@@ -117,7 +116,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     /**
      * @param string $agencyTpSupportCategory
      */
-    public function setAgencyTpSupportCategory($agencyTpSupportCategory = null)
+    public function setAgencyTpSupportCategory(string $agencyTpSupportCategory = null)
     {
         $this->setProperty('agencyTpSupportCategory', $agencyTpSupportCategory);
     }
@@ -133,7 +132,7 @@ class SchoolWorkforceCensusAgencyTpSupportCount extends ModelBase
     /**
      * @param int $supHeadCount
      */
-    public function setSupHeadCount($supHeadCount = null)
+    public function setSupHeadCount(int $supHeadCount = null)
     {
         $this->setProperty('supHeadCount', $supHeadCount);
     }

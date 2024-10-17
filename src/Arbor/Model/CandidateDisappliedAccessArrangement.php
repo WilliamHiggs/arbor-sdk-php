@@ -3,14 +3,15 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class CandidateDisappliedAccessArrangement extends ModelBase
 {
-    const CANDIDATE = 'candidate';
+    public const CANDIDATE = 'candidate';
 
-    const ACCESS_ARRANGEMENT = 'accessArrangement';
+    public const ACCESS_ARRANGEMENT = 'accessArrangement';
 
-    const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
+    public const QUALIFICATION_ASSESSABLE = 'qualificationAssessable';
 
     protected $_resourceType = ResourceType::CANDIDATE_DISAPPLIED_ACCESS_ARRANGEMENT;
 
@@ -19,7 +20,7 @@ class CandidateDisappliedAccessArrangement extends ModelBase
      * @return CandidateDisappliedAccessArrangement[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -51,7 +52,7 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     }
 
     /**
-     * @return Candidate
+     * @return \Arbor\Model\Candidate
      */
     public function getCandidate()
     {
@@ -59,15 +60,15 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     }
 
     /**
-     * @param Candidate $candidate
+     * @param \Arbor\Model\Candidate $candidate
      */
-    public function setCandidate(Candidate $candidate = null)
+    public function setCandidate(\Arbor\Model\Candidate $candidate = null)
     {
         $this->setProperty('candidate', $candidate);
     }
 
     /**
-     * @return AccessArrangement
+     * @return \Arbor\Model\AccessArrangement
      */
     public function getAccessArrangement()
     {
@@ -75,15 +76,15 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     }
 
     /**
-     * @param AccessArrangement $accessArrangement
+     * @param \Arbor\Model\AccessArrangement $accessArrangement
      */
-    public function setAccessArrangement(AccessArrangement $accessArrangement = null)
+    public function setAccessArrangement(\Arbor\Model\AccessArrangement $accessArrangement = null)
     {
         $this->setProperty('accessArrangement', $accessArrangement);
     }
 
     /**
-     * @return QualificationAssessable
+     * @return \Arbor\Model\QualificationAssessable
      */
     public function getQualificationAssessable()
     {
@@ -91,9 +92,9 @@ class CandidateDisappliedAccessArrangement extends ModelBase
     }
 
     /**
-     * @param QualificationAssessable $qualificationAssessable
+     * @param \Arbor\Model\QualificationAssessable $qualificationAssessable
      */
-    public function setQualificationAssessable(QualificationAssessable $qualificationAssessable = null)
+    public function setQualificationAssessable(\Arbor\Model\QualificationAssessable $qualificationAssessable = null)
     {
         $this->setProperty('qualificationAssessable', $qualificationAssessable);
     }

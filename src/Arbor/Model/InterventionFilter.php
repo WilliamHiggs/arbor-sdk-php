@@ -3,24 +3,25 @@ namespace Arbor\Model;
 
 use Arbor\Resource\ResourceType;
 use Arbor\Query\Query;
+use Arbor\Model\ModelBase;
 
 class InterventionFilter extends ModelBase
 {
-    const INTERVENTION = 'intervention';
+    public const INTERVENTION = 'intervention';
 
-    const FIELD_CLASS = 'fieldClass';
+    public const FIELD_CLASS = 'fieldClass';
 
-    const FIELD_PARAMS = 'fieldParams';
+    public const FIELD_PARAMS = 'fieldParams';
 
-    const TRANSFORMATION_CLASS = 'transformationClass';
+    public const TRANSFORMATION_CLASS = 'transformationClass';
 
-    const CONDITION_CLASS = 'conditionClass';
+    public const CONDITION_CLASS = 'conditionClass';
 
-    const CONDITION_PARAMS = 'conditionParams';
+    public const CONDITION_PARAMS = 'conditionParams';
 
-    const FILTER_GROUP_INDEX = 'filterGroupIndex';
+    public const FILTER_GROUP_INDEX = 'filterGroupIndex';
 
-    const IS_OUTCOME = 'isOutcome';
+    public const IS_OUTCOME = 'isOutcome';
 
     protected $_resourceType = ResourceType::INTERVENTION_FILTER;
 
@@ -29,7 +30,7 @@ class InterventionFilter extends ModelBase
      * @return InterventionFilter[] | Collection
      * @throws Exception
      */
-    public static function query(Query $query = null)
+    public static function query(\Arbor\Query\Query $query = null)
     {
         $gateway = self::getDefaultGateway();
         if ($gateway === null) {
@@ -61,7 +62,7 @@ class InterventionFilter extends ModelBase
     }
 
     /**
-     * @return Intervention
+     * @return \Arbor\Model\Intervention
      */
     public function getIntervention()
     {
@@ -69,9 +70,9 @@ class InterventionFilter extends ModelBase
     }
 
     /**
-     * @param Intervention $intervention
+     * @param \Arbor\Model\Intervention $intervention
      */
-    public function setIntervention(Intervention $intervention = null)
+    public function setIntervention(\Arbor\Model\Intervention $intervention = null)
     {
         $this->setProperty('intervention', $intervention);
     }
@@ -87,7 +88,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param string $fieldClass
      */
-    public function setFieldClass($fieldClass = null)
+    public function setFieldClass(string $fieldClass = null)
     {
         $this->setProperty('fieldClass', $fieldClass);
     }
@@ -103,7 +104,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param string $fieldParams
      */
-    public function setFieldParams($fieldParams = null)
+    public function setFieldParams(string $fieldParams = null)
     {
         $this->setProperty('fieldParams', $fieldParams);
     }
@@ -119,7 +120,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param string $transformationClass
      */
-    public function setTransformationClass($transformationClass = null)
+    public function setTransformationClass(string $transformationClass = null)
     {
         $this->setProperty('transformationClass', $transformationClass);
     }
@@ -135,7 +136,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param string $conditionClass
      */
-    public function setConditionClass($conditionClass = null)
+    public function setConditionClass(string $conditionClass = null)
     {
         $this->setProperty('conditionClass', $conditionClass);
     }
@@ -151,7 +152,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param string $conditionParams
      */
-    public function setConditionParams($conditionParams = null)
+    public function setConditionParams(string $conditionParams = null)
     {
         $this->setProperty('conditionParams', $conditionParams);
     }
@@ -167,7 +168,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param int $filterGroupIndex
      */
-    public function setFilterGroupIndex($filterGroupIndex = null)
+    public function setFilterGroupIndex(int $filterGroupIndex = null)
     {
         $this->setProperty('filterGroupIndex', $filterGroupIndex);
     }
@@ -183,7 +184,7 @@ class InterventionFilter extends ModelBase
     /**
      * @param bool $isOutcome
      */
-    public function setIsOutcome($isOutcome = null)
+    public function setIsOutcome(bool $isOutcome = null)
     {
         $this->setProperty('isOutcome', $isOutcome);
     }
